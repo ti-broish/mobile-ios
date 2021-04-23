@@ -1,0 +1,7 @@
+*.xcworkspace
+*.xcuserstate
+xcuserdata/
+
+Pods/
+
+.DS_Store

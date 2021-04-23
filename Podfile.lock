@@ -1,0 +1,20 @@
+PODS:
+  - SFBaseKit (2.2.0)
+  - TwoWayBondage (2.1.0)
+
+DEPENDENCIES:
+  - SFBaseKit
+  - TwoWayBondage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SFBaseKit
+    - TwoWayBondage
+
+SPEC CHECKSUMS:
+  SFBaseKit: f4519fde4d5212d564312b31b0445c5fbfed9a27
+  TwoWayBondage: c907b02fe132e7d9da0980b1d7fa3ed0d022f996
+
+PODFILE CHECKSUM: 12a306edeac9625887a77f9d07e29ac3b63b0356
+
+COCOAPODS: 1.10.1

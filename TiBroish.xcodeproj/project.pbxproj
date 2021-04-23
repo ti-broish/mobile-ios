@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF23880F26335D5100EF0048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23880E26335D5100EF0048 /* AppDelegate.swift */; };
+		CF23881626335D5100EF0048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF23881426335D5100EF0048 /* Main.storyboard */; };
+		CF23881826335D5300EF0048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF23881726335D5300EF0048 /* Assets.xcassets */; };
+		CF23881B26335D5300EF0048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF23881926335D5300EF0048 /* LaunchScreen.storyboard */; };
+		CF23882D26335F2600EF0048 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23882C26335F2600EF0048 /* AppCoordinator.swift */; };
+		CF23883326335FA400EF0048 /* ExampleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23883226335FA400EF0048 /* ExampleCoordinator.swift */; };
+		CF23883726335FCB00EF0048 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF23883626335FCB00EF0048 /* Example.storyboard */; };
+		CF23883B2633600200EF0048 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2388392633600200EF0048 /* ExampleViewController.swift */; };
+		CF2388422633612B00EF0048 /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2388412633612B00EF0048 /* ExampleViewModel.swift */; };
+		ECF43AD839CEEE33FB8EB95C /* Pods_TiBroish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F2535CCFF3ADEE7DF9B756 /* Pods_TiBroish.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		230BFF79DAC8EBA001AE8CC3 /* Pods-TiBroish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiBroish.release.xcconfig"; path = "Target Support Files/Pods-TiBroish/Pods-TiBroish.release.xcconfig"; sourceTree = "<group>"; };
+		5E75146B0D1AF93ACCE91EAB /* Pods-TiBroish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiBroish.debug.xcconfig"; path = "Target Support Files/Pods-TiBroish/Pods-TiBroish.debug.xcconfig"; sourceTree = "<group>"; };
+		78F2535CCFF3ADEE7DF9B756 /* Pods_TiBroish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiBroish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF23880B26335D5100EF0048 /* TiBroish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiBroish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF23880E26335D5100EF0048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF23881526335D5100EF0048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF23881726335D5300EF0048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF23881A26335D5300EF0048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF23881C26335D5300EF0048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF23882C26335F2600EF0048 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CF23883226335FA400EF0048 /* ExampleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoordinator.swift; sourceTree = "<group>"; };
+		CF23883626335FCB00EF0048 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
+		CF2388392633600200EF0048 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		CF2388412633612B00EF0048 /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF23880826335D5100EF0048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF43AD839CEEE33FB8EB95C /* Pods_TiBroish.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0112D3B95475964AE0EA7186 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78F2535CCFF3ADEE7DF9B756 /* Pods_TiBroish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43036C00AA287E71D9BF7852 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E75146B0D1AF93ACCE91EAB /* Pods-TiBroish.debug.xcconfig */,
+				230BFF79DAC8EBA001AE8CC3 /* Pods-TiBroish.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF23880226335D5100EF0048 = {
+			isa = PBXGroup;
+			children = (
+				CF23880D26335D5100EF0048 /* TiBroish */,
+				CF23880C26335D5100EF0048 /* Products */,
+				43036C00AA287E71D9BF7852 /* Pods */,
+				0112D3B95475964AE0EA7186 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF23880C26335D5100EF0048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF23880B26335D5100EF0048 /* TiBroish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF23880D26335D5100EF0048 /* TiBroish */ = {
+			isa = PBXGroup;
+			children = (
+				CF23883026335F6400EF0048 /* Modules */,
+				CF23882B26335F1D00EF0048 /* Architecture */,
+				CF23880E26335D5100EF0048 /* AppDelegate.swift */,
+				CF23881426335D5100EF0048 /* Main.storyboard */,
+				CF23881726335D5300EF0048 /* Assets.xcassets */,
+				CF23881926335D5300EF0048 /* LaunchScreen.storyboard */,
+				CF23881C26335D5300EF0048 /* Info.plist */,
+			);
+			path = TiBroish;
+			sourceTree = "<group>";
+		};
+		CF23882B26335F1D00EF0048 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				CF23882C26335F2600EF0048 /* AppCoordinator.swift */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		CF23883026335F6400EF0048 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CF23883126335F6E00EF0048 /* Example */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CF23883126335F6E00EF0048 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				CF23883226335FA400EF0048 /* ExampleCoordinator.swift */,
+				CF2388412633612B00EF0048 /* ExampleViewModel.swift */,
+				CF2388392633600200EF0048 /* ExampleViewController.swift */,
+				CF23883626335FCB00EF0048 /* Example.storyboard */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF23880A26335D5100EF0048 /* TiBroish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF23881F26335D5300EF0048 /* Build configuration list for PBXNativeTarget "TiBroish" */;
+			buildPhases = (
+				392B4F415EFC9BBE9125ECAC /* [CP] Check Pods Manifest.lock */,
+				CF23880726335D5100EF0048 /* Sources */,
+				CF23880826335D5100EF0048 /* Frameworks */,
+				CF23880926335D5100EF0048 /* Resources */,
+				4B4AA44E9B06FBEA70003DFF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TiBroish;
+			productName = TiBroish;
+			productReference = CF23880B26335D5100EF0048 /* TiBroish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF23880326335D5100EF0048 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CF23880A26335D5100EF0048 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = CF23880626335D5100EF0048 /* Build configuration list for PBXProject "TiBroish" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF23880226335D5100EF0048;
+			productRefGroup = CF23880C26335D5100EF0048 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF23880A26335D5100EF0048 /* TiBroish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF23880926335D5100EF0048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF23881B26335D5300EF0048 /* LaunchScreen.storyboard in Resources */,
+				CF23883726335FCB00EF0048 /* Example.storyboard in Resources */,
+				CF23881826335D5300EF0048 /* Assets.xcassets in Resources */,
+				CF23881626335D5100EF0048 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		392B4F415EFC9BBE9125ECAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TiBroish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B4AA44E9B06FBEA70003DFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TiBroish/Pods-TiBroish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TiBroish/Pods-TiBroish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TiBroish/Pods-TiBroish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF23880726335D5100EF0048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2388422633612B00EF0048 /* ExampleViewModel.swift in Sources */,
+				CF23882D26335F2600EF0048 /* AppCoordinator.swift in Sources */,
+				CF23880F26335D5100EF0048 /* AppDelegate.swift in Sources */,
+				CF23883326335FA400EF0048 /* ExampleCoordinator.swift in Sources */,
+				CF23883B2633600200EF0048 /* ExampleViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF23881426335D5100EF0048 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF23881526335D5100EF0048 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF23881926335D5300EF0048 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF23881A26335D5300EF0048 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF23881D26335D5300EF0048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF23881E26335D5300EF0048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF23882026335D5300EF0048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E75146B0D1AF93ACCE91EAB /* Pods-TiBroish.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZQPSU8SSN;
+				INFOPLIST_FILE = TiBroish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.TiBroish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF23882126335D5300EF0048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 230BFF79DAC8EBA001AE8CC3 /* Pods-TiBroish.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZQPSU8SSN;
+				INFOPLIST_FILE = TiBroish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.TiBroish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF23880626335D5100EF0048 /* Build configuration list for PBXProject "TiBroish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF23881D26335D5300EF0048 /* Debug */,
+				CF23881E26335D5300EF0048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF23881F26335D5300EF0048 /* Build configuration list for PBXNativeTarget "TiBroish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF23882026335D5300EF0048 /* Debug */,
+				CF23882126335D5300EF0048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF23880326335D5100EF0048 /* Project object */;
+}
