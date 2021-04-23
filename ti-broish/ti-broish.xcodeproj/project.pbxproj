@@ -1,0 +1,852 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A56D97F263323A70097778C /* ScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56D97E263323A70097778C /* ScreenCoordinator.swift */; };
+		0A56D987263326720097778C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56D986263326720097778C /* Coordinator.swift */; };
+		0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */; };
+		0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */; };
+		0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */; };
+		0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB632624F10200C178C9 /* MenuViewModel.swift */; };
+		0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */; };
+		0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB6D2624F72300C178C9 /* MenuItem.swift */; };
+		0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */; };
+		0AEB3958261CF9CD0005BF38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3957261CF9CD0005BF38 /* SceneDelegate.swift */; };
+		0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB395E261CF9CE0005BF38 /* Assets.xcassets */; };
+		0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */; };
+		0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */; };
+		0AEB3978261CF9CE0005BF38 /* ti_broishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */; };
+		0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3990261CFDE00005BF38 /* LoginViewController.swift */; };
+		0AEB3999261CFEBD0005BF38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3998261CFEBD0005BF38 /* BaseViewController.swift */; };
+		0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */; };
+		0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */; };
+		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
+		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
+		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
+		10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */; };
+		10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */; };
+		10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */; };
+		10C4EA4B26333BE8005FD07F /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA4A26333BE8005FD07F /* ResetPasswordViewController.xib */; };
+		10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA5D2633494E005FD07F /* ProtocolsTableViewController.swift */; };
+		10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA6526334965005FD07F /* SendProtocolViewController.swift */; };
+		10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA6A263349A5005FD07F /* SendProtocolViewController.xib */; };
+		10C4EA73263349D1005FD07F /* ProtocolsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA72263349D1005FD07F /* ProtocolsTableViewController.xib */; };
+		10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA7826334AB9005FD07F /* SendViolationViewController.swift */; };
+		10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA8026334ACC005FD07F /* SendViolationViewController.xib */; };
+		10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA8526334AE6005FD07F /* ViolationsTableViewController.swift */; };
+		10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA8A26334B13005FD07F /* ViolationsTableViewController.xib */; };
+		10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA8F26334B7C005FD07F /* ProtocolDetailsViewController.swift */; };
+		10C4EA9526334B8F005FD07F /* ProtocolDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA9426334B8F005FD07F /* ProtocolDetailsViewController.xib */; };
+		10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA9926334BDF005FD07F /* ViolationDetailsViewController.swift */; };
+		10C4EA9F26334BF4005FD07F /* ViolationDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA9E26334BF4005FD07F /* ViolationDetailsViewController.xib */; };
+		10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAA426334C1E005FD07F /* TermsViewController.swift */; };
+		10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAA926334C31005FD07F /* TermsViewController.xib */; };
+		10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EABC26335B02005FD07F /* UIColorExtension.swift */; };
+		10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAC426335B47005FD07F /* TibTheme.swift */; };
+		10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EACA26335C72005FD07F /* TibNavigationBar.swift */; };
+		10C4EAD326336242005FD07F /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAD226336242005FD07F /* MenuCell.swift */; };
+		10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EADC263362AD005FD07F /* TibViewControllable.swift */; };
+		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
+		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AEB3969261CF9CE0005BF38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AEB394A261CF9CD0005BF38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AEB3951261CF9CD0005BF38;
+			remoteInfo = "ti-broish";
+		};
+		0AEB3974261CF9CE0005BF38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AEB394A261CF9CD0005BF38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AEB3951261CF9CD0005BF38;
+			remoteInfo = "ti-broish";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A56D97E263323A70097778C /* ScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinator.swift; sourceTree = "<group>"; };
+		0A56D986263326720097778C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
+		0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		0AE2CB632624F10200C178C9 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		0AE2CB6D2624F72300C178C9 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		0AEB3952261CF9CD0005BF38 /* ti-broish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ti-broish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0AEB3957261CF9CD0005BF38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0AEB395E261CF9CE0005BF38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AEB3961261CF9CE0005BF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0AEB3963261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AEB3968261CF9CE0005BF38 /* ti-broishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ti-broishTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishTests.swift; sourceTree = "<group>"; };
+		0AEB396E261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AEB3973261CF9CE0005BF38 /* ti-broishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ti-broishUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishUITests.swift; sourceTree = "<group>"; };
+		0AEB3979261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AEB3990261CFDE00005BF38 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0AEB3998261CFEBD0005BF38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		10C4EA4A26333BE8005FD07F /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		10C4EA5D2633494E005FD07F /* ProtocolsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsTableViewController.swift; sourceTree = "<group>"; };
+		10C4EA6526334965005FD07F /* SendProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolViewController.swift; sourceTree = "<group>"; };
+		10C4EA6A263349A5005FD07F /* SendProtocolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendProtocolViewController.xib; sourceTree = "<group>"; };
+		10C4EA72263349D1005FD07F /* ProtocolsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolsTableViewController.xib; sourceTree = "<group>"; };
+		10C4EA7826334AB9005FD07F /* SendViolationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationViewController.swift; sourceTree = "<group>"; };
+		10C4EA8026334ACC005FD07F /* SendViolationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendViolationViewController.xib; sourceTree = "<group>"; };
+		10C4EA8526334AE6005FD07F /* ViolationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationsTableViewController.swift; sourceTree = "<group>"; };
+		10C4EA8A26334B13005FD07F /* ViolationsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViolationsTableViewController.xib; sourceTree = "<group>"; };
+		10C4EA8F26334B7C005FD07F /* ProtocolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDetailsViewController.swift; sourceTree = "<group>"; };
+		10C4EA9426334B8F005FD07F /* ProtocolDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolDetailsViewController.xib; sourceTree = "<group>"; };
+		10C4EA9926334BDF005FD07F /* ViolationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationDetailsViewController.swift; sourceTree = "<group>"; };
+		10C4EA9E26334BF4005FD07F /* ViolationDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViolationDetailsViewController.xib; sourceTree = "<group>"; };
+		10C4EAA426334C1E005FD07F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		10C4EAA926334C31005FD07F /* TermsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsViewController.xib; sourceTree = "<group>"; };
+		10C4EABC26335B02005FD07F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		10C4EAC426335B47005FD07F /* TibTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTheme.swift; sourceTree = "<group>"; };
+		10C4EACA26335C72005FD07F /* TibNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibNavigationBar.swift; sourceTree = "<group>"; };
+		10C4EAD226336242005FD07F /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		10C4EADC263362AD005FD07F /* TibViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibViewControllable.swift; sourceTree = "<group>"; };
+		10C4EAE12633637B005FD07F /* TibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTableViewCell.swift; sourceTree = "<group>"; };
+		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AEB394F261CF9CD0005BF38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AEB3965261CF9CE0005BF38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AEB3970261CF9CE0005BF38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A56D98B263326F70097778C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				0A56D986263326720097778C /* Coordinator.swift */,
+				0A56D97E263323A70097778C /* ScreenCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		0AE2CB552624EECC00C178C9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */,
+				0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0AEB3949261CF9CD0005BF38 = {
+			isa = PBXGroup;
+			children = (
+				0AEB3954261CF9CD0005BF38 /* ti-broish */,
+				0AEB396B261CF9CE0005BF38 /* ti-broishTests */,
+				0AEB3976261CF9CE0005BF38 /* ti-broishUITests */,
+				0AEB3953261CF9CD0005BF38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0AEB3953261CF9CD0005BF38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB3952261CF9CD0005BF38 /* ti-broish.app */,
+				0AEB3968261CF9CE0005BF38 /* ti-broishTests.xctest */,
+				0AEB3973261CF9CE0005BF38 /* ti-broishUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AEB3954261CF9CD0005BF38 /* ti-broish */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EAC926335C53005FD07F /* CustomControls */,
+				10C4EABB26335AE2005FD07F /* Extensions */,
+				0AEB398E261CFD800005BF38 /* Screens */,
+				0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */,
+				0AEB3957261CF9CD0005BF38 /* SceneDelegate.swift */,
+				0AEB395E261CF9CE0005BF38 /* Assets.xcassets */,
+				0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */,
+				0AEB3963261CF9CE0005BF38 /* Info.plist */,
+				0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */,
+				10C4EAC426335B47005FD07F /* TibTheme.swift */,
+			);
+			path = "ti-broish";
+			sourceTree = "<group>";
+		};
+		0AEB396B261CF9CE0005BF38 /* ti-broishTests */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */,
+				0AEB396E261CF9CE0005BF38 /* Info.plist */,
+			);
+			path = "ti-broishTests";
+			sourceTree = "<group>";
+		};
+		0AEB3976261CF9CE0005BF38 /* ti-broishUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */,
+				0AEB3979261CF9CE0005BF38 /* Info.plist */,
+			);
+			path = "ti-broishUITests";
+			sourceTree = "<group>";
+		};
+		0AEB398E261CFD800005BF38 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0A56D98B263326F70097778C /* Coordinators */,
+				0AE2CB552624EECC00C178C9 /* Profile */,
+				0AEB39B6261D01A10005BF38 /* Menu */,
+				0AEB39A3261CFF8C0005BF38 /* Home */,
+				0AEB398F261CFDC60005BF38 /* Login */,
+				10C4EA3626333A9E005FD07F /* Registration */,
+				10C4EA4426333BB4005FD07F /* ResetPassword */,
+				10C4EA4F26333F72005FD07F /* Protocols */,
+				10C4EA7726334AA2005FD07F /* Violations */,
+				10C4EAA326334C0A005FD07F /* Terms */,
+				10C4EADC263362AD005FD07F /* TibViewControllable.swift */,
+				0AEB3998261CFEBD0005BF38 /* BaseViewController.swift */,
+				0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0AEB398F261CFDC60005BF38 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB3990261CFDE00005BF38 /* LoginViewController.swift */,
+				0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0AEB39A3261CFF8C0005BF38 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */,
+				0AEB39B1261D001E0005BF38 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0AEB39B6261D01A10005BF38 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0AEB39B7261D01B60005BF38 /* MenuViewController.swift */,
+				0AEB39BC261D025C0005BF38 /* MenuViewController.xib */,
+				0AE2CB632624F10200C178C9 /* MenuViewModel.swift */,
+				0AE2CB6D2624F72300C178C9 /* MenuItem.swift */,
+				10C4EAD226336242005FD07F /* MenuCell.swift */,
+				10C4EAE9263363CF005FD07F /* MenuCell.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		10C4EA3626333A9E005FD07F /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */,
+				10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		10C4EA4426333BB4005FD07F /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */,
+				10C4EA4A26333BE8005FD07F /* ResetPasswordViewController.xib */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		10C4EA4F26333F72005FD07F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EA6526334965005FD07F /* SendProtocolViewController.swift */,
+				10C4EA6A263349A5005FD07F /* SendProtocolViewController.xib */,
+				10C4EA5D2633494E005FD07F /* ProtocolsTableViewController.swift */,
+				10C4EA72263349D1005FD07F /* ProtocolsTableViewController.xib */,
+				10C4EA8F26334B7C005FD07F /* ProtocolDetailsViewController.swift */,
+				10C4EA9426334B8F005FD07F /* ProtocolDetailsViewController.xib */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10C4EA7726334AA2005FD07F /* Violations */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EA7826334AB9005FD07F /* SendViolationViewController.swift */,
+				10C4EA8026334ACC005FD07F /* SendViolationViewController.xib */,
+				10C4EA8526334AE6005FD07F /* ViolationsTableViewController.swift */,
+				10C4EA8A26334B13005FD07F /* ViolationsTableViewController.xib */,
+				10C4EA9926334BDF005FD07F /* ViolationDetailsViewController.swift */,
+				10C4EA9E26334BF4005FD07F /* ViolationDetailsViewController.xib */,
+			);
+			path = Violations;
+			sourceTree = "<group>";
+		};
+		10C4EAA326334C0A005FD07F /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EAA426334C1E005FD07F /* TermsViewController.swift */,
+				10C4EAA926334C31005FD07F /* TermsViewController.xib */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		10C4EABB26335AE2005FD07F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EABC26335B02005FD07F /* UIColorExtension.swift */,
+				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10C4EAC926335C53005FD07F /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EACA26335C72005FD07F /* TibNavigationBar.swift */,
+				10C4EAE12633637B005FD07F /* TibTableViewCell.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AEB3951261CF9CD0005BF38 /* ti-broish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AEB397C261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broish" */;
+			buildPhases = (
+				0AEB394E261CF9CD0005BF38 /* Sources */,
+				0AEB394F261CF9CD0005BF38 /* Frameworks */,
+				0AEB3950261CF9CD0005BF38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ti-broish";
+			productName = "ti-broish";
+			productReference = 0AEB3952261CF9CD0005BF38 /* ti-broish.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0AEB3967261CF9CE0005BF38 /* ti-broishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AEB397F261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishTests" */;
+			buildPhases = (
+				0AEB3964261CF9CE0005BF38 /* Sources */,
+				0AEB3965261CF9CE0005BF38 /* Frameworks */,
+				0AEB3966261CF9CE0005BF38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AEB396A261CF9CE0005BF38 /* PBXTargetDependency */,
+			);
+			name = "ti-broishTests";
+			productName = "ti-broishTests";
+			productReference = 0AEB3968261CF9CE0005BF38 /* ti-broishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0AEB3972261CF9CE0005BF38 /* ti-broishUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AEB3982261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishUITests" */;
+			buildPhases = (
+				0AEB396F261CF9CE0005BF38 /* Sources */,
+				0AEB3970261CF9CE0005BF38 /* Frameworks */,
+				0AEB3971261CF9CE0005BF38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AEB3975261CF9CE0005BF38 /* PBXTargetDependency */,
+			);
+			name = "ti-broishUITests";
+			productName = "ti-broishUITests";
+			productReference = 0AEB3973261CF9CE0005BF38 /* ti-broishUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AEB394A261CF9CD0005BF38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					0AEB3951261CF9CD0005BF38 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					0AEB3967261CF9CE0005BF38 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 0AEB3951261CF9CD0005BF38;
+					};
+					0AEB3972261CF9CE0005BF38 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 0AEB3951261CF9CD0005BF38;
+					};
+				};
+			};
+			buildConfigurationList = 0AEB394D261CF9CD0005BF38 /* Build configuration list for PBXProject "ti-broish" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AEB3949261CF9CD0005BF38;
+			productRefGroup = 0AEB3953261CF9CD0005BF38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AEB3951261CF9CD0005BF38 /* ti-broish */,
+				0AEB3967261CF9CE0005BF38 /* ti-broishTests */,
+				0AEB3972261CF9CE0005BF38 /* ti-broishUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AEB3950261CF9CD0005BF38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */,
+				0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */,
+				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
+				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
+				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
+				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
+				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
+				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
+				10C4EA9526334B8F005FD07F /* ProtocolDetailsViewController.xib in Resources */,
+				10C4EA9F26334BF4005FD07F /* ViolationDetailsViewController.xib in Resources */,
+				0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */,
+				10C4EA73263349D1005FD07F /* ProtocolsTableViewController.xib in Resources */,
+				10C4EA4B26333BE8005FD07F /* ResetPasswordViewController.xib in Resources */,
+				10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */,
+				0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */,
+				10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AEB3966261CF9CE0005BF38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AEB3971261CF9CE0005BF38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AEB394E261CF9CD0005BF38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
+				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
+				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
+				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
+				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
+				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
+				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
+				0A56D987263326720097778C /* Coordinator.swift in Sources */,
+				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
+				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
+				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
+				0A56D97F263323A70097778C /* ScreenCoordinator.swift in Sources */,
+				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
+				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
+				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
+				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
+				0AEB3999261CFEBD0005BF38 /* BaseViewController.swift in Sources */,
+				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
+				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
+				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
+				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
+				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
+				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
+				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
+				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
+				0AEB3958261CF9CD0005BF38 /* SceneDelegate.swift in Sources */,
+				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
+				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,
+				10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AEB3964261CF9CE0005BF38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AEB396F261CF9CE0005BF38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AEB3978261CF9CE0005BF38 /* ti_broishUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0AEB396A261CF9CE0005BF38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AEB3951261CF9CD0005BF38 /* ti-broish */;
+			targetProxy = 0AEB3969261CF9CE0005BF38 /* PBXContainerItemProxy */;
+		};
+		0AEB3975261CF9CE0005BF38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AEB3951261CF9CD0005BF38 /* ti-broish */;
+			targetProxy = 0AEB3974261CF9CE0005BF38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AEB3961261CF9CE0005BF38 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0AEB397A261CF9CE0005BF38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0AEB397B261CF9CE0005BF38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AEB397D261CF9CE0005BF38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				INFOPLIST_FILE = "ti-broish/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0AEB397E261CF9CE0005BF38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				INFOPLIST_FILE = "ti-broish/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0AEB3980261CF9CE0005BF38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				INFOPLIST_FILE = "ti-broishTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dsi.ti-broishTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ti-broish.app/ti-broish";
+			};
+			name = Debug;
+		};
+		0AEB3981261CF9CE0005BF38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				INFOPLIST_FILE = "ti-broishTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dsi.ti-broishTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ti-broish.app/ti-broish";
+			};
+			name = Release;
+		};
+		0AEB3983261CF9CE0005BF38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				INFOPLIST_FILE = "ti-broishUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dsi.ti-broishUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ti-broish";
+			};
+			name = Debug;
+		};
+		0AEB3984261CF9CE0005BF38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				INFOPLIST_FILE = "ti-broishUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dsi.ti-broishUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ti-broish";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AEB394D261CF9CD0005BF38 /* Build configuration list for PBXProject "ti-broish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AEB397A261CF9CE0005BF38 /* Debug */,
+				0AEB397B261CF9CE0005BF38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AEB397C261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AEB397D261CF9CE0005BF38 /* Debug */,
+				0AEB397E261CF9CE0005BF38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AEB397F261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AEB3980261CF9CE0005BF38 /* Debug */,
+				0AEB3981261CF9CE0005BF38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AEB3982261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AEB3983261CF9CE0005BF38 /* Debug */,
+				0AEB3984261CF9CE0005BF38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AEB394A261CF9CD0005BF38 /* Project object */;
+}
