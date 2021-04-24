@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SFBaseKit
 
 protocol ExampleViewModelProtocol: CoordinatableViewModel {
     
@@ -30,15 +29,11 @@ class ExampleViewController: BaseViewController {
 
 }
 
-// MARK: - StoryboardInstantiatable
-extension ExampleViewController: StoryboardInstantiatable {
-    
-    static var storyboardName: String {
-        "Example"
-    }
+// MARK: - Scene Factory
+extension ExampleViewController {
     
     static func create(delegate: ExampleSceneDelegate) -> BaseViewController {
-        guard let controller = Self.instantiateFromStoryboard() else { return BaseViewController() }
+        let controller = ExampleViewController()
         controller.viewModel = ExampleViewModel(delegate: delegate)
         return controller
     }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SFBaseKit
 
 class ExampleCoordinator: Coordinator {
     

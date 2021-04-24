@@ -6,7 +6,6 @@ platform :ios, '13.0'
 target 'TiBroish' do
   use_frameworks!
 
-  pod 'SFBaseKit'
   pod 'TwoWayBondage'
 
 end
