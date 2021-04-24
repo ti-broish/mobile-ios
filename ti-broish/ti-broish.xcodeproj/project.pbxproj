@@ -16,7 +16,6 @@
 		0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */; };
 		0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB6D2624F72300C178C9 /* MenuItem.swift */; };
 		0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */; };
-		0AEB3958261CF9CD0005BF38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3957261CF9CD0005BF38 /* SceneDelegate.swift */; };
 		0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB395E261CF9CE0005BF38 /* Assets.xcassets */; };
 		0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */; };
 		0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */; };
@@ -84,7 +83,6 @@
 		0AE2CB6D2624F72300C178C9 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		0AEB3952261CF9CD0005BF38 /* ti-broish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ti-broish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0AEB3957261CF9CD0005BF38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0AEB395E261CF9CE0005BF38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AEB3961261CF9CE0005BF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AEB3963261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				10C4EABB26335AE2005FD07F /* Extensions */,
 				0AEB398E261CFD800005BF38 /* Screens */,
 				0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */,
-				0AEB3957261CF9CD0005BF38 /* SceneDelegate.swift */,
 				0AEB395E261CF9CE0005BF38 /* Assets.xcassets */,
 				0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */,
 				0AEB3963261CF9CE0005BF38 /* Info.plist */,
@@ -517,7 +514,6 @@
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
-				0AEB3958261CF9CD0005BF38 /* SceneDelegate.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,
 				10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */,
