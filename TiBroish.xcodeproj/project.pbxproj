@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1D147C2633EC0E004949B2 /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF1D147B2633EC0E004949B2 /* ExampleViewController.xib */; };
 		CF23880F26335D5100EF0048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23880E26335D5100EF0048 /* AppDelegate.swift */; };
 		CF23881626335D5100EF0048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF23881426335D5100EF0048 /* Main.storyboard */; };
 		CF23881826335D5300EF0048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF23881726335D5300EF0048 /* Assets.xcassets */; };
 		CF23881B26335D5300EF0048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF23881926335D5300EF0048 /* LaunchScreen.storyboard */; };
 		CF23882D26335F2600EF0048 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23882C26335F2600EF0048 /* AppCoordinator.swift */; };
 		CF23883326335FA400EF0048 /* ExampleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23883226335FA400EF0048 /* ExampleCoordinator.swift */; };
-		CF23883726335FCB00EF0048 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF23883626335FCB00EF0048 /* Example.storyboard */; };
 		CF23883B2633600200EF0048 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2388392633600200EF0048 /* ExampleViewController.swift */; };
 		CF2388422633612B00EF0048 /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2388412633612B00EF0048 /* ExampleViewModel.swift */; };
 		CF7699F12633E38F00FA3DE0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7699F02633E38F00FA3DE0 /* Coordinator.swift */; };
@@ -27,6 +27,7 @@
 		230BFF79DAC8EBA001AE8CC3 /* Pods-TiBroish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiBroish.release.xcconfig"; path = "Target Support Files/Pods-TiBroish/Pods-TiBroish.release.xcconfig"; sourceTree = "<group>"; };
 		5E75146B0D1AF93ACCE91EAB /* Pods-TiBroish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiBroish.debug.xcconfig"; path = "Target Support Files/Pods-TiBroish/Pods-TiBroish.debug.xcconfig"; sourceTree = "<group>"; };
 		78F2535CCFF3ADEE7DF9B756 /* Pods_TiBroish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiBroish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF1D147B2633EC0E004949B2 /* ExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
 		CF23880B26335D5100EF0048 /* TiBroish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiBroish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF23880E26335D5100EF0048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF23881526335D5100EF0048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		CF23881C26335D5300EF0048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF23882C26335F2600EF0048 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CF23883226335FA400EF0048 /* ExampleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoordinator.swift; sourceTree = "<group>"; };
-		CF23883626335FCB00EF0048 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		CF2388392633600200EF0048 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		CF2388412633612B00EF0048 /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
 		CF7699F02633E38F00FA3DE0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 				CF23883226335FA400EF0048 /* ExampleCoordinator.swift */,
 				CF2388412633612B00EF0048 /* ExampleViewModel.swift */,
 				CF2388392633600200EF0048 /* ExampleViewController.swift */,
-				CF23883626335FCB00EF0048 /* Example.storyboard */,
+				CF1D147B2633EC0E004949B2 /* ExampleViewController.xib */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF23881B26335D5300EF0048 /* LaunchScreen.storyboard in Resources */,
-				CF23883726335FCB00EF0048 /* Example.storyboard in Resources */,
+				CF1D147C2633EC0E004949B2 /* ExampleViewController.xib in Resources */,
 				CF23881826335D5300EF0048 /* Assets.xcassets in Resources */,
 				CF23881626335D5100EF0048 /* Main.storyboard in Resources */,
 			);
