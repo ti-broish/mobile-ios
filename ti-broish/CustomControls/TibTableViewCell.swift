@@ -7,7 +7,24 @@
 
 import UIKit
 
-class TibTableViewCell: UITableViewCell {
+protocol Cell {
+    
+    static var nibName: String { get }
+    static var cellIdentifier: String { get }
+}
+
+extension Cell {
+    
+    static var nibName: String {
+        return "\(String(describing: self))"
+    }
+    
+    static var cellIdentifier: String {
+        return "\(String(describing: self))"
+    }
+}
+
+class TibTableViewCell: UITableViewCell, Cell {
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -73,7 +73,7 @@ final class LoginViewController: BaseViewController {
     }
 }
 
-// MARK: - Scene Factory
+// MARK: - Factory
 
 extension LoginViewController {
     

@@ -69,7 +69,6 @@
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
 		CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138CD263592EF001B373D /* BaseViewController.swift */; };
-		CFB138D7263593BD001B373D /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138D6263593BD001B373D /* UITableViewCell+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +159,6 @@
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		CFB138D6263593BD001B373D /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,7 +457,6 @@
 				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
 				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
 				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
-				CFB138D6263593BD001B373D /* UITableViewCell+Extensions.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -695,7 +692,6 @@
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
-				CFB138D7263593BD001B373D /* UITableViewCell+Extensions.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
 				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
