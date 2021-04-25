@@ -1,0 +1,16 @@
+PODS:
+  - TwoWayBondage (2.1.0)
+
+DEPENDENCIES:
+  - TwoWayBondage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - TwoWayBondage
+
+SPEC CHECKSUMS:
+  TwoWayBondage: c907b02fe132e7d9da0980b1d7fa3ed0d022f996
+
+PODFILE CHECKSUM: d36c38cf55e738abbe42611a95ca686bead0a4ce
+
+COCOAPODS: 1.10.1
