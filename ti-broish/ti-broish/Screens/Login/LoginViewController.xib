@@ -11,6 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
+                <outlet property="emailInputField" destination="Txm-9t-17q" id="fjX-2d-d30"/>
+                <outlet property="loginButton" destination="vQ6-Vn-e7k" id="Szx-hy-yiq"/>
+                <outlet property="logoImageView" destination="yNc-an-Oqr" id="ACb-Mc-eOK"/>
+                <outlet property="passwordInputField" destination="F9I-k7-npD" id="nvn-N5-dLL"/>
+                <outlet property="registrationButton" destination="sBo-QN-BYv" id="iDZ-ca-Vtp"/>
+                <outlet property="resetPasswordButton" destination="uH8-Ae-yEc" id="YhG-k5-J7p"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sTK-e8-NAJ"/>
             </connections>
         </placeholder>
@@ -19,42 +25,76 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Joi-zE-PVa">
-                    <rect key="frame" x="188" y="325" width="38" height="30"/>
-                    <state key="normal" title="Login"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-an-Oqr" userLabel="logoImageView">
+                    <rect key="frame" x="0.0" y="181" width="414" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="MkH-pT-UOO"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txm-9t-17q" userLabel="emailInputField" customClass="CredentialInputField" customModule="ti_broish" customModuleProvider="target">
+                    <rect key="frame" x="40" y="349" width="334" height="64"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="JUB-9i-iKb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9I-k7-npD" userLabel="passwordInputField" customClass="CredentialInputField" customModule="ti_broish" customModuleProvider="target">
+                    <rect key="frame" x="40" y="421" width="334" height="64"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ6-Vn-e7k" userLabel="loginButton">
+                    <rect key="frame" x="163" y="525" width="88" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="22f-wa-GaE"/>
+                        <constraint firstAttribute="height" constant="44" id="U2J-Is-KsE"/>
+                    </constraints>
+                    <state key="normal" title="_login_"/>
                     <connections>
-                        <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="EL7-9t-XXk"/>
+                        <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="6ja-26-mFD"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AG-cw-Mwe">
-                    <rect key="frame" x="165.5" y="363" width="83" height="30"/>
-                    <state key="normal" title="Registration"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBo-QN-BYv" userLabel="registrationButton">
+                    <rect key="frame" x="159" y="617" width="96" height="30"/>
+                    <state key="normal" title="_registration_"/>
                     <connections>
-                        <action selector="didPressRegistrationButton:" destination="-1" eventType="touchUpInside" id="ALa-MD-7YI"/>
+                        <action selector="didPressRegistrationButton:" destination="-1" eventType="touchUpInside" id="8oa-BS-Z4w"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxB-lk-ZG1">
-                    <rect key="frame" x="152.5" y="401" width="109" height="30"/>
-                    <state key="normal" title="Reset password"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH8-Ae-yEc" userLabel="resetPasswordButton">
+                    <rect key="frame" x="143.5" y="663" width="127" height="30"/>
+                    <state key="normal" title="_reset_password_"/>
                     <connections>
-                        <action selector="didPressResetPasswordButton:" destination="-1" eventType="touchUpInside" id="K9A-oa-5vU"/>
+                        <action selector="didPressResetPasswordButton:" destination="-1" eventType="touchUpInside" id="vyt-RK-Ff3"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="NxB-lk-ZG1" firstAttribute="top" secondItem="2AG-cw-Mwe" secondAttribute="bottom" constant="8" id="0UD-3h-LkW"/>
-                <constraint firstItem="NxB-lk-ZG1" firstAttribute="centerX" secondItem="2AG-cw-Mwe" secondAttribute="centerX" id="8CG-0V-OnL"/>
-                <constraint firstItem="2AG-cw-Mwe" firstAttribute="centerX" secondItem="Joi-zE-PVa" secondAttribute="centerX" id="PS4-Tv-Mmh"/>
-                <constraint firstItem="2AG-cw-Mwe" firstAttribute="top" secondItem="Joi-zE-PVa" secondAttribute="bottom" constant="8" id="YB3-OJ-t9D"/>
-                <constraint firstItem="Joi-zE-PVa" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.75" id="n76-4l-Dfp"/>
-                <constraint firstItem="Joi-zE-PVa" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="yzl-h8-3aj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yNc-an-Oqr" secondAttribute="trailing" id="1mw-Xy-9i6"/>
+                <constraint firstItem="F9I-k7-npD" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="3Ou-NA-XuA"/>
+                <constraint firstItem="F9I-k7-npD" firstAttribute="trailing" secondItem="Txm-9t-17q" secondAttribute="trailing" id="6md-Zb-tcM"/>
+                <constraint firstItem="Txm-9t-17q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="8Vi-vc-b9k"/>
+                <constraint firstItem="F9I-k7-npD" firstAttribute="top" secondItem="Txm-9t-17q" secondAttribute="bottom" constant="8" id="BRx-U5-eWH"/>
+                <constraint firstItem="vQ6-Vn-e7k" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="H5r-fL-4Ju"/>
+                <constraint firstItem="yNc-an-Oqr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ni2-ze-rar"/>
+                <constraint firstItem="sBo-QN-BYv" firstAttribute="top" secondItem="vQ6-Vn-e7k" secondAttribute="bottom" constant="48" id="Wff-fM-UjD"/>
+                <constraint firstItem="uH8-Ae-yEc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="awI-q2-yhb"/>
+                <constraint firstItem="uH8-Ae-yEc" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.681818" id="g6l-5K-09i"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Txm-9t-17q" secondAttribute="trailing" constant="40" id="ggC-Pe-YN6"/>
+                <constraint firstItem="F9I-k7-npD" firstAttribute="height" secondItem="Txm-9t-17q" secondAttribute="height" id="jHO-Uo-qfF"/>
+                <constraint firstItem="Txm-9t-17q" firstAttribute="top" secondItem="yNc-an-Oqr" secondAttribute="bottom" constant="40" id="kcM-9q-Wzg"/>
+                <constraint firstItem="vQ6-Vn-e7k" firstAttribute="top" secondItem="F9I-k7-npD" secondAttribute="bottom" constant="40" id="oQ7-UN-zME"/>
+                <constraint firstItem="sBo-QN-BYv" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="oUo-0q-zJZ"/>
+                <constraint firstItem="F9I-k7-npD" firstAttribute="leading" secondItem="Txm-9t-17q" secondAttribute="leading" id="oqD-Yp-vvs"/>
+                <constraint firstItem="sBo-QN-BYv" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.681818" id="ph7-2V-3Ga"/>
+                <constraint firstItem="uH8-Ae-yEc" firstAttribute="top" secondItem="sBo-QN-BYv" secondAttribute="bottom" constant="16" id="trc-si-7Wb"/>
             </constraints>
             <point key="canvasLocation" x="-287" y="75"/>
         </view>
     </objects>
     <resources>
+        <image name="logo" width="928" height="416"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

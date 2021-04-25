@@ -24,4 +24,32 @@ struct TibTheme {
     var tableViewSeparatorColor: UIColor {
         return .primaryColor
     }
+    
+    var titleLabelTextColor: UIColor {
+        return .black
+    }
+    
+    var textFieldColor: UIColor {
+        return .black
+    }
+    
+    var textFieldPlaceholderColor: UIColor {
+        return .placeholderTextColor
+    }
+    
+    var buttonBackgroundColor: UIColor {
+        return .clear
+    }
+    
+    var buttonTextColor: UIColor {
+        return .primaryColor
+    }
+    
+    var solidButtonBackgroundColor: UIColor {
+        return .primaryColor
+    }
+    
+    var solidButtonTextColor: UIColor {
+        return .white
+    }
 }

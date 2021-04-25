@@ -27,6 +27,19 @@
 		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */; };
+		1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3BF2634A1D500764ACF /* CredentialInputField.swift */; };
+		1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3C42634A26000764ACF /* CredentialInputField.xib */; };
+		1042B3DF2634AAFD00764ACF /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */; };
+		1042B3E12634AAFD00764ACF /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3CF2634AAFD00764ACF /* Montserrat-Regular.ttf */; };
+		1042B3E42634AAFD00764ACF /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D22634AAFD00764ACF /* Montserrat-Italic.ttf */; };
+		1042B3E52634AAFD00764ACF /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D32634AAFD00764ACF /* Montserrat-ExtraLight.ttf */; };
+		1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D52634AAFD00764ACF /* Montserrat-ExtraBold.ttf */; };
+		1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D62634AAFD00764ACF /* Montserrat-Light.ttf */; };
+		1042B3E92634AAFD00764ACF /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D72634AAFD00764ACF /* Montserrat-Bold.ttf */; };
+		1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */; };
+		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
+		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */; };
 		10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */; };
@@ -99,6 +112,19 @@
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		1042B3BF2634A1D500764ACF /* CredentialInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialInputField.swift; sourceTree = "<group>"; };
+		1042B3C42634A26000764ACF /* CredentialInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialInputField.xib; sourceTree = "<group>"; };
+		1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		1042B3CF2634AAFD00764ACF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		1042B3D22634AAFD00764ACF /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		1042B3D32634AAFD00764ACF /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		1042B3D52634AAFD00764ACF /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1042B3D62634AAFD00764ACF /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		1042B3D72634AAFD00764ACF /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
@@ -193,6 +219,7 @@
 		0AEB3954261CF9CD0005BF38 /* ti-broish */ = {
 			isa = PBXGroup;
 			children = (
+				1042B3C92634AACC00764ACF /* Resources */,
 				10C4EAC926335C53005FD07F /* CustomControls */,
 				10C4EABB26335AE2005FD07F /* Extensions */,
 				0AEB398E261CFD800005BF38 /* Screens */,
@@ -275,6 +302,30 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		1042B3C92634AACC00764ACF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1042B3CA2634AAE300764ACF /* fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1042B3CA2634AAE300764ACF /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1042B3D72634AAFD00764ACF /* Montserrat-Bold.ttf */,
+				1042B3D52634AAFD00764ACF /* Montserrat-ExtraBold.ttf */,
+				1042B3D32634AAFD00764ACF /* Montserrat-ExtraLight.ttf */,
+				1042B3D22634AAFD00764ACF /* Montserrat-Italic.ttf */,
+				1042B3D62634AAFD00764ACF /* Montserrat-Light.ttf */,
+				1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */,
+				1042B3CF2634AAFD00764ACF /* Montserrat-Regular.ttf */,
+				1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */,
+				1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		10C4EA3626333A9E005FD07F /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +384,8 @@
 			children = (
 				10C4EABC26335B02005FD07F /* UIColorExtension.swift */,
 				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
+				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
+				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -342,6 +395,8 @@
 			children = (
 				10C4EACA26335C72005FD07F /* TibNavigationBar.swift */,
 				10C4EAE12633637B005FD07F /* TibTableViewCell.swift */,
+				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
+				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -451,20 +506,30 @@
 			files = (
 				0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */,
 				0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */,
+				1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */,
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
+				1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */,
 				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
+				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
+				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
 				10C4EA9526334B8F005FD07F /* ProtocolDetailsViewController.xib in Resources */,
 				10C4EA9F26334BF4005FD07F /* ViolationDetailsViewController.xib in Resources */,
+				1042B3E12634AAFD00764ACF /* Montserrat-Regular.ttf in Resources */,
 				0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */,
+				1042B3E42634AAFD00764ACF /* Montserrat-Italic.ttf in Resources */,
 				10C4EA73263349D1005FD07F /* ProtocolsTableViewController.xib in Resources */,
+				1042B3E92634AAFD00764ACF /* Montserrat-Bold.ttf in Resources */,
+				1042B3DF2634AAFD00764ACF /* Montserrat-SemiBold.ttf in Resources */,
 				10C4EA4B26333BE8005FD07F /* ResetPasswordViewController.xib in Resources */,
 				10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */,
+				1042B3E52634AAFD00764ACF /* Montserrat-ExtraLight.ttf in Resources */,
 				0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */,
 				10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */,
+				1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,11 +570,14 @@
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
+				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
 				0AEB3999261CFEBD0005BF38 /* BaseViewController.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
+				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
+				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,

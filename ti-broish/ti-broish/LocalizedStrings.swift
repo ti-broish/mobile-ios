@@ -22,4 +22,15 @@ struct LocalizedStrings {
         static let live: String = "Ти броиш Live"
         static let logout: String = "Изход"
     }
+    
+    struct Login {
+        
+        static let emailTitle: String = "Потребител:"
+        static let emailPlaceholder: String = "Въведете имейл адрес"
+        static let passwordTitle: String = "Парола:"
+        static let passwordPlaceholder: String = "Въведете вашата парола"
+        static let loginButton: String = "Вход"
+        static let registrationButton: String = "Регистрация"
+        static let resetPasswordButton: String = "Забравена парола"
+    }   
 }
