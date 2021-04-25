@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A56D97F263323A70097778C /* ScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56D97E263323A70097778C /* ScreenCoordinator.swift */; };
-		0A56D987263326720097778C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56D986263326720097778C /* Coordinator.swift */; };
 		0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */; };
 		0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */; };
 		0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */; };
@@ -21,7 +20,6 @@
 		0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */; };
 		0AEB3978261CF9CE0005BF38 /* ti_broishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */; };
 		0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3990261CFDE00005BF38 /* LoginViewController.swift */; };
-		0AEB3999261CFEBD0005BF38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3998261CFEBD0005BF38 /* BaseViewController.swift */; };
 		0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */; };
 		0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */; };
 		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
@@ -67,6 +65,11 @@
 		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
+		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
+		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
+		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
+		CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138CD263592EF001B373D /* BaseViewController.swift */; };
+		CFB138D7263593BD001B373D /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138D6263593BD001B373D /* UITableViewCell+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +92,6 @@
 /* Begin PBXFileReference section */
 		020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.debug.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.debug.xcconfig"; sourceTree = "<group>"; };
 		0A56D97E263323A70097778C /* ScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinator.swift; sourceTree = "<group>"; };
-		0A56D986263326720097778C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -108,7 +110,6 @@
 		0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishUITests.swift; sourceTree = "<group>"; };
 		0AEB3979261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB3990261CFDE00005BF38 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		0AEB3998261CFEBD0005BF38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -155,6 +156,11 @@
 		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
+		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
+		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CFB138D6263593BD001B373D /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +192,6 @@
 		0A56D98B263326F70097778C /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				0A56D986263326720097778C /* Coordinator.swift */,
 				0A56D97E263323A70097778C /* ScreenCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -226,16 +231,16 @@
 		0AEB3954261CF9CD0005BF38 /* ti-broish */ = {
 			isa = PBXGroup;
 			children = (
-				1042B3C92634AACC00764ACF /* Resources */,
 				10C4EAC926335C53005FD07F /* CustomControls */,
-				10C4EABB26335AE2005FD07F /* Extensions */,
 				0AEB398E261CFD800005BF38 /* Screens */,
+				CFB138B726359162001B373D /* Architecture */,
+				10C4EABB26335AE2005FD07F /* Extensions */,
+				CFDDA634263595F8008E99F8 /* Utils */,
+				1042B3C92634AACC00764ACF /* Resources */,
 				0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */,
 				0AEB395E261CF9CE0005BF38 /* Assets.xcassets */,
 				0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */,
 				0AEB3963261CF9CE0005BF38 /* Info.plist */,
-				0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */,
-				10C4EAC426335B47005FD07F /* TibTheme.swift */,
 			);
 			path = "ti-broish";
 			sourceTree = "<group>";
@@ -271,8 +276,6 @@
 				10C4EA4F26333F72005FD07F /* Protocols */,
 				10C4EA7726334AA2005FD07F /* Violations */,
 				10C4EAA326334C0A005FD07F /* Terms */,
-				10C4EADC263362AD005FD07F /* TibViewControllable.swift */,
-				0AEB3998261CFEBD0005BF38 /* BaseViewController.swift */,
 				0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */,
 			);
 			path = Screens;
@@ -389,10 +392,7 @@
 		10C4EABB26335AE2005FD07F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				10C4EABC26335B02005FD07F /* UIColorExtension.swift */,
-				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
-				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
-				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
+				CFB138D5263593AF001B373D /* UI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,13 +416,69 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CFB138B726359162001B373D /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				CFB138B82635917D001B373D /* BaseClasses */,
+				10C4EADC263362AD005FD07F /* TibViewControllable.swift */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		CFB138B82635917D001B373D /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CFB138B926359185001B373D /* Controllers */,
+				CFB138BA2635918E001B373D /* Coordinator */,
+				CFB138C82635929C001B373D /* AppCoordinator.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		CFB138B926359185001B373D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFB138CD263592EF001B373D /* BaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFB138BA2635918E001B373D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */,
+				CFB138BF263591F7001B373D /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CFB138D5263593AF001B373D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EABC26335B02005FD07F /* UIColorExtension.swift */,
+				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
+				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
+				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
+				CFB138D6263593BD001B373D /* UITableViewCell+Extensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CFDDA634263595F8008E99F8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */,
+				10C4EAC426335B47005FD07F /* TibTheme.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D96A7764BAB8AE55257EC3EA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */,
 				62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -623,14 +679,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
+				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
-				0A56D987263326720097778C /* Coordinator.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
@@ -638,9 +695,10 @@
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
+				CFB138D7263593BD001B373D /* UITableViewCell+Extensions.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
-				0AEB3999261CFEBD0005BF38 /* BaseViewController.swift in Sources */,
+				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
@@ -649,6 +707,7 @@
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
+				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,

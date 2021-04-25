@@ -73,6 +73,17 @@ final class LoginViewController: BaseViewController {
     }
 }
 
+// MARK: - Scene Factory
+
+extension LoginViewController {
+    
+    static func create() -> BaseViewController {
+        let controller = LoginViewController()
+        return controller
+    }
+    
+}
+
 // MARK: - UITextFieldDelegate
 
 extension LoginViewController: UITextFieldDelegate {

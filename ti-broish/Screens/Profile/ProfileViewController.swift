@@ -23,7 +23,7 @@ final class ProfileViewController: BaseViewController {
     // MARK: - Private methods
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
-        let controller = LoginViewController(nibName: LoginViewController.nibName, bundle: nil)
+        let controller = LoginViewController.create()
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
