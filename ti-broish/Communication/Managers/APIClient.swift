@@ -8,11 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol APIClientProtocol: AnyObject {
-    
-}
-
-class APIClient: APIClientProtocol {
+class APIClient {
     
     // MARK: Properties
     

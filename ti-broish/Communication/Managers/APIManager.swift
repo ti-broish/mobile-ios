@@ -7,8 +7,7 @@
 
 import Foundation
 
-public typealias APIResult<T> = Swift.Result<T, APIError>
-public typealias APIResultHandler<T: Decodable> = (APIResult<T>) -> Void
+public typealias APIResult<T: Decodable> = (Swift.Result<T, APIError>) -> Void
 
 class APIManager {
     
@@ -16,7 +15,7 @@ class APIManager {
     
     static let shared = APIManager()
     
-    private let apiClient: APIClientProtocol
+    private let apiClient: APIClient
     private let firebaseClient: FirebaseClient
     
     // MARK: Initializers

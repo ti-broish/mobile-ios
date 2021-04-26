@@ -7,14 +7,7 @@
 
 import Foundation
 
-protocol FirebaseClientProtocol: AnyObject {
-    
-    func register()
-    func login()
-    func resetPassword()
-}
-
-class FirebaseClient: FirebaseClientProtocol {
+class FirebaseClient {
     
     func register() {
         
