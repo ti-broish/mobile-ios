@@ -11,7 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var screenCoordinator: ScreenCoordinator?
+    var appCoordinator: AppCoordinator?
 
     func application(
         _ application: UIApplication,
@@ -20,10 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(navigationBarClass: TibNavigationBar.self, toolbarClass: nil)
-        screenCoordinator = ScreenCoordinator(navigationController: window?.rootViewController as! UINavigationController)
-        screenCoordinator?.start()
-        window?.makeKeyAndVisible()
+        appCoordinator = AppCoordinator(window: window)
+        appCoordinator?.start()
         
         return true
     }

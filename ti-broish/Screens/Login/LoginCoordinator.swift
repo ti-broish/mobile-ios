@@ -1,14 +1,13 @@
 //
-//  ScreenCoordinator.swift
+//  LoginCoordinator.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 4/23/21.
-//  
+//  Created by Viktor Georgiev on 26.04.21.
 //
 
 import UIKit
 
-final class ScreenCoordinator: Coordinator {
+final class LoginCoordinator: Coordinator {
     
     private var isLoggedIn = false // TODO: - refactor
     var navigationController: UINavigationController
