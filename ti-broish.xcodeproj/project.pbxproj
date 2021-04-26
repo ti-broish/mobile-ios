@@ -65,6 +65,8 @@
 		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
+		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
+		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -155,6 +157,8 @@
 		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
+		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
+		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -414,10 +418,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF7AEDC02635F293001F3EF8 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */,
+				CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		CFB138B726359162001B373D /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
 				CFB138B82635917D001B373D /* BaseClasses */,
+				CFB138C82635929C001B373D /* AppCoordinator.swift */,
 				10C4EADC263362AD005FD07F /* TibViewControllable.swift */,
 			);
 			path = Architecture;
@@ -426,9 +440,9 @@
 		CFB138B82635917D001B373D /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				CF7AEDC02635F293001F3EF8 /* Configurator */,
 				CFB138B926359185001B373D /* Controllers */,
 				CFB138BA2635918E001B373D /* Coordinator */,
-				CFB138C82635929C001B373D /* AppCoordinator.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -699,9 +713,11 @@
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
+				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
+				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
