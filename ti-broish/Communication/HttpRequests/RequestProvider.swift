@@ -1,5 +1,5 @@
 //
-//  BaseHttpRequest.swift
+//  RequestProvider.swift
 //  ti-broish
 //
 //  Created by Viktor Georgiev on 26.04.21.
@@ -8,13 +8,13 @@
 import Foundation
 import Alamofire
 
-protocol BaseHttpRequestProtocol {
+protocol RequestProvider {
     
-    var url: String { get }
+    var path: String { get }
     
     var method: HTTPMethod { get }
     
-    var allHeaders: HTTPHeaders { get }
+    var additionalHeaders: HTTPHeaders { get }
     
     var encoding: ParameterEncoding { get }
     
@@ -24,15 +24,9 @@ protocol BaseHttpRequestProtocol {
     
 }
 
-class BaseHttpRequest: BaseHttpRequestProtocol {
+extension RequestProvider {
     
     // MARK: Properites
-    
-    private let baseUrl = ""
-    
-    final var url: String {
-        baseUrl.appending(path)
-    }
     
     var path: String {
         ""
@@ -40,10 +34,6 @@ class BaseHttpRequest: BaseHttpRequestProtocol {
     
     var method: HTTPMethod {
         .get
-    }
-    
-    final var allHeaders: HTTPHeaders {
-        [:]
     }
     
     var additionalHeaders: HTTPHeaders {

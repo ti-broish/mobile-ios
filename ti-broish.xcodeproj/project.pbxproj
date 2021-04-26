@@ -65,11 +65,13 @@
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
-		CF390FE42637326300999369 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* ApiManager.swift */; };
-		CF390FED2637329000999369 /* BaseHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* BaseHttpRequest.swift */; };
+		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
+		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
 		CF390FF5263732BA00999369 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FF4263732BA00999369 /* APIError.swift */; };
 		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
+		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
+		CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574E526374C8D002BCECD /* FirebaseClient.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -160,11 +162,13 @@
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
-		CF390FE32637326300999369 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		CF390FEC2637329000999369 /* BaseHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHttpRequest.swift; sourceTree = "<group>"; };
+		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		CF390FF4263732BA00999369 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
+		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		CFA574E526374C8D002BCECD /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -430,7 +434,9 @@
 		CF390FE22637325C00999369 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				CF390FE32637326300999369 /* ApiManager.swift */,
+				CF390FE32637326300999369 /* APIManager.swift */,
+				CFA574DD26374BE9002BCECD /* APIClient.swift */,
+				CFA574E526374C8D002BCECD /* FirebaseClient.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -438,7 +444,7 @@
 		CF390FEB2637327D00999369 /* HttpRequests */ = {
 			isa = PBXGroup;
 			children = (
-				CF390FEC2637329000999369 /* BaseHttpRequest.swift */,
+				CF390FEC2637329000999369 /* RequestProvider.swift */,
 			);
 			path = HttpRequests;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
+				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
@@ -744,12 +751,13 @@
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
-				CF390FE42637326300999369 /* ApiManager.swift in Sources */,
-				CF390FED2637329000999369 /* BaseHttpRequest.swift in Sources */,
+				CF390FE42637326300999369 /* APIManager.swift in Sources */,
+				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
+				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,
 				10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */,

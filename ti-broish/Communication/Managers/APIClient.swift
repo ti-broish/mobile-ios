@@ -1,34 +1,43 @@
 //
-//  ApiManager.swift
+//  APIClient.swift
 //  ti-broish
 //
 //  Created by Viktor Georgiev on 26.04.21.
 //
 
+import Foundation
 import Alamofire
 
-public typealias APIResult<T> = Swift.Result<T, APIError>
-public typealias APIResultHandler<T: Decodable> = (APIResult<T>) -> Void
+protocol APIClientProtocol: AnyObject {
+    
+}
 
-class ApiManager {
+class APIClient: APIClientProtocol {
+    
+    // MARK: Properties
+    
+    private let baseUrl = ""
     
     // MARK: Private Methods
     
-    private static func send<T: Decodable>(
-        _ request: BaseHttpRequestProtocol,
+    private func send<T: Decodable>(
+        _ request: RequestProvider,
         _ completion: @escaping APIResultHandler<T>
     ) {
-        guard let url = try? request.url.asURL() else { return }
+        let urlString = baseUrl.appending(request.path)
+        guard let url = try? urlString.asURL() else { return }
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
+        
+        let allHeaders = request.additionalHeaders
         
         AF.request(
             url,
             method: request.method,
             parameters: request.parameters,
             encoding: request.encoding,
-            headers: request.allHeaders
+            headers: allHeaders
         )
         .responseDecodable(of: T.self, decoder: decoder) { response in
             DispatchQueue.main.async {
@@ -40,10 +49,5 @@ class ApiManager {
             }
         }
     }
-    
-}
-
-// MARK: Requests
-extension ApiManager {
     
 }
