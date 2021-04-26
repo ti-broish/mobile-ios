@@ -7,5 +7,6 @@ target 'ti-broish' do
   use_frameworks!
 
   pod 'TwoWayBondage'
+  pod 'Alamofire', '~> 5.2'
 
 end
