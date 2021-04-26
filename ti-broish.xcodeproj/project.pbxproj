@@ -65,6 +65,9 @@
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
+		CF390FE42637326300999369 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* ApiManager.swift */; };
+		CF390FED2637329000999369 /* BaseHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* BaseHttpRequest.swift */; };
+		CF390FF5263732BA00999369 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FF4263732BA00999369 /* APIError.swift */; };
 		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
@@ -157,6 +160,9 @@
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		CF390FE32637326300999369 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		CF390FEC2637329000999369 /* BaseHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHttpRequest.swift; sourceTree = "<group>"; };
+		CF390FF4263732BA00999369 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
@@ -225,9 +231,10 @@
 		0AEB3954261CF9CD0005BF38 /* ti-broish */ = {
 			isa = PBXGroup;
 			children = (
-				10C4EAC926335C53005FD07F /* CustomControls */,
 				0AEB398E261CFD800005BF38 /* Screens */,
 				CFB138B726359162001B373D /* Architecture */,
+				CF390FDE2637323700999369 /* Communication */,
+				10C4EAC926335C53005FD07F /* CustomControls */,
 				10C4EABB26335AE2005FD07F /* Extensions */,
 				CFDDA634263595F8008E99F8 /* Utils */,
 				1042B3C92634AACC00764ACF /* Resources */,
@@ -408,6 +415,32 @@
 				294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF390FDE2637323700999369 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				CF390FEB2637327D00999369 /* HttpRequests */,
+				CF390FE22637325C00999369 /* Managers */,
+				CF390FF4263732BA00999369 /* APIError.swift */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		CF390FE22637325C00999369 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CF390FE32637326300999369 /* ApiManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CF390FEB2637327D00999369 /* HttpRequests */ = {
+			isa = PBXGroup;
+			children = (
+				CF390FEC2637329000999369 /* BaseHttpRequest.swift */,
+			);
+			path = HttpRequests;
 			sourceTree = "<group>";
 		};
 		CF7AEDC02635F293001F3EF8 /* Configurator */ = {
@@ -709,7 +742,10 @@
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
+				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
+				CF390FE42637326300999369 /* ApiManager.swift in Sources */,
+				CF390FED2637329000999369 /* BaseHttpRequest.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,

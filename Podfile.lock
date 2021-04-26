@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.4.2)
   - TwoWayBondage (2.1.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - TwoWayBondage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - TwoWayBondage
 
 SPEC CHECKSUMS:
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   TwoWayBondage: c907b02fe132e7d9da0980b1d7fa3ed0d022f996
 
-PODFILE CHECKSUM: d36c38cf55e738abbe42611a95ca686bead0a4ce
+PODFILE CHECKSUM: d84072eb9af601a133a8d9a10eb4b10e38cf40b1
 
 COCOAPODS: 1.10.1
