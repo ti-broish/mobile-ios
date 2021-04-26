@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A56D97F263323A70097778C /* ScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56D97E263323A70097778C /* ScreenCoordinator.swift */; };
 		0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */; };
 		0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */; };
 		0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */; };
@@ -65,6 +64,7 @@
 		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
+		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
@@ -92,7 +92,6 @@
 
 /* Begin PBXFileReference section */
 		020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.debug.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.debug.xcconfig"; sourceTree = "<group>"; };
-		0A56D97E263323A70097778C /* ScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCoordinator.swift; sourceTree = "<group>"; };
 		0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -157,6 +156,7 @@
 		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
+		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
@@ -191,14 +191,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A56D98B263326F70097778C /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				0A56D97E263323A70097778C /* ScreenCoordinator.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
 		0AE2CB552624EECC00C178C9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +260,6 @@
 		0AEB398E261CFD800005BF38 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0A56D98B263326F70097778C /* Coordinators */,
 				0AE2CB552624EECC00C178C9 /* Profile */,
 				0AEB39B6261D01A10005BF38 /* Menu */,
 				0AEB39A3261CFF8C0005BF38 /* Home */,
@@ -288,6 +279,7 @@
 			children = (
 				0AEB3990261CFDE00005BF38 /* LoginViewController.swift */,
 				0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */,
+				CF390FCD2637097400999369 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -696,13 +688,13 @@
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
+				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
-				0A56D97F263323A70097778C /* ScreenCoordinator.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,

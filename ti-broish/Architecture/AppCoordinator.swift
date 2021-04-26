@@ -17,9 +17,12 @@ class AppCoordinator: Coordinator {
         self.window = window
         super.init()
         
-        let navigationController = UINavigationController()
+        let navigationController = UINavigationController(navigationBarClass: TibNavigationBar.self, toolbarClass: nil)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        let screenCoordinator = LoginCoordinator(navigationController: navigationController)
+        addChildCoordinator(screenCoordinator)
     }
     
     override func start() {
