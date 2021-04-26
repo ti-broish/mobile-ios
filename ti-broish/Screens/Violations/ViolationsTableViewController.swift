@@ -9,7 +9,7 @@ import UIKit
 
 final class ViolationsTableViewController: BaseViewController {
     
-    @IBOutlet private weak var mTableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     override func applyTheme() {
         super.applyTheme()

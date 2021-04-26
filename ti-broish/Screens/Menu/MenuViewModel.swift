@@ -6,11 +6,17 @@
 //  
 //
 
-final class MenuViewModel {
+final class MenuViewModel: CoordinatableViewModel {
     
     private (set) var menuItems = [MenuItem]()
     
     init() {
+        start()
+    }
+    
+    // MARK: - Public Methods
+    
+    func start() {
         setupMenuItems()
     }
     

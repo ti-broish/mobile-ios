@@ -17,7 +17,7 @@ final class ScreenCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func start() {
+    override func start() {
         if isLoggedIn {
             showHomeScreen()
         } else {

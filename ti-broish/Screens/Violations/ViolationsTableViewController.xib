@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViolationsTableViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
-                <outlet property="mTableView" destination="tOF-su-Bh7" id="1Pu-ZZ-9hW"/>
+                <outlet property="tableView" destination="tOF-su-Bh7" id="Wjr-kw-BfF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="RoV-52-f2e"/>
             </connections>
         </placeholder>
