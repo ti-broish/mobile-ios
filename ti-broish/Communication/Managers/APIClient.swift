@@ -18,7 +18,7 @@ class APIClient {
     
     private func send<T: Decodable>(
         _ request: RequestProvider,
-        _ completion: @escaping APIResultHandler<T>
+        _ completion: @escaping APIResult<T>
     ) {
         let urlString = baseUrl.appending(request.path)
         guard let url = try? urlString.asURL() else { return }
