@@ -67,7 +67,7 @@ class APIClient {
 extension APIClient {
     
     func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
-        let request = SendAPNsToken(token: token)
+        let request = APNSTokenRequest(token: token)
         send(request) { result in
             completion?(result)
         }

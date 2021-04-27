@@ -1,5 +1,5 @@
 //
-//  SendAPNsToken.swift
+//  APNSTokenRequest.swift
 //  ti-broish
 //
 //  Created by Viktor Georgiev on 27.04.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SendAPNsToken: RequestProvider {
+struct APNSTokenRequest: RequestProvider {
     
     let token: String
     
