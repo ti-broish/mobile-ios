@@ -72,6 +72,7 @@
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
 		CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574E526374C8D002BCECD /* FirebaseClient.swift */; };
+		CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFA575002637D925002BCECD /* GoogleService-Info.plist */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -169,6 +170,7 @@
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CFA574E526374C8D002BCECD /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		CFA575002637D925002BCECD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */,
 				0AEB395E261CF9CE0005BF38 /* Assets.xcassets */,
 				0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */,
+				CFA575002637D925002BCECD /* GoogleService-Info.plist */,
 				0AEB3963261CF9CE0005BF38 /* Info.plist */,
 			);
 			path = "ti-broish";
@@ -640,6 +643,7 @@
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
+				CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */,
 				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
 				10C4EA9526334B8F005FD07F /* ProtocolDetailsViewController.xib in Resources */,
 				10C4EA9F26334BF4005FD07F /* ViolationDetailsViewController.xib in Resources */,
@@ -930,7 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -951,7 +955,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2T55BC3A9S;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

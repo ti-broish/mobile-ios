@@ -9,4 +9,6 @@ target 'ti-broish' do
   pod 'TwoWayBondage'
   pod 'Alamofire', '~> 5.2'
 
+  pod 'Firebase/Messaging'
+
 end
