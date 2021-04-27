@@ -8,11 +8,19 @@
 import Foundation
 import Alamofire
 
+typealias HTTPMethod = Alamofire.HTTPMethod
+
 class APIClient {
     
     // MARK: Properties
     
-    private let baseUrl = ""
+    #if InDebug
+    private let baseUrl = "https://api.tibroish.bg/"
+    #else
+    private let baseUrl = "https://d1tapi.dabulgaria.bg/"
+    #endif
+    
+    private var jwt = ""
     
     // MARK: Private Methods
     
@@ -26,12 +34,13 @@ class APIClient {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
         
-        let allHeaders = request.additionalHeaders
+        var allHeaders = request.additionalHeaders
+        defaultHeaders.forEach( { allHeaders.add($0) })
         
         AF.request(
             url,
             method: request.method,
-            parameters: request.parameters,
+            parameters: request.parameters.compactMapValues({ $0 }),
             encoding: request.encoding,
             headers: allHeaders
         )
@@ -43,6 +52,66 @@ class APIClient {
                     }
                 completion(mappedResponse.result)
             }
+        }
+    }
+    
+    // MARK: Private Methods
+    
+    private var defaultHeaders: HTTPHeaders {
+        ["Authorization" : "Bearer \(jwt)"]
+    }
+    
+}
+
+// MARK: - APNs Token
+extension APIClient {
+    
+    func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
+        let request = APNSTokenRequest(token: token)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
+
+// MARK: - Violations
+extension APIClient {
+    
+    func sendViolation(
+        town: Town,
+        pictures: [String],
+        description: String,
+        section: Section?,
+        completion: APIResult<SendViolationResponse>?
+    ) {
+        let request = SendViolationRequest(town: town, pictures: pictures, description: description, section: section)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func getViolation(id: String, _ completion: APIResult<Violation>?) {
+        getViolations { result in
+            switch result {
+            case .success(let violations):
+                guard let violation = violations.filter({ $0.id == id }).first else {
+                    completion?(.failure(.violationNotFound))
+                    return
+                }
+                
+                completion?(.success(violation))
+            case .failure(let error):
+                print(error)
+                completion?(.failure(error))
+            }
+        }
+    }
+    
+    func getViolations(_ completion: APIResult<ViolationsResponse>?) {
+        let request = GetViolationsRequest()
+        send(request) { result in
+            completion?(result)
         }
     }
     

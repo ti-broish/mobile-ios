@@ -18,7 +18,7 @@ protocol RequestProvider {
     
     var encoding: ParameterEncoding { get }
     
-    var parameters: [String: Any] { get }
+    var parameters: [String: Any?] { get }
     
     var decodingStrategy: JSONDecoder.KeyDecodingStrategy { get }
     
@@ -27,10 +27,6 @@ protocol RequestProvider {
 extension RequestProvider {
     
     // MARK: Properites
-    
-    var path: String {
-        ""
-    }
     
     var method: HTTPMethod {
         .get
@@ -44,7 +40,7 @@ extension RequestProvider {
         JSONEncoding.default
     }
     
-    var parameters: [String: Any] {
+    var parameters: [String: Any?] {
         [:]
     }
     

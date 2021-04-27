@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias APIResult<T: Decodable> = (Swift.Result<T, APIError>) -> Void
+typealias APIResult<T: Decodable> = (Swift.Result<T, APIError>) -> Void
 
 class APIManager {
     
@@ -27,11 +27,49 @@ class APIManager {
     
 }
 
-// MARK: Requests
+// MARK: - Firebase
 extension APIManager {
     
     func register() {
         firebaseClient.register()
+    }
+    
+}
+
+// MARK: - APNs Token
+extension APIManager {
+    
+    func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
+        apiClient.sendAPNsToken(token, completion: completion)
+    }
+    
+}
+
+// MARK: - Violations
+extension APIManager {
+    
+    func sendViolation(
+        town: Town,
+        pictures: [String],
+        description: String,
+        section: Section?,
+        completion: APIResult<SendViolationResponse>?
+    ) {
+        apiClient.sendViolation(
+            town: town,
+            pictures: pictures,
+            description: description,
+            section: section,
+            completion: completion
+        )
+    }
+    
+    func getViolation(id: String, _ completion: APIResult<Violation>?) {
+        apiClient.getViolation(id: id, completion)
+    }
+    
+    func getViolations(_ completion: APIResult<ViolationsResponse>?) {
+        apiClient.getViolations(completion)
     }
     
 }
