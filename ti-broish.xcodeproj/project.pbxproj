@@ -73,6 +73,8 @@
 		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
 		CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574E526374C8D002BCECD /* FirebaseClient.swift */; };
 		CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFA575002637D925002BCECD /* GoogleService-Info.plist */; };
+		CFA5750F2637E2D2002BCECD /* SendAPNsToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */; };
+		CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575162637EBD0002BCECD /* BaseResponse.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -171,6 +173,8 @@
 		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CFA574E526374C8D002BCECD /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		CFA575002637D925002BCECD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPNsToken.swift; sourceTree = "<group>"; };
+		CFA575162637EBD0002BCECD /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -427,9 +431,10 @@
 		CF390FDE2637323700999369 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
-				CF390FEB2637327D00999369 /* HttpRequests */,
+				CF390FEB2637327D00999369 /* Requests */,
 				CF390FE22637325C00999369 /* Managers */,
 				CF390FF4263732BA00999369 /* APIError.swift */,
+				CFA575162637EBD0002BCECD /* BaseResponse.swift */,
 			);
 			path = Communication;
 			sourceTree = "<group>";
@@ -444,12 +449,13 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		CF390FEB2637327D00999369 /* HttpRequests */ = {
+		CF390FEB2637327D00999369 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
+				CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */,
 			);
-			path = HttpRequests;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		CF7AEDC02635F293001F3EF8 /* Configurator */ = {
@@ -750,6 +756,7 @@
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
+				CFA5750F2637E2D2002BCECD /* SendAPNsToken.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
@@ -763,6 +770,7 @@
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
+				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,
 				10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */,
 			);
@@ -941,6 +949,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -962,6 +971,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

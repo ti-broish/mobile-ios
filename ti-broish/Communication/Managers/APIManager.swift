@@ -34,4 +34,8 @@ extension APIManager {
         firebaseClient.register()
     }
     
+    func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
+        apiClient.sendAPNsToken(token, completion: completion)
+    }
+    
 }

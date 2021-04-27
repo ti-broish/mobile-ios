@@ -28,10 +28,6 @@ extension RequestProvider {
     
     // MARK: Properites
     
-    var path: String {
-        ""
-    }
-    
     var method: HTTPMethod {
         .get
     }
@@ -42,10 +38,6 @@ extension RequestProvider {
     
     var encoding: ParameterEncoding {
         JSONEncoding.default
-    }
-    
-    var parameters: [String: Any] {
-        [:]
     }
     
     var decodingStrategy: JSONDecoder.KeyDecodingStrategy {

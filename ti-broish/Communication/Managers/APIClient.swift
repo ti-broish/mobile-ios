@@ -12,7 +12,13 @@ class APIClient {
     
     // MARK: Properties
     
-    private let baseUrl = ""
+    #if InDebug
+    private let baseUrl = "https://api.tibroish.bg/"
+    #else
+    private let baseUrl = "https://d1tapi.dabulgaria.bg/"
+    #endif
+    
+    private var jwt = ""
     
     // MARK: Private Methods
     
@@ -26,7 +32,8 @@ class APIClient {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
         
-        let allHeaders = request.additionalHeaders
+        var allHeaders = request.additionalHeaders
+        defaultHeaders.forEach( { allHeaders.add($0) })
         
         AF.request(
             url,
@@ -43,6 +50,24 @@ class APIClient {
                     }
                 completion(mappedResponse.result)
             }
+        }
+    }
+    
+    // MARK: Private Methods
+    
+    private var defaultHeaders: HTTPHeaders {
+        ["Authorization" : "Bearer \(jwt)"]
+    }
+    
+}
+
+// MARK: - Requests
+extension APIClient {
+    
+    func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
+        let request = SendAPNsToken(token: token)
+        send(request) { result in
+            completion?(result)
         }
     }
     
