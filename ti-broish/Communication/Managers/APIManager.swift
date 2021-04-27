@@ -64,4 +64,12 @@ extension APIManager {
         )
     }
     
+    func getViolation(id: String, _ completion: APIResult<Violation>?) {
+        apiClient.getViolation(id: id, completion)
+    }
+    
+    func getViolations(_ completion: APIResult<ViolationsResponse>?) {
+        apiClient.getViolations(completion)
+    }
+    
 }

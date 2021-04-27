@@ -12,6 +12,6 @@ struct Section: Codable {
     let id: String
     let code: String
     let place: String
-    let name: String
+    let name: String?
     
 }

@@ -91,4 +91,28 @@ extension APIClient {
         }
     }
     
+    func getViolation(id: String, _ completion: APIResult<Violation>?) {
+        getViolations { result in
+            switch result {
+            case .success(let violations):
+                guard let violation = violations.filter({ $0.id == id }).first else {
+                    completion?(.failure(.violationNotFound))
+                    return
+                }
+                
+                completion?(.success(violation))
+            case .failure(let error):
+                print(error)
+                completion?(.failure(error))
+            }
+        }
+    }
+    
+    func getViolations(_ completion: APIResult<ViolationsResponse>?) {
+        let request = GetViolationsRequest()
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
 }

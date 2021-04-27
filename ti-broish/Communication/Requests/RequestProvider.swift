@@ -40,6 +40,10 @@ extension RequestProvider {
         JSONEncoding.default
     }
     
+    var parameters: [String: Any?] {
+        [:]
+    }
+    
     var decodingStrategy: JSONDecoder.KeyDecodingStrategy {
         .convertFromSnakeCase
     }

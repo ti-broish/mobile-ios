@@ -76,7 +76,6 @@
 		CFA5750F2637E2D2002BCECD /* SendAPNsToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */; };
 		CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575162637EBD0002BCECD /* BaseResponse.swift */; };
 		CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575282637F583002BCECD /* SendViolationRequest.swift */; };
-		CFA5752E2637F58E002BCECD /* GetViolationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5752D2637F58E002BCECD /* GetViolationRequest.swift */; };
 		CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575322637F596002BCECD /* GetViolationsRequest.swift */; };
 		CFA575392637F6D4002BCECD /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575382637F6D4002BCECD /* Town.swift */; };
 		CFA575412637F768002BCECD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575402637F768002BCECD /* Section.swift */; };
@@ -186,7 +185,6 @@
 		CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPNsToken.swift; sourceTree = "<group>"; };
 		CFA575162637EBD0002BCECD /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		CFA575282637F583002BCECD /* SendViolationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationRequest.swift; sourceTree = "<group>"; };
-		CFA5752D2637F58E002BCECD /* GetViolationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViolationRequest.swift; sourceTree = "<group>"; };
 		CFA575322637F596002BCECD /* GetViolationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViolationsRequest.swift; sourceTree = "<group>"; };
 		CFA575382637F6D4002BCECD /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		CFA575402637F768002BCECD /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -451,10 +449,10 @@
 		CF390FDE2637323700999369 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
+				CFA575742638068B002BCECD /* Errors */,
 				CF390FE22637325C00999369 /* Managers */,
 				CF390FEB2637327D00999369 /* Requests */,
 				CFA575372637F6CD002BCECD /* Models */,
-				CF390FF4263732BA00999369 /* APIError.swift */,
 				CFA575162637EBD0002BCECD /* BaseResponse.swift */,
 			);
 			path = Communication;
@@ -493,7 +491,6 @@
 			isa = PBXGroup;
 			children = (
 				CFA575282637F583002BCECD /* SendViolationRequest.swift */,
-				CFA5752D2637F58E002BCECD /* GetViolationRequest.swift */,
 				CFA575322637F596002BCECD /* GetViolationsRequest.swift */,
 			);
 			path = Violations;
@@ -535,6 +532,14 @@
 				CFA5755C2637FCE2002BCECD /* PhotosState.swift */,
 			);
 			path = Photos;
+			sourceTree = "<group>";
+		};
+		CFA575742638068B002BCECD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CF390FF4263732BA00999369 /* APIError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		CFB138B726359162001B373D /* Architecture */ = {
@@ -812,7 +817,6 @@
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
-				CFA5752E2637F58E002BCECD /* GetViolationRequest.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,

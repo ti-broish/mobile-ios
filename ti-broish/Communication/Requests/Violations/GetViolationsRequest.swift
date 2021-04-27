@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct GetViolationsRequest: RequestProvider {
+    
+    var path: String {
+        "/me/violations"
+    }
+    
+}

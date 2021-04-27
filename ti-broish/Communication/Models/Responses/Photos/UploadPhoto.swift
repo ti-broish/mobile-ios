@@ -13,6 +13,6 @@ struct UploadPhoto: Codable {
     let url: String
     let path: String
     let sortPosition: Int
-    let index: Int
+    let index: Int?
     
 }

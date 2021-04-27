@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum APIError: Error {
+enum APIError: Error {
+    
     /// Failed to create a valid `URL` from `APIRequest`'s baseUrl.
     case invalidBaseUrl
 
@@ -27,4 +28,7 @@ public enum APIError: Error {
 
     /// Authorization token is empty
     case invalidAuthorizationToken
+    
+    /// Violation not found
+    case violationNotFound
 }

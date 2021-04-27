@@ -7,10 +7,20 @@
 
 import Foundation
 
+typealias ViolationsResponse = [Violation]
+
 enum ViolationStatus: String, Decodable {
     case unknown
 }
 
-struct Violation {
+struct Violation: Decodable {
+    
+    let id: String
+    let description: String
+    let pictures: [UploadPhoto]
+    let sections: [Section]
+    let status: ViolationStatus
+    let statusLocalized: String
+    let statusColor: String
     
 }
