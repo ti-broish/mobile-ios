@@ -15,7 +15,7 @@ struct SendAPNsToken: RequestProvider {
         "/me/clients"
     }
     
-    var parameters: [String : Any] {
+    var parameters: [String : Any?] {
         ["token": token]
     }
     

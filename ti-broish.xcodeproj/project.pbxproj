@@ -75,6 +75,16 @@
 		CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFA575002637D925002BCECD /* GoogleService-Info.plist */; };
 		CFA5750F2637E2D2002BCECD /* SendAPNsToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */; };
 		CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575162637EBD0002BCECD /* BaseResponse.swift */; };
+		CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575282637F583002BCECD /* SendViolationRequest.swift */; };
+		CFA5752E2637F58E002BCECD /* GetViolationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5752D2637F58E002BCECD /* GetViolationRequest.swift */; };
+		CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575322637F596002BCECD /* GetViolationsRequest.swift */; };
+		CFA575392637F6D4002BCECD /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575382637F6D4002BCECD /* Town.swift */; };
+		CFA575412637F768002BCECD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575402637F768002BCECD /* Section.swift */; };
+		CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575472637FA07002BCECD /* SendViolationResponse.swift */; };
+		CFA5754D2637FB06002BCECD /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5754C2637FB06002BCECD /* Violation.swift */; };
+		CFA575532637FC23002BCECD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575522637FC23002BCECD /* Photo.swift */; };
+		CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575572637FC5D002BCECD /* UploadPhoto.swift */; };
+		CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5755C2637FCE2002BCECD /* PhotosState.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -175,6 +185,16 @@
 		CFA575002637D925002BCECD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPNsToken.swift; sourceTree = "<group>"; };
 		CFA575162637EBD0002BCECD /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		CFA575282637F583002BCECD /* SendViolationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationRequest.swift; sourceTree = "<group>"; };
+		CFA5752D2637F58E002BCECD /* GetViolationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViolationRequest.swift; sourceTree = "<group>"; };
+		CFA575322637F596002BCECD /* GetViolationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViolationsRequest.swift; sourceTree = "<group>"; };
+		CFA575382637F6D4002BCECD /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
+		CFA575402637F768002BCECD /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		CFA575472637FA07002BCECD /* SendViolationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationResponse.swift; sourceTree = "<group>"; };
+		CFA5754C2637FB06002BCECD /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
+		CFA575522637FC23002BCECD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		CFA575572637FC5D002BCECD /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
+		CFA5755C2637FCE2002BCECD /* PhotosState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosState.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -431,8 +451,9 @@
 		CF390FDE2637323700999369 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
-				CF390FEB2637327D00999369 /* Requests */,
 				CF390FE22637325C00999369 /* Managers */,
+				CF390FEB2637327D00999369 /* Requests */,
+				CFA575372637F6CD002BCECD /* Models */,
 				CF390FF4263732BA00999369 /* APIError.swift */,
 				CFA575162637EBD0002BCECD /* BaseResponse.swift */,
 			);
@@ -452,6 +473,7 @@
 		CF390FEB2637327D00999369 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CFA5751B2637F2EC002BCECD /* Violations */,
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
 				CFA5750E2637E2D2002BCECD /* SendAPNsToken.swift */,
 			);
@@ -465,6 +487,54 @@
 				CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		CFA5751B2637F2EC002BCECD /* Violations */ = {
+			isa = PBXGroup;
+			children = (
+				CFA575282637F583002BCECD /* SendViolationRequest.swift */,
+				CFA5752D2637F58E002BCECD /* GetViolationRequest.swift */,
+				CFA575322637F596002BCECD /* GetViolationsRequest.swift */,
+			);
+			path = Violations;
+			sourceTree = "<group>";
+		};
+		CFA575372637F6CD002BCECD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFA575452637F9F2002BCECD /* Responses */,
+				CFA575382637F6D4002BCECD /* Town.swift */,
+				CFA575402637F768002BCECD /* Section.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CFA575452637F9F2002BCECD /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CFA575512637FC1D002BCECD /* Photos */,
+				CFA575462637F9FE002BCECD /* Violations */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		CFA575462637F9FE002BCECD /* Violations */ = {
+			isa = PBXGroup;
+			children = (
+				CFA575472637FA07002BCECD /* SendViolationResponse.swift */,
+				CFA5754C2637FB06002BCECD /* Violation.swift */,
+			);
+			path = Violations;
+			sourceTree = "<group>";
+		};
+		CFA575512637FC1D002BCECD /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				CFA575522637FC23002BCECD /* Photo.swift */,
+				CFA575572637FC5D002BCECD /* UploadPhoto.swift */,
+				CFA5755C2637FCE2002BCECD /* PhotosState.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		CFB138B726359162001B373D /* Architecture */ = {
@@ -741,12 +811,18 @@
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
+				CFA575412637F768002BCECD /* Section.swift in Sources */,
+				CFA5752E2637F58E002BCECD /* GetViolationRequest.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
+				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
+				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
+				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
+				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
@@ -755,10 +831,13 @@
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
+				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* SendAPNsToken.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
+				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
+				CFA575392637F6D4002BCECD /* Town.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
@@ -768,6 +847,7 @@
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
+				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,

@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 
+typealias HTTPMethod = Alamofire.HTTPMethod
+
 class APIClient {
     
     // MARK: Properties
@@ -38,7 +40,7 @@ class APIClient {
         AF.request(
             url,
             method: request.method,
-            parameters: request.parameters,
+            parameters: request.parameters.compactMapValues({ $0 }),
             encoding: request.encoding,
             headers: allHeaders
         )
@@ -61,11 +63,29 @@ class APIClient {
     
 }
 
-// MARK: - Requests
+// MARK: - APNs Token
 extension APIClient {
     
     func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
         let request = SendAPNsToken(token: token)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
+
+// MARK: - Violations
+extension APIClient {
+    
+    func sendViolation(
+        town: Town,
+        pictures: [String],
+        description: String,
+        section: Section?,
+        completion: APIResult<SendViolationResponse>?
+    ) {
+        let request = SendViolationRequest(town: town, pictures: pictures, description: description, section: section)
         send(request) { result in
             completion?(result)
         }
