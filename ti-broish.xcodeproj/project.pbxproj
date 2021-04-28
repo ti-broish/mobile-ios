@@ -38,6 +38,9 @@
 		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
 		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
+		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
+		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
+		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
 		10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */; };
 		10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */; };
 		10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */; };
@@ -63,6 +66,12 @@
 		10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EADC263362AD005FD07F /* TibViewControllable.swift */; };
 		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
+		10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E622C0263A013300381A83 /* RegistrationViewModel.swift */; };
+		10EB5A9C263A05FE00690F88 /* RegistrationTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */; };
+		10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */; };
+		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
+		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
+		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
@@ -150,6 +159,9 @@
 		1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
 		10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +187,12 @@
 		10C4EADC263362AD005FD07F /* TibViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibViewControllable.swift; sourceTree = "<group>"; };
 		10C4EAE12633637B005FD07F /* TibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTableViewCell.swift; sourceTree = "<group>"; };
 		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		10E622C0263A013300381A83 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationTextCell.xib; sourceTree = "<group>"; };
+		10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTextCell.swift; sourceTree = "<group>"; };
+		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
+		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -324,6 +342,7 @@
 				0AEB3990261CFDE00005BF38 /* LoginViewController.swift */,
 				0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */,
 				CF390FCD2637097400999369 /* LoginCoordinator.swift */,
+				10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -377,8 +396,12 @@
 		10C4EA3626333A9E005FD07F /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				10E622C0263A013300381A83 /* RegistrationViewModel.swift */,
 				10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */,
 				10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */,
+				10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */,
+				10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */,
+				10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -440,8 +463,12 @@
 			children = (
 				10C4EACA26335C72005FD07F /* TibNavigationBar.swift */,
 				10C4EAE12633637B005FD07F /* TibTableViewCell.swift */,
+				10B9EAC42637557E0067FAE2 /* InputField.swift */,
 				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
 				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
+				10B9EAD926375BE30067FAE2 /* TextInputField.swift */,
+				10B9EAE126375C390067FAE2 /* TextInputField.xib */,
+				10EB5AA2263A1A8F00690F88 /* TibTextField.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -751,6 +778,8 @@
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
+				10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */,
+				10EB5A9C263A05FE00690F88 /* RegistrationTextCell.xib in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
 				CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */,
 				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
@@ -857,15 +886,19 @@
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
 				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
 				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
+				10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */,
+				10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
 				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
+				10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */,
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
+				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
@@ -874,13 +907,16 @@
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA575392637F6D4002BCECD /* Town.swift in Sources */,
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
+				10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
+				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,
 				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
+				10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,

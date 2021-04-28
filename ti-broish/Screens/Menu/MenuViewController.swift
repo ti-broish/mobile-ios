@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol MenuViewControllerDelegate: class {
+protocol MenuViewControllerDelegate: AnyObject {
     
     func didSelectMenuItem(_ menuItem: MenuItem, sender: MenuViewController)
 }
 
 final class MenuViewController: BaseViewController {
     
-    @IBOutlet private weak var mTableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private let viewModel = MenuViewModel()
     weak var delegate: MenuViewControllerDelegate?
@@ -37,12 +37,12 @@ final class MenuViewController: BaseViewController {
     // MARK: - Private methods
     
     private func setupTableView() {
-        mTableView.registerCell(MenuCell.self)
-        mTableView.dataSource = self
-        mTableView.delegate = self
-        mTableView.separatorColor = theme.tableViewSeparatorColor
-        mTableView.rowHeight = 44.0
-        mTableView.tableFooterView = UIView()
+        tableView.registerCell(MenuCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorColor = theme.tableViewSeparatorColor
+        tableView.rowHeight = 44.0
+        tableView.tableFooterView = UIView()
     }
 }
 

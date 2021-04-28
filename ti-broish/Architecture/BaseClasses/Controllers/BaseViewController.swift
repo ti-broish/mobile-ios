@@ -16,7 +16,7 @@ class BaseViewController: UIViewController, TibViewControllable {
     
     // MARK: - Properties
     
-    let theme = TibTheme()
+    let theme = TibTheme.shared
     weak var coordinator: LoginCoordinator? //TODO: Coordinators should not be in controllers
     
     private var pullToRefreshCustomView: UIView?

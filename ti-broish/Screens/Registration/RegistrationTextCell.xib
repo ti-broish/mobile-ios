@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegistrationTextCell" id="4yX-rB-FUz" customClass="RegistrationTextCell" customModule="ti_broish" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4yX-rB-FUz" id="pJA-gj-y6f">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jql-gN-j0N" userLabel="textInputField" customClass="TextInputField" customModule="ti_broish" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </subviews>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="Jql-gN-j0N" firstAttribute="leading" secondItem="4yX-rB-FUz" secondAttribute="leading" id="TSl-IH-0BE"/>
+                <constraint firstItem="Jql-gN-j0N" firstAttribute="top" secondItem="4yX-rB-FUz" secondAttribute="top" id="X00-mT-mJ9"/>
+                <constraint firstAttribute="bottom" secondItem="Jql-gN-j0N" secondAttribute="bottom" id="mJH-5a-qQT"/>
+                <constraint firstAttribute="trailing" secondItem="Jql-gN-j0N" secondAttribute="trailing" id="pLl-ab-DIa"/>
+            </constraints>
+            <connections>
+                <outlet property="textInputField" destination="Jql-gN-j0N" id="XB5-MQ-4ua"/>
+            </connections>
+            <point key="canvasLocation" x="126" y="35"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

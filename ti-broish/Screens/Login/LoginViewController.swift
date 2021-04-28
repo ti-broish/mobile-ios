@@ -17,6 +17,8 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var registrationButton: UIButton!
     @IBOutlet private weak var resetPasswordButton: UIButton!
     
+    private var viewModel = LoginViewModel()
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -41,19 +43,11 @@ final class LoginViewController: BaseViewController {
             action: nil
         )
         
-        emailInputField.configure(
-            type: .email,
-            textFieldDelegate: self,
-            title: LocalizedStrings.Login.emailTitle,
-            placeholder: LocalizedStrings.Login.emailPlaceholder
-        )
+        emailInputField.configureTextField(model: viewModel.makeLoginFieldForLoginInputType(type: .email))
+        emailInputField.textField.delegate = self
         
-        passwordInputField.configure(
-            type: .password,
-            textFieldDelegate: self,
-            title: LocalizedStrings.Login.passwordTitle,
-            placeholder: LocalizedStrings.Login.passwordPlaceholder
-        )
+        passwordInputField.configureTextField(model: viewModel.makeLoginFieldForLoginInputType(type: .password))
+        passwordInputField.textField.delegate = self
         
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)
         registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)

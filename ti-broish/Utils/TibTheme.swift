@@ -7,7 +7,9 @@
 
 import UIKit
 
-struct TibTheme {
+class TibTheme {
+    
+    static let shared = TibTheme()
     
     var backgroundColor: UIColor {
         return .backgroundColor
