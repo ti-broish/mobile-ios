@@ -87,6 +87,18 @@ extension APIClient {
     
 }
 
+// MARK: - Sections
+extension APIClient {
+    
+    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
+        let request = GetSectionsRequest(town: town, region: region)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
+
 // MARK: - Upload Photo
 extension APIClient {
     

@@ -54,6 +54,15 @@ extension APIManager {
     
 }
 
+// MARK: - Sections
+extension APIManager {
+    
+    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
+        apiClient.getSections(town: town, region: region, completion: completion)
+    }
+    
+}
+
 // MARK: - Upload Photo
 extension APIManager {
     

@@ -91,6 +91,7 @@
 		CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */; };
 		CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */; };
 		CFA5767C26393FA3002BCECD /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5767B26393FA3002BCECD /* Party.swift */; };
+		CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA57680263943E0002BCECD /* GetSectionsRequest.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -207,6 +208,7 @@
 		CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
 		CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartiesRequest.swift; sourceTree = "<group>"; };
 		CFA5767B26393FA3002BCECD /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		CFA57680263943E0002BCECD /* GetSectionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSectionsRequest.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				CFA5750E2637E2D2002BCECD /* APNSTokenRequest.swift */,
 				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
 				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
+				CFA57680263943E0002BCECD /* GetSectionsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
+				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
