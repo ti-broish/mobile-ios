@@ -75,6 +75,18 @@ extension APIClient {
     
 }
 
+// MARK: - Parties
+extension APIClient {
+    
+    func getParties(_ completion: APIResult<PartiesResponse>?) {
+        let request = GetPartiesRequest()
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
+
 // MARK: - Upload Photo
 extension APIClient {
     

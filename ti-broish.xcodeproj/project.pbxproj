@@ -89,6 +89,8 @@
 		CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */; };
 		CFA5766926393133002BCECD /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766826393133002BCECD /* Protocol.swift */; };
 		CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */; };
+		CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */; };
+		CFA5767C26393FA3002BCECD /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5767B26393FA3002BCECD /* Party.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -203,6 +205,8 @@
 		CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolResponse.swift; sourceTree = "<group>"; };
 		CFA5766826393133002BCECD /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
+		CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartiesRequest.swift; sourceTree = "<group>"; };
+		CFA5767B26393FA3002BCECD /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -486,6 +490,7 @@
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
 				CFA5750E2637E2D2002BCECD /* APNSTokenRequest.swift */,
 				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
+				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				CFA575462637F9FE002BCECD /* Violations */,
 				CFA575512637FC1D002BCECD /* Photos */,
 				CFA575402637F768002BCECD /* Section.swift */,
+				CFA5767B26393FA3002BCECD /* Party.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
+				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
@@ -854,6 +861,7 @@
 				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
+				CFA5767C26393FA3002BCECD /* Party.swift in Sources */,
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,

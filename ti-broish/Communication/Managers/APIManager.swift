@@ -45,6 +45,15 @@ extension APIManager {
     
 }
 
+// MARK: - Parties
+extension APIManager {
+    
+    func getParties(_ completion: APIResult<PartiesResponse>?) {
+        apiClient.getParties(completion)
+    }
+    
+}
+
 // MARK: - Upload Photo
 extension APIManager {
     
