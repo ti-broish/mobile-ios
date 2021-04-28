@@ -68,6 +68,9 @@
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
 		CF390FF5263732BA00999369 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FF4263732BA00999369 /* APIError.swift */; };
+		CF61EEB726396B9E00278AA7 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEB626396B9E00278AA7 /* Region.swift */; };
+		CF61EEC026396BFB00278AA7 /* GetTownsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */; };
+		CF61EEC526396E1B00278AA7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEC426396E1B00278AA7 /* Country.swift */; };
 		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
@@ -188,6 +191,9 @@
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		CF390FF4263732BA00999369 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CF61EEB626396B9E00278AA7 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTownsRequest.swift; sourceTree = "<group>"; };
+		CF61EEC426396E1B00278AA7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -493,6 +499,7 @@
 		CF390FEB2637327D00999369 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CF61EEC926396EF600278AA7 /* Location */,
 				CFA5764E26392653002BCECD /* Protocols */,
 				CFA5751B2637F2EC002BCECD /* Violations */,
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
@@ -500,9 +507,17 @@
 				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
 				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
 				CFA57680263943E0002BCECD /* GetSectionsRequest.swift */,
-				CFA5768526394663002BCECD /* GetElectionRegionsRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		CF61EEC926396EF600278AA7 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CFA5768526394663002BCECD /* GetElectionRegionsRequest.swift */,
+				CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		CF7AEDC02635F293001F3EF8 /* Configurator */ = {
@@ -592,9 +607,11 @@
 		CFA5768A263949A2002BCECD /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				CF61EEB626396B9E00278AA7 /* Region.swift */,
 				CFA575382637F6D4002BCECD /* Town.swift */,
 				CFA5769326394A28002BCECD /* Municipality.swift */,
 				CFA5768B263949AE002BCECD /* ElectionRegion.swift */,
+				CF61EEC426396E1B00278AA7 /* Country.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -881,7 +898,9 @@
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
+				CF61EEB726396B9E00278AA7 /* Region.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
+				CF61EEC026396BFB00278AA7 /* GetTownsRequest.swift in Sources */,
 				CFA5767C26393FA3002BCECD /* Party.swift in Sources */,
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
@@ -904,6 +923,7 @@
 				CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
+				CF61EEC526396E1B00278AA7 /* Country.swift in Sources */,
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */,
 				CFA575392637F6D4002BCECD /* Town.swift in Sources */,

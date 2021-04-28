@@ -87,11 +87,24 @@ extension APIClient {
     
 }
 
-// MARK: Election Regions
+// MARK: - Location
+
 extension APIClient {
     
     func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
         let request = GetElectionRegionsRequest()
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func getTowns(
+        country: Country,
+        electionRegion: ElectionRegion? = nil,
+        municipality: Municipality,
+        completion: APIResult<TownsResponse>?
+    ) {
+        let request = GetTownsRequest(country: country, electionRegion: electionRegion, municipality: municipality)
         send(request) { result in
             completion?(result)
         }
