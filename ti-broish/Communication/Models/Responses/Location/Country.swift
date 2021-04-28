@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Country {
+typealias CountriesResponse = [Country]
+
+struct Country: Decodable {
     
     // MARK: Properties
     

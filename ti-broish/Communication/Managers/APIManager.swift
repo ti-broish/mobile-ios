@@ -75,6 +75,10 @@ extension APIManager {
         )
     }
     
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
+        apiClient.getCountries(isAbroad: isAbroad, completion: completion)
+    }
+    
 }
 
 // MARK: - Sections

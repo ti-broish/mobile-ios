@@ -9,11 +9,13 @@ import Foundation
 
 struct GetTownsRequest: RequestProvider {
     
-    // MARK: - RequestProvider
+    // MARK: - Properites
     
     let country: Country
     let electionRegion: ElectionRegion?
     let municipality: Municipality?
+    
+    // MARK: - RequestProvider
     
     var path: String {
         "/towns"

@@ -102,6 +102,7 @@
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
 		CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138CD263592EF001B373D /* BaseViewController.swift */; };
+		CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +226,7 @@
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +518,7 @@
 			children = (
 				CFA5768526394663002BCECD /* GetElectionRegionsRequest.swift */,
 				CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */,
+				CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -917,6 +920,7 @@
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
+				CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,

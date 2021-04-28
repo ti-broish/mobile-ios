@@ -110,6 +110,20 @@ extension APIClient {
         }
     }
     
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
+        let request = GetCountriesRequest()
+        send(request) { (result: Result<CountriesResponse, APIError>) in
+            switch result {
+            case .success(let countries):
+                let filteredCountries = countries.filter({ $0.isAbroad == isAbroad })
+                completion?(.success(filteredCountries))
+            case .failure(let error):
+                print(error)
+                completion?(.failure(.requestFailed(error: error)))
+            }
+        }
+    }
+    
 }
 
 // MARK: - Sections
