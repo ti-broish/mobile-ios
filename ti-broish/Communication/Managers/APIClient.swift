@@ -75,6 +75,18 @@ extension APIClient {
     
 }
 
+// MARK: - Upload Photo
+extension APIClient {
+    
+    func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?) {
+        let request = UploadPhotoRequest(photo: photo)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
+
 // MARK: - Violations
 extension APIClient {
     

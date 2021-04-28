@@ -88,6 +88,7 @@
 		CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5765726392669002BCECD /* GetProtocolRequest.swift */; };
 		CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */; };
 		CFA5766926393133002BCECD /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766826393133002BCECD /* Protocol.swift */; };
+		CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -201,6 +202,7 @@
 		CFA5765726392669002BCECD /* GetProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProtocolRequest.swift; sourceTree = "<group>"; };
 		CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolResponse.swift; sourceTree = "<group>"; };
 		CFA5766826393133002BCECD /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				CFA5751B2637F2EC002BCECD /* Violations */,
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
 				CFA5750E2637E2D2002BCECD /* APNSTokenRequest.swift */,
+				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
+				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,

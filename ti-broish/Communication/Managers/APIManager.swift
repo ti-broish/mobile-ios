@@ -45,6 +45,15 @@ extension APIManager {
     
 }
 
+// MARK: - Upload Photo
+extension APIManager {
+    
+    func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?) {
+        apiClient.uploadPhoto(photo, completion: completion)
+    }
+    
+}
+
 // MARK: - Violations
 extension APIManager {
     
