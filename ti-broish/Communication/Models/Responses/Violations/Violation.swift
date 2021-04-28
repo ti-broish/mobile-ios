@@ -15,6 +15,8 @@ enum ViolationStatus: String, Decodable {
 
 struct Violation: Decodable {
     
+    // MARK: Properties
+    
     let id: String
     let description: String
     let pictures: [UploadPhoto]

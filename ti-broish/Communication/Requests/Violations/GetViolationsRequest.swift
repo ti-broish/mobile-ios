@@ -9,6 +9,8 @@ import Foundation
 
 struct GetViolationsRequest: RequestProvider {
     
+    // MARK: - RequestProvider
+    
     var path: String {
         "/me/violations"
     }

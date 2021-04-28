@@ -9,10 +9,14 @@ import Foundation
 
 struct SendViolationRequest: RequestProvider {
     
+    // MARK: - Properties
+    
     let town: Town
     let pictures: [String]
     let description: String
     let section: Section?
+    
+    // MARK: - RequestProvider
     
     var path: String {
         "/violations"

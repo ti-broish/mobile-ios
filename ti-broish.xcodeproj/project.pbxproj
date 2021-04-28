@@ -84,6 +84,10 @@
 		CFA575532637FC23002BCECD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575522637FC23002BCECD /* Photo.swift */; };
 		CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA575572637FC5D002BCECD /* UploadPhoto.swift */; };
 		CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5755C2637FCE2002BCECD /* PhotosState.swift */; };
+		CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5764F26392661002BCECD /* SendProtocolRequest.swift */; };
+		CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5765726392669002BCECD /* GetProtocolRequest.swift */; };
+		CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */; };
+		CFA5766926393133002BCECD /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766826393133002BCECD /* Protocol.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
@@ -193,6 +197,10 @@
 		CFA575522637FC23002BCECD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		CFA575572637FC5D002BCECD /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
 		CFA5755C2637FCE2002BCECD /* PhotosState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosState.swift; sourceTree = "<group>"; };
+		CFA5764F26392661002BCECD /* SendProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolRequest.swift; sourceTree = "<group>"; };
+		CFA5765726392669002BCECD /* GetProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProtocolRequest.swift; sourceTree = "<group>"; };
+		CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolResponse.swift; sourceTree = "<group>"; };
+		CFA5766826393133002BCECD /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -471,6 +479,7 @@
 		CF390FEB2637327D00999369 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CFA5764E26392653002BCECD /* Protocols */,
 				CFA5751B2637F2EC002BCECD /* Violations */,
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
 				CFA5750E2637E2D2002BCECD /* APNSTokenRequest.swift */,
@@ -501,7 +510,6 @@
 			children = (
 				CFA575452637F9F2002BCECD /* Responses */,
 				CFA575382637F6D4002BCECD /* Town.swift */,
-				CFA575402637F768002BCECD /* Section.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -509,8 +517,10 @@
 		CFA575452637F9F2002BCECD /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				CFA575512637FC1D002BCECD /* Photos */,
+				CFA5765F26392DA6002BCECD /* Protocols */,
 				CFA575462637F9FE002BCECD /* Violations */,
+				CFA575512637FC1D002BCECD /* Photos */,
+				CFA575402637F768002BCECD /* Section.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -540,6 +550,24 @@
 				CF390FF4263732BA00999369 /* APIError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		CFA5764E26392653002BCECD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CFA5764F26392661002BCECD /* SendProtocolRequest.swift */,
+				CFA5765726392669002BCECD /* GetProtocolRequest.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CFA5765F26392DA6002BCECD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */,
+				CFA5766826393133002BCECD /* Protocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CFB138B726359162001B373D /* Architecture */ = {
@@ -816,6 +844,7 @@
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
+				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
@@ -827,6 +856,7 @@
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
 				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
+				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
@@ -838,10 +868,12 @@
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
+				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA575392637F6D4002BCECD /* Town.swift in Sources */,
+				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,

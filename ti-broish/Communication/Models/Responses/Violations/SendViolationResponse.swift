@@ -9,6 +9,8 @@ import Foundation
 
 struct SendViolationResponse: Decodable {
     
+    // MARK: Properties
+    
     let id: Int
     let section: Section
     let pictures: [UploadPhoto]

@@ -9,9 +9,15 @@ import Foundation
 
 struct Section: Codable {
     
+    // MARK: Properties
+    
     let id: String
     let code: String
     let place: String
     let name: String?
+    
+    let isMachine: Bool?
+    let isMobile: Bool?
+    let isShip: Bool?
     
 }

@@ -116,3 +116,39 @@ extension APIClient {
     }
     
 }
+
+// MARK: - Protocols
+extension APIClient {
+    
+    func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
+        let request = SendProtocolRequest(section: section, pictures: pictures)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func getProtocol(id: String, completion: APIResult<Protocol>?) {
+        getProtocols { result in
+            switch result {
+            case .success(let protocols):
+                guard let proto = protocols.filter({ $0.id == id }).first else {
+                    completion?(.failure(.violationNotFound))
+                    return
+                }
+                
+                completion?(.success(proto))
+            case .failure(let error):
+                print(error)
+                completion?(.failure(error))
+            }
+        }
+    }
+    
+    func getProtocols(_ completion: APIResult<ProtocolsResponse>?) {
+        let request = GetProtocolRequest()
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
