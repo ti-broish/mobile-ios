@@ -54,6 +54,15 @@ extension APIManager {
     
 }
 
+// MARK: - Election Regions
+extension APIManager {
+    
+    func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
+        apiClient.getElectionRegions(isAbroad: isAbroad, completion: completion)
+    }
+    
+}
+
 // MARK: - Sections
 extension APIManager {
     

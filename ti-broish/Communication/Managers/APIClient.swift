@@ -87,6 +87,18 @@ extension APIClient {
     
 }
 
+// MARK: Election Regions
+extension APIClient {
+    
+    func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
+        let request = GetElectionRegionsRequest()
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+}
+
 // MARK: - Sections
 extension APIClient {
     
@@ -168,7 +180,7 @@ extension APIClient {
             switch result {
             case .success(let protocols):
                 guard let proto = protocols.filter({ $0.id == id }).first else {
-                    completion?(.failure(.violationNotFound))
+                    completion?(.failure(.protocolNotFound))
                     return
                 }
                 
