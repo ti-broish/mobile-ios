@@ -37,6 +37,8 @@
 		1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */; };
 		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
 		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
+		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
+		104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF85263A8872001B6B15 /* InputFieldConfig.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
@@ -158,6 +160,8 @@
 		1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
+		104DAF85263A8872001B6B15 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
@@ -464,6 +468,8 @@
 				10C4EACA26335C72005FD07F /* TibNavigationBar.swift */,
 				10C4EAE12633637B005FD07F /* TibTableViewCell.swift */,
 				10B9EAC42637557E0067FAE2 /* InputField.swift */,
+				104DAF83263A880A001B6B15 /* InputFieldType.swift */,
+				104DAF85263A8872001B6B15 /* InputFieldConfig.swift */,
 				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
 				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
 				10B9EAD926375BE30067FAE2 /* TextInputField.swift */,
@@ -868,6 +874,7 @@
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
+				104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
@@ -884,6 +891,7 @@
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
+				104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */,
 				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
 				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
 				10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */,

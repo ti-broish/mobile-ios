@@ -7,38 +7,6 @@
 
 import UIKit
 
-enum InputFieldType {
-    
-    case text, email, password, phone, pin, picker, checkbox
-}
-
-class InputFieldModel {
-
-    let type: InputFieldType
-    var value: String?
-    let title: String
-    let placeholderText: String?
-    let isRequired: Bool
-    
-    var isTextFieldModel: Bool {
-        return type != .picker || type != .checkbox
-    }
-    
-    init(
-        type: InputFieldType,
-        value: String? = nil,
-        title: String,
-        placeholderText: String?,
-        isRequired: Bool = false
-    ) {
-        self.type = type
-        self.value = value
-        self.title = title
-        self.placeholderText = placeholderText
-        self.isRequired = isRequired
-    }
-}
-
 class InputField: UIView {
     
     @IBOutlet weak var view: UIView!
@@ -86,18 +54,17 @@ class InputField: UIView {
         textField.textColor = theme.textFieldColor
     }
     
-    func configureTextField(model: InputFieldModel) {
-        titleLabel.text = model.title
+    func configureTextField(config: InputFieldConfig) {
+        titleLabel.text = config.title
         
-        if let _placeholderText = model.placeholderText {
+        if let _placeholderText = config.placeholderText {
             textField.attributedPlaceholder = NSAttributedString(
                 string: _placeholderText,
                 attributes: [.foregroundColor: theme.textFieldPlaceholderColor]
             )
         }
         
-        textField.text = model.value
-        configureTextFieldKeyboardType(inputFieldType: model.type)
+        configureTextFieldKeyboardType(inputFieldType: config.type)
     }
     
     // MARK: - Private methods

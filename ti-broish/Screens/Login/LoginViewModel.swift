@@ -14,16 +14,16 @@ enum LoginFieldType {
 
 final class LoginViewModel: CoordinatableViewModel {
     
-    func makeLoginFieldForLoginInputType(type: LoginFieldType) -> InputFieldModel {
+    func makeConfigForLoginInputType(type: LoginFieldType) -> InputFieldConfig {
         switch type {
         case .email:
-            return InputFieldModel(
+            return InputFieldConfig(
                 type: .email,
                 title: LocalizedStrings.Login.emailTitle,
                 placeholderText: LocalizedStrings.Login.emailPlaceholder
             )
         case .password:
-            return InputFieldModel(
+            return InputFieldConfig(
                 type: .password,
                 title: LocalizedStrings.Login.passwordTitle,
                 placeholderText: LocalizedStrings.Login.passwordPlaceholder

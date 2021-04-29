@@ -43,10 +43,10 @@ final class LoginViewController: BaseViewController {
             action: nil
         )
         
-        emailInputField.configureTextField(model: viewModel.makeLoginFieldForLoginInputType(type: .email))
+        emailInputField.configureTextField(config: viewModel.makeConfigForLoginInputType(type: .email))
         emailInputField.textField.delegate = self
         
-        passwordInputField.configureTextField(model: viewModel.makeLoginFieldForLoginInputType(type: .password))
+        passwordInputField.configureTextField(config: viewModel.makeConfigForLoginInputType(type: .password))
         passwordInputField.textField.delegate = self
         
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)

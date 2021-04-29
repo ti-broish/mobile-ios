@@ -50,7 +50,7 @@ final class RegistrationViewController: BaseViewController {
 extension RegistrationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.registrationFields.count
+        return viewModel.inputFieldsConfigs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,10 +59,10 @@ extension RegistrationViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let model = viewModel.registrationFields[indexPath.row]
+        let model = viewModel.inputFieldsConfigs[indexPath.row]
         
-        if model.isTextFieldModel {
-            _cell.textInputField.configureTextField(model: viewModel.registrationFields[indexPath.row])
+        if model.isTextInputField {
+            _cell.textInputField.configureTextField(config: viewModel.inputFieldsConfigs[indexPath.row])
             _cell.textInputField.textField.delegate = self
         }
         
