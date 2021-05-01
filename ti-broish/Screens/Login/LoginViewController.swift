@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 final class LoginViewController: BaseViewController {
     
@@ -16,7 +17,8 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var registrationButton: UIButton!
     @IBOutlet private weak var resetPasswordButton: UIButton!
-    
+
+    private var firebase = FirebaseClient()
     private var viewModel = LoginViewModel()
     
     // MARK: - View lifecycle
@@ -55,7 +57,35 @@ final class LoginViewController: BaseViewController {
     }
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
-        coordinator?.showHomeScreen()
+        let email = emailInputField.textField.text!
+        let password = passwordInputField.textField.text!
+        if !email.isEmpty && !password.isEmpty {
+            self.firebase.login(email: email, password: password, completionHandler: { [weak self] result in
+                guard let strongSelf = self else { return }
+
+                switch result {
+                case .success(let user):
+                    // TODO: get user data from ti-broish API
+                    dump(user)
+                    strongSelf.coordinator?.showHomeScreen()
+                case .failure(let error):
+                    let errorMessage: String
+                    switch error {
+                    case .invalidEmail:
+                        errorMessage = "Моля въведете валиден имейл адрес."
+                    case .userNotFound:
+                        errorMessage = "Потребител с този имейл не съществува."
+                    case .wrongPassword:
+                        errorMessage = "Грешна парола. Моля опитайте отново."
+                    default:
+                        errorMessage = "Възникна грешка. Моля опитайте по-късно."
+                    }
+                    strongSelf.view.makeToast(errorMessage)
+                }
+            })
+        } else {
+            self.navigationController?.view.makeToast("Моля въведете потребителско име и парола")
+        }
     }
     
     @IBAction private func didPressRegistrationButton(_ sender: UIButton) {

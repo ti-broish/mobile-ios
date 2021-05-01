@@ -10,5 +10,8 @@ target 'ti-broish' do
   pod 'Alamofire', '~> 5.2'
 
   pod 'Firebase/Messaging'
+  pod 'Firebase/Auth'
 
+  pod 'Toast-Swift', '~> 5.0.1'
+  
 end

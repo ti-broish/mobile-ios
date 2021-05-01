@@ -1,10 +1,18 @@
 PODS:
   - Alamofire (5.4.2)
+  - Firebase/Auth (7.9.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 7.9.0)
   - Firebase/CoreOnly (7.9.0):
     - FirebaseCore (= 7.9.0)
   - Firebase/Messaging (7.9.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 7.9.0)
+  - FirebaseAuth (7.9.0):
+    - FirebaseCore (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GTMSessionFetcher/Core (~> 1.4)
   - FirebaseCore (7.9.0):
     - FirebaseCoreDiagnostics (~> 7.4)
     - GoogleUtilities/Environment (~> 7.0)
@@ -52,23 +60,28 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.3.1):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.5.0)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - Toast-Swift (5.0.1)
   - TwoWayBondage (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - Firebase/Auth
   - Firebase/Messaging
+  - Toast-Swift (~> 5.0.1)
   - TwoWayBondage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Firebase
+    - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseInstallations
@@ -76,13 +89,16 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleDataTransport
     - GoogleUtilities
+    - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - Toast-Swift
     - TwoWayBondage
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   Firebase: d8bd6bd34b4c7ed57bfdd056c66ff5adcdde53ab
+  FirebaseAuth: 20625f04fdd213995249a82375b3dab39b1c136c
   FirebaseCore: 0798738ad1ae0fda67e17c7b9081241c431c6859
   FirebaseCoreDiagnostics: 3d36e05da74cb8b7ce30e6594a8f201b982c725c
   FirebaseInstallations: 5e777e6640fa060405cc7632447b6c5ca5af4742
@@ -90,10 +106,12 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 5f83f200a251c44f647f36cb43e557be09889e8d
   GoogleDataTransport: 8b0e733ea77c9218778e5a9e34ba9508b8328939
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TwoWayBondage: c907b02fe132e7d9da0980b1d7fa3ed0d022f996
 
-PODFILE CHECKSUM: 7c6a4fc03d70986798aa3d3c3f19927f777ffb6f
+PODFILE CHECKSUM: 5891db94dfdbd4b99acdc1b545af3b1b69f2a641
 
 COCOAPODS: 1.10.1
