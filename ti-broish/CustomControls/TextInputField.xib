@@ -18,23 +18,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title_" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoB-oo-EkQ" userLabel="titleLabel">
-                    <rect key="frame" x="8" y="8" width="398" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="22" id="Qtc-25-LE3"/>
-                    </constraints>
+                    <rect key="frame" x="8" y="8" width="398" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jjg-af-uCG" userLabel="textField" customClass="TibTextField" customModule="ti_broish" customModuleProvider="target">
-                    <rect key="frame" x="16" y="30" width="382" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="uMD-5x-Ghr"/>
-                    </constraints>
+                    <rect key="frame" x="16" y="32.5" width="382" height="45.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -47,8 +41,8 @@
                 <constraint firstItem="Jjg-af-uCG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="CCI-st-v4R"/>
                 <constraint firstAttribute="bottom" secondItem="Jjg-af-uCG" secondAttribute="bottom" constant="8" id="MkF-p1-yf9"/>
                 <constraint firstItem="ZoB-oo-EkQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OQG-wr-su9"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZoB-oo-EkQ" secondAttribute="trailing" constant="8" id="dxS-PI-Ppk"/>
-                <constraint firstItem="Jjg-af-uCG" firstAttribute="top" secondItem="ZoB-oo-EkQ" secondAttribute="bottom" id="kuP-f5-Eor"/>
+                <constraint firstAttribute="trailing" secondItem="ZoB-oo-EkQ" secondAttribute="trailing" constant="8" id="dxS-PI-Ppk"/>
+                <constraint firstItem="Jjg-af-uCG" firstAttribute="top" secondItem="ZoB-oo-EkQ" secondAttribute="bottom" constant="4" id="kuP-f5-Eor"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="66.666666666666671" y="124.55357142857142"/>

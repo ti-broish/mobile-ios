@@ -40,7 +40,7 @@ final class RegistrationViewController: BaseViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.separatorColor = .none
-        tableView.rowHeight = 82.0
+        //tableView.rowHeight = 82.0
         tableView.tableFooterView = UIView()
     }
 }
@@ -48,6 +48,14 @@ final class RegistrationViewController: BaseViewController {
 // MARK: - UITableViewDataSource
 
 extension RegistrationViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.inputFieldsConfigs.count
@@ -64,6 +72,9 @@ extension RegistrationViewController: UITableViewDataSource {
         if model.isTextInputField {
             _cell.textInputField.configureTextField(config: viewModel.inputFieldsConfigs[indexPath.row])
             _cell.textInputField.textField.delegate = self
+            
+            _cell.contentView.setNeedsLayout()
+            _cell.contentView.layoutIfNeeded()
         }
         
         return _cell
