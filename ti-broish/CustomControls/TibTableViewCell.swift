@@ -11,6 +11,7 @@ protocol Cell {
     
     static var nibName: String { get }
     static var cellIdentifier: String { get }
+    static var defaultCellHeight: CGFloat { get }
 }
 
 extension Cell {
@@ -22,6 +23,11 @@ extension Cell {
     static var cellIdentifier: String {
         return "\(String(describing: self))"
     }
+    
+    static var defaultCellHeight: CGFloat {
+        assertionFailure("defaultCellHeight not implemented")
+        return 0
+    }
 }
 
 class TibTableViewCell: UITableViewCell, Cell {
@@ -29,6 +35,7 @@ class TibTableViewCell: UITableViewCell, Cell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
         selectionStyle = .none
     }
 }

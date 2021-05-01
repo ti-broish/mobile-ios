@@ -40,7 +40,7 @@ final class RegistrationViewController: BaseViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.separatorColor = .none
-        //tableView.rowHeight = 82.0
+        tableView.rowHeight = RegistrationTextCell.defaultCellHeight
         tableView.tableFooterView = UIView()
     }
 }
