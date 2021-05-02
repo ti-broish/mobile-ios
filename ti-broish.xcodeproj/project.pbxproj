@@ -75,9 +75,10 @@
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
+		5B4BF66E263F0F3400A75B5E /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4BF66D263F0F3400A75B5E /* Observer.swift */; };
+		5B4BF676263F126100A75B5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4BF675263F126100A75B5E /* GoogleService-Info.plist */; };
 		5B53C425263D9BB100A975A3 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53C424263D9BB100A975A3 /* FirebaseUser.swift */; };
 		5BA5B6DC263D56E000C39C5D /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5B6DB263D56E000C39C5D /* FirebaseError.swift */; };
-		5BA5B6FC263D667100C39C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BA5B6FB263D667100C39C5D /* GoogleService-Info.plist */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
@@ -200,9 +201,10 @@
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B4BF66D263F0F3400A75B5E /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		5B4BF675263F126100A75B5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B53C424263D9BB100A975A3 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		5BA5B6DB263D56E000C39C5D /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
-		5BA5B6FB263D667100C39C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BA5B700263D66B000C39C5D /* ti-broish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ti-broish.entitlements"; sourceTree = "<group>"; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -304,8 +306,8 @@
 				1042B3C92634AACC00764ACF /* Resources */,
 				0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */,
 				0AEB395E261CF9CE0005BF38 /* Assets.xcassets */,
+				5B4BF675263F126100A75B5E /* GoogleService-Info.plist */,
 				0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */,
-				5BA5B6FB263D667100C39C5D /* GoogleService-Info.plist */,
 				0AEB3963261CF9CE0005BF38 /* Info.plist */,
 			);
 			path = "ti-broish";
@@ -663,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */,
+				5B4BF66D263F0F3400A75B5E /* Observer.swift */,
 				10C4EAC426335B47005FD07F /* TibTheme.swift */,
 			);
 			path = Utils;
@@ -786,7 +789,7 @@
 				0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */,
 				1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */,
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
-				5BA5B6FC263D667100C39C5D /* GoogleService-Info.plist in Resources */,
+				5B4BF676263F126100A75B5E /* GoogleService-Info.plist in Resources */,
 				1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */,
 				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
 				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
@@ -912,6 +915,7 @@
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */,
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
+				5B4BF66E263F0F3400A75B5E /* Observer.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,

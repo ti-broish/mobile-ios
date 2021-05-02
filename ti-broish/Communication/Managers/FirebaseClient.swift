@@ -35,7 +35,7 @@ class FirebaseClient {
                 let user = Auth.auth().currentUser
                 if let user = user {
                     guard let email = user.email else {
-                        completionHandler(.failure(.other))
+                        completionHandler(.failure(.invalidEmail))
                         return
                     }
                     let firebaseUser = FirebaseUser(uid: user.uid, email: email)

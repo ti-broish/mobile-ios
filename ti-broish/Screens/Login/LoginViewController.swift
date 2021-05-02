@@ -18,9 +18,8 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var registrationButton: UIButton!
     @IBOutlet private weak var resetPasswordButton: UIButton!
 
-    private var firebase = FirebaseClient()
     private var viewModel = LoginViewModel()
-    
+
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -54,38 +53,27 @@ final class LoginViewController: BaseViewController {
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)
         registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)
         resetPasswordButton.configureButton(title: LocalizedStrings.Login.resetPasswordButton, theme: theme)
+
+        // show error message from firebase
+        viewModel.firebaseError.bind { [weak self] error in
+            self?.navigationController?.view.makeToast(error)
+        }
+
+        // go to home screen if firebase user found
+        viewModel.firebaseUser.bind { [weak self] user in
+            guard user != nil else {
+                return
+            }
+            self?.coordinator?.showHomeScreen()
+        }
     }
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
-        let email = emailInputField.textField.text!
-        let password = passwordInputField.textField.text!
-        if !email.isEmpty && !password.isEmpty {
-            self.firebase.login(email: email, password: password, completionHandler: { [weak self] result in
-                guard let strongSelf = self else { return }
-
-                switch result {
-                case .success(let user):
-                    // TODO: get user data from ti-broish API
-                    dump(user)
-                    strongSelf.coordinator?.showHomeScreen()
-                case .failure(let error):
-                    let errorMessage: String
-                    switch error {
-                    case .invalidEmail:
-                        errorMessage = "Моля въведете валиден имейл адрес."
-                    case .userNotFound:
-                        errorMessage = "Потребител с този имейл не съществува."
-                    case .wrongPassword:
-                        errorMessage = "Грешна парола. Моля опитайте отново."
-                    default:
-                        errorMessage = "Възникна грешка. Моля опитайте по-късно."
-                    }
-                    strongSelf.view.makeToast(errorMessage)
-                }
-            })
-        } else {
-            self.navigationController?.view.makeToast("Моля въведете потребителско име и парола")
+        guard let email = emailInputField.textField.text, let password = passwordInputField.textField.text else {
+            return
         }
+
+        self.viewModel.fetchFirebaseUser(email: email, password: password)
     }
     
     @IBAction private func didPressRegistrationButton(_ sender: UIButton) {
@@ -114,12 +102,12 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case emailInputField.textField:
-            textField.resignFirstResponder()
-        case passwordInputField.textField:
-            textField.resignFirstResponder()
-        default:
-            break
+            case emailInputField.textField:
+                textField.resignFirstResponder()
+            case passwordInputField.textField:
+                textField.resignFirstResponder()
+            default:
+                break
         }
         
         return true
