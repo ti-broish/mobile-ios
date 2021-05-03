@@ -25,7 +25,7 @@ struct UploadPhotoRequest: RequestProvider {
     
     var parameters: [String : Any?] {
         [
-            "image": photo.data
+            "image": photo.base64
         ]
     }
     

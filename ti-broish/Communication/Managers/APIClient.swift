@@ -93,8 +93,14 @@ extension APIClient {
     
     func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
         let request = GetElectionRegionsRequest()
-        send(request) { result in
-            completion?(result)
+        send(request) { (result: Result<ElectionRegionsResponse, APIError>) in
+            switch result {
+            case .success(var regions):
+                regions.sort(by: { $0.code < $1.code })
+                completion?(.success(regions))
+            case .failure(let error):
+                completion?(.failure(.requestFailed(error: error)))
+            }
         }
     }
     
@@ -115,10 +121,10 @@ extension APIClient {
         send(request) { (result: Result<CountriesResponse, APIError>) in
             switch result {
             case .success(let countries):
-                let filteredCountries = countries.filter({ $0.isAbroad == isAbroad })
+                var filteredCountries = countries.filter({ $0.isAbroad == isAbroad })
+                filteredCountries.sort(by: { $0.name < $1.name })
                 completion?(.success(filteredCountries))
             case .failure(let error):
-                print(error)
                 completion?(.failure(.requestFailed(error: error)))
             }
         }
@@ -131,8 +137,14 @@ extension APIClient {
     
     func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
         let request = GetSectionsRequest(town: town, region: region)
-        send(request) { result in
-            completion?(result)
+        send(request) { (result: Result<SectionsResponse, APIError>) in
+            switch result {
+            case .success(var sections):
+                sections.sort(by: { $0.code < $1.code })
+                completion?(.success(sections))
+            case .failure(let error):
+                completion?(.failure(.requestFailed(error: error)))
+            }
         }
     }
     
@@ -177,7 +189,6 @@ extension APIClient {
                 
                 completion?(.success(violation))
             case .failure(let error):
-                print(error)
                 completion?(.failure(error))
             }
         }
@@ -213,7 +224,6 @@ extension APIClient {
                 
                 completion?(.success(proto))
             case .failure(let error):
-                print(error)
                 completion?(.failure(error))
             }
         }
