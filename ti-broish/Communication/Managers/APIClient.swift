@@ -15,12 +15,10 @@ class APIClient {
     // MARK: Properties
     
     #if InDebug
-    private let baseUrl = "https://api.tibroish.bg/"
+    private let baseUrl = "https://d1tapi.dabulgaria.bg"
     #else
-    private let baseUrl = "https://d1tapi.dabulgaria.bg/"
+    private let baseUrl = "https://api.tibroish.bg"
     #endif
-    
-    private var jwt = ""
     
     // MARK: Private Methods
     
@@ -35,38 +33,55 @@ class APIClient {
         decoder.keyDecodingStrategy = request.decodingStrategy
         
         var allHeaders = request.additionalHeaders
-        defaultHeaders.forEach( { allHeaders.add($0) })
+        
+        if request.token.count > 0 {
+            allHeaders["Authorization"] = "Bearer \(request.token)"
+        }
         
         AF.request(
             url,
             method: request.method,
             parameters: request.parameters.compactMapValues({ $0 }),
-            encoding: request.encoding,
+            encoding: URLEncoding.default,
             headers: allHeaders
         )
         .responseDecodable(of: T.self, decoder: decoder) { response in
             DispatchQueue.main.async {
-                let mappedResponse = response
-                    .mapError { (error) -> APIError in
-                        APIError.requestFailed(error: error)
-                    }
+                let mappedResponse = response.mapError { (error) -> APIError in
+                    APIError.requestFailed(error: error)
+                }
+                
                 completion(mappedResponse.result)
             }
         }
     }
+}
+
+// MARK: -
+
+extension APIClient {
     
-    // MARK: Private Methods
-    
-    private var defaultHeaders: HTTPHeaders {
-        ["Authorization" : "Bearer \(jwt)"]
+    func getOrganizations(completion: APIResult<[Organization]>?) {
+        let request = OrganizationsRequest()
+        
+        send(request) { result in
+            completion?(result)
+        }
     }
     
+    func getCountries(token: String, completion: APIResult<[Country]>?) {
+        let request = CountriesRequest(token: token)
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
 }
 
 // MARK: - APNs Token
 extension APIClient {
     
-    func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
+    func sendAPNsToken(token: String, completion: APIResult<BaseResponse>?) {
         let request = APNSTokenRequest(token: token)
         send(request) { result in
             completion?(result)
@@ -79,20 +94,28 @@ extension APIClient {
 extension APIClient {
     
     func sendViolation(
+        token: String,
         town: Town,
         pictures: [String],
         description: String,
         section: Section?,
         completion: APIResult<SendViolationResponse>?
     ) {
-        let request = SendViolationRequest(town: town, pictures: pictures, description: description, section: section)
+        let request = SendViolationRequest(
+            town: town,
+            pictures: pictures,
+            description: description,
+            section: section,
+            token: token
+        )
+        
         send(request) { result in
             completion?(result)
         }
     }
     
-    func getViolation(id: String, _ completion: APIResult<Violation>?) {
-        getViolations { result in
+    func getViolation(token: String, id: String, _ completion: APIResult<Violation>?) {
+        getViolations(token: token) { result in
             switch result {
             case .success(let violations):
                 guard let violation = violations.filter({ $0.id == id }).first else {
@@ -108,8 +131,9 @@ extension APIClient {
         }
     }
     
-    func getViolations(_ completion: APIResult<ViolationsResponse>?) {
-        let request = GetViolationsRequest()
+    func getViolations(token: String, completion: APIResult<ViolationsResponse>?) {
+        let request = GetViolationsRequest(token: token)
+        
         send(request) { result in
             completion?(result)
         }
@@ -120,15 +144,16 @@ extension APIClient {
 // MARK: - Protocols
 extension APIClient {
     
-    func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
-        let request = SendProtocolRequest(section: section, pictures: pictures)
+    func sendProtocol(token: String, section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
+        let request = SendProtocolRequest(section: section, pictures: pictures, token: token)
+        
         send(request) { result in
             completion?(result)
         }
     }
     
-    func getProtocol(id: String, completion: APIResult<Protocol>?) {
-        getProtocols { result in
+    func getProtocol(token: String, id: String, completion: APIResult<Protocol>?) {
+        getProtocols(token: token) { result in
             switch result {
             case .success(let protocols):
                 guard let proto = protocols.filter({ $0.id == id }).first else {
@@ -144,11 +169,11 @@ extension APIClient {
         }
     }
     
-    func getProtocols(_ completion: APIResult<ProtocolsResponse>?) {
-        let request = GetProtocolRequest()
+    func getProtocols(token: String, completion: APIResult<ProtocolsResponse>?) {
+        let request = GetProtocolRequest(token: token)
+        
         send(request) { result in
             completion?(result)
         }
     }
-    
 }

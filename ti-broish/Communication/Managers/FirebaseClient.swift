@@ -14,22 +14,22 @@ class FirebaseClient {
         
     }
     
+    func refreshToken(completion: @escaping (Result<String, FirebaseError>) -> Void) {
+        Auth.auth().currentUser?.getIDToken { token, error in
+            if let _token = token {
+                completion(.success(_token))
+            } else {
+                completion(.failure(.unknownError))
+            }
+        }
+    }
+    
     func login(email: String, password: String, completion: @escaping (Result<String, FirebaseError>) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in 
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             if let _error = error {
                 completion(.failure(ErrorHandler.handleFirebaseError(_error)))
             } else {
-                if let user = authResult?.user {
-                    user.getIDToken { token, error in
-                        if let _token = token {
-                            completion(.success(_token))
-                        } else {
-                            completion(.failure(.unknownError))
-                        }
-                    }
-                } else {
-                    completion(.failure(.unknownError))
-                }
+                self?.refreshToken(completion: completion)
             }
         }
     }
@@ -37,5 +37,4 @@ class FirebaseClient {
     func resetPassword() {
         
     }
-    
 }

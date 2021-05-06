@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 final class LoginCoordinator: Coordinator {
     
@@ -17,6 +18,7 @@ final class LoginCoordinator: Coordinator {
     
     override func start() {
         if isLoggedIn() {
+            // TODO: - Auth.auth().currentUser?.isEmailVerified
             showHomeScreen()
         } else {
             showLoginScreen()

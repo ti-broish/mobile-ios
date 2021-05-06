@@ -24,7 +24,11 @@
 		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */; };
+		1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC892644A84700BDAB8A /* Organization.swift */; };
+		1013FC8C2644AB2D00BDAB8A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC8B2644AB2D00BDAB8A /* Country.swift */; };
 		101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */; };
+		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3BF2634A1D500764ACF /* CredentialInputField.swift */; };
 		1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3C42634A26000764ACF /* CredentialInputField.xib */; };
 		1042B3DF2634AAFD00764ACF /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */; };
@@ -152,7 +156,11 @@
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsRequest.swift; sourceTree = "<group>"; };
+		1013FC892644A84700BDAB8A /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		1013FC8B2644AB2D00BDAB8A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		1042B3BF2634A1D500764ACF /* CredentialInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialInputField.swift; sourceTree = "<group>"; };
 		1042B3C42634A26000764ACF /* CredentialInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialInputField.xib; sourceTree = "<group>"; };
 		1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -527,6 +535,8 @@
 				CFA5751B2637F2EC002BCECD /* Violations */,
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
 				CFA5750E2637E2D2002BCECD /* APNSTokenRequest.swift */,
+				1031CE7726449CBC000214DD /* CountriesRequest.swift */,
+				1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -554,6 +564,8 @@
 			children = (
 				CFA575452637F9F2002BCECD /* Responses */,
 				CFA575382637F6D4002BCECD /* Town.swift */,
+				1013FC892644A84700BDAB8A /* Organization.swift */,
+				1013FC8B2644AB2D00BDAB8A /* Country.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -904,6 +916,7 @@
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
+				1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
@@ -917,6 +930,7 @@
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
 				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
+				1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */,
 				106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */,
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */,
@@ -936,8 +950,10 @@
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
 				10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
+				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
+				1013FC8C2644AB2D00BDAB8A /* Country.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,
 				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,

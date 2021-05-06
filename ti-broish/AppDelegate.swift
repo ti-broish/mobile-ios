@@ -20,18 +20,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool
     {
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
-        
-        FirebaseApp.configure()
         
         registerRemoteNotifications(for: application)
         
         return true
     }
     
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        Auth.auth().currentUser?.getIDToken { authToken, error in
+            if let token = authToken {
+                LocalStorage.User().setJwt(token)
+            } else {
+                LocalStorage.User().reset()
+            }
+        }
+    }
+
     // MARK: Private Methods
     
     private func registerRemoteNotifications(for application: UIApplication) {

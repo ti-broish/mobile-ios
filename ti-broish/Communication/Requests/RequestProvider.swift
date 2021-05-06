@@ -10,6 +10,9 @@ import Alamofire
 
 protocol RequestProvider {
     
+    /// Firebase JWT token
+    var token: String { get set }
+    
     var path: String { get }
     
     var method: HTTPMethod { get }
