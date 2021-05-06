@@ -29,6 +29,7 @@ final class RegistrationViewController: BaseViewController {
     override func applyTheme() {
         super.applyTheme()
         
+        let theme = TibTheme()
         tableView.backgroundColor = theme.backgroundColor
     }
     

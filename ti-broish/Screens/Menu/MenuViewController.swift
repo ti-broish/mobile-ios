@@ -37,6 +37,7 @@ final class MenuViewController: BaseViewController {
     // MARK: - Private methods
     
     private func setupTableView() {
+        let theme = TibTheme()
         tableView.registerCell(MenuCell.self)
         tableView.dataSource = self
         tableView.delegate = self

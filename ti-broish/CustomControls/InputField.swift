@@ -13,8 +13,6 @@ class InputField: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: TibTextField!
     
-    let theme = TibTheme.shared
-    
     var nibName: String {
         return ""
     }
@@ -47,6 +45,7 @@ class InputField: UIView {
     }
     
     func setupViews() {
+        let theme = TibTheme()
         titleLabel.font = .regularFont(size: 14.0)
         titleLabel.textColor = theme.titleLabelTextColor
         
@@ -60,6 +59,8 @@ class InputField: UIView {
         titleLabel.text = config.title
         
         if let _placeholderText = config.placeholderText {
+            let theme = TibTheme()
+            
             textField.attributedPlaceholder = NSAttributedString(
                 string: _placeholderText,
                 attributes: [.foregroundColor: theme.textFieldPlaceholderColor]

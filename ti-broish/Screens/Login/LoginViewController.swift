@@ -30,6 +30,7 @@ final class LoginViewController: BaseViewController {
     override func applyTheme() {
         super.applyTheme()
         
+        let theme = TibTheme()
         emailInputField.backgroundColor = theme.backgroundColor
         passwordInputField.backgroundColor = theme.backgroundColor
     }
@@ -51,6 +52,7 @@ final class LoginViewController: BaseViewController {
         passwordInputField.configureTextField(config: viewModel.makeConfig(for: .password))
         passwordInputField.textField.delegate = self
         
+        let theme = TibTheme()
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)
         registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)
         resetPasswordButton.configureButton(title: LocalizedStrings.Login.resetPasswordButton, theme: theme)
