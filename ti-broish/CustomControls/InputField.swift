@@ -7,7 +7,9 @@
 
 import UIKit
 
-class InputField: UIView {
+class InputField: UIView, Configurable {
+    
+    typealias DataType = InputFieldConfig
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -55,10 +57,10 @@ class InputField: UIView {
         textField.autocapitalizationType = .none
     }
     
-    func configureTextField(config: InputFieldConfig) {
-        titleLabel.text = config.title
+    func configureWith(_ data: InputFieldConfig) {
+        titleLabel.text = data.title
         
-        if let _placeholderText = config.placeholderText {
+        if let _placeholderText = data.placeholderText {
             let theme = TibTheme()
             
             textField.attributedPlaceholder = NSAttributedString(
@@ -67,7 +69,7 @@ class InputField: UIView {
             )
         }
         
-        configureTextFieldKeyboardType(inputFieldType: config.type)
+        configureTextFieldKeyboardType(inputFieldType: data.type)
     }
     
     // MARK: - Private methods

@@ -45,11 +45,11 @@ final class LoginViewController: BaseViewController {
             action: nil
         )
         
-        emailInputField.configureTextField(config: viewModel.makeConfig(for: .email))
+        emailInputField.configureWith(viewModel.makeConfig(for: .email))
         emailInputField.textField.text = LocalStorage.Login().getEmail()
         emailInputField.textField.delegate = self
         
-        passwordInputField.configureTextField(config: viewModel.makeConfig(for: .password))
+        passwordInputField.configureWith(viewModel.makeConfig(for: .password))
         passwordInputField.textField.delegate = self
         
         let theme = TibTheme()

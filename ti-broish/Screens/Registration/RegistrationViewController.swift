@@ -63,7 +63,7 @@ extension RegistrationViewController: UITableViewDataSource {
         let model = viewModel.inputFieldsConfigs[indexPath.row]
         
         if model.isTextInputField {
-            _cell.textInputField.configureTextField(config: viewModel.inputFieldsConfigs[indexPath.row])
+            _cell.textInputField.configureWith(model)
             _cell.textInputField.textField.delegate = self
         }
         
