@@ -43,10 +43,10 @@ final class LoginViewController: BaseViewController {
             action: nil
         )
         
-        emailInputField.configureTextField(config: viewModel.makeConfigForLoginInputType(type: .email))
+        emailInputField.configureTextField(config: viewModel.makeConfig(for: .email))
         emailInputField.textField.delegate = self
         
-        passwordInputField.configureTextField(config: viewModel.makeConfigForLoginInputType(type: .password))
+        passwordInputField.configureTextField(config: viewModel.makeConfig(for: .password))
         passwordInputField.textField.delegate = self
         
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)
@@ -55,7 +55,24 @@ final class LoginViewController: BaseViewController {
     }
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
-        coordinator?.showHomeScreen()
+        // TODO: - validate email and password
+        guard let email = emailInputField.textField.text, let password = passwordInputField.textField.text else {
+            // TODO: - show invalid
+            return
+        }
+        
+        viewModel.login(email: email, password: password) { [weak self] result in
+            switch result {
+            case .success(let isSuccessful):
+                if isSuccessful {
+                    self?.coordinator?.showHomeScreen()
+                } else {
+                    print("login failed: ???")
+                }
+            case .failure(let error):
+                print("login failed: \(error)")
+            }
+        }
     }
     
     @IBAction private func didPressRegistrationButton(_ sender: UIButton) {

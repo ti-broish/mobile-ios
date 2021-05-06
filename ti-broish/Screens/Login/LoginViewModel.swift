@@ -14,7 +14,9 @@ enum LoginFieldType {
 
 final class LoginViewModel: CoordinatableViewModel {
     
-    func makeConfigForLoginInputType(type: LoginFieldType) -> InputFieldConfig {
+    private let firebaseClient = FirebaseClient()
+    
+    func makeConfig(for type: LoginFieldType) -> InputFieldConfig {
         switch type {
         case .email:
             return InputFieldConfig(
@@ -28,6 +30,19 @@ final class LoginViewModel: CoordinatableViewModel {
                 title: LocalizedStrings.Login.passwordTitle,
                 placeholderText: LocalizedStrings.Login.passwordPlaceholder
             )
+        }
+    }
+    
+    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> (Void)) {
+        firebaseClient.login(email: email, password: password) { result in
+            switch result {
+            case .success(let firebaseUser):
+                // TODO: - store firebase jwt
+                print("firebaseUser: \(firebaseUser)")
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

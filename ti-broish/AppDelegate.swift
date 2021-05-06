@@ -35,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Private Methods
     
     private func registerRemoteNotifications(for application: UIApplication) {
-        Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             DispatchQueue.main.async {
@@ -56,7 +55,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         guard let token = String(data: deviceToken, encoding: .utf8) else { return }
-        
+        Messaging.messaging().delegate = self
         print("APNS token: \(token)")
     }
     

@@ -40,6 +40,7 @@
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
 		104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF85263A8872001B6B15 /* InputFieldConfig.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
+		10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10613F1B2642F2BD00062B33 /* ErrorHandler.swift */; };
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
 		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
@@ -74,6 +75,7 @@
 		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
+		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
@@ -163,6 +165,7 @@
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
 		104DAF85263A8872001B6B15 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		10613F1B2642F2BD00062B33 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
+		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -581,6 +585,8 @@
 			isa = PBXGroup;
 			children = (
 				CF390FF4263732BA00999369 /* APIError.swift */,
+				10F78C302642E43900407284 /* FirebaseError.swift */,
+				10613F1B2642F2BD00062B33 /* ErrorHandler.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -884,6 +890,7 @@
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
+				10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */,
 				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
@@ -908,6 +915,7 @@
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
+				10F78C312642E43900407284 /* FirebaseError.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
