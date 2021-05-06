@@ -52,6 +52,8 @@ class InputField: UIView {
         
         textField.font = .regularFont(size: 16.0)
         textField.textColor = theme.textFieldColor
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
     }
     
     func configureTextField(config: InputFieldConfig) {

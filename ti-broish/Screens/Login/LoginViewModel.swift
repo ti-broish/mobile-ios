@@ -33,12 +33,13 @@ final class LoginViewModel: CoordinatableViewModel {
         }
     }
     
-    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> (Void)) {
+    func login(email: String, password: String, completion: @escaping (Result<Bool, FirebaseError>) -> (Void)) {
         firebaseClient.login(email: email, password: password) { result in
             switch result {
-            case .success(let firebaseUser):
-                // TODO: - store firebase jwt
-                print("firebaseUser: \(firebaseUser)")
+            case .success(let jwt):
+                print("firebase jwt: \(jwt)")
+                LocalStorage.Login().save(email: email)
+                LocalStorage.User().setJwt(jwt)
                 completion(.success(true))
             case .failure(let error):
                 completion(.failure(error))

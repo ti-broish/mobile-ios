@@ -18,6 +18,7 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var resetPasswordButton: UIButton!
     
     private var viewModel = LoginViewModel()
+    private let validator = Validator()
     
     // MARK: - View lifecycle
     
@@ -44,6 +45,7 @@ final class LoginViewController: BaseViewController {
         )
         
         emailInputField.configureTextField(config: viewModel.makeConfig(for: .email))
+        emailInputField.textField.text = LocalStorage.Login().getEmail()
         emailInputField.textField.delegate = self
         
         passwordInputField.configureTextField(config: viewModel.makeConfig(for: .password))
@@ -55,9 +57,13 @@ final class LoginViewController: BaseViewController {
     }
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
-        // TODO: - validate email and password
-        guard let email = emailInputField.textField.text, let password = passwordInputField.textField.text else {
-            // TODO: - show invalid
+        guard let email = emailInputField.textField.text, validator.isValidEmail(email) else {
+            // TODO: - show invalid email
+            return
+        }
+        
+        guard let password = passwordInputField.textField.text, validator.isValidPassword(password) else {
+            // TODO: - show invalid password
             return
         }
         
@@ -70,7 +76,8 @@ final class LoginViewController: BaseViewController {
                     print("login failed: ???")
                 }
             case .failure(let error):
-                print("login failed: \(error)")
+                // TODO: - show toast
+                print("login failed: \(error.localizedString)")
             }
         }
     }

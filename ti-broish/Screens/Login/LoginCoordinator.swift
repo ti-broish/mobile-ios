@@ -9,7 +9,6 @@ import UIKit
 
 final class LoginCoordinator: Coordinator {
     
-    private var isLoggedIn = false // TODO: - refactor
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -17,7 +16,7 @@ final class LoginCoordinator: Coordinator {
     }
     
     override func start() {
-        if isLoggedIn {
+        if isLoggedIn() {
             showHomeScreen()
         } else {
             showLoginScreen()
@@ -53,6 +52,14 @@ final class LoginCoordinator: Coordinator {
     }
     
     // MARK: - Private methods
+    
+    private func isLoggedIn() -> Bool {
+        guard let token = LocalStorage.User().getJwt() else {
+            return false
+        }
+        
+        return token.count > 0
+    }
     
     private func pushController(_ controller: UIViewController, hideNavigationBar: Bool = false, animated: Bool = true) {
         navigationController.navigationBar.isHidden = hideNavigationBar

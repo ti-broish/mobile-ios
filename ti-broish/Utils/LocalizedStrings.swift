@@ -11,6 +11,15 @@ struct LocalizedStrings {
     static let menu: String = "Меню"
     static let back: String = "Назад"
     
+    struct Errors {
+        
+        static let defaultError: String = "Възникна грешка. Моля опитайте отново."
+        
+        static let invalidEmail: String = "Невалиден имейл адрес"
+        static let userDisabled: String = "Достъпа до акаунта е временно спрян. Моля опитайте по-късно."
+        static let wrongPassword: String = "Невалидна парола. Паролата трябва да съдържа 6 или повече символа."
+    }
+    
     struct Menu {
         
         static let profile: String = "Профил"

@@ -41,6 +41,9 @@
 		104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF85263A8872001B6B15 /* InputFieldConfig.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10613F1B2642F2BD00062B33 /* ErrorHandler.swift */; };
+		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
+		106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFD26441E6500571859 /* LocalStorage.swift */; };
+		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
 		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
@@ -166,6 +169,9 @@
 		104DAF85263A8872001B6B15 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		10613F1B2642F2BD00062B33 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		106B7EFD26441E6500571859 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
@@ -462,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				CFB138D5263593AF001B373D /* UI */,
+				106B7EFF2644226400571859 /* UserDefaultsExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -662,6 +669,8 @@
 			children = (
 				0AE2CB682624F1FD00C178C9 /* LocalizedStrings.swift */,
 				10C4EAC426335B47005FD07F /* TibTheme.swift */,
+				106B7EF72644187600571859 /* Validator.swift */,
+				106B7EFD26441E6500571859 /* LocalStorage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -908,12 +917,14 @@
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
 				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
+				106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */,
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */,
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,
+				106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				10F78C312642E43900407284 /* FirebaseError.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
@@ -939,6 +950,7 @@
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
+				106B7EF82644187600571859 /* Validator.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,
 				10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 final class ContentContainerViewController: BaseViewController {
     
@@ -156,7 +157,13 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
             // TODO: - implement
             break
         case .logout:
-            coordinator?.showLoginScreen()
+            do {
+                try Auth.auth().signOut()
+                LocalStorage.User().reset()
+                coordinator?.showLoginScreen()
+            } catch {
+                print("logout failed: \(error)")
+            }
         }
     }
 }
