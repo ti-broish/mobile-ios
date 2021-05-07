@@ -31,4 +31,7 @@ enum APIError: Error {
     
     /// Violation not found
     case violationNotFound
+    
+    /// Protocol  not found
+    case protocolNotFound
 }

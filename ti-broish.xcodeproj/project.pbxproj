@@ -79,6 +79,9 @@
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
 		CF390FF5263732BA00999369 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FF4263732BA00999369 /* APIError.swift */; };
+		CF61EEB726396B9E00278AA7 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEB626396B9E00278AA7 /* Region.swift */; };
+		CF61EEC026396BFB00278AA7 /* GetTownsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */; };
+		CF61EEC526396E1B00278AA7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEC426396E1B00278AA7 /* Country.swift */; };
 		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
@@ -99,10 +102,18 @@
 		CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5765726392669002BCECD /* GetProtocolRequest.swift */; };
 		CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */; };
 		CFA5766926393133002BCECD /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766826393133002BCECD /* Protocol.swift */; };
+		CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */; };
+		CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */; };
+		CFA5767C26393FA3002BCECD /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5767B26393FA3002BCECD /* Party.swift */; };
+		CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA57680263943E0002BCECD /* GetSectionsRequest.swift */; };
+		CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5768526394663002BCECD /* GetElectionRegionsRequest.swift */; };
+		CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5768B263949AE002BCECD /* ElectionRegion.swift */; };
+		CFA5769426394A28002BCECD /* Municipality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5769326394A28002BCECD /* Municipality.swift */; };
 		CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */; };
 		CFB138C1263591F7001B373D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138BF263591F7001B373D /* Coordinator.swift */; };
 		CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138C82635929C001B373D /* AppCoordinator.swift */; };
 		CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB138CD263592EF001B373D /* BaseViewController.swift */; };
+		CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +214,9 @@
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		CF390FF4263732BA00999369 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CF61EEB626396B9E00278AA7 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTownsRequest.swift; sourceTree = "<group>"; };
+		CF61EEC426396E1B00278AA7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -223,10 +237,18 @@
 		CFA5765726392669002BCECD /* GetProtocolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProtocolRequest.swift; sourceTree = "<group>"; };
 		CFA5766026392DB6002BCECD /* SendProtocolResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolResponse.swift; sourceTree = "<group>"; };
 		CFA5766826393133002BCECD /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
+		CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartiesRequest.swift; sourceTree = "<group>"; };
+		CFA5767B26393FA3002BCECD /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		CFA57680263943E0002BCECD /* GetSectionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSectionsRequest.swift; sourceTree = "<group>"; };
+		CFA5768526394663002BCECD /* GetElectionRegionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetElectionRegionsRequest.swift; sourceTree = "<group>"; };
+		CFA5768B263949AE002BCECD /* ElectionRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionRegion.swift; sourceTree = "<group>"; };
+		CFA5769326394A28002BCECD /* Municipality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Municipality.swift; sourceTree = "<group>"; };
 		CFB138BE263591F7001B373D /* CoordinatableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatableViewModel.swift; sourceTree = "<group>"; };
 		CFB138BF263591F7001B373D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,9 +512,9 @@
 		CF390FDE2637323700999369 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
-				CFA575742638068B002BCECD /* Errors */,
 				CF390FE22637325C00999369 /* Managers */,
 				CF390FEB2637327D00999369 /* Requests */,
+				CFA575742638068B002BCECD /* Errors */,
 				CFA575372637F6CD002BCECD /* Models */,
 				CFA575162637EBD0002BCECD /* BaseResponse.swift */,
 			);
@@ -512,12 +534,26 @@
 		CF390FEB2637327D00999369 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CF61EEC926396EF600278AA7 /* Location */,
 				CFA5764E26392653002BCECD /* Protocols */,
 				CFA5751B2637F2EC002BCECD /* Violations */,
 				CF390FEC2637329000999369 /* RequestProvider.swift */,
 				CFA5750E2637E2D2002BCECD /* APNSTokenRequest.swift */,
+				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
+				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
+				CFA57680263943E0002BCECD /* GetSectionsRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		CF61EEC926396EF600278AA7 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CFA5768526394663002BCECD /* GetElectionRegionsRequest.swift */,
+				CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */,
+				CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		CF7AEDC02635F293001F3EF8 /* Configurator */ = {
@@ -542,7 +578,6 @@
 			isa = PBXGroup;
 			children = (
 				CFA575452637F9F2002BCECD /* Responses */,
-				CFA575382637F6D4002BCECD /* Town.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -550,10 +585,12 @@
 		CFA575452637F9F2002BCECD /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				CFA5768A263949A2002BCECD /* Location */,
 				CFA5765F26392DA6002BCECD /* Protocols */,
 				CFA575462637F9FE002BCECD /* Violations */,
 				CFA575512637FC1D002BCECD /* Photos */,
 				CFA575402637F768002BCECD /* Section.swift */,
+				CFA5767B26393FA3002BCECD /* Party.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -601,6 +638,18 @@
 				CFA5766826393133002BCECD /* Protocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CFA5768A263949A2002BCECD /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CF61EEB626396B9E00278AA7 /* Region.swift */,
+				CFA575382637F6D4002BCECD /* Town.swift */,
+				CFA5769326394A28002BCECD /* Municipality.swift */,
+				CFA5768B263949AE002BCECD /* ElectionRegion.swift */,
+				CF61EEC426396E1B00278AA7 /* Country.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		CFB138B726359162001B373D /* Architecture */ = {
@@ -878,15 +927,20 @@
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
+				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
+				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,
 				10C4EA7926334AB9005FD07F /* SendViolationViewController.swift in Sources */,
+				CF61EEB726396B9E00278AA7 /* Region.swift in Sources */,
 				10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */,
+				CF61EEC026396BFB00278AA7 /* GetTownsRequest.swift in Sources */,
+				CFA5767C26393FA3002BCECD /* Party.swift in Sources */,
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
@@ -907,12 +961,16 @@
 				10C4EA9026334B7C005FD07F /* ProtocolDetailsViewController.swift in Sources */,
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,
+				CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
+				CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
 				1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */,
+				CF61EEC526396E1B00278AA7 /* Country.swift in Sources */,
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
+				CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */,
 				CFA575392637F6D4002BCECD /* Town.swift in Sources */,
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
 				10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */,
@@ -926,9 +984,11 @@
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
+				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
+				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,

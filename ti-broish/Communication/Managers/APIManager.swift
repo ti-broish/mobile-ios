@@ -45,6 +45,60 @@ extension APIManager {
     
 }
 
+// MARK: - Parties
+extension APIManager {
+    
+    func getParties(_ completion: APIResult<PartiesResponse>?) {
+        apiClient.getParties(completion)
+    }
+    
+}
+
+// MARK: - Location
+extension APIManager {
+    
+    func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
+        apiClient.getElectionRegions(isAbroad: isAbroad, completion: completion)
+    }
+    
+    func getTowns(
+        country: Country,
+        electionRegion: ElectionRegion? = nil,
+        municipality: Municipality,
+        completion: APIResult<TownsResponse>?
+    ) {
+        apiClient.getTowns(
+            country: country,
+            electionRegion: electionRegion,
+            municipality: municipality,
+            completion: completion
+        )
+    }
+    
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
+        apiClient.getCountries(isAbroad: isAbroad, completion: completion)
+    }
+    
+}
+
+// MARK: - Sections
+extension APIManager {
+    
+    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
+        apiClient.getSections(town: town, region: region, completion: completion)
+    }
+    
+}
+
+// MARK: - Upload Photo
+extension APIManager {
+    
+    func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?) {
+        apiClient.uploadPhoto(photo, completion: completion)
+    }
+    
+}
+
 // MARK: - Violations
 extension APIManager {
     

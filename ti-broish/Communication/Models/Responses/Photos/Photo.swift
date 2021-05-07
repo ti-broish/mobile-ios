@@ -14,7 +14,7 @@ struct Photo: Codable {
     let filename: String
     let filepath: String
     let webviewPath: String?
-    let data: String
+    let base64: String
     let isSelected: Bool
     let index: Int
     
