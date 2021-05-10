@@ -7,13 +7,13 @@
 
 import UIKit
 
-class InputField: UIView {
+class InputField: UIView, Configurable {
+    
+    typealias DataType = InputFieldConfig
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: TibTextField!
-    
-    let theme = TibTheme.shared
     
     var nibName: String {
         return ""
@@ -47,24 +47,29 @@ class InputField: UIView {
     }
     
     func setupViews() {
+        let theme = TibTheme()
         titleLabel.font = .regularFont(size: 14.0)
         titleLabel.textColor = theme.titleLabelTextColor
         
         textField.font = .regularFont(size: 16.0)
         textField.textColor = theme.textFieldColor
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
     }
     
-    func configureTextField(config: InputFieldConfig) {
-        titleLabel.text = config.title
+    func configureWith(_ data: InputFieldConfig) {
+        titleLabel.text = data.title
         
-        if let _placeholderText = config.placeholderText {
+        if let _placeholderText = data.placeholderText {
+            let theme = TibTheme()
+            
             textField.attributedPlaceholder = NSAttributedString(
                 string: _placeholderText,
                 attributes: [.foregroundColor: theme.textFieldPlaceholderColor]
             )
         }
         
-        configureTextFieldKeyboardType(inputFieldType: config.type)
+        configureTextFieldKeyboardType(inputFieldType: data.type)
     }
     
     // MARK: - Private methods

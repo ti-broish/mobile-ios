@@ -14,7 +14,9 @@ enum LoginFieldType {
 
 final class LoginViewModel: CoordinatableViewModel {
     
-    func makeConfigForLoginInputType(type: LoginFieldType) -> InputFieldConfig {
+    weak var coordinator: LoginCoordinator?
+    
+    func makeConfig(for type: LoginFieldType) -> InputFieldConfig {
         switch type {
         case .email:
             return InputFieldConfig(
@@ -28,6 +30,20 @@ final class LoginViewModel: CoordinatableViewModel {
                 title: LocalizedStrings.Login.passwordTitle,
                 placeholderText: LocalizedStrings.Login.passwordPlaceholder
             )
+        }
+    }
+    
+    func login(email: String, password: String, completion: @escaping (Result<Bool, FirebaseError>) -> (Void)) {
+        APIManager.shared.login(email: email, password: password) { result in
+            switch result {
+            case .success(let jwt):
+                print("firebase jwt: \(jwt)")
+                LocalStorage.Login().save(email: email)
+                LocalStorage.User().setJwt(jwt)
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

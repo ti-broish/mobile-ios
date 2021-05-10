@@ -9,14 +9,13 @@ import Foundation
 
 struct APNSTokenRequest: RequestProvider {
     
-    let token: String
-    
     var path: String {
         "/me/clients"
     }
     
-    var parameters: [String : Any?] {
-        ["token": token]
-    }
+    // TODO: - refactor firebase APN token is different from user.getIDToken
+//    var parameters: [String : Any?] {
+//        ["token": token]
+//    }
     
 }

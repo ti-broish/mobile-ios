@@ -24,38 +24,42 @@ class APIManager {
         self.apiClient = APIClient()
         self.firebaseClient = FirebaseClient()
     }
-    
 }
 
 // MARK: - Firebase
+
 extension APIManager {
+    
+    func login(email: String, password: String, completion: @escaping (Result<String, FirebaseError>) -> Void) {
+        firebaseClient.login(email: email, password: password, completion: completion)
+    }
     
     func register() {
         firebaseClient.register()
     }
-    
 }
 
-// MARK: - APNs Token
-extension APIManager {
+// MARK: - API calls
+
+extension APIManager: APIClientInterface {
     
-    func sendAPNsToken(_ token: String, completion: APIResult<BaseResponse>?) {
-        apiClient.sendAPNsToken(token, completion: completion)
+    func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
+        apiClient.getOrganizations(completion: completion)
     }
     
-}
+    func sendAPNsToken(completion: APIResult<BaseResponse>?) {
+        apiClient.sendAPNsToken(completion: completion)
+    }
 
-// MARK: - Parties
-extension APIManager {
-    
     func getParties(_ completion: APIResult<PartiesResponse>?) {
         apiClient.getParties(completion)
     }
     
-}
-
-// MARK: - Location
-extension APIManager {
+    // MARK: - Location
+    
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
+        apiClient.getCountries(isAbroad: isAbroad, completion: completion)
+    }
     
     func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
         apiClient.getElectionRegions(isAbroad: isAbroad, completion: completion)
@@ -74,40 +78,27 @@ extension APIManager {
             completion: completion
         )
     }
-    
-    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
-        apiClient.getCountries(isAbroad: isAbroad, completion: completion)
-    }
-    
-}
 
-// MARK: - Sections
-extension APIManager {
+    // MARK: - Sections
     
     func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
         apiClient.getSections(town: town, region: region, completion: completion)
     }
     
-}
-
-// MARK: - Upload Photo
-extension APIManager {
+    // MARK: - Upload Photo
     
     func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?) {
         apiClient.uploadPhoto(photo, completion: completion)
     }
     
-}
-
-// MARK: - Violations
-extension APIManager {
+    // MARK: - Violations
     
     func sendViolation(
         town: Town,
         pictures: [String],
         description: String,
         section: Section?,
-        _ completion: APIResult<SendViolationResponse>?
+        completion: APIResult<SendViolationResponse>?
     ) {
         apiClient.sendViolation(
             town: town,
@@ -122,25 +113,21 @@ extension APIManager {
         apiClient.getViolation(id: id, completion)
     }
     
-    func getViolations(_ completion: APIResult<ViolationsResponse>?) {
-        apiClient.getViolations(completion)
+    func getViolations(completion: APIResult<ViolationsResponse>?) {
+        apiClient.getViolations(completion: completion)
     }
-    
-}
 
-// MARK: Protocols
-extension APIManager {
+    // MARK: - Protocols
     
-    func sendProtocol(section: Section, pictures: [String], _ completion: APIResult<SendProtocolResponse>?) {
+    func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
         apiClient.sendProtocol(section: section, pictures: pictures, completion: completion)
     }
     
-    func getProtocol(id: String, _ completion: APIResult<Protocol>?) {
+    func getProtocol(id: String, completion: APIResult<Protocol>?) {
         apiClient.getProtocol(id: id, completion: completion)
     }
     
-    func getProtocols(_ completion: APIResult<ProtocolsResponse>?) {
-        apiClient.getProtocols(completion)
+    func getProtocols(completion: APIResult<ProtocolsResponse>?) {
+        apiClient.getProtocols(completion: completion)
     }
-    
 }

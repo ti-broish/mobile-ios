@@ -27,7 +27,7 @@ final class RegistrationViewModel: CoordinatableViewModel {
         let builder = RegistrationDataBuilder()
         
         RegistrationFieldType.allCases.forEach {
-            inputFieldsConfigs.append(builder.makeConfigForRegistrationFieldType(type: $0))
+            inputFieldsConfigs.append(builder.makeConfig(for: $0))
         }
     }
 }

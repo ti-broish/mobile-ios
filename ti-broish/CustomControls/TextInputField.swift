@@ -16,6 +16,7 @@ final class TextInputField: InputField {
     override func setupViews() {
         super.setupViews()
         
+        let theme = TibTheme()
         view.backgroundColor = theme.backgroundColor
     }
 }

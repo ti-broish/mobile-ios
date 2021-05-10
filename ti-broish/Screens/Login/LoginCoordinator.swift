@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import Firebase
 
 final class LoginCoordinator: Coordinator {
     
-    private var isLoggedIn = false // TODO: - refactor
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -17,16 +17,11 @@ final class LoginCoordinator: Coordinator {
     }
     
     override func start() {
-        if isLoggedIn {
-            showHomeScreen()
-        } else {
-            showLoginScreen()
-        }
+        showLoginScreen()
     }
     
     func showHomeScreen() {
         let controller = ContentContainerViewController()
-        controller.coordinator = self
         
         navigationController.viewControllers.removeAll()
         pushController(controller, animated: false)
@@ -34,7 +29,7 @@ final class LoginCoordinator: Coordinator {
     
     func showLoginScreen() {
         let controller = LoginViewController(nibName: LoginViewController.nibName, bundle: nil)
-        controller.coordinator = self
+        controller.viewModel.coordinator = self
         
         navigationController.viewControllers.removeAll()
         pushController(controller, hideNavigationBar: true, animated: false)

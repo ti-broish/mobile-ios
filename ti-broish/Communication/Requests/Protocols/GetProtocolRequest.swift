@@ -14,5 +14,4 @@ struct GetProtocolRequest: RequestProvider {
     var path: String {
         "/me/protocols"
     }
-    
 }

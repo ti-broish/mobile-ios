@@ -18,6 +18,7 @@ final class CredentialInputField: InputField {
     override func setupViews() {
         super.setupViews()
         
+        let theme = TibTheme()
         view.backgroundColor = .clear
         separatorView.backgroundColor = theme.tableViewSeparatorColor
     }

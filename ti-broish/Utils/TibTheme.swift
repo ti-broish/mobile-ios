@@ -9,8 +9,6 @@ import UIKit
 
 class TibTheme {
     
-    static let shared = TibTheme()
-    
     var backgroundColor: UIColor {
         return .backgroundColor
     }

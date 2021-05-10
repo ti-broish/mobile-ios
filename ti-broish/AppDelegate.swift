@@ -20,22 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool
     {
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
         
-        FirebaseApp.configure()
-        
         registerRemoteNotifications(for: application)
         
         return true
     }
-    
+
     // MARK: Private Methods
     
     private func registerRemoteNotifications(for application: UIApplication) {
-        Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             DispatchQueue.main.async {
@@ -56,7 +54,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         guard let token = String(data: deviceToken, encoding: .utf8) else { return }
-        
+        Messaging.messaging().delegate = self
         print("APNS token: \(token)")
     }
     

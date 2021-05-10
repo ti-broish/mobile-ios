@@ -16,9 +16,6 @@ class BaseViewController: UIViewController, TibViewControllable {
     
     // MARK: - Properties
     
-    let theme = TibTheme.shared
-    weak var coordinator: LoginCoordinator? //TODO: Coordinators should not be in controllers
-    
     private var pullToRefreshCustomView: UIView?
     
     /// Override for custom logic for pull to refresh
@@ -42,6 +39,7 @@ class BaseViewController: UIViewController, TibViewControllable {
     }
     
     func applyTheme() {
+        let theme = TibTheme()
         self.view.backgroundColor = theme.backgroundColor
     }
     

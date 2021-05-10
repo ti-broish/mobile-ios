@@ -13,7 +13,7 @@ final class TibNavigationBar: UINavigationBar {
         super.init(frame: frame)
         isTranslucent = false
         
-        let theme = TibTheme.shared
+        let theme = TibTheme()
         barTintColor = theme.navigationBarTintColor
         tintColor = theme.navigationBarTextColor
         titleTextAttributes = [.foregroundColor: theme.navigationBarTextColor]

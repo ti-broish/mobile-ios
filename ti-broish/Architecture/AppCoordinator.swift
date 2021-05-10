@@ -21,12 +21,42 @@ class AppCoordinator: Coordinator {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        let screenCoordinator = LoginCoordinator(navigationController: navigationController)
+        let screenCoordinator: Coordinator
+        if isLoggedIn() {
+            screenCoordinator = HomeCoordinator(navigationController: navigationController)
+        } else {
+            screenCoordinator = LoginCoordinator(navigationController: navigationController)
+        }
+        
         addChildCoordinator(screenCoordinator)
     }
     
     override func start() {
         childCoordinators.first?.start()
+    }
+    
+    func logout() {
+        guard let navigationController = window?.rootViewController as? UINavigationController else {
+            return
+        }
+        
+        removeAllChildCoordinators()
+        navigationController.viewControllers.removeAll()
+        
+        let screenCoordinator = LoginCoordinator(navigationController: navigationController)
+        addChildCoordinator(screenCoordinator)
+        
+        start()
+    }
+    
+    // MARK: - Private methods
+    
+    private func isLoggedIn() -> Bool {
+        guard let token = LocalStorage.User().getJwt() else {
+            return false
+        }
+        
+        return token.count > 0
     }
 }
 
