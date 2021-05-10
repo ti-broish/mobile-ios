@@ -62,7 +62,7 @@ struct RegistrationDataBuilder {
             )
         case .organization:
             return InputFieldConfig(
-                type: .text,
+                type: .picker,
                 title: LocalizedStrings.Registration.organization,
                 placeholderText: nil,
                 isRequired: true

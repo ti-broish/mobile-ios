@@ -15,7 +15,11 @@ struct InputFieldConfig {
     let isRequired: Bool
     
     var isTextInputField: Bool {
-        return type != .picker || type != .checkbox
+        return type != .picker && type != .checkbox
+    }
+    
+    var isPickerInputField: Bool {
+        return type == .picker
     }
     
     init(type: InputFieldType, title: String, placeholderText: String?, isRequired: Bool = false) {

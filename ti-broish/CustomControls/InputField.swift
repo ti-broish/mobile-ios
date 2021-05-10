@@ -67,6 +67,8 @@ class InputField: UIView, Configurable {
                 string: _placeholderText,
                 attributes: [.foregroundColor: theme.textFieldPlaceholderColor]
             )
+        } else {
+            textField.attributedPlaceholder = nil
         }
         
         configureTextFieldKeyboardType(inputFieldType: data.type)

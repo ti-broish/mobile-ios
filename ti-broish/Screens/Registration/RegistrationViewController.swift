@@ -37,11 +37,12 @@ final class RegistrationViewController: BaseViewController {
     
     private func setupTableView() {
         tableView.registerCell(RegistrationTextCell.self)
+        tableView.registerCell(PickerCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.separatorColor = .none
-        tableView.rowHeight = 82.0
+        tableView.rowHeight = 86.0
         tableView.tableFooterView = UIView()
     }
 }
@@ -63,21 +64,38 @@ extension RegistrationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RegistrationTextCell.cellIdentifier, for: indexPath)
-        guard let _cell = cell as? RegistrationTextCell else {
-            return UITableViewCell()
-        }
-        
         let model = viewModel.inputFieldsConfigs[indexPath.row]
+        let cell: UITableViewCell
         
         if model.isTextInputField {
-            _cell.textInputField.configureWith(model)
-            _cell.textInputField.textField.delegate = self
-            _cell.setNeedsLayout()
-            _cell.layoutIfNeeded()
+            let textCell = tableView.dequeueReusableCell(
+                withIdentifier: RegistrationTextCell.cellIdentifier,
+                for: indexPath
+            )
+            
+            guard let textCell = textCell as? RegistrationTextCell  else {
+                return UITableViewCell()
+            }
+            
+            textCell.textInputField.configureWith(model)
+            textCell.textInputField.textField.delegate = self
+            cell = textCell
+        } else if model.isPickerInputField {
+            let pickerCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
+            guard let pickerCell = pickerCell as? PickerCell else {
+                return UITableViewCell()
+            }
+            
+            pickerCell.configureWith(model)
+            cell = pickerCell
+        } else {
+            cell = UITableViewCell()
         }
         
-        return _cell
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        
+        return cell
     }
 }
 
