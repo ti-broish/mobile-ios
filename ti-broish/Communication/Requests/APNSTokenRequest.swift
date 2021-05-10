@@ -9,8 +9,6 @@ import Foundation
 
 struct APNSTokenRequest: RequestProvider {
     
-    var token: String
-    
     var path: String {
         "/me/clients"
     }

@@ -30,16 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        Auth.auth().currentUser?.getIDToken { authToken, error in
-            if let token = authToken {
-                LocalStorage.User().setJwt(token)
-            } else {
-                LocalStorage.User().reset()
-            }
-        }
-    }
 
     // MARK: Private Methods
     

@@ -18,8 +18,6 @@ struct SendViolationRequest: RequestProvider {
     
     // MARK: - RequestProvider
     
-    var token: String
-    
     var path: String {
         "/violations"
     }

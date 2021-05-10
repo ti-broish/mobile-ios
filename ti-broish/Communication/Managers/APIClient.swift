@@ -10,7 +10,47 @@ import Alamofire
 
 typealias HTTPMethod = Alamofire.HTTPMethod
 
-class APIClient {
+protocol APIClientInterface {
+    
+    func getOrganizations(completion: APIResult<OrganizationsResponse>?)
+    func sendAPNsToken(completion: APIResult<BaseResponse>?)
+    func getParties(_ completion: APIResult<PartiesResponse>?)
+    
+    // MARK: - Location
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?)
+    func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?)
+        
+    func getTowns(
+        country: Country,
+        electionRegion: ElectionRegion?,
+        municipality: Municipality,
+        completion: APIResult<TownsResponse>?
+    )
+    
+    func getSections(town: Town, region: Region?, completion: APIResult<SectionsResponse>?)
+
+    // MARK: - Upload Photo
+    func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?)
+
+    // MARK: - Violations
+    func sendViolation(
+        town: Town,
+        pictures: [String],
+        description: String,
+        section: Section?,
+        completion: APIResult<SendViolationResponse>?
+    )
+    
+    func getViolation(id: String, _ completion: APIResult<Violation>?)
+    func getViolations(completion: APIResult<ViolationsResponse>?)
+    
+    // MARK: - Protocols
+    func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?)
+    func getProtocol(id: String, completion: APIResult<Protocol>?)
+    func getProtocols(completion: APIResult<ProtocolsResponse>?)
+}
+
+final class APIClient {
     
     // MARK: Properties
     
@@ -19,6 +59,12 @@ class APIClient {
     #else
     private let baseUrl = "https://api.tibroish.bg"
     #endif
+    
+    private let requestInterceptor: RequestInterceptor
+    
+    init() {
+        self.requestInterceptor = RequestInterceptor(storage: LocalStorage(), host: baseUrl)
+    }
     
     // MARK: Private Methods
     
@@ -31,19 +77,14 @@ class APIClient {
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
-        
-        var allHeaders = request.additionalHeaders
-        
-        if request.token.count > 0 {
-            allHeaders["Authorization"] = "Bearer \(request.token)"
-        }
-        
+
         AF.request(
             url,
             method: request.method,
             parameters: request.parameters.compactMapValues({ $0 }),
             encoding: URLEncoding.default,
-            headers: allHeaders
+            headers: request.additionalHeaders,
+            interceptor: requestInterceptor
         )
         .responseDecodable(of: T.self, decoder: decoder) { response in
             DispatchQueue.main.async {
@@ -57,11 +98,11 @@ class APIClient {
     }
 }
 
-// MARK: -
+// MARK: - APIClientInterface
 
-extension APIClient {
+extension APIClient: APIClientInterface {
     
-    func getOrganizations(completion: APIResult<[Organization]>?) {
+    func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         let request = OrganizationsRequest()
         
         send(request) { result in
@@ -69,32 +110,90 @@ extension APIClient {
         }
     }
     
-    func getCountries(token: String, completion: APIResult<[Country]>?) {
-        let request = CountriesRequest(token: token)
-        
+    // MARK: - APNs Token
+    
+    func sendAPNsToken(completion: APIResult<BaseResponse>?) {
+        let request = APNSTokenRequest()
         send(request) { result in
             completion?(result)
         }
     }
-}
 
-// MARK: - APNs Token
-extension APIClient {
+    // MARK: - Parties
     
-    func sendAPNsToken(token: String, completion: APIResult<BaseResponse>?) {
-        let request = APNSTokenRequest(token: token)
+    func getParties(_ completion: APIResult<PartiesResponse>?) {
+        let request = GetPartiesRequest()
+        send(request) { result in
+            completion?(result)
+        }
+    }
+
+    // MARK: - Location
+    
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
+        let request = GetCountriesRequest()
+        send(request) { (result: Result<CountriesResponse, APIError>) in
+            switch result {
+            case .success(let countries):
+                var filteredCountries = countries.filter({ $0.isAbroad == isAbroad })
+                filteredCountries.sort(by: { $0.name < $1.name })
+                completion?(.success(filteredCountries))
+            case .failure(let error):
+                completion?(.failure(.requestFailed(error: error)))
+            }
+        }
+    }
+
+    func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
+        let request = GetElectionRegionsRequest()
+        send(request) { (result: Result<ElectionRegionsResponse, APIError>) in
+            switch result {
+            case .success(var regions):
+                regions.sort(by: { $0.code < $1.code })
+                completion?(.success(regions))
+            case .failure(let error):
+                completion?(.failure(.requestFailed(error: error)))
+            }
+        }
+    }
+    
+    func getTowns(
+        country: Country,
+        electionRegion: ElectionRegion? = nil,
+        municipality: Municipality,
+        completion: APIResult<TownsResponse>?
+    ) {
+        let request = GetTownsRequest(country: country, electionRegion: electionRegion, municipality: municipality)
         send(request) { result in
             completion?(result)
         }
     }
     
-}
+    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
+        let request = GetSectionsRequest(town: town, region: region)
+        send(request) { (result: Result<SectionsResponse, APIError>) in
+            switch result {
+            case .success(var sections):
+                sections.sort(by: { $0.code < $1.code })
+                completion?(.success(sections))
+            case .failure(let error):
+                completion?(.failure(.requestFailed(error: error)))
+            }
+        }
+    }
 
-// MARK: - Violations
-extension APIClient {
+    // MARK: - Upload Photo
+
+    func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?) {
+        let request = UploadPhotoRequest(photo: photo)
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    // MARK: - Violations
     
     func sendViolation(
-        token: String,
         town: Town,
         pictures: [String],
         description: String,
@@ -105,8 +204,7 @@ extension APIClient {
             town: town,
             pictures: pictures,
             description: description,
-            section: section,
-            token: token
+            section: section
         )
         
         send(request) { result in
@@ -114,8 +212,8 @@ extension APIClient {
         }
     }
     
-    func getViolation(token: String, id: String, _ completion: APIResult<Violation>?) {
-        getViolations(token: token) { result in
+    func getViolation(id: String, _ completion: APIResult<Violation>?) {
+        getViolations() { result in
             switch result {
             case .success(let violations):
                 guard let violation = violations.filter({ $0.id == id }).first else {
@@ -125,52 +223,47 @@ extension APIClient {
                 
                 completion?(.success(violation))
             case .failure(let error):
-                print(error)
                 completion?(.failure(error))
             }
         }
     }
     
-    func getViolations(token: String, completion: APIResult<ViolationsResponse>?) {
-        let request = GetViolationsRequest(token: token)
+    func getViolations(completion: APIResult<ViolationsResponse>?) {
+        let request = GetViolationsRequest()
         
         send(request) { result in
             completion?(result)
         }
     }
-    
-}
 
-// MARK: - Protocols
-extension APIClient {
+    // MARK: - Protocols
     
-    func sendProtocol(token: String, section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
-        let request = SendProtocolRequest(section: section, pictures: pictures, token: token)
+    func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
+        let request = SendProtocolRequest(section: section, pictures: pictures)
         
         send(request) { result in
             completion?(result)
         }
     }
     
-    func getProtocol(token: String, id: String, completion: APIResult<Protocol>?) {
-        getProtocols(token: token) { result in
+    func getProtocol(id: String, completion: APIResult<Protocol>?) {
+        getProtocols() { result in
             switch result {
             case .success(let protocols):
                 guard let proto = protocols.filter({ $0.id == id }).first else {
-                    completion?(.failure(.violationNotFound))
+                    completion?(.failure(.protocolNotFound))
                     return
                 }
                 
                 completion?(.success(proto))
             case .failure(let error):
-                print(error)
                 completion?(.failure(error))
             }
         }
     }
     
-    func getProtocols(token: String, completion: APIResult<ProtocolsResponse>?) {
-        let request = GetProtocolRequest(token: token)
+    func getProtocols(completion: APIResult<ProtocolsResponse>?) {
+        let request = GetProtocolRequest()
         
         send(request) { result in
             completion?(result)

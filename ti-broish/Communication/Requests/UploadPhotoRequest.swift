@@ -1,5 +1,5 @@
 //
-//  SendProtocolRequest.swift
+//  UploadPhotoRequest.swift
 //  ti-broish
 //
 //  Created by Viktor Georgiev on 28.04.21.
@@ -7,17 +7,16 @@
 
 import Foundation
 
-struct SendProtocolRequest: RequestProvider {
+struct UploadPhotoRequest: RequestProvider {
     
     // MARK: - Properites
     
-    let section: Section
-    let pictures: [String]
+    let photo: Photo
     
     // MARK: - RequestProvider
     
     var path: String {
-        "/protocols"
+        "/pictures"
     }
     
     var method: HTTPMethod {
@@ -26,8 +25,7 @@ struct SendProtocolRequest: RequestProvider {
     
     var parameters: [String : Any?] {
         [
-            "section" : section.id,
-            "pictures" : pictures
+            "image": photo.base64
         ]
     }
     

@@ -9,8 +9,6 @@ import Foundation
 
 struct OrganizationsRequest: RequestProvider {
     
-    var token: String = ""
-    
     var path: String {
         "/organizations"
     }

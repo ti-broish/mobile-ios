@@ -14,6 +14,8 @@ enum OrganizationType: String {
     case watchers = "watchers"
 }
 
+typealias OrganizationsResponse = [Organization]
+
 struct Organization: Decodable {
     
     let id: Int

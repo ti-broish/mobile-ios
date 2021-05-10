@@ -11,8 +11,6 @@ struct GetViolationsRequest: RequestProvider {
     
     // MARK: - RequestProvider
     
-    var token: String
-    
     var path: String {
         "/me/violations"
     }

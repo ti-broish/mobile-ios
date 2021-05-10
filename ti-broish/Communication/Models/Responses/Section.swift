@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias SectionsResponse = [Section]
+
 struct Section: Codable {
     
     // MARK: Properties

@@ -7,16 +7,9 @@
 
 import Foundation
 
-struct Region {
-    
-    // MARK: Properties
-    
-    let code: String
-    let name: String
-    
-}
+typealias TownsResponse = [Town]
 
-struct Town {
+struct Town: Decodable {
     
     // MARK: Properties
     

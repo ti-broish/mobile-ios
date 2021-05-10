@@ -41,38 +41,66 @@ extension APIManager {
 
 // MARK: - API calls
 
-extension APIManager {
+extension APIManager: APIClientInterface {
     
-    func getOrganizations(completion: APIResult<[Organization]>?) {
+    func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         apiClient.getOrganizations(completion: completion)
     }
     
-    func getCountries(token: String, completion: APIResult<[Country]>?) {
-        apiClient.getCountries(token: token, completion: completion)
+    func sendAPNsToken(completion: APIResult<BaseResponse>?) {
+        apiClient.sendAPNsToken(completion: completion)
     }
-}
 
-// MARK: - APNs Token
-extension APIManager {
+    func getParties(_ completion: APIResult<PartiesResponse>?) {
+        apiClient.getParties(completion)
+    }
     
-    func sendAPNsToken(token: String, completion: APIResult<BaseResponse>?) {
-        apiClient.sendAPNsToken(token: token, completion: completion)
+    // MARK: - Location
+    
+    func getCountries(isAbroad: Bool, completion: APIResult<CountriesResponse>?) {
+        apiClient.getCountries(isAbroad: isAbroad, completion: completion)
     }
-}
+    
+    func getElectionRegions(isAbroad: Bool, completion: APIResult<ElectionRegionsResponse>?) {
+        apiClient.getElectionRegions(isAbroad: isAbroad, completion: completion)
+    }
+    
+    func getTowns(
+        country: Country,
+        electionRegion: ElectionRegion? = nil,
+        municipality: Municipality,
+        completion: APIResult<TownsResponse>?
+    ) {
+        apiClient.getTowns(
+            country: country,
+            electionRegion: electionRegion,
+            municipality: municipality,
+            completion: completion
+        )
+    }
 
-// MARK: - Violations
-extension APIManager {
+    // MARK: - Sections
+    
+    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
+        apiClient.getSections(town: town, region: region, completion: completion)
+    }
+    
+    // MARK: - Upload Photo
+    
+    func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?) {
+        apiClient.uploadPhoto(photo, completion: completion)
+    }
+    
+    // MARK: - Violations
     
     func sendViolation(
-        token: String,
         town: Town,
         pictures: [String],
         description: String,
         section: Section?,
-        _ completion: APIResult<SendViolationResponse>?
+        completion: APIResult<SendViolationResponse>?
     ) {
         apiClient.sendViolation(
-            token: token,
             town: town,
             pictures: pictures,
             description: description,
@@ -81,29 +109,25 @@ extension APIManager {
         )
     }
     
-    func getViolation(token: String,id: String, _ completion: APIResult<Violation>?) {
-        apiClient.getViolation(token: token, id: id, completion)
+    func getViolation(id: String, _ completion: APIResult<Violation>?) {
+        apiClient.getViolation(id: id, completion)
     }
     
-    func getViolations(token: String, completion: APIResult<ViolationsResponse>?) {
-        apiClient.getViolations(token: token, completion: completion)
+    func getViolations(completion: APIResult<ViolationsResponse>?) {
+        apiClient.getViolations(completion: completion)
     }
-    
-}
 
-// MARK: Protocols
-extension APIManager {
+    // MARK: - Protocols
     
-    func sendProtocol(token: String, section: Section, pictures: [String], _ completion: APIResult<SendProtocolResponse>?) {
-        apiClient.sendProtocol(token: token, section: section, pictures: pictures, completion: completion)
+    func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?) {
+        apiClient.sendProtocol(section: section, pictures: pictures, completion: completion)
     }
     
-    func getProtocol(token: String, id: String, _ completion: APIResult<Protocol>?) {
-        apiClient.getProtocol(token: token, id: id, completion: completion)
+    func getProtocol(id: String, completion: APIResult<Protocol>?) {
+        apiClient.getProtocol(id: id, completion: completion)
     }
     
-    func getProtocols(token: String, completion: APIResult<ProtocolsResponse>?) {
-        apiClient.getProtocols(token: token, completion: completion)
+    func getProtocols(completion: APIResult<ProtocolsResponse>?) {
+        apiClient.getProtocols(completion: completion)
     }
-    
 }

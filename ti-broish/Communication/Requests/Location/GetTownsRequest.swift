@@ -1,5 +1,5 @@
 //
-//  SendProtocolRequest.swift
+//  GetTownsRequest.swift
 //  ti-broish
 //
 //  Created by Viktor Georgiev on 28.04.21.
@@ -7,17 +7,18 @@
 
 import Foundation
 
-struct SendProtocolRequest: RequestProvider {
+struct GetTownsRequest: RequestProvider {
     
     // MARK: - Properites
     
-    let section: Section
-    let pictures: [String]
+    let country: Country
+    let electionRegion: ElectionRegion?
+    let municipality: Municipality?
     
     // MARK: - RequestProvider
     
     var path: String {
-        "/protocols"
+        "/towns"
     }
     
     var method: HTTPMethod {
@@ -26,8 +27,9 @@ struct SendProtocolRequest: RequestProvider {
     
     var parameters: [String : Any?] {
         [
-            "section" : section.id,
-            "pictures" : pictures
+            "country": country.code,
+            "election_region": electionRegion?.code,
+            "municipality": municipality?.code
         ]
     }
     

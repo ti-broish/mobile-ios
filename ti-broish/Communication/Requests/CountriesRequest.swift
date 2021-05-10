@@ -9,8 +9,6 @@ import Foundation
 
 struct CountriesRequest: RequestProvider {
     
-    var token: String
-    
     var path: String {
         "/countries"
     }
