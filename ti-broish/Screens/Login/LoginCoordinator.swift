@@ -17,17 +17,11 @@ final class LoginCoordinator: Coordinator {
     }
     
     override func start() {
-        if isLoggedIn() {
-            // TODO: - Auth.auth().currentUser?.isEmailVerified
-            showHomeScreen()
-        } else {
-            showLoginScreen()
-        }
+        showLoginScreen()
     }
     
     func showHomeScreen() {
         let controller = ContentContainerViewController()
-        controller.coordinator = self
         
         navigationController.viewControllers.removeAll()
         pushController(controller, animated: false)
@@ -35,7 +29,7 @@ final class LoginCoordinator: Coordinator {
     
     func showLoginScreen() {
         let controller = LoginViewController(nibName: LoginViewController.nibName, bundle: nil)
-        controller.coordinator = self
+        controller.viewModel.coordinator = self
         
         navigationController.viewControllers.removeAll()
         pushController(controller, hideNavigationBar: true, animated: false)
@@ -54,14 +48,6 @@ final class LoginCoordinator: Coordinator {
     }
     
     // MARK: - Private methods
-    
-    private func isLoggedIn() -> Bool {
-        guard let token = LocalStorage.User().getJwt() else {
-            return false
-        }
-        
-        return token.count > 0
-    }
     
     private func pushController(_ controller: UIViewController, hideNavigationBar: Bool = false, animated: Bool = true) {
         navigationController.navigationBar.isHidden = hideNavigationBar

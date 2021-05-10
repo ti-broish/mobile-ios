@@ -28,6 +28,8 @@
 		1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC892644A84700BDAB8A /* Organization.swift */; };
 		101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
+		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
+		103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A678A2649958F00D93853 /* HomeViewModel.swift */; };
 		1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3BF2634A1D500764ACF /* CredentialInputField.swift */; };
 		1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3C42634A26000764ACF /* CredentialInputField.xib */; };
 		1042B3DF2634AAFD00764ACF /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */; };
@@ -171,6 +173,8 @@
 		1013FC892644A84700BDAB8A /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
+		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		103A678A2649958F00D93853 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1042B3BF2634A1D500764ACF /* CredentialInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialInputField.swift; sourceTree = "<group>"; };
 		1042B3C42634A26000764ACF /* CredentialInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialInputField.xib; sourceTree = "<group>"; };
 		1042B3CD2634AAFD00764ACF /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -396,6 +400,8 @@
 			children = (
 				0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */,
 				0AEB39B1261D001E0005BF38 /* HomeViewController.xib */,
+				103A67882649902300D93853 /* HomeCoordinator.swift */,
+				103A678A2649958F00D93853 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -948,6 +954,7 @@
 				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
+				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */,
@@ -982,6 +989,7 @@
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
+				103A67892649902300D93853 /* HomeCoordinator.swift in Sources */,
 				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
 				1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */,

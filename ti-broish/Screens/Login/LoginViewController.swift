@@ -17,8 +17,8 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var registrationButton: UIButton!
     @IBOutlet private weak var resetPasswordButton: UIButton!
     
-    private var viewModel = LoginViewModel()
     private let validator = Validator()
+    let viewModel = LoginViewModel()
     
     // MARK: - View lifecycle
     
@@ -73,7 +73,7 @@ final class LoginViewController: BaseViewController {
             switch result {
             case .success(let isSuccessful):
                 if isSuccessful {
-                    self?.coordinator?.showHomeScreen()
+                    self?.viewModel.coordinator?.showHomeScreen()
                 } else {
                     print("login failed: ???")
                 }
@@ -85,11 +85,11 @@ final class LoginViewController: BaseViewController {
     }
     
     @IBAction private func didPressRegistrationButton(_ sender: UIButton) {
-        coordinator?.showRegistrationScreen()
+        viewModel.coordinator?.showRegistrationScreen()
     }
     
     @IBAction private func didPressResetPasswordButton(_ sender: UIButton) {
-        coordinator?.showResetPasswordScreen()
+        viewModel.coordinator?.showResetPasswordScreen()
     }
 }
 

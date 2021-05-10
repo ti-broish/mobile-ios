@@ -11,6 +11,8 @@ import Firebase
 
 final class HomeViewController: BaseViewController {
     
+    let viewModel = HomeViewModel()
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {

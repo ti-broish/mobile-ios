@@ -157,12 +157,14 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
             // TODO: - implement
             break
         case .logout:
-            do {
-                try Auth.auth().signOut()
-                LocalStorage.User().reset()
-                coordinator?.showLoginScreen()
-            } catch {
-                print("logout failed: \(error)")
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                do {
+                    try Auth.auth().signOut()
+                    LocalStorage.User().reset()
+                    appDelegate.appCoordinator?.logout()
+                } catch {
+                    print("logout failed: \(error)")
+                }
             }
         }
     }
