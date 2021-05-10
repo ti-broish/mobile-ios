@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OrganizationType: String {
+enum OrganizationType: String, Decodable {
     
     case party = "party"
     case commission = "commission"
@@ -20,5 +20,5 @@ struct Organization: Decodable {
     
     let id: Int
     let name: String
-    let type: String
+    let type: OrganizationType
 }
