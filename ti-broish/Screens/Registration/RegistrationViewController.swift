@@ -50,6 +50,14 @@ final class RegistrationViewController: BaseViewController {
 
 extension RegistrationViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.inputFieldsConfigs.count
     }
@@ -65,6 +73,8 @@ extension RegistrationViewController: UITableViewDataSource {
         if model.isTextInputField {
             _cell.textInputField.configureWith(model)
             _cell.textInputField.textField.delegate = self
+            _cell.setNeedsLayout()
+            _cell.layoutIfNeeded()
         }
         
         return _cell

@@ -24,7 +24,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title_" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoB-oo-EkQ" userLabel="titleLabel">
                     <rect key="frame" x="8" y="8" width="398" height="22"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="22" id="Qtc-25-LE3"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="Qtc-25-LE3"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -47,7 +47,7 @@
                 <constraint firstItem="Jjg-af-uCG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="CCI-st-v4R"/>
                 <constraint firstAttribute="bottom" secondItem="Jjg-af-uCG" secondAttribute="bottom" constant="8" id="MkF-p1-yf9"/>
                 <constraint firstItem="ZoB-oo-EkQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OQG-wr-su9"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZoB-oo-EkQ" secondAttribute="trailing" constant="8" id="dxS-PI-Ppk"/>
+                <constraint firstAttribute="trailing" secondItem="ZoB-oo-EkQ" secondAttribute="trailing" constant="8" id="dxS-PI-Ppk"/>
                 <constraint firstItem="Jjg-af-uCG" firstAttribute="top" secondItem="ZoB-oo-EkQ" secondAttribute="bottom" id="kuP-f5-Eor"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

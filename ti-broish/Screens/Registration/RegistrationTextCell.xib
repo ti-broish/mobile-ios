@@ -22,13 +22,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Jql-gN-j0N" secondAttribute="trailing" id="EBn-TL-1Zj"/>
+                    <constraint firstItem="Jql-gN-j0N" firstAttribute="top" secondItem="pJA-gj-y6f" secondAttribute="top" id="hIv-S3-BFu"/>
+                    <constraint firstItem="Jql-gN-j0N" firstAttribute="leading" secondItem="pJA-gj-y6f" secondAttribute="leading" id="j1L-lo-zob"/>
+                    <constraint firstAttribute="bottom" secondItem="Jql-gN-j0N" secondAttribute="bottom" id="lQm-UZ-Gqy"/>
+                </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstItem="Jql-gN-j0N" firstAttribute="leading" secondItem="4yX-rB-FUz" secondAttribute="leading" id="TSl-IH-0BE"/>
-                <constraint firstItem="Jql-gN-j0N" firstAttribute="top" secondItem="4yX-rB-FUz" secondAttribute="top" id="X00-mT-mJ9"/>
-                <constraint firstAttribute="bottom" secondItem="Jql-gN-j0N" secondAttribute="bottom" id="mJH-5a-qQT"/>
-                <constraint firstAttribute="trailing" secondItem="Jql-gN-j0N" secondAttribute="trailing" id="pLl-ab-DIa"/>
-            </constraints>
             <connections>
                 <outlet property="textInputField" destination="Jql-gN-j0N" id="XB5-MQ-4ua"/>
             </connections>
