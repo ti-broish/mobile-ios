@@ -9,7 +9,7 @@ import Foundation
 
 final class RegistrationViewModel: CoordinatableViewModel {
     
-    private (set) var inputFieldsConfigs = [InputFieldConfig]()
+    private (set) var data = [InputFieldData]()
     
     init() {
         start()
@@ -27,7 +27,7 @@ final class RegistrationViewModel: CoordinatableViewModel {
         let builder = RegistrationDataBuilder()
         
         RegistrationFieldType.allCases.forEach {
-            inputFieldsConfigs.append(builder.makeConfig(for: $0))
+            data.append(builder.makeConfig(for: $0))
         }
     }
 }

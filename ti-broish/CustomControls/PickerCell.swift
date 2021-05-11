@@ -29,8 +29,18 @@ final class PickerCell: TibTableViewCell, Configurable {
         valueLabel.numberOfLines = 0
     }
     
-    func configureWith(_ data: InputFieldConfig) {
+    func configureWith(_ data: InputFieldData) {
         titleLabel.text = data.title
-        valueLabel.text = ""
+        
+        if let _data = data.data as? String {
+            valueLabel.text = _data
+        } else if let placeholderText = data.placeholderText {
+            valueLabel.attributedText = NSAttributedString(
+                string: placeholderText,
+                attributes: [.foregroundColor: TibTheme().textFieldPlaceholderColor]
+            )
+        } else {
+            valueLabel.text = nil
+        }
     }
 }

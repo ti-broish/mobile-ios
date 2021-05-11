@@ -23,73 +23,73 @@ enum RegistrationFieldType: Int, CaseIterable {
 
 struct RegistrationDataBuilder {
     
-    func makeConfig(for type: RegistrationFieldType) -> InputFieldConfig {
+    func makeConfig(for type: RegistrationFieldType) -> InputFieldData {
         switch type {
         case .firstName:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .text,
                 title: LocalizedStrings.Registration.firstName,
                 placeholderText: LocalizedStrings.Registration.firstNamePlaceholder,
                 isRequired: true
             )
         case .lastName:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .text,
                 title: LocalizedStrings.Registration.lastName,
                 placeholderText: LocalizedStrings.Registration.lastNamePlaceholder,
                 isRequired: true
             )
         case .email:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .email,
                 title: LocalizedStrings.Registration.email,
                 placeholderText: LocalizedStrings.Registration.emailPlaceholder,
                 isRequired: true
             )
         case .phone:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .phone,
                 title: LocalizedStrings.Registration.phone,
                 placeholderText: LocalizedStrings.Registration.phonePlaceholder,
                 isRequired: true
             )
         case .pin:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .pin,
                 title: LocalizedStrings.Registration.pin,
                 placeholderText: LocalizedStrings.Registration.pinPlaceholder,
                 isRequired: true
             )
         case .organization:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .picker,
                 title: LocalizedStrings.Registration.organization,
-                placeholderText: nil,
+                placeholderText: LocalizedStrings.Registration.organizationPlaceholder,
                 isRequired: true
             )
         case .password:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .password,
                 title: LocalizedStrings.Registration.password,
                 placeholderText: LocalizedStrings.Registration.passwordPlaceholder,
                 isRequired: true
             )
         case .confirmPassword:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .password,
                 title: LocalizedStrings.Registration.confirmPassword,
                 placeholderText: LocalizedStrings.Registration.confirmPasswordPlaceholder,
                 isRequired: true
             )
         case .hasAgreedToKeepData:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .text,
                 title: LocalizedStrings.Registration.hasAgreedToKeepData,
                 placeholderText: nil,
                 isRequired: false
             )
         case .hasAdulthood:
-            return InputFieldConfig(
+            return InputFieldData(
                 type: .text,
                 title: LocalizedStrings.Registration.hasAdulthood,
                 placeholderText: nil,

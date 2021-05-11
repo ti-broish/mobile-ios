@@ -61,6 +61,7 @@ struct LocalizedStrings {
         static let pinPlaceholder: String = "Въведете последни четири цифри"
         
         static let organization: String = "Организация:"
+        static let organizationPlaceholder: String = "Избери организация"
         
         static let password: String = "Парола:"
         static let passwordPlaceholder: String = "Въведете вашата парола"

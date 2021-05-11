@@ -36,7 +36,7 @@ final class RegistrationViewController: BaseViewController {
     // MARK: - Private methods
     
     private func setupTableView() {
-        tableView.registerCell(RegistrationTextCell.self)
+        tableView.registerCell(TextCell.self)
         tableView.registerCell(PickerCell.self)
         tableView.dataSource = self
         tableView.delegate = self
@@ -60,20 +60,16 @@ extension RegistrationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.inputFieldsConfigs.count
+        return viewModel.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = viewModel.inputFieldsConfigs[indexPath.row]
+        let model = viewModel.data[indexPath.row]
         let cell: UITableViewCell
         
         if model.isTextInputField {
-            let textCell = tableView.dequeueReusableCell(
-                withIdentifier: RegistrationTextCell.cellIdentifier,
-                for: indexPath
-            )
-            
-            guard let textCell = textCell as? RegistrationTextCell  else {
+            let textCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
+            guard let textCell = textCell as? TextCell  else {
                 return UITableViewCell()
             }
             

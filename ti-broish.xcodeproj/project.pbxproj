@@ -24,6 +24,8 @@
 		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100C03CD264ADF3900B01B0E /* TextCell.swift */; };
+		100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100C03CF264ADF4400B01B0E /* TextCell.xib */; };
 		1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */; };
 		1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC892644A84700BDAB8A /* Organization.swift */; };
 		101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */; };
@@ -43,7 +45,6 @@
 		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
 		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
-		104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF85263A8872001B6B15 /* InputFieldConfig.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
 		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
@@ -82,11 +83,10 @@
 		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
 		10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E622C0263A013300381A83 /* RegistrationViewModel.swift */; };
-		10EB5A9C263A05FE00690F88 /* RegistrationTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */; };
-		10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */; };
 		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
+		10EDBB44264AE74900627457 /* InputFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EDBB43264AE74900627457 /* InputFieldData.swift */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
@@ -171,6 +171,8 @@
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		100C03CD264ADF3900B01B0E /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		100C03CF264ADF4400B01B0E /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsRequest.swift; sourceTree = "<group>"; };
 		1013FC892644A84700BDAB8A /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -190,7 +192,6 @@
 		1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
-		104DAF85263A8872001B6B15 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
@@ -229,11 +230,10 @@
 		10C4EAE12633637B005FD07F /* TibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTableViewCell.swift; sourceTree = "<group>"; };
 		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		10E622C0263A013300381A83 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationTextCell.xib; sourceTree = "<group>"; };
-		10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTextCell.swift; sourceTree = "<group>"; };
 		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
+		10EDBB43264AE74900627457 /* InputFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldData.swift; sourceTree = "<group>"; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
@@ -453,8 +453,6 @@
 				10E622C0263A013300381A83 /* RegistrationViewModel.swift */,
 				10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */,
 				10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */,
-				10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */,
-				10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */,
 				10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */,
 			);
 			path = Registration;
@@ -521,13 +519,15 @@
 				10EB5AA2263A1A8F00690F88 /* TibTextField.swift */,
 				10B9EAC42637557E0067FAE2 /* InputField.swift */,
 				104DAF83263A880A001B6B15 /* InputFieldType.swift */,
-				104DAF85263A8872001B6B15 /* InputFieldConfig.swift */,
+				10EDBB43264AE74900627457 /* InputFieldData.swift */,
 				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
 				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
 				10B9EAD926375BE30067FAE2 /* TextInputField.swift */,
 				10B9EAE126375C390067FAE2 /* TextInputField.xib */,
 				1058029D2649EA4B00A88528 /* PickerCell.swift */,
 				1058029E2649EA4B00A88528 /* PickerCell.xib */,
+				100C03CD264ADF3900B01B0E /* TextCell.swift */,
+				100C03CF264ADF4400B01B0E /* TextCell.xib */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -874,7 +874,7 @@
 				105802A12649EA4B00A88528 /* PickerCell.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
 				10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */,
-				10EB5A9C263A05FE00690F88 /* RegistrationTextCell.xib in Resources */,
+				100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
 				CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */,
 				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
@@ -971,6 +971,7 @@
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
+				10EDBB44264AE74900627457 /* InputFieldData.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
@@ -988,7 +989,6 @@
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
-				104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */,
 				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
 				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
 				10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */,
@@ -1012,6 +1012,7 @@
 				106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */,
 				CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
+				100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */,
 				10F78C312642E43900407284 /* FirebaseError.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
@@ -1022,7 +1023,6 @@
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */,
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
-				10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
