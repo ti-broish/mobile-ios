@@ -101,6 +101,7 @@
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
 		CF8729FC264BC19B00C8E849 /* GetUserDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8729FB264BC19B00C8E849 /* GetUserDetailsRequest.swift */; };
 		CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF872A00264BC2C300C8E849 /* UpdateUserDetailsRequest.swift */; };
+		CF872A09264BC3D700C8E849 /* DeleteUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF872A08264BC3D700C8E849 /* DeleteUserRequest.swift */; };
 		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
 		CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574E526374C8D002BCECD /* FirebaseClient.swift */; };
 		CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFA575002637D925002BCECD /* GoogleService-Info.plist */; };
@@ -252,6 +253,7 @@
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		CF8729FB264BC19B00C8E849 /* GetUserDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDetailsRequest.swift; sourceTree = "<group>"; };
 		CF872A00264BC2C300C8E849 /* UpdateUserDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserDetailsRequest.swift; sourceTree = "<group>"; };
+		CF872A08264BC3D700C8E849 /* DeleteUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserRequest.swift; sourceTree = "<group>"; };
 		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CFA574E526374C8D002BCECD /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		CFA575002637D925002BCECD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 				CF3DB0D3264BB87700AAB618 /* CreateUserRequest.swift */,
 				CF8729FB264BC19B00C8E849 /* GetUserDetailsRequest.swift */,
 				CF872A00264BC2C300C8E849 /* UpdateUserDetailsRequest.swift */,
+				CF872A08264BC3D700C8E849 /* DeleteUserRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
 				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
+				CF872A09264BC3D700C8E849 /* DeleteUserRequest.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,

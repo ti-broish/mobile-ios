@@ -17,6 +17,7 @@ protocol APIClientInterface {
     func createUser(_ user: User, completion: APIResult<BaseResponse>?)
     func getUserDetails(completion: APIResult<UserDetails>?)
     func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?)
+    func deleteUser(completion: APIResult<UserDetails>?)
     
     func getOrganizations(completion: APIResult<OrganizationsResponse>?)
     func sendAPNsToken(completion: APIResult<BaseResponse>?)
@@ -129,6 +130,14 @@ extension APIClient: APIClientInterface {
     func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?) {
         let request = UpdateUserDetailsRequest(user: user)
     
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func deleteUser(completion: APIResult<UserDetails>?) {
+        let request = DeleteUserRequest()
+        
         send(request) { result in
             completion?(result)
         }
