@@ -43,6 +43,24 @@ extension APIManager {
 
 extension APIManager: APIClientInterface {
     
+    // MARK: - User
+    
+    func createUser(_ user: User, completion: APIResult<BaseResponse>?) {
+        apiClient.createUser(user, completion: completion)
+    }
+    
+    func getUserDetails(completion: APIResult<UserDetails>?) {
+        apiClient.getUserDetails(completion: completion)
+    }
+    
+    func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?) {
+        apiClient.updateUserDetails(user, completion: completion)
+    }
+    
+    func deleteUser(completion: APIResult<UserDetails>?) {
+        apiClient.deleteUser(completion: completion)
+    }
+    
     func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         apiClient.getOrganizations(completion: completion)
     }

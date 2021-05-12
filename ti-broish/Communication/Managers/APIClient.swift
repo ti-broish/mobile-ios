@@ -12,6 +12,13 @@ typealias HTTPMethod = Alamofire.HTTPMethod
 
 protocol APIClientInterface {
     
+    // MARK: - User
+    
+    func createUser(_ user: User, completion: APIResult<BaseResponse>?)
+    func getUserDetails(completion: APIResult<UserDetails>?)
+    func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?)
+    func deleteUser(completion: APIResult<UserDetails>?)
+    
     func getOrganizations(completion: APIResult<OrganizationsResponse>?)
     func sendAPNsToken(completion: APIResult<BaseResponse>?)
     func getParties(_ completion: APIResult<PartiesResponse>?)
@@ -101,6 +108,40 @@ final class APIClient {
 // MARK: - APIClientInterface
 
 extension APIClient: APIClientInterface {
+    
+    // MARK: - User
+    
+    func createUser(_ user: User, completion: APIResult<BaseResponse>?) {
+        let request = CreateUserRequest(user: user)
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func getUserDetails(completion: APIResult<UserDetails>?) {
+        let request = GetUserDetailsRequest()
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?) {
+        let request = UpdateUserDetailsRequest(user: user)
+    
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func deleteUser(completion: APIResult<UserDetails>?) {
+        let request = DeleteUserRequest()
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
     
     func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         let request = OrganizationsRequest()

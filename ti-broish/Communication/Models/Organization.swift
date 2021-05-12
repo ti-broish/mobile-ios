@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OrganizationType: String, Decodable {
+enum OrganizationType: String, Codable {
     
     case party = "party"
     case commission = "commission"
@@ -16,7 +16,7 @@ enum OrganizationType: String, Decodable {
 
 typealias OrganizationsResponse = [Organization]
 
-struct Organization: Decodable {
+struct Organization: Codable {
     
     let id: Int
     let name: String
