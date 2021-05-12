@@ -53,6 +53,10 @@ extension APIManager: APIClientInterface {
         apiClient.getUserDetails(completion: completion)
     }
     
+    func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?) {
+        apiClient.updateUserDetails(user, completion: completion)
+    }
+    
     func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         apiClient.getOrganizations(completion: completion)
     }

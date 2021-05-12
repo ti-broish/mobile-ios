@@ -99,7 +99,8 @@
 		CF61EEC526396E1B00278AA7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEC426396E1B00278AA7 /* Country.swift */; };
 		CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */; };
 		CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */; };
-		CF8729FC264BC19B00C8E849 /* GetUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8729FB264BC19B00C8E849 /* GetUserDetails.swift */; };
+		CF8729FC264BC19B00C8E849 /* GetUserDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8729FB264BC19B00C8E849 /* GetUserDetailsRequest.swift */; };
+		CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF872A00264BC2C300C8E849 /* UpdateUserDetailsRequest.swift */; };
 		CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574DD26374BE9002BCECD /* APIClient.swift */; };
 		CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA574E526374C8D002BCECD /* FirebaseClient.swift */; };
 		CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFA575002637D925002BCECD /* GoogleService-Info.plist */; };
@@ -249,7 +250,8 @@
 		CF61EEC426396E1B00278AA7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		CF7AEDC12635F2DC001F3EF8 /* BaseViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurator.swift; sourceTree = "<group>"; };
 		CF7AEDC62635F31A001F3EF8 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
-		CF8729FB264BC19B00C8E849 /* GetUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDetails.swift; sourceTree = "<group>"; };
+		CF8729FB264BC19B00C8E849 /* GetUserDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDetailsRequest.swift; sourceTree = "<group>"; };
+		CF872A00264BC2C300C8E849 /* UpdateUserDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserDetailsRequest.swift; sourceTree = "<group>"; };
 		CFA574DD26374BE9002BCECD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CFA574E526374C8D002BCECD /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		CFA575002637D925002BCECD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -596,7 +598,8 @@
 			isa = PBXGroup;
 			children = (
 				CF3DB0D3264BB87700AAB618 /* CreateUserRequest.swift */,
-				CF8729FB264BC19B00C8E849 /* GetUserDetails.swift */,
+				CF8729FB264BC19B00C8E849 /* GetUserDetailsRequest.swift */,
+				CF872A00264BC2C300C8E849 /* UpdateUserDetailsRequest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1015,7 +1018,7 @@
 				CFB138C1263591F7001B373D /* Coordinator.swift in Sources */,
 				0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */,
 				1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */,
-				CF8729FC264BC19B00C8E849 /* GetUserDetails.swift in Sources */,
+				CF8729FC264BC19B00C8E849 /* GetUserDetailsRequest.swift in Sources */,
 				106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */,
 				0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */,
 				10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */,
@@ -1053,6 +1056,7 @@
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
+				CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
