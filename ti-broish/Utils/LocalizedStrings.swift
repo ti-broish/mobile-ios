@@ -11,6 +11,12 @@ struct LocalizedStrings {
     static let menu: String = "Меню"
     static let back: String = "Назад"
     
+    struct Search {
+        
+        static let searchBarPlaceholder: String = "Избери"
+        static let doneButton: String = "Затвори"
+    }
+    
     struct Errors {
         
         static let defaultError: String = "Възникна грешка. Моля опитайте отново."
