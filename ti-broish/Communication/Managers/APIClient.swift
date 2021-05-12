@@ -15,6 +15,7 @@ protocol APIClientInterface {
     // MARK: - User
     
     func createUser(_ user: User, completion: APIResult<BaseResponse>?)
+    func getUserDetails(completion: APIResult<UserDetails>?)
     
     func getOrganizations(completion: APIResult<OrganizationsResponse>?)
     func sendAPNsToken(completion: APIResult<BaseResponse>?)
@@ -110,6 +111,14 @@ extension APIClient: APIClientInterface {
     
     func createUser(_ user: User, completion: APIResult<BaseResponse>?) {
         let request = CreateUserRequest(user: user)
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    func getUserDetails(completion: APIResult<UserDetails>?) {
+        let request = GetUserDetails()
         
         send(request) { result in
             completion?(result)
