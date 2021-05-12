@@ -12,6 +12,10 @@ typealias HTTPMethod = Alamofire.HTTPMethod
 
 protocol APIClientInterface {
     
+    // MARK: - User
+    
+    func createUser(_ user: User, completion: APIResult<BaseResponse>?)
+    
     func getOrganizations(completion: APIResult<OrganizationsResponse>?)
     func sendAPNsToken(completion: APIResult<BaseResponse>?)
     func getParties(_ completion: APIResult<PartiesResponse>?)
@@ -101,6 +105,16 @@ final class APIClient {
 // MARK: - APIClientInterface
 
 extension APIClient: APIClientInterface {
+    
+    // MARK: - User
+    
+    func createUser(_ user: User, completion: APIResult<BaseResponse>?) {
+        let request = CreateUserRequest(user: user)
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
     
     func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         let request = OrganizationsRequest()

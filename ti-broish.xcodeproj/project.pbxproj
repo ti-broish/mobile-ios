@@ -91,6 +91,9 @@
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
 		CF390FF5263732BA00999369 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FF4263732BA00999369 /* APIError.swift */; };
+		CF3DB0C9264BB83B00AAB618 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB0C8264BB83A00AAB618 /* User.swift */; };
+		CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB0CD264BB84100AAB618 /* UserDetails.swift */; };
+		CF3DB0D4264BB87700AAB618 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DB0D3264BB87700AAB618 /* CreateUserRequest.swift */; };
 		CF61EEB726396B9E00278AA7 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEB626396B9E00278AA7 /* Region.swift */; };
 		CF61EEC026396BFB00278AA7 /* GetTownsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */; };
 		CF61EEC526396E1B00278AA7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61EEC426396E1B00278AA7 /* Country.swift */; };
@@ -237,6 +240,9 @@
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		CF390FF4263732BA00999369 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CF3DB0C8264BB83A00AAB618 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CF3DB0CD264BB84100AAB618 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		CF3DB0D3264BB87700AAB618 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
 		CF61EEB626396B9E00278AA7 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		CF61EEBF26396BFB00278AA7 /* GetTownsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTownsRequest.swift; sourceTree = "<group>"; };
 		CF61EEC426396E1B00278AA7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -552,6 +558,7 @@
 				CF390FE32637326300999369 /* APIManager.swift */,
 				CFA574DD26374BE9002BCECD /* APIClient.swift */,
 				CFA574E526374C8D002BCECD /* FirebaseClient.swift */,
+				108F20232649753400E54F64 /* RequestInterceptor.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -559,6 +566,7 @@
 		CF390FEB2637327D00999369 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CF3DB0D2264BB86F00AAB618 /* User */,
 				CF61EEC926396EF600278AA7 /* Location */,
 				CFA5764E26392653002BCECD /* Protocols */,
 				CFA5751B2637F2EC002BCECD /* Violations */,
@@ -569,9 +577,25 @@
 				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
 				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
 				CFA57680263943E0002BCECD /* GetSectionsRequest.swift */,
-				108F20232649753400E54F64 /* RequestInterceptor.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		CF3DB0C7264BB81F00AAB618 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CF3DB0C8264BB83A00AAB618 /* User.swift */,
+				CF3DB0CD264BB84100AAB618 /* UserDetails.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CF3DB0D2264BB86F00AAB618 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CF3DB0D3264BB87700AAB618 /* CreateUserRequest.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		CF61EEC926396EF600278AA7 /* Location */ = {
@@ -605,14 +629,7 @@
 		CFA575372637F6CD002BCECD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CFA575452637F9F2002BCECD /* Responses */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CFA575452637F9F2002BCECD /* Responses */ = {
-			isa = PBXGroup;
-			children = (
+				CF3DB0C7264BB81F00AAB618 /* User */,
 				CFA5768A263949A2002BCECD /* Location */,
 				CFA5765F26392DA6002BCECD /* Protocols */,
 				CFA575462637F9FE002BCECD /* Violations */,
@@ -621,7 +638,7 @@
 				CFA5767B26393FA3002BCECD /* Party.swift */,
 				1013FC892644A84700BDAB8A /* Organization.swift */,
 			);
-			path = Responses;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CFA575462637F9FE002BCECD /* Violations */ = {
@@ -959,6 +976,7 @@
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
+				CF3DB0C9264BB83B00AAB618 /* User.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
@@ -967,6 +985,7 @@
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
+				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				10C4EA9A26334BDF005FD07F /* ViolationDetailsViewController.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */,
@@ -1019,6 +1038,7 @@
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
+				CF3DB0D4264BB87700AAB618 /* CreateUserRequest.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,

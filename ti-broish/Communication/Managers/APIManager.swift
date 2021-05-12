@@ -43,6 +43,12 @@ extension APIManager {
 
 extension APIManager: APIClientInterface {
     
+    // MARK: - User
+    
+    func createUser(_ user: User, completion: APIResult<BaseResponse>?) {
+        apiClient.createUser(user, completion: completion)
+    }
+    
     func getOrganizations(completion: APIResult<OrganizationsResponse>?) {
         apiClient.getOrganizations(completion: completion)
     }
