@@ -13,3 +13,14 @@ target 'ti-broish' do
   pod 'Firebase/Messaging'
 
 end
+
+target 'ti-broishTests' do
+  use_frameworks!
+
+  pod 'TwoWayBondage'
+  pod 'Alamofire', '~> 5.2'
+
+  pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
+
+end
