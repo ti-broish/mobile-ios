@@ -16,7 +16,6 @@
 		0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */; };
 		0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB395E261CF9CE0005BF38 /* Assets.xcassets */; };
 		0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */; };
-		0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */; };
 		0AEB3978261CF9CE0005BF38 /* ti_broishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */; };
 		0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3990261CFDE00005BF38 /* LoginViewController.swift */; };
 		0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */; };
@@ -97,6 +96,7 @@
 		10EDBB44264AE74900627457 /* InputFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EDBB43264AE74900627457 /* InputFieldData.swift */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
+		4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
@@ -174,7 +174,6 @@
 		0AEB3961261CF9CE0005BF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AEB3963261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB3968261CF9CE0005BF38 /* ti-broishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ti-broishTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishTests.swift; sourceTree = "<group>"; };
 		0AEB396E261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB3973261CF9CE0005BF38 /* ti-broishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ti-broishUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishUITests.swift; sourceTree = "<group>"; };
@@ -259,6 +258,8 @@
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
+		72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broishTests.release.xcconfig"; path = "Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests.release.xcconfig"; sourceTree = "<group>"; };
+		7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broishTests.debug.xcconfig"; path = "Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesRequest.swift; sourceTree = "<group>"; };
+		EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +387,6 @@
 		0AEB396B261CF9CE0005BF38 /* ti-broishTests */ = {
 			isa = PBXGroup;
 			children = (
-				0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */,
 				0AEB396E261CF9CE0005BF38 /* Info.plist */,
 				109027FF264DD4190011E4BD /* APIManagerTests.swift */,
 			);
@@ -596,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */,
+				EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -827,6 +830,8 @@
 			children = (
 				020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */,
 				62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */,
+				7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */,
+				72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -857,9 +862,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AEB397F261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishTests" */;
 			buildPhases = (
+				F2915F2F185FCB16375CD1B3 /* [CP] Check Pods Manifest.lock */,
 				0AEB3964261CF9CE0005BF38 /* Sources */,
 				0AEB3965261CF9CE0005BF38 /* Frameworks */,
 				0AEB3966261CF9CE0005BF38 /* Resources */,
+				336E61DB3BF9588FF47F36DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1006,6 +1013,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ti-broish/Pods-ti-broish-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		336E61DB3BF9588FF47F36DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9664B9F97D6B1D006C4B38C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1022,6 +1046,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ti-broish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2915F2F185FCB16375CD1B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ti-broishTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1141,7 +1187,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */,
-				0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,6 +1358,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1342,8 +1388,9 @@
 		};
 		0AEB3980261CF9CE0005BF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1366,8 +1413,9 @@
 		};
 		0AEB3981261CF9CE0005BF38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
