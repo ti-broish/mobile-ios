@@ -10,6 +10,7 @@ struct LocalizedStrings {
     
     static let menu: String = "Меню"
     static let back: String = "Назад"
+    static let cancel: String = "Откажи"
     
     struct Search {
         

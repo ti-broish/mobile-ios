@@ -21,6 +21,10 @@ final class RegistrationViewModel: CoordinatableViewModel {
         loadRegistrationFields()
     }
     
+    func updateValue(_ value: AnyObject?, at indexPath: IndexPath) {
+        data[indexPath.row].data = value
+    }
+    
     // MARK: - Private methods
     
     private func loadRegistrationFields() {

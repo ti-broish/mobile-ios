@@ -18,4 +18,5 @@ struct SearchItem {
     let name: String
     let code: String
     let type: SearchItemType
+    var parentCellIndexPath: IndexPath?
 }

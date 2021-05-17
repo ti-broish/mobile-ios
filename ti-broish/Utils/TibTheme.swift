@@ -9,6 +9,10 @@ import UIKit
 
 class TibTheme {
     
+    static func changeAppearance() {
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = LocalizedStrings.cancel
+    }
+    
     var backgroundColor: UIColor {
         return .backgroundColor
     }

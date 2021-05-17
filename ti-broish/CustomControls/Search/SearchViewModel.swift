@@ -9,14 +9,31 @@ import Combine
 
 final class SearchViewModel: CoordinatableViewModel {
     
-    private (set) var data = [SearchItem]()
+    private var lastSearchedText = ""
+    private var data = [SearchItem]()
+    private var filteredData = [SearchItem]()
     
     let reloadDataPublisher = PassthroughSubject<Void, APIError>()
+    
+    var numberOfRows: Int {
+        return lastSearchedText.isEmpty ? data.count : filteredData.count
+    }
+    
+    var items: [SearchItem] {
+        return lastSearchedText.isEmpty ? data : filteredData
+    }
     
     // MARK: - Public Methods
     
     func start() {
         
+    }
+    
+    func filter(by text: String) {
+        lastSearchedText = text
+        
+        filteredData.removeAll()
+        filteredData = data.filter { $0.name.lowercased().contains(lastSearchedText.lowercased()) }
     }
     
     func getOrganizations() {

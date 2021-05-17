@@ -31,9 +31,12 @@ final class PickerCell: TibTableViewCell, Configurable {
     
     func configureWith(_ data: InputFieldData) {
         titleLabel.text = data.title
+        valueLabel.attributedText = nil
         
-        if let _data = data.data as? String {
-            valueLabel.text = _data
+        if let text = data.data as? String {
+            valueLabel.text = text
+        } else if let item = data.data as? SearchItem {
+            valueLabel.text = item.name
         } else if let placeholderText = data.placeholderText {
             valueLabel.attributedText = NSAttributedString(
                 string: placeholderText,

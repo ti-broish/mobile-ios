@@ -8,12 +8,22 @@
 import UIKit
 import Combine
 
+protocol SearchViewControllerDelegate: AnyObject {
+    
+    func didFinishSearching(value: SearchItem?, sender: SearchViewController)
+}
+
 final class SearchViewController: UIViewController, TibViewControllable {
     
     @IBOutlet private weak var tableView: UITableView!
     
     private let viewModel = SearchViewModel()
     private var reloadDataSubscription: AnyCancellable?
+    
+    var selectedItem: SearchItem?
+    var parentCellIndexPath: IndexPath?
+    
+    weak var delegate: SearchViewControllerDelegate?
     
     // MARK: - View lifecycle
     
@@ -35,7 +45,7 @@ final class SearchViewController: UIViewController, TibViewControllable {
     
     @objc private func handleDoneBarButton(_ sender: UIBarButtonItem) {
         reloadDataSubscription?.cancel()
-        dismiss(animated: true, completion: nil)
+        delegate?.didFinishSearching(value: selectedItem, sender: self)
     }
     
     private func setupDoneBarButton() {
@@ -51,8 +61,6 @@ final class SearchViewController: UIViewController, TibViewControllable {
         tableView.registerCell(SearchCell.self)
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.separatorStyle = .none
-//        tableView.separatorColor = .none
         tableView.rowHeight = 44.0
         tableView.tableFooterView = UIView()
     }
@@ -85,7 +93,7 @@ final class SearchViewController: UIViewController, TibViewControllable {
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.data.count
+        return viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,7 +101,9 @@ extension SearchViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configureWith(viewModel.data[indexPath.row])
+        let item = viewModel.items[indexPath.row]
+        cell.configureWith(item)
+        cell.accessoryType = item.id == selectedItem?.id ? .checkmark : .none
         
         return cell
     }
@@ -105,6 +115,10 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        selectedItem = viewModel.items[indexPath.row]
+        
+        tableView.reloadData()
     }
 }
 
@@ -112,7 +126,12 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UISearchResultsUpdating {
     
-  func updateSearchResults(for searchController: UISearchController) {
-    // TODO: - implement
-  }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        
+        viewModel.filter(by: text)
+        tableView.reloadData()
+    }
 }

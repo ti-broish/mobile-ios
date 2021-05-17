@@ -103,8 +103,11 @@ extension RegistrationViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let controller = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
-        let navController = UINavigationController(rootViewController: controller)
+        controller.delegate = self
+        controller.parentCellIndexPath = indexPath
+        controller.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
         
+        let navController = UINavigationController(rootViewController: controller)
         self.present(navController, animated: true)
     }
 }
@@ -117,5 +120,19 @@ extension RegistrationViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+}
+
+// MARK: - SearchViewControllerDelegate
+
+extension RegistrationViewController: SearchViewControllerDelegate {
+    
+    func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
+        if let indexPath = sender.parentCellIndexPath {
+            viewModel.updateValue(value as AnyObject, at: indexPath)
+        }
+        
+        tableView.reloadData()
+        sender.dismiss(animated: true, completion: nil)
     }
 }
