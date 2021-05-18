@@ -56,7 +56,7 @@ final class CheckboxCell: TibTableViewCell, Configurable {
     }
     
     func configureWith(_ data: InputFieldData) {
-        titleLabel.text = data.title
+        titleLabel.setText(data.title, isRequired: data.isRequired)
         
         if let _state = data.data as? CheckboxState {
             state = _state

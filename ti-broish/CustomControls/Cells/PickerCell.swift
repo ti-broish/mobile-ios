@@ -30,7 +30,7 @@ final class PickerCell: TibTableViewCell, Configurable {
     }
     
     func configureWith(_ data: InputFieldData) {
-        titleLabel.text = data.title
+        titleLabel.setText(data.title, isRequired: data.isRequired)
         valueLabel.attributedText = nil
         
         if let text = data.data as? String {

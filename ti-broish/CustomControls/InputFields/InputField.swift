@@ -58,7 +58,7 @@ class InputField: UIView, Configurable {
     }
     
     func configureWith(_ data: InputFieldData) {
-        titleLabel.text = data.title
+        titleLabel.setText(data.title, isRequired: data.isRequired)
         
         if let text = data.data as? String {
             textField.text = text

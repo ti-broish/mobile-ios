@@ -60,6 +60,7 @@
 		10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109027FF264DD4190011E4BD /* APIManagerTests.swift */; };
 		10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0126545C0B001E6B0E /* CheckboxCell.swift */; };
 		10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B11E0326545C18001E6B0E /* CheckboxCell.xib */; };
+		10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0526546544001E6B0E /* UILabelExtension.swift */; };
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
 		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
@@ -223,6 +224,7 @@
 		109027FF264DD4190011E4BD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		10B11E0126545C0B001E6B0E /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
 		10B11E0326545C18001E6B0E /* CheckboxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
+		10B11E0526546544001E6B0E /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
 				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
 				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
+				10B11E0526546544001E6B0E /* UILabelExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1180,6 +1183,7 @@
 				CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
+				10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */,
 				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
