@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckboxCell" id="pMe-D9-kaW" customClass="CheckboxCell" customModule="ti_broish" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pMe-D9-kaW" id="Qup-bl-N5h">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaT-dC-jgK" userLabel="checkboxButton">
+                        <rect key="frame" x="12" y="8" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="IFW-xd-ucu"/>
+                            <constraint firstAttribute="height" constant="20" id="ZeF-xD-nQh"/>
+                        </constraints>
+                        <connections>
+                            <action selector="chengeCheckboxState:" destination="pMe-D9-kaW" eventType="touchUpInside" id="BsO-hU-Ykz"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T91-bh-f7x" userLabel="titleLabel">
+                        <rect key="frame" x="40" y="8" width="366" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="T91-bh-f7x" firstAttribute="leading" secondItem="OaT-dC-jgK" secondAttribute="trailing" constant="8" id="2wo-1q-bVT"/>
+                    <constraint firstItem="OaT-dC-jgK" firstAttribute="leading" secondItem="Qup-bl-N5h" secondAttribute="leading" constant="12" id="7bx-vO-jpc"/>
+                    <constraint firstItem="OaT-dC-jgK" firstAttribute="top" secondItem="Qup-bl-N5h" secondAttribute="top" constant="8" id="90f-at-C5n"/>
+                    <constraint firstItem="T91-bh-f7x" firstAttribute="top" secondItem="Qup-bl-N5h" secondAttribute="top" constant="8" id="HM9-EI-0g2"/>
+                    <constraint firstAttribute="trailing" secondItem="T91-bh-f7x" secondAttribute="trailing" constant="8" id="Hji-XZ-qgD"/>
+                    <constraint firstAttribute="bottom" secondItem="T91-bh-f7x" secondAttribute="bottom" constant="8" id="mhQ-Im-TCV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkboxButton" destination="OaT-dC-jgK" id="sSr-jS-eQN"/>
+                <outlet property="titleLabel" destination="T91-bh-f7x" id="MLR-z2-YSQ"/>
+            </connections>
+            <point key="canvasLocation" x="91" y="76"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -58,6 +58,8 @@
 		108F202226496D8800E54F64 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F202126496D8800E54F64 /* Town.swift */; };
 		108F20242649753400E54F64 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F20232649753400E54F64 /* RequestInterceptor.swift */; };
 		10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109027FF264DD4190011E4BD /* APIManagerTests.swift */; };
+		10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0126545C0B001E6B0E /* CheckboxCell.swift */; };
+		10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B11E0326545C18001E6B0E /* CheckboxCell.xib */; };
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
 		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
@@ -219,6 +221,8 @@
 		108F202126496D8800E54F64 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		108F20232649753400E54F64 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		109027FF264DD4190011E4BD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
+		10B11E0126545C0B001E6B0E /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
+		10B11E0326545C18001E6B0E /* CheckboxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
@@ -489,6 +493,8 @@
 				1058029E2649EA4B00A88528 /* PickerCell.xib */,
 				100C03CD264ADF3900B01B0E /* TextCell.swift */,
 				100C03CF264ADF4400B01B0E /* TextCell.xib */,
+				10B11E0126545C0B001E6B0E /* CheckboxCell.swift */,
+				10B11E0326545C18001E6B0E /* CheckboxCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -945,6 +951,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */,
+				10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */,
 				0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */,
 				1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */,
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
@@ -1161,6 +1168,7 @@
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,
+				10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */,
 				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,
 				105802A02649EA4B00A88528 /* PickerCell.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,

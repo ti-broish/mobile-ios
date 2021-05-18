@@ -83,14 +83,14 @@ struct RegistrationDataBuilder {
             )
         case .hasAgreedToKeepData:
             return InputFieldData(
-                type: .text,
+                type: .checkbox,
                 title: LocalizedStrings.Registration.hasAgreedToKeepData,
                 placeholderText: nil,
                 isRequired: false
             )
         case .hasAdulthood:
             return InputFieldData(
-                type: .text,
+                type: .checkbox,
                 title: LocalizedStrings.Registration.hasAdulthood,
                 placeholderText: nil,
                 isRequired: true

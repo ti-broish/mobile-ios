@@ -23,6 +23,10 @@ struct InputFieldData {
         return type == .picker
     }
     
+    var isCheckboxInputField: Bool {
+        return type == .checkbox
+    }
+    
     init(
         type: InputFieldType,
         title: String,

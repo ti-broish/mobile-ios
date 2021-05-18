@@ -38,6 +38,8 @@ final class RegistrationViewController: BaseViewController {
     private func setupTableView() {
         tableView.registerCell(TextCell.self)
         tableView.registerCell(PickerCell.self)
+        tableView.registerCell(CheckboxCell.self)
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -84,6 +86,15 @@ extension RegistrationViewController: UITableViewDataSource {
             
             pickerCell.configureWith(model)
             cell = pickerCell
+        } else if model.isCheckboxInputField {
+            let checkboxCell = tableView.dequeueReusableCell(withIdentifier: CheckboxCell.cellIdentifier, for: indexPath)
+            guard let checkboxCell = checkboxCell as? CheckboxCell else {
+                return UITableViewCell()
+            }
+            
+            checkboxCell.configureWith(model)
+            checkboxCell.delegate = self
+            cell = checkboxCell
         } else {
             cell = UITableViewCell()
         }
@@ -166,5 +177,16 @@ extension RegistrationViewController: SearchViewControllerDelegate {
         
         tableView.reloadData()
         sender.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - CheckbboxCellDelegate
+
+extension RegistrationViewController: CheckboxCellDelegate {
+    
+    func didChangeCheckboxState(state: CheckboxState, sender: CheckboxCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            viewModel.updateValue((state == .checked) as AnyObject, at: indexPath)
+        }
     }
 }
