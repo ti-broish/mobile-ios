@@ -102,6 +102,14 @@ extension RegistrationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        if viewModel.data[indexPath.row].isPickerInputField {
+            showSearchController(for: indexPath)
+        }
+    }
+    
+    // MARK: - Private methods (UITableViewDelegate)
+    
+    private func showSearchController(for indexPath: IndexPath) {
         let controller = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
         controller.delegate = self
         controller.parentCellIndexPath = indexPath
@@ -116,10 +124,34 @@ extension RegistrationViewController: UITableViewDelegate {
 
 extension RegistrationViewController: UITextFieldDelegate {
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateValueForTextField(textField)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        updateValueForTextField(textField)
         
         return true
+    }
+    
+    // MARK: - Private methods (UITextFieldDelegate)
+    
+    private func cellForTextField(_ textField: UITextField) -> UITableViewCell? {
+        return tableView.visibleCells.filter { cell in
+            if let textCell = cell as? TextCell {
+                return textCell.textInputField.textField == textField
+            } else {
+                return false
+            }
+        }.first
+    }
+    
+    private func updateValueForTextField(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        
+        if let cell = cellForTextField(textField), let indexPath = tableView.indexPath(for: cell) {
+            viewModel.updateValue(textField.text as AnyObject, at: indexPath)
+        }
     }
 }
 
