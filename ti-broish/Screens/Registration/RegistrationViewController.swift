@@ -35,6 +35,45 @@ final class RegistrationViewController: BaseViewController {
     
     // MARK: - Private methods
     
+    @objc private func tryRegistration(_ sender: UIButton) {
+        print("tryRegistration is not implemented")
+    }
+    
+    private func tableViewHeaderView() -> UIView {
+        let theme = TibTheme()
+        let bounds = UIScreen.main.bounds
+        let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: bounds.size.height * 0.1))
+        label.textColor = theme.textFieldColor
+        label.font = .boldFont(size: 18.0)
+        label.text = LocalizedStrings.Registration.title
+        label.textAlignment = .center
+        
+        return label
+    }
+    
+    private func registrationButtonView() -> UIView {
+        let theme = TibTheme()
+        let bounds = UIScreen.main.bounds
+        let container = UIView(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: bounds.size.height * 0.2))
+        container.backgroundColor = theme.backgroundColor
+        
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        button.configureSolidButton(title: LocalizedStrings.Registration.registerButton, theme: theme)
+        button.addTarget(self, action: #selector(tryRegistration), for: .touchUpInside)
+        container.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            button.widthAnchor.constraint(equalToConstant: bounds.size.width * 0.5),
+            button.heightAnchor.constraint(equalToConstant: theme.defaultButtonHeight),
+            button.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+        ])
+        
+        return container
+    }
+    
     private func setupTableView() {
         tableView.registerCell(TextCell.self)
         tableView.registerCell(PickerCell.self)
@@ -45,7 +84,8 @@ final class RegistrationViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.separatorColor = .none
         tableView.rowHeight = 86.0
-        tableView.tableFooterView = UIView()
+        tableView.tableHeaderView = tableViewHeaderView()
+        tableView.tableFooterView = registrationButtonView()
     }
 }
 

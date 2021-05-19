@@ -52,6 +52,8 @@ struct LocalizedStrings {
     
     struct Registration {
         
+        static let title: String = "РЕГИСТРАЦИЯ"
+        
         static let firstName: String = "Име:"
         static let firstNamePlaceholder: String = "Въведете вашето име"
         
@@ -82,5 +84,6 @@ struct LocalizedStrings {
         """
         
         static let hasAdulthood: String = "Имам навършени 18 години."
+        static let registerButton: String = "СЪЗДАЙ ПРОФИЛ"
     }
 }

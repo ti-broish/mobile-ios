@@ -27,7 +27,7 @@ protocol CheckboxCellDelegate: AnyObject {
 
 final class CheckboxCell: TibTableViewCell, Configurable {
     
-    @IBOutlet private (set) weak var checkboxButton: UIButton!
+    @IBOutlet private weak var checkboxButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
     
     private var state: CheckboxState = .unchecked {

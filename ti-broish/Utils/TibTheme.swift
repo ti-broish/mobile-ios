@@ -56,4 +56,8 @@ class TibTheme {
     var solidButtonTextColor: UIColor {
         return .white
     }
+    
+    var defaultButtonHeight: CGFloat {
+        return 44.0
+    }
 }
