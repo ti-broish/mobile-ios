@@ -109,7 +109,7 @@ extension RegistrationViewController: UITableViewDataSource {
         let model = viewModel.data[indexPath.row]
         let cell: UITableViewCell
         
-        if model.isTextInputField {
+        if model.isTextField {
             let textCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
             guard let textCell = textCell as? TextCell  else {
                 return UITableViewCell()
@@ -118,7 +118,7 @@ extension RegistrationViewController: UITableViewDataSource {
             textCell.textInputField.configureWith(model)
             textCell.textInputField.textField.delegate = self
             cell = textCell
-        } else if model.isPickerInputField {
+        } else if model.isPickerField {
             let pickerCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
             guard let pickerCell = pickerCell as? PickerCell else {
                 return UITableViewCell()
@@ -126,7 +126,7 @@ extension RegistrationViewController: UITableViewDataSource {
             
             pickerCell.configureWith(model)
             cell = pickerCell
-        } else if model.isCheckboxInputField {
+        } else if model.isCheckboxField {
             let checkboxCell = tableView.dequeueReusableCell(withIdentifier: CheckboxCell.cellIdentifier, for: indexPath)
             guard let checkboxCell = checkboxCell as? CheckboxCell else {
                 return UITableViewCell()
@@ -153,7 +153,7 @@ extension RegistrationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if viewModel.data[indexPath.row].isPickerInputField {
+        if viewModel.data[indexPath.row].isPickerField {
             showSearchController(for: indexPath)
         }
     }

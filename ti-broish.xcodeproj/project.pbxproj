@@ -92,11 +92,11 @@
 		10DC9FA8264C115A00A7C941 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FA7264C115A00A7C941 /* SearchViewController.swift */; };
 		10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DC9FA9264C18B700A7C941 /* SearchViewController.xib */; };
 		10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FAB264C195400A7C941 /* SearchCell.swift */; };
+		10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E250D42655BC7D008A2121 /* InputFieldConfig.swift */; };
 		10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E622C0263A013300381A83 /* RegistrationViewModel.swift */; };
 		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
-		10EDBB44264AE74900627457 /* InputFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EDBB43264AE74900627457 /* InputFieldData.swift */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
 		4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */; };
@@ -256,11 +256,11 @@
 		10DC9FA7264C115A00A7C941 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		10DC9FA9264C18B700A7C941 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		10DC9FAB264C195400A7C941 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		10E250D42655BC7D008A2121 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		10E622C0263A013300381A83 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
-		10EDBB43264AE74900627457 /* InputFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldData.swift; sourceTree = "<group>"; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 			children = (
 				10B9EAC42637557E0067FAE2 /* InputField.swift */,
 				104DAF83263A880A001B6B15 /* InputFieldType.swift */,
-				10EDBB43264AE74900627457 /* InputFieldData.swift */,
+				10E250D42655BC7D008A2121 /* InputFieldConfig.swift */,
 				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
 				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
 				10B9EAD926375BE30067FAE2 /* TextInputField.swift */,
@@ -1107,7 +1107,7 @@
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
-				10EDBB44264AE74900627457 /* InputFieldData.swift in Sources */,
+				10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,

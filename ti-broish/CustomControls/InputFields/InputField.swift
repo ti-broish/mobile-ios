@@ -9,7 +9,7 @@ import UIKit
 
 class InputField: UIView, Configurable {
     
-    typealias DataType = InputFieldData
+    typealias DataType = InputFieldConfig
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -57,7 +57,7 @@ class InputField: UIView, Configurable {
         textField.autocapitalizationType = .none
     }
     
-    func configureWith(_ data: InputFieldData) {
+    func configureWith(_ data: InputFieldConfig) {
         titleLabel.setText(data.title, isRequired: data.isRequired)
         
         if let text = data.data as? String {

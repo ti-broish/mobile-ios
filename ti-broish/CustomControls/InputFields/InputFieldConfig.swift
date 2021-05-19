@@ -1,13 +1,13 @@
 //
-//  InputFieldData.swift
+//  InputFieldConfig.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 11.05.21.
+//  Created by Krasimir Slavkov on 20.05.21.
 //
 
 import Foundation
 
-struct InputFieldData {
+struct InputFieldConfig {
 
     let type: InputFieldType
     let title: String
@@ -15,15 +15,15 @@ struct InputFieldData {
     let isRequired: Bool
     var data: AnyObject?
     
-    var isTextInputField: Bool {
+    var isTextField: Bool {
         return type != .picker && type != .checkbox
     }
     
-    var isPickerInputField: Bool {
+    var isPickerField: Bool {
         return type == .picker
     }
     
-    var isCheckboxInputField: Bool {
+    var isCheckboxField: Bool {
         return type == .checkbox
     }
     
@@ -41,4 +41,5 @@ struct InputFieldData {
         self.data = data
     }
 }
+
 

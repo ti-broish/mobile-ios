@@ -9,7 +9,7 @@ import Foundation
 
 final class RegistrationViewModel: CoordinatableViewModel {
     
-    private (set) var data = [InputFieldData]()
+    private (set) var data = [InputFieldConfig]()
     
     init() {
         start()

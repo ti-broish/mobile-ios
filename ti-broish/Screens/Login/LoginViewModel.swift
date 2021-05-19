@@ -16,16 +16,16 @@ final class LoginViewModel: CoordinatableViewModel {
     
     weak var coordinator: LoginCoordinator?
     
-    func makeConfig(for type: LoginFieldType) -> InputFieldData {
+    func makeConfig(for type: LoginFieldType) -> InputFieldConfig {
         switch type {
         case .email:
-            return InputFieldData(
+            return InputFieldConfig(
                 type: .email,
                 title: LocalizedStrings.Login.emailTitle,
                 placeholderText: LocalizedStrings.Login.emailPlaceholder
             )
         case .password:
-            return InputFieldData(
+            return InputFieldConfig(
                 type: .password,
                 title: LocalizedStrings.Login.passwordTitle,
                 placeholderText: LocalizedStrings.Login.passwordPlaceholder
