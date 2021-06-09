@@ -24,4 +24,8 @@ final class ResetPasswordViewModel {
             )
         }
     }
+    
+    func resetPassword(email: String, completion: @escaping (Result<Void, FirebaseError>) -> (Void)) {
+        APIManager.shared.resetPassword(email: email, completion: completion)
+    }
 }

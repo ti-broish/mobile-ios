@@ -26,6 +26,10 @@ struct ErrorHandler {
             return .userDisabled
         case .wrongPassword:
             return .wrongPassword
+        case .invalidRecipientEmail:
+            return .invalidRecipientEmail
+        case .userNotFound: 
+            return .userNotFound
         default:
             return .unknownError
         }

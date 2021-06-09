@@ -47,7 +47,20 @@ final class ResetPasswordViewController: BaseViewController {
     }
     
     @IBAction private func handleSendButton(_ sender: UIButton) {
-        // TODO: - implement handleSendButton
+        guard let email = emailInputField.textField.text else {
+            return
+        }
+        
+        viewModel.resetPassword(email: email) { result in
+            switch result {
+            case .success():
+                // TODO: - show toast
+                print(LocalizedStrings.ResetPassword.message)
+            case .failure(let error):
+                // TODO: - show toast
+                print("request password failed: \(error.localizedString)")
+            }
+        }
     }
 }
 
@@ -57,7 +70,7 @@ extension ResetPasswordViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+        // TODO: - implement email validation
         return true
     }
 }

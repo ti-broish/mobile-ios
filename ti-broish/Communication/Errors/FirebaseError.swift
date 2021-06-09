@@ -18,6 +18,10 @@ enum FirebaseError: Error {
     case userDisabled
     /// Indicates the user attempted sign in with a wrong password
     case wrongPassword
+    /// Indicates an invalid recipient email was sent in the request
+    case invalidRecipientEmail
+    /// Indicates the user account was not found
+    case userNotFound
     
     var localizedString: String {
         switch self {
@@ -27,6 +31,10 @@ enum FirebaseError: Error {
             return LocalizedStrings.Errors.userDisabled
         case .wrongPassword:
             return LocalizedStrings.Errors.wrongPassword
+        case .invalidRecipientEmail:
+            return LocalizedStrings.Errors.userNotFound
+        case .userNotFound:
+            return LocalizedStrings.Errors.userNotFound
         default:
             return LocalizedStrings.Errors.defaultError
         }

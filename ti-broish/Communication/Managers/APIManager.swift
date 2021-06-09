@@ -37,6 +37,10 @@ extension APIManager {
     func register() {
         firebaseClient.register()
     }
+    
+    func resetPassword(email: String, completion: @escaping (Result<Void, FirebaseError>) -> Void) {
+        firebaseClient.resetPassword(email: email, completion: completion)
+    }
 }
 
 // MARK: - API calls

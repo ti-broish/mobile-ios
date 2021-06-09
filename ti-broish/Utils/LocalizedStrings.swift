@@ -25,6 +25,7 @@ struct LocalizedStrings {
         static let invalidEmail: String = "Невалиден имейл адрес"
         static let userDisabled: String = "Достъпа до акаунта е временно спрян. Моля опитайте по-късно."
         static let wrongPassword: String = "Невалидна парола. Паролата трябва да съдържа 6 или повече символа."
+        static let userNotFound: String = "Не е открит регистриран потребител с въведения имейл адрес."
     }
     
     struct Menu {
@@ -96,5 +97,7 @@ struct LocalizedStrings {
         
         static let sendButton: String = "Изпрати"
         static let backButton: String = "Назад"
+        
+        static let message: String = "За да промените паролата отворете връзката получена на Вашия имейл адрес."
     }
 }

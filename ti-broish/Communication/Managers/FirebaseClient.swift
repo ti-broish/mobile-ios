@@ -34,7 +34,13 @@ class FirebaseClient {
         }
     }
     
-    func resetPassword() {
-        
+    func resetPassword(email: String, completion: @escaping (Result<Void, FirebaseError>) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let _error = error {
+                completion(.failure(ErrorHandler.handleFirebaseError(_error)))
+            } else {
+                completion(.success(()))
+            }
+        }
     }
 }
