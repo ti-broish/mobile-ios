@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,9 @@
 		1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */; };
 		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
 		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
+		10482D9026710848001C260F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D8F26710848001C260F /* Alamofire */; };
+		10482D93267108F2001C260F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D92267108F2001C260F /* FirebaseAuth */; };
+		10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D94267108F2001C260F /* FirebaseMessaging */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
@@ -98,8 +101,6 @@
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
-		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
-		4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
@@ -164,7 +165,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.debug.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.debug.xcconfig"; sourceTree = "<group>"; };
 		0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
@@ -262,10 +262,6 @@
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
-		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
-		72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broishTests.release.xcconfig"; path = "Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests.release.xcconfig"; sourceTree = "<group>"; };
-		7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broishTests.debug.xcconfig"; path = "Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
@@ -310,7 +306,6 @@
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesRequest.swift; sourceTree = "<group>"; };
-		EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,7 +313,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */,
+				10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */,
+				10482D9026710848001C260F /* Alamofire in Frameworks */,
+				10482D93267108F2001C260F /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +323,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,8 +352,6 @@
 				0AEB396B261CF9CE0005BF38 /* ti-broishTests */,
 				0AEB3976261CF9CE0005BF38 /* ti-broishUITests */,
 				0AEB3953261CF9CD0005BF38 /* Products */,
-				D96A7764BAB8AE55257EC3EA /* Pods */,
-				72398C928CFBD61E1A67B50F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -602,15 +596,6 @@
 			path = CustomControls;
 			sourceTree = "<group>";
 		};
-		72398C928CFBD61E1A67B50F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */,
-				EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		CF390FDE2637323700999369 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,17 +819,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		D96A7764BAB8AE55257EC3EA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */,
-				62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */,
-				7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */,
-				72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -852,17 +826,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AEB397C261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broish" */;
 			buildPhases = (
-				9664B9F97D6B1D006C4B38C9 /* [CP] Check Pods Manifest.lock */,
 				0AEB394E261CF9CD0005BF38 /* Sources */,
 				0AEB394F261CF9CD0005BF38 /* Frameworks */,
 				0AEB3950261CF9CD0005BF38 /* Resources */,
-				1C45DEDD43C5F5B24BCA1300 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "ti-broish";
+			packageProductDependencies = (
+				10482D8F26710848001C260F /* Alamofire */,
+				10482D92267108F2001C260F /* FirebaseAuth */,
+				10482D94267108F2001C260F /* FirebaseMessaging */,
+			);
 			productName = "ti-broish";
 			productReference = 0AEB3952261CF9CD0005BF38 /* ti-broish.app */;
 			productType = "com.apple.product-type.application";
@@ -871,11 +848,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AEB397F261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishTests" */;
 			buildPhases = (
-				F2915F2F185FCB16375CD1B3 /* [CP] Check Pods Manifest.lock */,
 				0AEB3964261CF9CE0005BF38 /* Sources */,
 				0AEB3965261CF9CE0005BF38 /* Frameworks */,
 				0AEB3966261CF9CE0005BF38 /* Resources */,
-				336E61DB3BF9588FF47F36DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -937,6 +912,10 @@
 				Base,
 			);
 			mainGroup = 0AEB3949261CF9CD0005BF38;
+			packageReferences = (
+				10482D8E26710848001C260F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 0AEB3953261CF9CD0005BF38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1004,87 +983,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1C45DEDD43C5F5B24BCA1300 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ti-broish/Pods-ti-broish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ti-broish/Pods-ti-broish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ti-broish/Pods-ti-broish-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		336E61DB3BF9588FF47F36DE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9664B9F97D6B1D006C4B38C9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ti-broish-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2915F2F185FCB16375CD1B3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ti-broishTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AEB394E261CF9CD0005BF38 /* Sources */ = {
@@ -1355,7 +1253,6 @@
 		};
 		0AEB397D261CF9CE0005BF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1378,7 +1275,6 @@
 		};
 		0AEB397E261CF9CE0005BF38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1401,7 +1297,6 @@
 		};
 		0AEB3980261CF9CE0005BF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1426,7 +1321,6 @@
 		};
 		0AEB3981261CF9CE0005BF38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1528,6 +1422,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10482D8E26710848001C260F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10482D8F26710848001C260F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10482D8E26710848001C260F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		10482D92267108F2001C260F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		10482D94267108F2001C260F /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AEB394A261CF9CD0005BF38 /* Project object */;
 }
