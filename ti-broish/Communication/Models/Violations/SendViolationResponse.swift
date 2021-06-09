@@ -11,9 +11,9 @@ struct SendViolationResponse: Decodable {
     
     // MARK: Properties
     
-    let id: Int
-    let section: Section
-    let pictures: [UploadPhoto]
+    let id: String
+    let section: Section?
+    let pictures: [Picture]
     let description: String
     let status: ViolationStatus
     

@@ -16,7 +16,6 @@
 		0AEB3956261CF9CD0005BF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3955261CF9CD0005BF38 /* AppDelegate.swift */; };
 		0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB395E261CF9CE0005BF38 /* Assets.xcassets */; };
 		0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */; };
-		0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */; };
 		0AEB3978261CF9CE0005BF38 /* ti_broishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */; };
 		0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3990261CFDE00005BF38 /* LoginViewController.swift */; };
 		0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */; };
@@ -24,8 +23,14 @@
 		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100C03CD264ADF3900B01B0E /* TextCell.swift */; };
+		100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100C03CF264ADF4400B01B0E /* TextCell.xib */; };
 		1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */; };
 		1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC892644A84700BDAB8A /* Organization.swift */; };
+		1016B68F264C3EDA00515612 /* SearchResultsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016B68E264C3EDA00515612 /* SearchResultsMapper.swift */; };
+		1016B691264C3F2000515612 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016B690264C3F2000515612 /* SearchItem.swift */; };
+		1016B693264C3F3600515612 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016B692264C3F3600515612 /* SearchViewModel.swift */; };
+		1016B695264C4C7F00515612 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1016B694264C4C7F00515612 /* SearchCell.xib */; };
 		101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
@@ -43,14 +48,19 @@
 		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
 		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
-		104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF85263A8872001B6B15 /* InputFieldConfig.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
+		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
+		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
 		10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10613F1B2642F2BD00062B33 /* ErrorHandler.swift */; };
 		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
 		106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFD26441E6500571859 /* LocalStorage.swift */; };
 		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
 		108F202226496D8800E54F64 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F202126496D8800E54F64 /* Town.swift */; };
 		108F20242649753400E54F64 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F20232649753400E54F64 /* RequestInterceptor.swift */; };
+		10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109027FF264DD4190011E4BD /* APIManagerTests.swift */; };
+		10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0126545C0B001E6B0E /* CheckboxCell.swift */; };
+		10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B11E0326545C18001E6B0E /* CheckboxCell.xib */; };
+		10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0526546544001E6B0E /* UILabelExtension.swift */; };
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
 		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
@@ -79,14 +89,17 @@
 		10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EADC263362AD005FD07F /* TibViewControllable.swift */; };
 		10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EAE12633637B005FD07F /* TibTableViewCell.swift */; };
 		10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EAE9263363CF005FD07F /* MenuCell.xib */; };
+		10DC9FA8264C115A00A7C941 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FA7264C115A00A7C941 /* SearchViewController.swift */; };
+		10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DC9FA9264C18B700A7C941 /* SearchViewController.xib */; };
+		10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FAB264C195400A7C941 /* SearchCell.swift */; };
+		10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E250D42655BC7D008A2121 /* InputFieldConfig.swift */; };
 		10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E622C0263A013300381A83 /* RegistrationViewModel.swift */; };
-		10EB5A9C263A05FE00690F88 /* RegistrationTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */; };
-		10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */; };
 		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
 		1ACE8FA2AB083F03E8C945EE /* Pods_ti_broish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */; };
+		4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
@@ -164,7 +177,6 @@
 		0AEB3961261CF9CE0005BF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AEB3963261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB3968261CF9CE0005BF38 /* ti-broishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ti-broishTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishTests.swift; sourceTree = "<group>"; };
 		0AEB396E261CF9CE0005BF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AEB3973261CF9CE0005BF38 /* ti-broishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ti-broishUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB3977261CF9CE0005BF38 /* ti_broishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ti_broishUITests.swift; sourceTree = "<group>"; };
@@ -175,8 +187,14 @@
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		100C03CD264ADF3900B01B0E /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		100C03CF264ADF4400B01B0E /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsRequest.swift; sourceTree = "<group>"; };
 		1013FC892644A84700BDAB8A /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		1016B68E264C3EDA00515612 /* SearchResultsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsMapper.swift; sourceTree = "<group>"; };
+		1016B690264C3F2000515612 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		1016B692264C3F3600515612 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1016B694264C4C7F00515612 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -194,14 +212,19 @@
 		1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
-		104DAF85263A8872001B6B15 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 		10613F1B2642F2BD00062B33 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		106B7EFD26441E6500571859 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		108F202126496D8800E54F64 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		108F20232649753400E54F64 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		109027FF264DD4190011E4BD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
+		10B11E0126545C0B001E6B0E /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
+		10B11E0326545C18001E6B0E /* CheckboxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
+		10B11E0526546544001E6B0E /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
@@ -230,15 +253,19 @@
 		10C4EADC263362AD005FD07F /* TibViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibViewControllable.swift; sourceTree = "<group>"; };
 		10C4EAE12633637B005FD07F /* TibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTableViewCell.swift; sourceTree = "<group>"; };
 		10C4EAE9263363CF005FD07F /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		10DC9FA7264C115A00A7C941 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		10DC9FA9264C18B700A7C941 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		10DC9FAB264C195400A7C941 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		10E250D42655BC7D008A2121 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		10E622C0263A013300381A83 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationTextCell.xib; sourceTree = "<group>"; };
-		10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationTextCell.swift; sourceTree = "<group>"; };
 		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broish.release.xcconfig"; path = "Target Support Files/Pods-ti-broish/Pods-ti-broish.release.xcconfig"; sourceTree = "<group>"; };
+		72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broishTests.release.xcconfig"; path = "Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests.release.xcconfig"; sourceTree = "<group>"; };
+		7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ti-broishTests.debug.xcconfig"; path = "Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
@@ -283,6 +310,7 @@
 		CFB138C82635929C001B373D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CFB138CD263592EF001B373D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CFEE4C772639706300AF88A0 /* GetCountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesRequest.swift; sourceTree = "<group>"; };
+		EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ti_broishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3E94DB86BAB8F09FCAA825 /* Pods_ti_broishTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +393,8 @@
 		0AEB396B261CF9CE0005BF38 /* ti-broishTests */ = {
 			isa = PBXGroup;
 			children = (
-				0AEB396C261CF9CE0005BF38 /* ti_broishTests.swift */,
 				0AEB396E261CF9CE0005BF38 /* Info.plist */,
+				109027FF264DD4190011E4BD /* APIManagerTests.swift */,
 			);
 			path = "ti-broishTests";
 			sourceTree = "<group>";
@@ -431,6 +460,47 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		1016B68B264C3E8E00515612 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1016B690264C3F2000515612 /* SearchItem.swift */,
+				1016B68E264C3EDA00515612 /* SearchResultsMapper.swift */,
+				1016B692264C3F3600515612 /* SearchViewModel.swift */,
+				10DC9FA7264C115A00A7C941 /* SearchViewController.swift */,
+				10DC9FA9264C18B700A7C941 /* SearchViewController.xib */,
+				10DC9FAB264C195400A7C941 /* SearchCell.swift */,
+				1016B694264C4C7F00515612 /* SearchCell.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1016B68C264C3EA400515612 /* InputFields */ = {
+			isa = PBXGroup;
+			children = (
+				10B9EAC42637557E0067FAE2 /* InputField.swift */,
+				104DAF83263A880A001B6B15 /* InputFieldType.swift */,
+				10E250D42655BC7D008A2121 /* InputFieldConfig.swift */,
+				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
+				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
+				10B9EAD926375BE30067FAE2 /* TextInputField.swift */,
+				10B9EAE126375C390067FAE2 /* TextInputField.xib */,
+			);
+			path = InputFields;
+			sourceTree = "<group>";
+		};
+		1016B68D264C3EC000515612 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1058029D2649EA4B00A88528 /* PickerCell.swift */,
+				1058029E2649EA4B00A88528 /* PickerCell.xib */,
+				100C03CD264ADF3900B01B0E /* TextCell.swift */,
+				100C03CF264ADF4400B01B0E /* TextCell.xib */,
+				10B11E0126545C0B001E6B0E /* CheckboxCell.swift */,
+				10B11E0326545C18001E6B0E /* CheckboxCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1042B3C92634AACC00764ACF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,8 +531,6 @@
 				10E622C0263A013300381A83 /* RegistrationViewModel.swift */,
 				10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */,
 				10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */,
-				10EB5A9B263A05FE00690F88 /* RegistrationTextCell.swift */,
-				10EB5A9A263A05FE00690F88 /* RegistrationTextCell.xib */,
 				10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */,
 			);
 			path = Registration;
@@ -524,15 +592,11 @@
 		10C4EAC926335C53005FD07F /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				1016B68D264C3EC000515612 /* Cells */,
+				1016B68C264C3EA400515612 /* InputFields */,
+				1016B68B264C3E8E00515612 /* Search */,
 				10C4EACA26335C72005FD07F /* TibNavigationBar.swift */,
 				10C4EAE12633637B005FD07F /* TibTableViewCell.swift */,
-				10B9EAC42637557E0067FAE2 /* InputField.swift */,
-				104DAF83263A880A001B6B15 /* InputFieldType.swift */,
-				104DAF85263A8872001B6B15 /* InputFieldConfig.swift */,
-				1042B3BF2634A1D500764ACF /* CredentialInputField.swift */,
-				1042B3C42634A26000764ACF /* CredentialInputField.xib */,
-				10B9EAD926375BE30067FAE2 /* TextInputField.swift */,
-				10B9EAE126375C390067FAE2 /* TextInputField.xib */,
 				10EB5AA2263A1A8F00690F88 /* TibTextField.swift */,
 			);
 			path = CustomControls;
@@ -542,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				294E7A3AF3E677F3CB6256C7 /* Pods_ti_broish.framework */,
+				EC5E11923339F41A82DBAFDA /* Pods_ti_broishTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -753,6 +818,7 @@
 				1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */,
 				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
 				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
+				10B11E0526546544001E6B0E /* UILabelExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -773,6 +839,8 @@
 			children = (
 				020C1C29CE22B69CA228A2EF /* Pods-ti-broish.debug.xcconfig */,
 				62F232B0EEE1D3C055C445B0 /* Pods-ti-broish.release.xcconfig */,
+				7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */,
+				72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -803,9 +871,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AEB397F261CF9CE0005BF38 /* Build configuration list for PBXNativeTarget "ti-broishTests" */;
 			buildPhases = (
+				F2915F2F185FCB16375CD1B3 /* [CP] Check Pods Manifest.lock */,
 				0AEB3964261CF9CE0005BF38 /* Sources */,
 				0AEB3965261CF9CE0005BF38 /* Frameworks */,
 				0AEB3966261CF9CE0005BF38 /* Resources */,
+				336E61DB3BF9588FF47F36DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -849,6 +919,7 @@
 					};
 					0AEB3967261CF9CE0005BF38 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1250;
 						TestTargetID = 0AEB3951261CF9CD0005BF38;
 					};
 					0AEB3972261CF9CE0005BF38 = {
@@ -883,6 +954,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */,
+				10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */,
 				0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */,
 				1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */,
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
@@ -891,9 +963,10 @@
 				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
+				105802A12649EA4B00A88528 /* PickerCell.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
 				10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */,
-				10EB5A9C263A05FE00690F88 /* RegistrationTextCell.xib in Resources */,
+				100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
 				CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */,
 				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
@@ -902,6 +975,7 @@
 				1042B3E12634AAFD00764ACF /* Montserrat-Regular.ttf in Resources */,
 				0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */,
 				1042B3E42634AAFD00764ACF /* Montserrat-Italic.ttf in Resources */,
+				1016B695264C4C7F00515612 /* SearchCell.xib in Resources */,
 				10C4EA73263349D1005FD07F /* ProtocolsTableViewController.xib in Resources */,
 				1042B3E92634AAFD00764ACF /* Montserrat-Bold.ttf in Resources */,
 				1042B3DF2634AAFD00764ACF /* Montserrat-SemiBold.ttf in Resources */,
@@ -911,6 +985,7 @@
 				0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */,
 				10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */,
 				1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */,
+				10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +1023,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ti-broish/Pods-ti-broish-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		336E61DB3BF9588FF47F36DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ti-broishTests/Pods-ti-broishTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9664B9F97D6B1D006C4B38C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -970,6 +1062,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F2915F2F185FCB16375CD1B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ti-broishTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -985,6 +1099,7 @@
 				CF872A09264BC3D700C8E849 /* DeleteUserRequest.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
 				104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */,
+				10DC9FA8264C115A00A7C941 /* SearchViewController.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				CF3DB0C9264BB83B00AAB618 /* User.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
@@ -992,6 +1107,7 @@
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
+				10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
@@ -1008,9 +1124,10 @@
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
 				1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
+				1016B68F264C3EDA00515612 /* SearchResultsMapper.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
-				104DAF86263A8872001B6B15 /* InputFieldConfig.swift in Sources */,
+				1016B693264C3F3600515612 /* SearchViewModel.swift in Sources */,
 				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
 				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
 				10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */,
@@ -1035,7 +1152,9 @@
 				106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */,
 				CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
+				100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */,
 				10F78C312642E43900407284 /* FirebaseError.swift in Sources */,
+				10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
 				CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */,
@@ -1045,7 +1164,6 @@
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */,
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
-				10EB5A9D263A05FE00690F88 /* RegistrationTextCell.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
@@ -1053,7 +1171,9 @@
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,
+				10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */,
 				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,
+				105802A02649EA4B00A88528 /* PickerCell.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */,
@@ -1063,10 +1183,12 @@
 				CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
+				10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */,
 				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
 				106B7EF82644187600571859 /* Validator.swift in Sources */,
+				1016B691264C3F2000515612 /* SearchItem.swift in Sources */,
 				10C4EAD326336242005FD07F /* MenuCell.swift in Sources */,
 				10C4EA6626334965005FD07F /* SendProtocolViewController.swift in Sources */,
 			);
@@ -1076,7 +1198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AEB396D261CF9CE0005BF38 /* ti_broishTests.swift in Sources */,
+				10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1172,7 +1294,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -1248,6 +1370,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1270,6 +1393,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1277,9 +1401,11 @@
 		};
 		0AEB3980261CF9CE0005BF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AB94ADBE1D2283DBDF8E6A7 /* Pods-ti-broishTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broishTests/Info.plist";
@@ -1291,6 +1417,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dsi.ti-broishTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ti-broish.app/ti-broish";
@@ -1299,9 +1426,11 @@
 		};
 		0AEB3981261CF9CE0005BF38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72DD2A9AE668ED3D132966EC /* Pods-ti-broishTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broishTests/Info.plist";

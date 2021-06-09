@@ -14,8 +14,7 @@ struct Town: Decodable {
     // MARK: Properties
     
     let id: Int
-    let code: Int
     let name: String
-    let cityRegions: Region?
+    let cityRegions: [Region]
     
 }

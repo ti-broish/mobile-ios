@@ -1,13 +1,13 @@
 //
-//  RegistrationTextCell.swift
+//  TextCell.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 26.04.21.
+//  Created by Krasimir Slavkov on 11.05.21.
 //
 
 import UIKit
 
-final class RegistrationTextCell: TibTableViewCell {
+final class TextCell: TibTableViewCell {
     
     @IBOutlet private (set) weak var textInputField: TextInputField!
     

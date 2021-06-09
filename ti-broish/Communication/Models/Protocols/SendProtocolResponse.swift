@@ -11,9 +11,9 @@ struct SendProtocolResponse: Decodable {
     
     // MARK: Properties
     
-    let id: Int
+    let id: String
     let section: Section
-    let pictures: [UploadPhoto]
+    let pictures: [Picture]
     let status: ProtocolStatus
     
 }

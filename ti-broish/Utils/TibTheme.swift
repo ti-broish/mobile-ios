@@ -9,6 +9,10 @@ import UIKit
 
 class TibTheme {
     
+    static func changeAppearance() {
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = LocalizedStrings.cancel
+    }
+    
     var backgroundColor: UIColor {
         return .backgroundColor
     }
@@ -51,5 +55,9 @@ class TibTheme {
     
     var solidButtonTextColor: UIColor {
         return .white
+    }
+    
+    var defaultButtonHeight: CGFloat {
+        return 44.0
     }
 }

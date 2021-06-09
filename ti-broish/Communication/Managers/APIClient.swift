@@ -30,7 +30,7 @@ protocol APIClientInterface {
     func getTowns(
         country: Country,
         electionRegion: ElectionRegion?,
-        municipality: Municipality,
+        municipality: Municipality?,
         completion: APIResult<TownsResponse>?
     )
     
@@ -84,12 +84,14 @@ final class APIClient {
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
+        
+        let encoding: ParameterEncoding = request.method == .post ? JSONEncoding.default : URLEncoding.default
 
         AF.request(
             url,
             method: request.method,
             parameters: request.parameters.compactMapValues({ $0 }),
-            encoding: URLEncoding.default,
+            encoding: encoding,
             headers: request.additionalHeaders,
             interceptor: requestInterceptor
         )
@@ -201,7 +203,7 @@ extension APIClient: APIClientInterface {
     func getTowns(
         country: Country,
         electionRegion: ElectionRegion? = nil,
-        municipality: Municipality,
+        municipality: Municipality? = nil,
         completion: APIResult<TownsResponse>?
     ) {
         let request = GetTownsRequest(country: country, electionRegion: electionRegion, municipality: municipality)

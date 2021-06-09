@@ -22,4 +22,21 @@ struct Section: Codable {
     let isMobile: Bool?
     let isShip: Bool?
     
+    init(
+        id: String,
+        code: String,
+        place: String,
+        name: String? = nil,
+        isMachine: Bool? = nil,
+        isMobile: Bool? = nil,
+        isShip: Bool? = nil
+    ) {
+        self.id = id
+        self.code = code
+        self.place = place
+        self.name = name
+        self.isMachine = isMachine
+        self.isMobile = isMobile
+        self.isShip = isShip
+    }
 }

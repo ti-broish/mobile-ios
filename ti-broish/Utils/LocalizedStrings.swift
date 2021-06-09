@@ -10,6 +10,13 @@ struct LocalizedStrings {
     
     static let menu: String = "Меню"
     static let back: String = "Назад"
+    static let cancel: String = "Откажи"
+    
+    struct Search {
+        
+        static let searchBarPlaceholder: String = "Избери"
+        static let doneButton: String = "Затвори"
+    }
     
     struct Errors {
         
@@ -45,6 +52,8 @@ struct LocalizedStrings {
     
     struct Registration {
         
+        static let title: String = "РЕГИСТРАЦИЯ"
+        
         static let firstName: String = "Име:"
         static let firstNamePlaceholder: String = "Въведете вашето име"
         
@@ -61,6 +70,7 @@ struct LocalizedStrings {
         static let pinPlaceholder: String = "Въведете последни четири цифри"
         
         static let organization: String = "Организация:"
+        static let organizationPlaceholder: String = "Избери организация"
         
         static let password: String = "Парола:"
         static let passwordPlaceholder: String = "Въведете вашата парола"
@@ -74,5 +84,6 @@ struct LocalizedStrings {
         """
         
         static let hasAdulthood: String = "Имам навършени 18 години."
+        static let registerButton: String = "СЪЗДАЙ ПРОФИЛ"
     }
 }

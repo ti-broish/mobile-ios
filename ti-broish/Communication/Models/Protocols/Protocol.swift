@@ -10,7 +10,16 @@ import Foundation
 typealias ProtocolsResponse = [Protocol]
 
 enum ProtocolStatus: String, Decodable {
-    case unknown
+    
+    case received, rejected, approved, processed
+}
+
+struct Picture: Decodable {
+    
+    let id: String
+    let path: String
+    let rotation: Int
+    let url: String
 }
 
 struct Protocol: Decodable {
@@ -18,10 +27,10 @@ struct Protocol: Decodable {
     // MARK: Properites
     
     let id: String
-    let pictures: [UploadPhoto]
+    let pictures: [Picture]
     let section: Section
     let status: ProtocolStatus
     let statusLocalized: String
-    let statusColor: String
+    let statusColor: Int?
     
 }

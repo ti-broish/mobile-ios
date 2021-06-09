@@ -21,16 +21,20 @@ struct GetTownsRequest: RequestProvider {
         "/towns"
     }
     
-    var method: HTTPMethod {
-        .post
-    }
-    
     var parameters: [String : Any?] {
-        [
-            "country": country.code,
-            "election_region": electionRegion?.code,
-            "municipality": municipality?.code
-        ]
+        if let electionRegionCode = electionRegion?.code {
+            if let municipalityCode = municipality?.code {
+                return [
+                    "country": country.code,
+                    "election_region": electionRegionCode,
+                    "municipality": municipalityCode
+                ]
+            } else {
+                return ["country": country.code, "election_region": electionRegionCode]
+            }
+        }
+        
+        return ["country": country.code]
     }
     
 }

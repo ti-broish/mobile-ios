@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool
     {
+        TibTheme.changeAppearance()
         FirebaseApp.configure()
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)

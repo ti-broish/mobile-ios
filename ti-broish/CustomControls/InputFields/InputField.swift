@@ -58,15 +58,20 @@ class InputField: UIView, Configurable {
     }
     
     func configureWith(_ data: InputFieldConfig) {
-        titleLabel.text = data.title
+        titleLabel.setText(data.title, isRequired: data.isRequired)
         
-        if let _placeholderText = data.placeholderText {
+        if let text = data.data as? String {
+            textField.text = text
+        } else if let _placeholderText = data.placeholderText {
             let theme = TibTheme()
             
             textField.attributedPlaceholder = NSAttributedString(
                 string: _placeholderText,
                 attributes: [.foregroundColor: theme.textFieldPlaceholderColor]
             )
+        } else {
+            textField.text = nil
+            textField.attributedPlaceholder = nil
         }
         
         configureTextFieldKeyboardType(inputFieldType: data.type)

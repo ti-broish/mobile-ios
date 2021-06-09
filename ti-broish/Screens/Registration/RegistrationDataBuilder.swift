@@ -62,9 +62,9 @@ struct RegistrationDataBuilder {
             )
         case .organization:
             return InputFieldConfig(
-                type: .text,
+                type: .picker,
                 title: LocalizedStrings.Registration.organization,
-                placeholderText: nil,
+                placeholderText: LocalizedStrings.Registration.organizationPlaceholder,
                 isRequired: true
             )
         case .password:
@@ -83,14 +83,14 @@ struct RegistrationDataBuilder {
             )
         case .hasAgreedToKeepData:
             return InputFieldConfig(
-                type: .text,
+                type: .checkbox,
                 title: LocalizedStrings.Registration.hasAgreedToKeepData,
                 placeholderText: nil,
                 isRequired: false
             )
         case .hasAdulthood:
             return InputFieldConfig(
-                type: .text,
+                type: .checkbox,
                 title: LocalizedStrings.Registration.hasAdulthood,
                 placeholderText: nil,
                 isRequired: true

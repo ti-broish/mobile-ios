@@ -16,18 +16,9 @@ final class HomeViewController: BaseViewController {
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        APIClient().getCountries(isAbroad: true) { response in
-            switch response {
-            case .success(let countries):
-                print("getCountries.success: \(countries)")
-            case .failure(let error):
-                print("getCountries.failure: \(error)")
-            }
-        }
+        super.viewDidLoad()        
     }
-    
+
     override func applyTheme() {
         super.applyTheme()
     }

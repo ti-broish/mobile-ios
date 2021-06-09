@@ -86,7 +86,7 @@ extension APIManager: APIClientInterface {
     func getTowns(
         country: Country,
         electionRegion: ElectionRegion? = nil,
-        municipality: Municipality,
+        municipality: Municipality? = nil,
         completion: APIResult<TownsResponse>?
     ) {
         apiClient.getTowns(
