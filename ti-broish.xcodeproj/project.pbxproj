@@ -55,6 +55,8 @@
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
 		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
 		10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10613F1B2642F2BD00062B33 /* ErrorHandler.swift */; };
+		106306A32671168100133598 /* SharedAssetsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106306A22671168100133598 /* SharedAssetsConfig.swift */; };
+		106306A526711B9300133598 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106306A426711B9300133598 /* ResetPasswordViewModel.swift */; };
 		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
 		106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFD26441E6500571859 /* LocalStorage.swift */; };
 		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
@@ -216,6 +218,8 @@
 		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 		10613F1B2642F2BD00062B33 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		106306A22671168100133598 /* SharedAssetsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAssetsConfig.swift; sourceTree = "<group>"; };
+		106306A426711B9300133598 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		106B7EFD26441E6500571859 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
@@ -499,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				1042B3CA2634AAE300764ACF /* fonts */,
+				106306A22671168100133598 /* SharedAssetsConfig.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 			children = (
 				10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */,
 				10C4EA4A26333BE8005FD07F /* ResetPasswordViewController.xib */,
+				106306A426711B9300133598 /* ResetPasswordViewModel.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -1030,7 +1036,9 @@
 				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
 				10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */,
 				10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */,
+				106306A526711B9300133598 /* ResetPasswordViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
+				106306A32671168100133598 /* SharedAssetsConfig.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
 				103A67892649902300D93853 /* HomeCoordinator.swift in Sources */,

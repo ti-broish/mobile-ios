@@ -45,6 +45,8 @@ final class LoginViewController: BaseViewController {
             action: nil
         )
         
+        logoImageView.image = UIImage(named: SharedAssetsConfig.logo)
+        
         emailInputField.configureWith(viewModel.makeConfig(for: .email))
         emailInputField.textField.text = LocalStorage.Login().getEmail()
         emailInputField.textField.delegate = self
