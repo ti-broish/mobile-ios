@@ -86,4 +86,15 @@ struct LocalizedStrings {
         static let hasAdulthood: String = "Имам навършени 18 години."
         static let registerButton: String = "СЪЗДАЙ ПРОФИЛ"
     }
+    
+    struct ResetPassword {
+        
+        static let title: String = "Забравена парола"
+        
+        static let email: String = "Потребител:"
+        static let emailPlaceholder: String = "Въведете вашия имейл"
+        
+        static let sendButton: String = "Изпрати"
+        static let backButton: String = "Назад"
+    }
 }

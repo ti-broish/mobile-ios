@@ -9,7 +9,17 @@ import UIKit
 
 final class ResetPasswordViewController: BaseViewController {
     
+    @IBOutlet private weak var emailInputField: CredentialInputField!
+    @IBOutlet private weak var sendButton: UIButton!
+    
+    private let viewModel = ResetPasswordViewModel()
+    
     // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -18,5 +28,36 @@ final class ResetPasswordViewController: BaseViewController {
     
     override func applyTheme() {
         super.applyTheme()
+        
+        let theme = TibTheme()
+        emailInputField.backgroundColor = theme.backgroundColor
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupViews() {
+        self.title = LocalizedStrings.ResetPassword.title
+        
+        emailInputField.configureWith(viewModel.makeConfig(for: .email))
+        emailInputField.textField.text = LocalStorage.Login().getEmail()
+        emailInputField.textField.delegate = self
+        
+        let theme = TibTheme()
+        sendButton.configureSolidButton(title: LocalizedStrings.ResetPassword.sendButton, theme: theme)
+    }
+    
+    @IBAction private func handleSendButton(_ sender: UIButton) {
+        // TODO: - implement handleSendButton
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ResetPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }
