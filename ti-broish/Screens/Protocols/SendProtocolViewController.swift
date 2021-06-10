@@ -9,7 +9,20 @@ import UIKit
 
 final class SendProtocolViewController: BaseViewController {
     
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
+    
     override func applyTheme() {
         super.applyTheme()
+    }
+    
+    // MARK: - Private methods
+    
+    private func setupViews() {
+        navigationItem.configureBackButton()
     }
 }

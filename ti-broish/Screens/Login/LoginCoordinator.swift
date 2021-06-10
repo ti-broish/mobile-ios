@@ -10,10 +10,13 @@ import Firebase
 
 final class LoginCoordinator: Coordinator {
     
+    private var contentContainerCoordinator: ContentContainerCoordinator?
+    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        contentContainerCoordinator = ContentContainerCoordinator(navigationController: self.navigationController)
     }
     
     override func start() {
@@ -22,6 +25,7 @@ final class LoginCoordinator: Coordinator {
     
     func showHomeScreen() {
         let controller = ContentContainerViewController()
+        controller.coordinator = contentContainerCoordinator
         
         navigationController.viewControllers.removeAll()
         pushController(controller, animated: false)

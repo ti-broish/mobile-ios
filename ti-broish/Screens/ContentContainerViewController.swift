@@ -15,6 +15,8 @@ final class ContentContainerViewController: BaseViewController {
     private var currentViewController: UIViewController?
     private var menuViewController: MenuViewController!
     private var isMenuExpand: Bool = true
+    
+    weak var coordinator: ContentContainerCoordinator?
 
     // MARK: - View lifecycle
     
@@ -22,6 +24,8 @@ final class ContentContainerViewController: BaseViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .red
+        self.navigationItem.configureBackButton()
+        
         setupContentViewController()
         setupMenuViewController()
         setupNavigationBar()
@@ -30,7 +34,7 @@ final class ContentContainerViewController: BaseViewController {
     // MARK: - Private methods
     
     private func removeCurrentViewController() {
-        guard let _currentViewController = currentViewController, _currentViewController.isViewLoaded else {
+        guard let _currentViewController = currentViewController, _currentViewController.parent != nil else {
             return
         }
         
@@ -40,35 +44,12 @@ final class ContentContainerViewController: BaseViewController {
     }
     
     private func loadViewController(nibName: String) {
-        removeCurrentViewController()
+        coordinator?.remove(currentViewController)
         toggleMainMenu()
         
-        switch nibName {
-        case HomeViewController.nibName:
-            currentViewController = HomeViewController.init(nibName: nibName, bundle: nil)
-        case ProfileViewController.nibName:
-            currentViewController = ProfileViewController.init(nibName: nibName, bundle: nil)
-        case SendProtocolViewController.nibName:
-            currentViewController = SendProtocolViewController.init(nibName: nibName, bundle: nil)
-        case SendViolationViewController.nibName:
-            currentViewController = SendViolationViewController.init(nibName: nibName, bundle: nil)
-        case ProtocolsTableViewController.nibName:
-            currentViewController = ProtocolsTableViewController.init(nibName: nibName, bundle: nil)
-        case ViolationsTableViewController.nibName:
-            currentViewController = ViolationsTableViewController.init(nibName: nibName, bundle: nil)
-        case TermsViewController.nibName:
-            currentViewController = TermsViewController.init(nibName: nibName, bundle: nil)
-        default:
-            assertionFailure("Invalid or not handled nibName")
-            break
-        }
-        
-        if let _currentViewController = currentViewController {
-            contentViewController.view.addSubview(_currentViewController.view)
-            _currentViewController.view.frame = contentViewController.view.bounds
-            _currentViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            contentViewController.addChild(_currentViewController)
-            _currentViewController.didMove(toParent: contentViewController)
+        if let viewController = coordinator?.getViewController(nibName: nibName) {
+            currentViewController = viewController
+            coordinator?.add(viewController: viewController, to: contentViewController)
         }
     }
     

@@ -20,6 +20,7 @@ extension UIButton {
         layer.cornerRadius = 8.0
         backgroundColor = theme.solidButtonBackgroundColor
         setTitleColor(theme.solidButtonTextColor, for: .normal)
+        setTitleColor(theme.solidButtonTextColor.withAlphaComponent(0.5), for: .highlighted)
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.regularFont(size: fontSize)
     }

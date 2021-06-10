@@ -12,6 +12,13 @@ struct LocalizedStrings {
     static let back: String = "Назад"
     static let cancel: String = "Откажи"
     
+    struct Home {
+        
+        static let sendProtocol: String = "Изпрати протокол"
+        static let sendViolation: String = "Изпрати сигнал"
+        static let terms: String = "Права и задължения"
+    }
+    
     struct Search {
         
         static let searchBarPlaceholder: String = "Избери"

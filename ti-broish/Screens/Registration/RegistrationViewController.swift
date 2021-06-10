@@ -111,30 +111,30 @@ extension RegistrationViewController: UITableViewDataSource {
         
         if model.isTextField {
             let textCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
-            guard let textCell = textCell as? TextCell  else {
+            guard let _textCell = textCell as? TextCell  else {
                 return UITableViewCell()
             }
-            
-            textCell.textInputField.configureWith(model)
-            textCell.textInputField.textField.delegate = self
-            cell = textCell
+
+            _textCell.textInputField.configureWith(model)
+            _textCell.textInputField.textField.delegate = self
+            cell = _textCell
         } else if model.isPickerField {
             let pickerCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
-            guard let pickerCell = pickerCell as? PickerCell else {
+            guard let _pickerCell = pickerCell as? PickerCell else {
                 return UITableViewCell()
             }
-            
-            pickerCell.configureWith(model)
-            cell = pickerCell
+
+            _pickerCell.configureWith(model)
+            cell = _pickerCell
         } else if model.isCheckboxField {
             let checkboxCell = tableView.dequeueReusableCell(withIdentifier: CheckboxCell.cellIdentifier, for: indexPath)
-            guard let checkboxCell = checkboxCell as? CheckboxCell else {
+            guard let _checkboxCell = checkboxCell as? CheckboxCell else {
                 return UITableViewCell()
             }
-            
-            checkboxCell.configureWith(model)
-            checkboxCell.delegate = self
-            cell = checkboxCell
+
+            _checkboxCell.configureWith(model)
+            _checkboxCell.delegate = self
+            cell = _checkboxCell
         } else {
             cell = UITableViewCell()
         }
