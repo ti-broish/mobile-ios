@@ -15,15 +15,25 @@ final class HomeCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    override func start() {
-        showHomeScreen()
-    }
-    
-    func showHomeScreen() {
-        let controller = ContentContainerViewController()
+    func loadViewController(nibName: String) {
+        let controller: UIViewController?
         
-        navigationController.viewControllers.removeAll()
-        pushController(controller, animated: false)
+        switch nibName {
+        case SendProtocolViewController.nibName:
+            controller = SendProtocolViewController.init(nibName: nibName, bundle: nil)
+        case SendViolationViewController.nibName:
+            controller = SendViolationViewController.init(nibName: nibName, bundle: nil)
+        case TermsViewController.nibName:
+            controller = TermsViewController.init(nibName: nibName, bundle: nil)
+        default:
+            controller = nil
+            assertionFailure("Invalid or not handled view controller nibName")
+            break
+        }
+        
+        if let _controller = controller {
+            pushController(_controller)
+        }
     }
     
     // MARK: - Private methods

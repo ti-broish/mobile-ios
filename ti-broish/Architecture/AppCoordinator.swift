@@ -23,7 +23,7 @@ class AppCoordinator: Coordinator {
         
         let screenCoordinator: Coordinator
         if isLoggedIn() {
-            screenCoordinator = HomeCoordinator(navigationController: navigationController)
+            screenCoordinator = ContentContainerCoordinator(navigationController: navigationController)
         } else {
             screenCoordinator = LoginCoordinator(navigationController: navigationController)
         }

@@ -20,9 +20,9 @@
 		0AEB3991261CFDE00005BF38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB3990261CFDE00005BF38 /* LoginViewController.swift */; };
 		0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39A4261CFFA00005BF38 /* HomeViewController.swift */; };
 		0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */; };
-		0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		100A798426716D1500508DB8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100C03CD264ADF3900B01B0E /* TextCell.swift */; };
 		100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100C03CF264ADF4400B01B0E /* TextCell.xib */; };
 		1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */; };
@@ -55,6 +55,8 @@
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
 		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
 		10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10613F1B2642F2BD00062B33 /* ErrorHandler.swift */; };
+		1062087D2671843B00F28D83 /* ContentContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062087C2671843B00F28D83 /* ContentContainerCoordinator.swift */; };
+		1062087F267188A100F28D83 /* UINavigationItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062087E267188A100F28D83 /* UINavigationItemExtension.swift */; };
 		106306A32671168100133598 /* SharedAssetsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106306A22671168100133598 /* SharedAssetsConfig.swift */; };
 		106306A526711B9300133598 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106306A426711B9300133598 /* ResetPasswordViewModel.swift */; };
 		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
@@ -218,6 +220,8 @@
 		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 		10613F1B2642F2BD00062B33 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		1062087C2671843B00F28D83 /* ContentContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerCoordinator.swift; sourceTree = "<group>"; };
+		1062087E267188A100F28D83 /* UINavigationItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItemExtension.swift; sourceTree = "<group>"; };
 		106306A22671168100133598 /* SharedAssetsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAssetsConfig.swift; sourceTree = "<group>"; };
 		106306A426711B9300133598 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 				10C4EA7726334AA2005FD07F /* Violations */,
 				10C4EAA326334C0A005FD07F /* Terms */,
 				0AE2CB502624E08400C178C9 /* ContentContainerViewController.swift */,
+				1062087C2671843B00F28D83 /* ContentContainerCoordinator.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -810,6 +815,7 @@
 				1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */,
 				101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */,
 				10B11E0526546544001E6B0E /* UILabelExtension.swift */,
+				1062087E267188A100F28D83 /* UINavigationItemExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -967,10 +973,10 @@
 				10C4EA4B26333BE8005FD07F /* ResetPasswordViewController.xib in Resources */,
 				10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */,
 				1042B3E52634AAFD00764ACF /* Montserrat-ExtraLight.ttf in Resources */,
-				0AEB39B2261D001E0005BF38 /* HomeViewController.xib in Resources */,
 				10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */,
 				1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */,
 				10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */,
+				100A798426716D1500508DB8 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,6 +1005,7 @@
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
 				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
+				1062087F267188A100F28D83 /* UINavigationItemExtension.swift in Sources */,
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
 				CF872A09264BC3D700C8E849 /* DeleteUserRequest.swift in Sources */,
 				10C4EAE22633637B005FD07F /* TibTableViewCell.swift in Sources */,
@@ -1091,6 +1098,7 @@
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */,
 				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
+				1062087D2671843B00F28D83 /* ContentContainerCoordinator.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
 				106B7EF82644187600571859 /* Validator.swift in Sources */,
@@ -1200,7 +1208,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1265,7 +1273,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1275,7 +1283,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1287,7 +1295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

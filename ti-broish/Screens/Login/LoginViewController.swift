@@ -38,12 +38,7 @@ final class LoginViewController: BaseViewController {
     // MARK: - Private methods
     
     private func setupViews() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: LocalizedStrings.back,
-            style: .plain,
-            target: nil,
-            action: nil
-        )
+        navigationItem.configureBackButton()
         
         logoImageView.image = UIImage(named: SharedAssetsConfig.logo)
         
