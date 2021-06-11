@@ -61,10 +61,10 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
                 } else {
                     completion(.doNotRetryWithError(error))
                 }
-            } else if let _authError = authError {
+            } else if let authError = authError {
                 LocalStorage.User().reset()
                 // TODO: - logout
-                completion(.doNotRetryWithError(_authError))
+                completion(.doNotRetryWithError(authError))
             } else {
                 completion(.doNotRetryWithError(error))
             }

@@ -62,11 +62,11 @@ class InputField: UIView, Configurable {
         
         if let text = data.data as? String {
             textField.text = text
-        } else if let _placeholderText = data.placeholderText {
+        } else if let placeholderText = data.placeholderText {
             let theme = TibTheme()
             
             textField.attributedPlaceholder = NSAttributedString(
-                string: _placeholderText,
+                string: placeholderText,
                 attributes: [.foregroundColor: theme.textFieldPlaceholderColor]
             )
         } else {

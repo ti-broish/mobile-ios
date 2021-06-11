@@ -12,6 +12,19 @@ typealias ProtocolsResponse = [Protocol]
 enum ProtocolStatus: String, Decodable {
     
     case received, rejected, approved, processed
+    
+    var colorString: String {
+        switch (self) {
+        case .received:
+            return "#FF9900"
+        case .rejected:
+            return "#FF0000"
+        case .approved:
+            return "#4CAF50"
+        case .processed:
+            return "#4CAF50"
+        }
+    }
 }
 
 struct Picture: Decodable {
@@ -31,6 +44,6 @@ struct Protocol: Decodable {
     let section: Section
     let status: ProtocolStatus
     let statusLocalized: String
-    let statusColor: Int?
+    let statusColor: String?
     
 }

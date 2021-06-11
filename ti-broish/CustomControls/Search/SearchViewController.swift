@@ -18,10 +18,10 @@ final class SearchViewController: UIViewController, TibViewControllable {
     @IBOutlet private weak var tableView: UITableView!
     
     private let viewModel = SearchViewModel()
-    private var reloadDataSubscription: AnyCancellable?
     
     var selectedItem: SearchItem?
     var parentCellIndexPath: IndexPath?
+    var reloadDataSubscription: AnyCancellable?
     
     weak var delegate: SearchViewControllerDelegate?
     

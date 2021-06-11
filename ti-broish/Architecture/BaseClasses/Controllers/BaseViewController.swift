@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 public enum PullToRefreshType {
     case `default`(color: UIColor?)
@@ -17,6 +18,7 @@ class BaseViewController: UIViewController, TibViewControllable {
     // MARK: - Properties
     
     private var pullToRefreshCustomView: UIView?
+    var reloadDataSubscription: AnyCancellable?
     
     /// Override for custom logic for pull to refresh
     var pullToRefreshAction: (() -> Void)? {

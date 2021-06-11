@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProtocolCell" rowHeight="104" id="EmK-H1-Hh1" customClass="ProtocolCell" customModule="ti_broish" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EmK-H1-Hh1" id="QuB-DV-wM4">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-x3-BXP" userLabel="stackView">
+                        <rect key="frame" x="16" y="8" width="362" height="88"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXs-hO-uju" userLabel="titleLabel">
+                                <rect key="frame" x="0.0" y="0.0" width="362" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="_location_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txU-1T-nKO" userLabel="locationLabel">
+                                <rect key="frame" x="0.0" y="28.5" width="362" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_status_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doQ-w3-X6F" userLabel="statusLabel">
+                                <rect key="frame" x="0.0" y="67.5" width="362" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2Ak-SS-ao6">
+                        <rect key="frame" x="386" y="44.5" width="20" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="GrR-le-LuW"/>
+                            <constraint firstAttribute="width" constant="20" id="R05-hc-6sR"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2Ak-SS-ao6" firstAttribute="centerY" secondItem="QuB-DV-wM4" secondAttribute="centerY" id="6Lj-TM-a0S"/>
+                    <constraint firstItem="7x5-x3-BXP" firstAttribute="leading" secondItem="QuB-DV-wM4" secondAttribute="leading" constant="16" id="DC1-RZ-46M"/>
+                    <constraint firstItem="2Ak-SS-ao6" firstAttribute="leading" secondItem="7x5-x3-BXP" secondAttribute="trailing" constant="8" id="ESO-qa-tSt"/>
+                    <constraint firstAttribute="trailing" secondItem="2Ak-SS-ao6" secondAttribute="trailing" constant="8" id="Ioa-ab-I9f"/>
+                    <constraint firstAttribute="bottom" secondItem="7x5-x3-BXP" secondAttribute="bottom" constant="8" id="aI2-aO-AfZ"/>
+                    <constraint firstItem="7x5-x3-BXP" firstAttribute="top" secondItem="QuB-DV-wM4" secondAttribute="top" constant="8" id="llB-QL-9Zt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="locationLabel" destination="txU-1T-nKO" id="h53-IO-UeI"/>
+                <outlet property="stackView" destination="7x5-x3-BXP" id="ejb-iD-Zgl"/>
+                <outlet property="statusLabel" destination="doQ-w3-X6F" id="qzV-v0-vmY"/>
+                <outlet property="titleLabel" destination="PXs-hO-uju" id="tjP-ag-ZcJ"/>
+            </connections>
+            <point key="canvasLocation" x="117.39130434782609" y="79.6875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="next-arrow" width="512.00201416015625" height="512.00201416015625"/>
+    </resources>
+</document>

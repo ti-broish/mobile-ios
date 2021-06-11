@@ -25,6 +25,11 @@
 		100A798426716D1500508DB8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100C03CD264ADF3900B01B0E /* TextCell.swift */; };
 		100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100C03CF264ADF4400B01B0E /* TextCell.xib */; };
+		10123A4D26739B3F0089799B /* ProtocolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10123A4C26739B3F0089799B /* ProtocolCell.swift */; };
+		10123A4F26739B4B0089799B /* ProtocolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10123A4E26739B4B0089799B /* ProtocolCell.xib */; };
+		10123A5626739FFB0089799B /* ProtocolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10123A5526739FFB0089799B /* ProtocolsViewModel.swift */; };
+		10123A582673A6790089799B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10123A572673A6790089799B /* BaseViewModel.swift */; };
+		10123A5A2673AC7A0089799B /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10123A592673AC7A0089799B /* StringUtils.swift */; };
 		1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */; };
 		1013FC8A2644A84700BDAB8A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1013FC892644A84700BDAB8A /* Organization.swift */; };
 		1016B68F264C3EDA00515612 /* SearchResultsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016B68E264C3EDA00515612 /* SearchResultsMapper.swift */; };
@@ -193,6 +198,11 @@
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		100C03CD264ADF3900B01B0E /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		100C03CF264ADF4400B01B0E /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		10123A4C26739B3F0089799B /* ProtocolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolCell.swift; sourceTree = "<group>"; };
+		10123A4E26739B4B0089799B /* ProtocolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolCell.xib; sourceTree = "<group>"; };
+		10123A5526739FFB0089799B /* ProtocolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsViewModel.swift; sourceTree = "<group>"; };
+		10123A572673A6790089799B /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		10123A592673AC7A0089799B /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		1013FC872644A62D00BDAB8A /* OrganizationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsRequest.swift; sourceTree = "<group>"; };
 		1013FC892644A84700BDAB8A /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		1016B68E264C3EDA00515612 /* SearchResultsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsMapper.swift; sourceTree = "<group>"; };
@@ -559,6 +569,9 @@
 				10C4EA72263349D1005FD07F /* ProtocolsTableViewController.xib */,
 				10C4EA8F26334B7C005FD07F /* ProtocolDetailsViewController.swift */,
 				10C4EA9426334B8F005FD07F /* ProtocolDetailsViewController.xib */,
+				10123A4C26739B3F0089799B /* ProtocolCell.swift */,
+				10123A4E26739B4B0089799B /* ProtocolCell.xib */,
+				10123A5526739FFB0089799B /* ProtocolsViewModel.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -786,6 +799,7 @@
 				CF7AEDC02635F293001F3EF8 /* Configurator */,
 				CFB138B926359185001B373D /* Controllers */,
 				CFB138BA2635918E001B373D /* Coordinator */,
+				10123A572673A6790089799B /* BaseViewModel.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -827,6 +841,7 @@
 				10C4EAC426335B47005FD07F /* TibTheme.swift */,
 				106B7EF72644187600571859 /* Validator.swift */,
 				106B7EFD26441E6500571859 /* LocalStorage.swift */,
+				10123A592673AC7A0089799B /* StringUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -953,6 +968,7 @@
 				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
 				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
+				10123A4F26739B4B0089799B /* ProtocolCell.xib in Resources */,
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
 				105802A12649EA4B00A88528 /* PickerCell.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
@@ -1001,6 +1017,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10123A5A2673AC7A0089799B /* StringUtils.swift in Sources */,
 				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
@@ -1045,6 +1062,7 @@
 				10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */,
 				106306A526711B9300133598 /* ResetPasswordViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
+				10123A4D26739B3F0089799B /* ProtocolCell.swift in Sources */,
 				106306A32671168100133598 /* SharedAssetsConfig.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
@@ -1063,12 +1081,14 @@
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
 				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,
 				106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */,
+				10123A582673A6790089799B /* BaseViewModel.swift in Sources */,
 				CFEE4C782639706300AF88A0 /* GetCountriesRequest.swift in Sources */,
 				CF7AEDC72635F31A001F3EF8 /* BaseDataSource.swift in Sources */,
 				100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */,
 				10F78C312642E43900407284 /* FirebaseError.swift in Sources */,
 				10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
+				10123A5626739FFB0089799B /* ProtocolsViewModel.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
 				CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,

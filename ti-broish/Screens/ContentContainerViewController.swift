@@ -34,13 +34,13 @@ final class ContentContainerViewController: BaseViewController {
     // MARK: - Private methods
     
     private func removeCurrentViewController() {
-        guard let _currentViewController = currentViewController, _currentViewController.parent != nil else {
+        guard let currentViewController = currentViewController, currentViewController.parent != nil else {
             return
         }
         
-        _currentViewController.willMove(toParent: nil)
-        _currentViewController.view.removeFromSuperview()
-        _currentViewController.removeFromParent()
+        currentViewController.willMove(toParent: nil)
+        currentViewController.view.removeFromSuperview()
+        currentViewController.removeFromParent()
     }
     
     private func loadViewController(nibName: String) {

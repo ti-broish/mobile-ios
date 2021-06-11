@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 protocol TibViewControllable {
     
     static var nibName: String { get }
+    
+    var reloadDataSubscription: AnyCancellable? { get }
     
     func applyTheme()
 }

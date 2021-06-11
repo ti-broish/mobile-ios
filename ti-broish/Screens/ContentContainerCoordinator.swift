@@ -31,22 +31,22 @@ final class ContentContainerCoordinator: Coordinator {
     }
     
     func remove(_ viewController: UIViewController?) {
-        guard let _viewController = viewController, _viewController.parent != nil else {
+        guard let controller = viewController, controller.parent != nil else {
             return
         }
         
-        _viewController.willMove(toParent: nil)
-        _viewController.view.removeFromSuperview()
-        _viewController.removeFromParent()
+        controller.willMove(toParent: nil)
+        controller.view.removeFromSuperview()
+        controller.removeFromParent()
     }
     
     func add(viewController: UIViewController?, to parentViewController: UIViewController) {
-        if let _viewController = viewController {
-            parentViewController.addChild(_viewController)
-            parentViewController.view.addSubview(_viewController.view)
-            _viewController.view.frame = parentViewController.view.bounds
-            _viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            _viewController.didMove(toParent: parentViewController)
+        if let childViewController = viewController {
+            parentViewController.addChild(childViewController)
+            parentViewController.view.addSubview(childViewController.view)
+            childViewController.view.frame = parentViewController.view.bounds
+            childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            childViewController.didMove(toParent: parentViewController)
         }
     }
     

@@ -31,8 +31,8 @@ final class HomeCoordinator: Coordinator {
             break
         }
         
-        if let _controller = controller {
-            pushController(_controller)
+        if let controller = controller {
+            pushController(controller)
         }
     }
     

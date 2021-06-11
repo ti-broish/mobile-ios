@@ -110,31 +110,31 @@ extension RegistrationViewController: UITableViewDataSource {
         let cell: UITableViewCell
         
         if model.isTextField {
-            let textCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
-            guard let _textCell = textCell as? TextCell  else {
+            let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
+            guard let textCell = reusableCell as? TextCell  else {
                 return UITableViewCell()
             }
 
-            _textCell.textInputField.configureWith(model)
-            _textCell.textInputField.textField.delegate = self
-            cell = _textCell
+            textCell.textInputField.configureWith(model)
+            textCell.textInputField.textField.delegate = self
+            cell = textCell
         } else if model.isPickerField {
-            let pickerCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
-            guard let _pickerCell = pickerCell as? PickerCell else {
+            let reusableCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
+            guard let pickerCell = reusableCell as? PickerCell else {
                 return UITableViewCell()
             }
 
-            _pickerCell.configureWith(model)
-            cell = _pickerCell
+            pickerCell.configureWith(model)
+            cell = pickerCell
         } else if model.isCheckboxField {
-            let checkboxCell = tableView.dequeueReusableCell(withIdentifier: CheckboxCell.cellIdentifier, for: indexPath)
-            guard let _checkboxCell = checkboxCell as? CheckboxCell else {
+            let reusableCell = tableView.dequeueReusableCell(withIdentifier: CheckboxCell.cellIdentifier, for: indexPath)
+            guard let checkboxCell = reusableCell as? CheckboxCell else {
                 return UITableViewCell()
             }
 
-            _checkboxCell.configureWith(model)
-            _checkboxCell.delegate = self
-            cell = _checkboxCell
+            checkboxCell.configureWith(model)
+            checkboxCell.delegate = self
+            cell = checkboxCell
         } else {
             cell = UITableViewCell()
         }

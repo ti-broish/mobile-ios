@@ -11,11 +11,9 @@ public protocol CoordinatableViewModel {
     
     /// Starts the viewModel logic
     func start()
-    
 }
 
 public extension CoordinatableViewModel {
     
     func start() {}
-    
 }
