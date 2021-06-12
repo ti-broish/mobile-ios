@@ -90,21 +90,16 @@ extension ProtocolsTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        if viewModel.data[indexPath.row].isPickerField {
-//            showSearchController(for: indexPath)
-//        }
+        showProtocolDetails(viewModel.protocols[indexPath.row])
     }
     
     // MARK: - Private methods (UITableViewDelegate)
     
-//    private func showSearchController(for indexPath: IndexPath) {
-//        let controller = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
-//        controller.delegate = self
-//        controller.parentCellIndexPath = indexPath
-//        controller.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
-//
-//        let navController = UINavigationController(rootViewController: controller)
-//        self.present(navController, animated: true)
-//    }
+    private func showProtocolDetails(_ protocolItem: Protocol) {
+        let viewController = ProtocolDetailsViewController.init(nibName: ProtocolDetailsViewController.nibName, bundle: nil)
+        viewController.viewModel.protocolItem = protocolItem
+
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 

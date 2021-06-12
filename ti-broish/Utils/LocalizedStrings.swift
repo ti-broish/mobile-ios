@@ -14,7 +14,15 @@ struct LocalizedStrings {
     
     struct Protocols {
         
-        static let titlePrefix = "Секция"
+        static let titlePrefix: String = "Секция"
+        
+        struct ProtocolDetails {
+            
+            static let status: String = "Статус"
+            static let protocolId: String = "Протокол"
+            static let sectionNumber: String = "Номер на секция"
+            static let location: String = "Локация"
+        }
     }
     
     struct Home {

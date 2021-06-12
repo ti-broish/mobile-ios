@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="tlg-iw-erH" customClass="ImageCell" customModule="ti_broish" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XPH-bN-QA1">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y07-jF-xap" userLabel="imageView">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-lm-nlv" userLabel="spinner">
+                        <rect key="frame" x="15" y="15" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oh3-lm-nlv" firstAttribute="centerX" secondItem="XPH-bN-QA1" secondAttribute="centerX" id="Ghu-8q-DVq"/>
+                    <constraint firstAttribute="trailing" secondItem="Y07-jF-xap" secondAttribute="trailing" id="aFW-0H-AV7"/>
+                    <constraint firstAttribute="bottom" secondItem="Y07-jF-xap" secondAttribute="bottom" id="hh4-yT-Bw0"/>
+                    <constraint firstItem="Y07-jF-xap" firstAttribute="top" secondItem="XPH-bN-QA1" secondAttribute="top" id="maa-xz-BUs"/>
+                    <constraint firstItem="oh3-lm-nlv" firstAttribute="centerY" secondItem="XPH-bN-QA1" secondAttribute="centerY" id="rw3-z5-tMi"/>
+                    <constraint firstItem="Y07-jF-xap" firstAttribute="leading" secondItem="XPH-bN-QA1" secondAttribute="leading" id="xYG-XT-sWO"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="imageView" destination="Y07-jF-xap" id="fab-p5-mpu"/>
+                <outlet property="spinner" destination="oh3-lm-nlv" id="8l5-1D-NHE"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="51"/>
+        </collectionViewCell>
+    </objects>
+</document>

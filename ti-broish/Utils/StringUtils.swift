@@ -25,6 +25,22 @@ struct StringUtils {
         return attrText
     }
     
+    static func makeAttributedText(prefix: String, text: String) -> NSAttributedString {
+        let attrText = NSMutableAttributedString(
+            string: "\(prefix): ",
+            attributes: [.foregroundColor: UIColor.grayTextColor, .font: UIFont.regularFont(size: 14.0)]
+        )
+        
+        let attrSection = NSAttributedString(
+            string: text,
+            attributes: [.foregroundColor: UIColor.grayTextColor, .font: UIFont.semiBoldFont(size: 14.0)]
+        )
+        
+        attrText.append(attrSection)
+        
+        return attrText
+    }
+    
     static func stringToColor(hex: String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
