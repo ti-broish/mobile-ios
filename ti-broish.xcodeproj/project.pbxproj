@@ -38,6 +38,8 @@
 		1016B695264C4C7F00515612 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1016B694264C4C7F00515612 /* SearchCell.xib */; };
 		101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */; };
 		101DA7732674A2FA003AE2A2 /* DetailsHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DA7722674A2FA003AE2A2 /* DetailsHeaderReusableView.swift */; };
+		101DA7752674A926003AE2A2 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DA7742674A926003AE2A2 /* ImagePreviewViewController.swift */; };
+		101DA7772674A93F003AE2A2 /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
 		103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A678A2649958F00D93853 /* HomeViewModel.swift */; };
@@ -216,6 +218,8 @@
 		1016B694264C4C7F00515612 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		101CFA6C2634CC8E00666DD8 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		101DA7722674A2FA003AE2A2 /* DetailsHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderReusableView.swift; sourceTree = "<group>"; };
+		101DA7742674A926003AE2A2 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePreviewViewController.xib; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		103A678A2649958F00D93853 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -630,6 +634,8 @@
 				10C4EACA26335C72005FD07F /* TibNavigationBar.swift */,
 				10C4EAE12633637B005FD07F /* TibTableViewCell.swift */,
 				10EB5AA2263A1A8F00690F88 /* TibTextField.swift */,
+				101DA7742674A926003AE2A2 /* ImagePreviewViewController.swift */,
+				101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -985,6 +991,7 @@
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
 				10123A4F26739B4B0089799B /* ProtocolCell.xib in Resources */,
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
+				101DA7772674A93F003AE2A2 /* ImagePreviewViewController.xib in Resources */,
 				105802A12649EA4B00A88528 /* PickerCell.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
 				10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */,
@@ -1132,6 +1139,7 @@
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
+				101DA7752674A926003AE2A2 /* ImagePreviewViewController.swift in Sources */,
 				CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,

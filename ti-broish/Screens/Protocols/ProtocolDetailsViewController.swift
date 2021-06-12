@@ -93,3 +93,21 @@ extension ProtocolDetailsViewController: UICollectionViewDataSource {
         return detailsHeaderView.headerSize
     }
 }
+
+// MARK: - UICollectionViewDelegate
+
+extension ProtocolDetailsViewController {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showImage(viewModel.protocolItem?.pictures[indexPath.row])
+    }
+    
+    // MARK: - Private methods (UICollectionViewDelegate)
+    
+    private func showImage(_ picture: Picture?) {
+        let viewController = ImagePreviewViewController.init(nibName: ImagePreviewViewController.nibName, bundle: nil)
+        viewController.picture = picture
+
+        present(viewController, animated: true, completion: nil)
+    }
+}
