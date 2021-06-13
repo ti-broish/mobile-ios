@@ -19,6 +19,7 @@ final class TermsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         addObservers()
         viewModel.start()
     }
@@ -26,10 +27,14 @@ final class TermsViewController: BaseViewController {
     override func applyTheme() {
         super.applyTheme()
         
-        webView.backgroundColor = .backgroundColor
+        webView.backgroundColor = .clear
     }
     
     // MARK: - Private methods
+    
+    private func setupViews() {
+        navigationItem.configureTitleView()
+    }
     
     private func addObservers() {
         reloadDataSubscription = viewModel

@@ -14,7 +14,7 @@ struct LocalizedStrings {
     
     struct Violations {
         
-        //static let titlePrefix: String = "Секция"
+        static let title: String = "Сигнали"
         
         struct ViolationDetails {
             
@@ -28,7 +28,8 @@ struct LocalizedStrings {
     
     struct Protocols {
         
-        static let titlePrefix: String = "Секция"
+        static let title: String = "Протоколи"
+        static let section: String = "Секция"
         
         struct ProtocolDetails {
             

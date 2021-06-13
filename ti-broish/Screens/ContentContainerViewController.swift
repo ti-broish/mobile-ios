@@ -25,6 +25,7 @@ final class ContentContainerViewController: BaseViewController {
         
         self.view.backgroundColor = .red
         self.navigationItem.configureBackButton()
+        self.navigationItem.configureTitleView()
         
         setupContentViewController()
         setupMenuViewController()

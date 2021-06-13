@@ -33,6 +33,7 @@ final class ProtocolsTableViewController: BaseViewController {
         tableView.delegate = self
         tableView.separatorColor = .darkTextColor
         tableView.rowHeight = 86.0
+        tableView.setHeaderView(text: LocalizedStrings.Protocols.title)
         tableView.tableFooterView = UIView()
     }
     

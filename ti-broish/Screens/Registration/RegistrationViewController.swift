@@ -39,18 +39,6 @@ final class RegistrationViewController: BaseViewController {
         print("tryRegistration is not implemented")
     }
     
-    private func tableViewHeaderView() -> UIView {
-        let theme = TibTheme()
-        let bounds = UIScreen.main.bounds
-        let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: bounds.size.height * 0.1))
-        label.textColor = theme.textFieldColor
-        label.font = .boldFont(size: 18.0)
-        label.text = LocalizedStrings.Registration.title
-        label.textAlignment = .center
-        
-        return label
-    }
-    
     private func registrationButtonView() -> UIView {
         let theme = TibTheme()
         let bounds = UIScreen.main.bounds
@@ -84,7 +72,7 @@ final class RegistrationViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.separatorColor = .none
         tableView.rowHeight = 86.0
-        tableView.tableHeaderView = tableViewHeaderView()
+        tableView.setHeaderView(text: LocalizedStrings.Registration.title)
         tableView.tableFooterView = registrationButtonView()
     }
 }

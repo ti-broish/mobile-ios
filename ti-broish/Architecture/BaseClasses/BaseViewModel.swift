@@ -10,5 +10,5 @@ import Combine
 
 class BaseViewModel {
     
-    let reloadDataPublisher = PassthroughSubject<Void, APIError>()
+    let reloadDataPublisher = PassthroughSubject<Void, Error>()
 }

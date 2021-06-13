@@ -23,6 +23,6 @@ final class SendProtocolViewController: BaseViewController {
     // MARK: - Private methods
     
     private func setupViews() {
-        navigationItem.configureBackButton()
+        navigationItem.configureTitleView()
     }
 }

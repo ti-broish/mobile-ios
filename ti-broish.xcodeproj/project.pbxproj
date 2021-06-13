@@ -40,6 +40,8 @@
 		101DA7732674A2FA003AE2A2 /* DetailsHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DA7722674A2FA003AE2A2 /* DetailsHeaderReusableView.swift */; };
 		101DA7752674A926003AE2A2 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DA7742674A926003AE2A2 /* ImagePreviewViewController.swift */; };
 		101DA7772674A93F003AE2A2 /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */; };
+		102B847C2676526000839324 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 102B847B2676526000839324 /* terms.html */; };
+		102B847F2676557500839324 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B847E2676557500839324 /* CommonError.swift */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
 		103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A678A2649958F00D93853 /* HomeViewModel.swift */; };
@@ -223,6 +225,8 @@
 		101DA7722674A2FA003AE2A2 /* DetailsHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderReusableView.swift; sourceTree = "<group>"; };
 		101DA7742674A926003AE2A2 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePreviewViewController.xib; sourceTree = "<group>"; };
+		102B847B2676526000839324 /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
+		102B847E2676557500839324 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		103A678A2649958F00D93853 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 		0AEB3954261CF9CD0005BF38 /* ti-broish */ = {
 			isa = PBXGroup;
 			children = (
+				102B847D2676555C00839324 /* Errors */,
 				0AEB398E261CFD800005BF38 /* Screens */,
 				CFB138B726359162001B373D /* Architecture */,
 				CF390FDE2637323700999369 /* Communication */,
@@ -536,11 +541,20 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		102B847D2676555C00839324 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				102B847E2676557500839324 /* CommonError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		1042B3C92634AACC00764ACF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				1042B3CA2634AAE300764ACF /* fonts */,
 				106306A22671168100133598 /* SharedAssetsConfig.swift */,
+				102B847B2676526000839324 /* terms.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1024,6 +1038,7 @@
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
 				CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */,
 				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
+				102B847C2676526000839324 /* terms.html in Resources */,
 				1080EB6C2675F1E7004AFC2A /* ViolationCell.xib in Resources */,
 				1042B3E12634AAFD00764ACF /* Montserrat-Regular.ttf in Resources */,
 				0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */,
@@ -1147,6 +1162,7 @@
 				CF61EEC526396E1B00278AA7 /* Country.swift in Sources */,
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */,
+				102B847F2676557500839324 /* CommonError.swift in Sources */,
 				10D0FAB32674802100DCF0EA /* BaseCollectionViewController.swift in Sources */,
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,

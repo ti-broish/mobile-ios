@@ -33,8 +33,6 @@ final class HomeViewController: BaseViewController {
     // MARK: - Private methods
     
     private func setupViews() {
-        navigationItem.configureBackButton()
-        
         let theme = TibTheme()
         sendProtocolButton.configureSolidButton(title: LocalizedStrings.Home.sendProtocol, theme: theme)
         sendViolationButton.configureSolidButton(title: LocalizedStrings.Home.sendViolation, theme: theme)

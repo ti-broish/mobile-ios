@@ -33,6 +33,7 @@ final class ViolationsTableViewController: BaseViewController {
         tableView.delegate = self
         tableView.separatorColor = .darkTextColor
         tableView.rowHeight = 86.0
+        tableView.setHeaderView(text: LocalizedStrings.Violations.title)
         tableView.tableFooterView = UIView()
     }
     
