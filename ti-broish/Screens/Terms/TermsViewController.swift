@@ -6,10 +6,40 @@
 //
 
 import UIKit
+import WebKit
+import Combine
 
 final class TermsViewController: BaseViewController {
     
+    @IBOutlet private weak var webView: WKWebView!
+    
+    private let viewModel = TermsViewModel()
+
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addObservers()
+        viewModel.start()
+    }
+    
     override func applyTheme() {
         super.applyTheme()
+        
+        webView.backgroundColor = .backgroundColor
+    }
+    
+    // MARK: - Private methods
+    
+    private func addObservers() {
+        reloadDataSubscription = viewModel
+            .reloadDataPublisher
+            .sink(
+                receiveCompletion: { error in
+                    print("reload data failed \(error)")
+                },
+                receiveValue: { [unowned self] _ in
+                    webView.loadHTMLString(viewModel.htmlString ?? "", baseURL: nil)
+                })
     }
 }

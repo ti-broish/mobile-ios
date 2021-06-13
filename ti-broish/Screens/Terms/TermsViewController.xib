@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="iN0-l3-epB" id="svN-Yt-Yfk"/>
+                <outlet property="webView" destination="jKW-uJ-KiE" id="qmg-dw-L6G"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,18 +20,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_terms_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7A-bc-VDP">
-                    <rect key="frame" x="175.5" y="442.5" width="63" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-uJ-KiE" userLabel="webView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="d7A-bc-VDP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="09y-5X-Ty7"/>
-                <constraint firstItem="d7A-bc-VDP" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="vw7-sn-TZm"/>
+                <constraint firstAttribute="bottom" secondItem="jKW-uJ-KiE" secondAttribute="bottom" id="1gH-FD-JKF"/>
+                <constraint firstItem="jKW-uJ-KiE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bs8-iX-4It"/>
+                <constraint firstAttribute="trailing" secondItem="jKW-uJ-KiE" secondAttribute="trailing" id="fsv-mO-PPU"/>
+                <constraint firstItem="jKW-uJ-KiE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wmE-HI-l83"/>
             </constraints>
             <point key="canvasLocation" x="-26" y="123"/>
         </view>
