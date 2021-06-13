@@ -23,7 +23,6 @@ final class ContentContainerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .red
         self.navigationItem.configureBackButton()
         self.navigationItem.configureTitleView()
         
@@ -111,6 +110,7 @@ final class ContentContainerViewController: BaseViewController {
             action: #selector(toggleMainMenu)
         )
         
+        menuButton.setTitleTextAttributes([.font: UIFont.semiBoldFont(size: 17.0)], for: .normal)
         navigationItem.setLeftBarButton(menuButton, animated: true)
     }
 }

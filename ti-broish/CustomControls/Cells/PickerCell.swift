@@ -37,6 +37,8 @@ final class PickerCell: TibTableViewCell, Configurable {
             valueLabel.text = text
         } else if let item = data.data as? SearchItem {
             valueLabel.text = item.name
+        } else if let organization = data.data as? Organization {
+            valueLabel.text = organization.name
         } else if let placeholderText = data.placeholderText {
             valueLabel.attributedText = NSAttributedString(
                 string: placeholderText,

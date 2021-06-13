@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="lAS-3R-8EX" id="S3p-oW-8Gv"/>
                 <outlet property="view" destination="iN0-l3-epB" id="RzL-WS-ciR"/>
             </connections>
         </placeholder>
@@ -19,18 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_profile_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN5-dJ-Y53">
-                    <rect key="frame" x="173.5" y="442.5" width="67" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-3R-8EX" userLabel="tableView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="RN5-dJ-Y53" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Rof-7G-5Eg"/>
-                <constraint firstItem="RN5-dJ-Y53" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="SIm-uu-1nw"/>
+                <constraint firstItem="lAS-3R-8EX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5om-Ub-tAd"/>
+                <constraint firstAttribute="trailing" secondItem="lAS-3R-8EX" secondAttribute="trailing" id="F8Y-mZ-fdH"/>
+                <constraint firstAttribute="bottom" secondItem="lAS-3R-8EX" secondAttribute="bottom" id="bXQ-WS-Att"/>
+                <constraint firstItem="lAS-3R-8EX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wNH-B0-Slj"/>
             </constraints>
             <point key="canvasLocation" x="74" y="123"/>
         </view>

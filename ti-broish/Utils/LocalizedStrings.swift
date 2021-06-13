@@ -11,6 +11,7 @@ struct LocalizedStrings {
     static let menu: String = "Меню"
     static let back: String = "Назад"
     static let cancel: String = "Откажи"
+    static let save: String = "Запази"
     
     struct Violations {
         
@@ -86,9 +87,7 @@ struct LocalizedStrings {
         static let resetPasswordButton: String = "Забравена парола"
     }
     
-    struct Registration {
-        
-        static let title: String = "РЕГИСТРАЦИЯ"
+    struct CommonInputField {
         
         static let firstName: String = "Име:"
         static let firstNamePlaceholder: String = "Въведете вашето име"
@@ -102,23 +101,28 @@ struct LocalizedStrings {
         static let phone: String = "Телефон:"
         static let phonePlaceholder: String = "Въведете вашия телефон"
         
-        static let pin: String = "Последни четири цифри на ЕГН:"
-        static let pinPlaceholder: String = "Въведете последни четири цифри"
-        
         static let organization: String = "Организация:"
         static let organizationPlaceholder: String = "Избери организация"
+        
+        static let hasAgreedToKeepData: String = """
+        Съгласен съм да съхранявате данните ми и за целите на застъпнически кампании за следващите избори (след 04.04.2021).
+        Данните ви се съхраняват по подразбиране до 30 дни след изборния ден на база на легитимния интерес на администратора и изискванията на Изборния кодекс.
+        """
+    }
+    
+    struct Registration {
+        
+        static let title: String = "РЕГИСТРАЦИЯ"
+        
+        static let pin: String = "Последни четири цифри на ЕГН:"
+        static let pinPlaceholder: String = "Въведете последни четири цифри"
         
         static let password: String = "Парола:"
         static let passwordPlaceholder: String = "Въведете вашата парола"
         
         static let confirmPassword: String = "Потвърди парола:"
         static let confirmPasswordPlaceholder: String = "Потвърдете вашата парола"
-        
-        static let hasAgreedToKeepData: String = """
-        Съгласен съм да съхранявате данните ми и за целите на застъпнически кампании за следващите избори (след 04.04.2021).
-        Данните ви се съхраняват по подразбиране до 30 дни след изборния ден на база на легитимния интерес на администратора и изискванията на Изборния кодекс.
-        """
-        
+
         static let hasAdulthood: String = "Имам навършени 18 години."
         static let registerButton: String = "СЪЗДАЙ ПРОФИЛ"
     }

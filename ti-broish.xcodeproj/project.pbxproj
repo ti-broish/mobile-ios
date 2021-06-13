@@ -42,6 +42,8 @@
 		101DA7772674A93F003AE2A2 /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */; };
 		102B847C2676526000839324 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 102B847B2676526000839324 /* terms.html */; };
 		102B847F2676557500839324 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B847E2676557500839324 /* CommonError.swift */; };
+		102B84812676600C00839324 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B84802676600C00839324 /* ProfileViewModel.swift */; };
+		102B84832676607700839324 /* ProfileDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B84822676607700839324 /* ProfileDataBuilder.swift */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
 		103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A678A2649958F00D93853 /* HomeViewModel.swift */; };
@@ -227,6 +229,8 @@
 		101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePreviewViewController.xib; sourceTree = "<group>"; };
 		102B847B2676526000839324 /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		102B847E2676557500839324 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
+		102B84802676600C00839324 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		102B84822676607700839324 /* ProfileDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataBuilder.swift; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		103A678A2649958F00D93853 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 			children = (
 				0AE2CB562624EEDF00C178C9 /* ProfileViewController.swift */,
 				0AE2CB5E2624EEEE00C178C9 /* ProfileViewController.xib */,
+				102B84802676600C00839324 /* ProfileViewModel.swift */,
+				102B84822676607700839324 /* ProfileDataBuilder.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1094,6 +1100,7 @@
 				10DC9FA8264C115A00A7C941 /* SearchViewController.swift in Sources */,
 				10C4EAC526335B47005FD07F /* TibTheme.swift in Sources */,
 				CF3DB0C9264BB83B00AAB618 /* User.swift in Sources */,
+				102B84812676600C00839324 /* ProfileViewModel.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
@@ -1106,6 +1113,7 @@
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
 				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */,
+				102B84832676607700839324 /* ProfileDataBuilder.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */,
 				CFA575292637F583002BCECD /* SendViolationRequest.swift in Sources */,
