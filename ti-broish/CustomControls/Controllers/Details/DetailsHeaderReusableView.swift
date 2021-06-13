@@ -26,13 +26,13 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadProtocol(_ protocolItem: Protocol?) {
-        guard let protocolItem = protocolItem else {
-            return
-        }
-        
+    func loadProtocol(_ protocolItem: Protocol) {
         stackView.addArrangedSubview(
-            makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.status, text: protocolItem.statusLocalized)
+            makeLabel(
+                prefix: LocalizedStrings.Protocols.ProtocolDetails.status,
+                text: protocolItem.statusLocalized,
+                textColor: StringUtils.stringToColor(hex: protocolItem.statusColor ?? protocolItem.status.colorString)
+            )
         )
         
         stackView.addArrangedSubview(
@@ -45,6 +45,35 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         
         stackView.addArrangedSubview(
             makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.location, text: protocolItem.section.place)
+        )
+    }
+    
+    func loadViolation(_ violation: Violation) {
+        stackView.addArrangedSubview(
+            makeLabel(
+                prefix: LocalizedStrings.Violations.ViolationDetails.status,
+                text: violation.statusLocalized,
+                textColor: StringUtils.stringToColor(hex: violation.statusColor ?? violation.status.colorString)
+            )
+        )
+        
+        stackView.addArrangedSubview(
+            makeLabel(prefix: LocalizedStrings.Violations.ViolationDetails.violationId, text: violation.id)
+        )
+        
+        if violation.sections != nil {
+//            stackView.addArrangedSubview(
+//                makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.sectionNumber, text: violation.section.id)
+//            )
+//
+//            stackView.addArrangedSubview(
+//                makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.location, text: violation.section.place)
+//            )
+            assertionFailure("violation sections are not handled")
+        }
+        
+        stackView.addArrangedSubview(
+            makeLabel(prefix: LocalizedStrings.Violations.ViolationDetails.description, text: violation.description)
         )
     }
     
@@ -65,12 +94,12 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         ])
     }
     
-    private func makeLabel(prefix: String, text: String) -> UILabel {
+    private func makeLabel(prefix: String, text: String, textColor: UIColor = .darkTextColor) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setContentHuggingPriority(UILayoutPriority(250.0), for: .vertical)
         label.numberOfLines = 0
-        label.attributedText = StringUtils.makeAttributedText(prefix: prefix, text: text)
+        label.attributedText = StringUtils.makeAttributedText(prefix: prefix, text: text, textColor: textColor)
         
         let textSize = label.attributedText?.boundingRect(
             with: CGSize(width: 200.0, height: 0.0),

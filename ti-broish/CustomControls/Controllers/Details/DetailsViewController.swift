@@ -1,15 +1,15 @@
 //
-//  ProtocolDetailsViewController.swift
+//  DetailsViewController.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 23.04.21.
+//  Created by Krasimir Slavkov on 13.06.21.
 //
 
 import UIKit
 
-final class ProtocolDetailsViewController: BaseCollectionViewController {
+final class DetailsViewController: BaseCollectionViewController {
     
-    var viewModel = ProtocolDetailsViewModel()
+    var viewModel = DetailsViewModel()
     
     // MARK: - View lifecycle
     
@@ -40,14 +40,14 @@ final class ProtocolDetailsViewController: BaseCollectionViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension ProtocolDetailsViewController: UICollectionViewDataSource {
+extension DetailsViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.protocolItem?.pictures.count ?? 0
+        return viewModel.imagesCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +77,13 @@ extension ProtocolDetailsViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
         
-        detailsHeaderView.loadProtocol(viewModel.protocolItem)
+        if let protocolItem = viewModel.protocolItem {
+            detailsHeaderView.loadProtocol(protocolItem)
+        } else if let violation = viewModel.violation {
+            detailsHeaderView.loadViolation(violation)
+        } else {
+            return UICollectionReusableView()
+        }
             
         return detailsHeaderView
     }
@@ -88,7 +94,12 @@ extension ProtocolDetailsViewController: UICollectionViewDataSource {
         referenceSizeForHeaderInSection section: Int
     ) -> CGSize {
         let detailsHeaderView = DetailsHeaderReusableView()
-        detailsHeaderView.loadProtocol(viewModel.protocolItem)
+        
+        if let protocolItem = viewModel.protocolItem {
+            detailsHeaderView.loadProtocol(protocolItem)
+        } else if let violation = viewModel.violation {
+            detailsHeaderView.loadViolation(violation)
+        }
         
         return detailsHeaderView.headerSize
     }
@@ -96,7 +107,7 @@ extension ProtocolDetailsViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 
-extension ProtocolDetailsViewController {
+extension DetailsViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showImage(viewModel.protocolItem?.pictures[indexPath.row])
@@ -111,3 +122,4 @@ extension ProtocolDetailsViewController {
         present(viewController, animated: true, completion: nil)
     }
 }
+

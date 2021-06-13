@@ -14,11 +14,9 @@ final class ImageCell: UICollectionViewCell, Cell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.cornerRadius = 4.0
-        imageView.layer.borderWidth = 1.0
-        imageView.layer.borderColor = UIColor.grayTextColor.cgColor
+        imageView.setBorder(color: .darkTextColor)
         
-        spinner.color = .grayTextColor
+        spinner.color = .darkTextColor
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
     }

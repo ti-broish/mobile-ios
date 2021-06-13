@@ -44,10 +44,8 @@ final class CheckboxCell: TibTableViewCell, Configurable {
         backgroundColor = .clear
         
         let theme = TibTheme()
-        
-        checkboxButton.layer.borderWidth = 2.0
-        checkboxButton.layer.cornerRadius = 4.0
-        checkboxButton.layer.borderColor = UIColor.primaryColor.cgColor
+
+        checkboxButton.setBorder(width: 2.0, color: .primaryColor)
         checkboxButton.setTitleColor(.primaryColor, for: .normal)
         
         titleLabel.font = .regularFont(size: 14.0)

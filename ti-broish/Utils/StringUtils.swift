@@ -9,31 +9,15 @@ import UIKit
 
 struct StringUtils {
     
-    static func makeAttributedSectionText(index: Int, section: String) -> NSAttributedString {
-        let attrText = NSMutableAttributedString(
-            string: "\(index). \(LocalizedStrings.Protocols.titlePrefix): ",
-            attributes: [.foregroundColor: UIColor.grayTextColor, .font: UIFont.regularFont(size: 14.0)]
-        )
-        
-        let attrSection = NSAttributedString(
-            string: section,
-            attributes: [.foregroundColor: UIColor.grayTextColor, .font: UIFont.semiBoldFont(size: 14.0)]
-        )
-        
-        attrText.append(attrSection)
-        
-        return attrText
-    }
-    
-    static func makeAttributedText(prefix: String, text: String) -> NSAttributedString {
+    static func makeAttributedText(prefix: String, text: String, textColor: UIColor) -> NSAttributedString {
         let attrText = NSMutableAttributedString(
             string: "\(prefix): ",
-            attributes: [.foregroundColor: UIColor.grayTextColor, .font: UIFont.regularFont(size: 14.0)]
+            attributes: [.foregroundColor: UIColor.darkTextColor, .font: UIFont.regularFont(size: 14.0)]
         )
         
         let attrSection = NSAttributedString(
             string: text,
-            attributes: [.foregroundColor: UIColor.grayTextColor, .font: UIFont.semiBoldFont(size: 14.0)]
+            attributes: [.foregroundColor: textColor, .font: UIFont.semiBoldFont(size: 14.0)]
         )
         
         attrText.append(attrSection)
@@ -49,7 +33,7 @@ struct StringUtils {
         }
         
         if ((cString.count) != 6) {
-            return .grayTextColor
+            return .darkTextColor
         }
         
         var rgbValue:UInt64 = 0

@@ -31,7 +31,7 @@ final class ProtocolsTableViewController: BaseViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorColor = .grayTextColor
+        tableView.separatorColor = .darkTextColor
         tableView.rowHeight = 86.0
         tableView.tableFooterView = UIView()
     }
@@ -90,16 +90,15 @@ extension ProtocolsTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        showProtocolDetails(viewModel.protocols[indexPath.row])
+        showDetails(protocolItem: viewModel.protocols[indexPath.row])
     }
     
     // MARK: - Private methods (UITableViewDelegate)
     
-    private func showProtocolDetails(_ protocolItem: Protocol) {
-        let viewController = ProtocolDetailsViewController.init(nibName: ProtocolDetailsViewController.nibName, bundle: nil)
+    private func showDetails(protocolItem: Protocol) {
+        let viewController = DetailsViewController.init(nibName: DetailsViewController.nibName, bundle: nil)
         viewController.viewModel.protocolItem = protocolItem
 
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
-

@@ -12,6 +12,20 @@ struct LocalizedStrings {
     static let back: String = "Назад"
     static let cancel: String = "Откажи"
     
+    struct Violations {
+        
+        //static let titlePrefix: String = "Секция"
+        
+        struct ViolationDetails {
+            
+            static let status: String = "Статус"
+            static let violationId: String = "Сигнал"
+            static let sectionNumber: String = "Номер на секция"
+            static let location: String = "Локация"
+            static let description: String = "Описание"
+        }
+    }
+    
     struct Protocols {
         
         static let titlePrefix: String = "Секция"
