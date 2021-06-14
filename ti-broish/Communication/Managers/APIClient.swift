@@ -85,7 +85,9 @@ final class APIClient {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
         
-        let encoding: ParameterEncoding = request.method == .post ? JSONEncoding.default : URLEncoding.default
+        let encoding: ParameterEncoding = request.method == .post || request.method == .patch
+            ? JSONEncoding.default
+            : URLEncoding.default
 
         AF.request(
             url,
@@ -131,7 +133,7 @@ extension APIClient: APIClientInterface {
     
     func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?) {
         let request = UpdateUserDetailsRequest(user: user)
-    
+        
         send(request) { result in
             completion?(result)
         }

@@ -39,7 +39,8 @@ final class ProfileViewController: BaseViewController {
     // MARK: - Private methods
     
     @objc private func handleSaveButton(_ sender: UIButton) {
-        assertionFailure("handleSaveButton is not implemented")
+        // TODO: - show loading
+        viewModel.saveProfile()
     }
     
     @objc private func handleDeleteButton(_ sender: UIBarButtonItem) {
@@ -113,6 +114,7 @@ final class ProfileViewController: BaseViewController {
                     tableView.reloadData()
                 },
                 receiveValue: { [unowned self] _ in
+                    print("reload data finished")
                     tableView.reloadData()
                 })
     }
@@ -245,8 +247,10 @@ extension ProfileViewController: UITextFieldDelegate {
 extension ProfileViewController: SearchViewControllerDelegate {
     
     func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
-        if let indexPath = sender.parentCellIndexPath {
-            viewModel.updateValue(value as AnyObject, at: indexPath)
+        if let indexPath = sender.parentCellIndexPath, let value = value {
+            let organization = Organization(id: value.id, name: value.name)
+            
+            viewModel.updateValue(organization as AnyObject, at: indexPath)
         }
         
         tableView.reloadData()

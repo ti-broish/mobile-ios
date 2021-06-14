@@ -20,5 +20,9 @@ struct Organization: Codable {
     
     let id: Int
     let name: String
-    let type: OrganizationType
+    //let type: OrganizationType
+    
+    func toDictionary() -> [String: Any?] {
+        return [ "id": id, "name": name ]
+    }
 }
