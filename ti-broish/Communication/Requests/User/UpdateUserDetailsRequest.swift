@@ -30,8 +30,7 @@ struct UpdateUserDetailsRequest: RequestProvider {
             "email": user.userDetails.email,
             "phone": user.userDetails.phone,
             "pin": user.userDetails.pin,
-            "organization": user.userDetails.organization,
-            "firebaseUid": user.firebaseUid,
+            "organization": user.userDetails.organization?.toDictionary() ?? nil,
             "hasAgreedToKeepData": user.userDetails.hasAgreedToKeepData
         ]
     }

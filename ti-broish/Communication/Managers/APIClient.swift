@@ -85,7 +85,9 @@ final class APIClient {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = request.decodingStrategy
         
-        let encoding: ParameterEncoding = request.method == .post ? JSONEncoding.default : URLEncoding.default
+        let encoding: ParameterEncoding = request.method == .post || request.method == .patch
+            ? JSONEncoding.default
+            : URLEncoding.default
 
         AF.request(
             url,
@@ -97,11 +99,36 @@ final class APIClient {
         )
         .responseDecodable(of: T.self, decoder: decoder) { response in
             DispatchQueue.main.async {
-                let mappedResponse = response.mapError { (error) -> APIError in
-                    APIError.requestFailed(error: error)
+                guard let httpResponse = response.response else {
+                    if let error = response.error {
+                        completion(.failure(.requestFailed(error: error)))
+                    } else {
+                        completion(.failure(.unknown))
+                    }
+                    
+                    return
                 }
                 
-                completion(mappedResponse.result)
+                if httpResponse.statusCode < 200 || httpResponse.statusCode >= 300 {
+                    guard let data = response.data else {
+                        completion(.failure(.invalidResponseData))
+                        return
+                    }
+                    
+                    do {
+                        let apiResponseError = try JSONDecoder().decode(APIResponseError.self, from: data)
+                        
+                        print(apiResponseError)
+                    } catch {
+                        completion(.failure(.jsonDecodingFailed(error: error)))
+                    }
+                } else {
+                    let mappedResponse = response.mapError { (error) -> APIError in
+                        APIError.requestFailed(error: error)
+                    }
+                    
+                    completion(mappedResponse.result)
+                }
             }
         }
     }
@@ -131,7 +158,7 @@ extension APIClient: APIClientInterface {
     
     func updateUserDetails(_ user: User, completion: APIResult<BaseResponse>?) {
         let request = UpdateUserDetailsRequest(user: user)
-    
+        
         send(request) { result in
             completion?(result)
         }
