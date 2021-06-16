@@ -7,22 +7,28 @@
 
 import Foundation
 
-enum ResetFieldType {
+final class ResetPasswordViewModel: BaseViewModel, CoordinatableViewModel {
     
-    case email
-}
-
-final class ResetPasswordViewModel {
+    // MARK: - Public Methods
     
-    func makeConfig(for type: ResetFieldType) -> InputFieldConfig {
-        switch type {
-        case .email:
-            return InputFieldConfig(
-                type: .email,
-                title: LocalizedStrings.ResetPassword.email,
-                placeholderText: LocalizedStrings.ResetPassword.emailPlaceholder
-            )
+    override func loadDataFields() {
+        let builder = ResetPasswordDataBuilder()
+        
+        ResetPasswordFieldType.allCases.forEach {
+            data.append(builder.makeConfig(for: $0))
         }
+    }
+    
+    override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
+        guard let field = ResetPasswordFieldType(rawValue: indexPath.row) else {
+            return
+        }
+        
+        setFieldValue(value, forFieldAt: field.rawValue)
+    }
+    
+    func start() {
+        loadDataFields()
     }
     
     func resetPassword(email: String, completion: @escaping (Result<Void, FirebaseError>) -> (Void)) {

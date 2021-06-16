@@ -10,15 +10,15 @@ import Combine
 final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     
     private var lastSearchedText = ""
-    private var data = [SearchItem]()
-    private var filteredData = [SearchItem]()
+    private var searchData = [SearchItem]()
+    private var filteredSearchData = [SearchItem]()
     
     var numberOfRows: Int {
-        return lastSearchedText.isEmpty ? data.count : filteredData.count
+        return lastSearchedText.isEmpty ? searchData.count : filteredSearchData.count
     }
     
     var items: [SearchItem] {
-        return lastSearchedText.isEmpty ? data : filteredData
+        return lastSearchedText.isEmpty ? searchData : filteredSearchData
     }
     
     // MARK: - Public Methods
@@ -30,8 +30,8 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     func filter(by text: String) {
         lastSearchedText = text
         
-        filteredData.removeAll()
-        filteredData = data.filter { $0.name.lowercased().contains(lastSearchedText.lowercased()) }
+        filteredSearchData.removeAll()
+        filteredSearchData = searchData.filter { $0.name.lowercased().contains(lastSearchedText.lowercased()) }
     }
     
     func getOrganizations() {
@@ -44,7 +44,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             
             switch response {
             case .success(let organizations):
-                strongSelf.data = SearchResultsMapper.mapOrganizations(organizations)
+                strongSelf.searchData = SearchResultsMapper.mapOrganizations(organizations)
                 strongSelf.reloadDataPublisher.send()
             case .failure(let error):
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))

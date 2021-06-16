@@ -11,23 +11,26 @@ import Firebase
 final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     
     private var userDetails: UserDetails?
-    private (set) var data = [InputFieldConfig]()
     
-    override init() {
-        super.init()
-        loadProfileFields()
-    }
-
-    func start() {
-        getProfile()
+    override func loadDataFields() {
+        let builder = ProfileDataBuilder()
+        
+        ProfileFieldType.allCases.forEach {
+            data.append(builder.makeConfig(for: $0))
+        }
     }
     
-    func updateValue(_ value: AnyObject?, at indexPath: IndexPath) {
+    override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard let field = ProfileFieldType(rawValue: indexPath.row) else {
             return
         }
         
-        setValue(value, for: field)
+        setFieldValue(value, forFieldAt: field.rawValue)
+    }
+    
+    func start() {
+        loadDataFields()
+        getProfile()
     }
     
     func saveProfile() {
@@ -55,31 +58,19 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     
     // MARK: - Private methods
     
-    private func loadProfileFields() {
-        let builder = ProfileDataBuilder()
-        
-        ProfileFieldType.allCases.forEach {
-            data.append(builder.makeConfig(for: $0))
-        }
-    }
-    
-    private func setValue(_ value: AnyObject?, for field: ProfileFieldType) {
-        data[field.rawValue].data = value
-    }
-    
-    private func getValue(for field: ProfileFieldType) -> AnyObject? {
-        return data[field.rawValue].data
+    private func indexFor(field: ProfileFieldType) -> Int {
+        return field.rawValue
     }
     
     private func updateData(_ userDetails: UserDetails) {
-        setValue(userDetails.firstName as AnyObject, for: .firstName)
-        setValue(userDetails.lastName as AnyObject, for: .lastName)
-        setValue(userDetails.email as AnyObject, for: .email)
-        setValue(userDetails.phone as AnyObject, for: .phone)
-        setValue(userDetails.organization as AnyObject, for: .organization)
+        setFieldValue(userDetails.firstName as AnyObject, forFieldAt: indexFor(field: .firstName))
+        setFieldValue(userDetails.lastName as AnyObject, forFieldAt: indexFor(field: .lastName))
+        setFieldValue(userDetails.email as AnyObject, forFieldAt: indexFor(field: .email))
+        setFieldValue(userDetails.phone as AnyObject, forFieldAt: indexFor(field: .phone))
+        setFieldValue(userDetails.organization as AnyObject, forFieldAt: indexFor(field: .organization))
         
         let state: CheckboxState = userDetails.hasAgreedToKeepData ? .checked : .unchecked
-        setValue(state as AnyObject, for: .hasAgreedToKeepData)
+        setFieldValue(state as AnyObject, forFieldAt: indexFor(field: .hasAgreedToKeepData))
         
         reloadDataPublisher.send()
     }
@@ -102,13 +93,13 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     
     private func makeUserDetails() -> UserDetails? {
         guard
-            let firstName = getValue(for: .firstName) as? String,
-            let lastName = getValue(for: .lastName) as? String,
-            let email = getValue(for: .email) as? String,
-            let phone = getValue(for: .phone) as? String,
+            let firstName = getFieldValue(forFieldAt: indexFor(field: .firstName)) as? String,
+            let lastName = getFieldValue(forFieldAt: indexFor(field: .lastName)) as? String,
+            let email = getFieldValue(forFieldAt: indexFor(field: .email)) as? String,
+            let phone = getFieldValue(forFieldAt: indexFor(field: .phone)) as? String,
             let pin = userDetails?.pin,
-            let organization = getValue(for: .organization) as? Organization,
-            let hasAgreedToKeepData = getValue(for: .hasAgreedToKeepData) as? CheckboxState
+            let organization = getFieldValue(forFieldAt: indexFor(field: .organization)) as? Organization,
+            let hasAgreedToKeepData = getFieldValue(forFieldAt: indexFor(field: .hasAgreedToKeepData)) as? CheckboxState
         else {
             return nil
         }

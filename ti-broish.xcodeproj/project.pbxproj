@@ -64,6 +64,7 @@
 		10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D94267108F2001C260F /* FirebaseMessaging */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
+		10577056267A8BE60003C1DC /* ResetPasswordDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */; };
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
 		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
 		10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10613F1B2642F2BD00062B33 /* ErrorHandler.swift */; };
@@ -85,6 +86,8 @@
 		108F202226496D8800E54F64 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F202126496D8800E54F64 /* Town.swift */; };
 		108F20242649753400E54F64 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F20232649753400E54F64 /* RequestInterceptor.swift */; };
 		10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109027FF264DD4190011E4BD /* APIManagerTests.swift */; };
+		10ABFA082678F05B00E34D32 /* SendProtocolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABFA072678F05B00E34D32 /* SendProtocolViewModel.swift */; };
+		10ABFA0A2678F0C700E34D32 /* SendProtocolDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABFA092678F0C700E34D32 /* SendProtocolDataBuilder.swift */; };
 		10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0126545C0B001E6B0E /* CheckboxCell.swift */; };
 		10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B11E0326545C18001E6B0E /* CheckboxCell.xib */; };
 		10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B11E0526546544001E6B0E /* UILabelExtension.swift */; };
@@ -248,6 +251,7 @@
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDataBuilder.swift; sourceTree = "<group>"; };
 		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 		10613F1B2642F2BD00062B33 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 		108F202126496D8800E54F64 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		108F20232649753400E54F64 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		109027FF264DD4190011E4BD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
+		10ABFA072678F05B00E34D32 /* SendProtocolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolViewModel.swift; sourceTree = "<group>"; };
+		10ABFA092678F0C700E34D32 /* SendProtocolDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolDataBuilder.swift; sourceTree = "<group>"; };
 		10B11E0126545C0B001E6B0E /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
 		10B11E0326545C18001E6B0E /* CheckboxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
 		10B11E0526546544001E6B0E /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
@@ -602,6 +608,17 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		10ABFA0B2678F0E700E34D32 /* SendProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EA6526334965005FD07F /* SendProtocolViewController.swift */,
+				10C4EA6A263349A5005FD07F /* SendProtocolViewController.xib */,
+				10ABFA072678F05B00E34D32 /* SendProtocolViewModel.swift */,
+				10ABFA092678F0C700E34D32 /* SendProtocolDataBuilder.swift */,
+			);
+			path = SendProtocol;
+			sourceTree = "<group>";
+		};
 		10C4EA3626333A9E005FD07F /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +636,7 @@
 				10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */,
 				10C4EA4A26333BE8005FD07F /* ResetPasswordViewController.xib */,
 				106306A426711B9300133598 /* ResetPasswordViewModel.swift */,
+				10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -626,8 +644,7 @@
 		10C4EA4F26333F72005FD07F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				10C4EA6526334965005FD07F /* SendProtocolViewController.swift */,
-				10C4EA6A263349A5005FD07F /* SendProtocolViewController.xib */,
+				10ABFA0B2678F0E700E34D32 /* SendProtocol */,
 				10C4EA5D2633494E005FD07F /* ProtocolsTableViewController.swift */,
 				10C4EA72263349D1005FD07F /* ProtocolsTableViewController.xib */,
 				10123A5526739FFB0089799B /* ProtocolsViewModel.swift */,
@@ -1087,6 +1104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10123A5A2673AC7A0089799B /* StringUtils.swift in Sources */,
+				10ABFA0A2678F0C700E34D32 /* SendProtocolDataBuilder.swift in Sources */,
 				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
@@ -1132,6 +1150,7 @@
 				CFA575482637FA07002BCECD /* SendViolationResponse.swift in Sources */,
 				CFA5765026392661002BCECD /* SendProtocolRequest.swift in Sources */,
 				10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */,
+				10ABFA082678F05B00E34D32 /* SendProtocolViewModel.swift in Sources */,
 				10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */,
 				106306A526711B9300133598 /* ResetPasswordViewModel.swift in Sources */,
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
@@ -1194,6 +1213,7 @@
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */,
+				10577056267A8BE60003C1DC /* ResetPasswordDataBuilder.swift in Sources */,
 				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
 				1062087D2671843B00F28D83 /* ContentContainerCoordinator.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,

@@ -237,7 +237,7 @@ extension ProfileViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if let cell = cellForTextField(textField), let indexPath = tableView.indexPath(for: cell) {
-            viewModel.updateValue(textField.text as AnyObject, at: indexPath)
+            viewModel.updateFieldValue(textField.text as AnyObject, at: indexPath)
         }
     }
 }
@@ -250,7 +250,7 @@ extension ProfileViewController: SearchViewControllerDelegate {
         if let indexPath = sender.parentCellIndexPath, let value = value {
             let organization = Organization(id: value.id, name: value.name)
             
-            viewModel.updateValue(organization as AnyObject, at: indexPath)
+            viewModel.updateFieldValue(organization as AnyObject, at: indexPath)
         }
         
         tableView.reloadData()
@@ -264,7 +264,7 @@ extension ProfileViewController: CheckboxCellDelegate {
     
     func didChangeCheckboxState(state: CheckboxState, sender: CheckboxCell) {
         if let indexPath = tableView.indexPath(for: sender) {
-            viewModel.updateValue((state == .checked) as AnyObject, at: indexPath)
+            viewModel.updateFieldValue((state == .checked) as AnyObject, at: indexPath)
         }
     }
 }

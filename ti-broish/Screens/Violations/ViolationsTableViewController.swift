@@ -24,6 +24,13 @@ final class ViolationsTableViewController: BaseViewController {
         // TODO: - implement pagination
     }
     
+    override func applyTheme() {
+        super.applyTheme()
+        
+        let theme = TibTheme()
+        tableView.backgroundColor = theme.backgroundColor
+    }
+    
     // MARK: - Private methods
     
     private func setupTableView() {

@@ -7,31 +7,27 @@
 
 import Foundation
 
-final class RegistrationViewModel: CoordinatableViewModel {
-    
-    private (set) var data = [InputFieldConfig]()
-    
-    init() {
-        start()
-    }
+final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
     
     // MARK: - Public Methods
     
-    func start() {
-        loadRegistrationFields()
-    }
-    
-    func updateValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        data[indexPath.row].data = value
-    }
-    
-    // MARK: - Private methods
-    
-    private func loadRegistrationFields() {
+    override func loadDataFields() {
         let builder = RegistrationDataBuilder()
         
         RegistrationFieldType.allCases.forEach {
             data.append(builder.makeConfig(for: $0))
         }
+    }
+    
+    override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
+        guard let field = RegistrationFieldType(rawValue: indexPath.row) else {
+            return
+        }
+        
+        setFieldValue(value, forFieldAt: field.rawValue)
+    }
+    
+    func start() {
+        loadDataFields()
     }
 }

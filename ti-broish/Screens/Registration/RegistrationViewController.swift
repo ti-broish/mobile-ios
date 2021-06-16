@@ -189,7 +189,7 @@ extension RegistrationViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if let cell = cellForTextField(textField), let indexPath = tableView.indexPath(for: cell) {
-            viewModel.updateValue(textField.text as AnyObject, at: indexPath)
+            viewModel.updateFieldValue(textField.text as AnyObject, at: indexPath)
         }
     }
 }
@@ -200,7 +200,7 @@ extension RegistrationViewController: SearchViewControllerDelegate {
     
     func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
         if let indexPath = sender.parentCellIndexPath {
-            viewModel.updateValue(value as AnyObject, at: indexPath)
+            viewModel.updateFieldValue(value as AnyObject, at: indexPath)
         }
         
         tableView.reloadData()
@@ -214,7 +214,7 @@ extension RegistrationViewController: CheckboxCellDelegate {
     
     func didChangeCheckboxState(state: CheckboxState, sender: CheckboxCell) {
         if let indexPath = tableView.indexPath(for: sender) {
-            viewModel.updateValue((state == .checked) as AnyObject, at: indexPath)
+            viewModel.updateFieldValue((state == .checked) as AnyObject, at: indexPath)
         }
     }
 }

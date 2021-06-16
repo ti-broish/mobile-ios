@@ -18,6 +18,7 @@ final class ResetPasswordViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.start()
         setupViews()
     }
     
@@ -38,7 +39,7 @@ final class ResetPasswordViewController: BaseViewController {
     private func setupViews() {
         self.title = LocalizedStrings.ResetPassword.title
         
-        emailInputField.configureWith(viewModel.makeConfig(for: .email))
+        emailInputField.configureWith(viewModel.data[ResetPasswordFieldType.email.rawValue])
         emailInputField.textField.text = LocalStorage.Login().getEmail()
         emailInputField.textField.delegate = self
         
