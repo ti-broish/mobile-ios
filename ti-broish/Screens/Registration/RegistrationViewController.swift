@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class RegistrationViewController: BaseViewController {
-    
-    @IBOutlet private weak var tableView: UITableView!
+final class RegistrationViewController: BaseTableViewController {
     
     private var viewModel = RegistrationViewModel()
     
@@ -26,11 +24,20 @@ final class RegistrationViewController: BaseViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    override func applyTheme() {
-        super.applyTheme()
+    override func setupTableView() {
+        super.setupTableView()
+        tableView.registerCell(TextCell.self)
+        tableView.registerCell(PickerCell.self)
+        tableView.registerCell(CheckboxCell.self)
         
-        let theme = TibTheme()
-        tableView.backgroundColor = theme.backgroundColor
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.setHeaderView(text: LocalizedStrings.Registration.title)
+        tableView.tableFooterView = registrationButtonView()
+    }
+    
+    override func updateTextInputFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
+        viewModel.updateFieldValue(value, at: indexPath)
     }
     
     // MARK: - Private methods
@@ -60,20 +67,6 @@ final class RegistrationViewController: BaseViewController {
         ])
         
         return container
-    }
-    
-    private func setupTableView() {
-        tableView.registerCell(TextCell.self)
-        tableView.registerCell(PickerCell.self)
-        tableView.registerCell(CheckboxCell.self)
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
-        tableView.separatorColor = .none
-        tableView.rowHeight = 86.0
-        tableView.setHeaderView(text: LocalizedStrings.Registration.title)
-        tableView.tableFooterView = registrationButtonView()
     }
 }
 
@@ -156,41 +149,6 @@ extension RegistrationViewController: UITableViewDelegate {
         
         let navController = UINavigationController(rootViewController: controller)
         self.present(navController, animated: true)
-    }
-}
-
-// MARK: - UITextFieldDelegate
-
-extension RegistrationViewController: UITextFieldDelegate {
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        updateValueForTextField(textField)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        updateValueForTextField(textField)
-        
-        return true
-    }
-    
-    // MARK: - Private methods (UITextFieldDelegate)
-    
-    private func cellForTextField(_ textField: UITextField) -> UITableViewCell? {
-        return tableView.visibleCells.filter { cell in
-            if let textCell = cell as? TextCell {
-                return textCell.textInputField.textField == textField
-            } else {
-                return false
-            }
-        }.first
-    }
-    
-    private func updateValueForTextField(_ textField: UITextField) {
-        textField.resignFirstResponder()
-        
-        if let cell = cellForTextField(textField), let indexPath = tableView.indexPath(for: cell) {
-            viewModel.updateFieldValue(textField.text as AnyObject, at: indexPath)
-        }
     }
 }
 

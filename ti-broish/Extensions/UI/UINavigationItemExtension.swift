@@ -10,7 +10,12 @@ import UIKit
 extension UINavigationItem {
     
     func configureBackButton() {
-        self.backBarButtonItem = UIBarButtonItem(title: LocalizedStrings.back, style: .plain, target: nil, action: nil)
+        self.backBarButtonItem = UIBarButtonItem(
+            title: LocalizedStrings.Buttons.back,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
     }
     
     func configureTitleView() {

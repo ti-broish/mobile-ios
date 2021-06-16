@@ -19,8 +19,8 @@ struct SendProtocolDataBuilder {
         case .sectionNumber:
             return InputFieldConfig(
                 type: .text,
-                title: LocalizedStrings.CommonInputField.firstName,
-                placeholderText: LocalizedStrings.CommonInputField.firstNamePlaceholder,
+                title: LocalizedStrings.Protocols.section,
+                placeholderText: LocalizedStrings.Protocols.sectionNumberPlaceholder,
                 isRequired: true
             )
         }

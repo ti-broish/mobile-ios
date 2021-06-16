@@ -7,40 +7,36 @@
 
 import UIKit
 
-final class SendProtocolViewController: BaseViewController {
+final class SendProtocolViewController: BaseTableViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
+    private let viewModel = SendProtocolViewModel()
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        viewModel.start()
     }
     
-    override func applyTheme() {
-        super.applyTheme()
-        
-        let theme = TibTheme()
-        tableView.backgroundColor = theme.backgroundColor
-    }
-    
-    // MARK: - Private methods
-    
-    private func setupTableView() {
+    override func setupTableView() {
+        super.setupTableView()
         tableView.registerCell(TextCell.self)
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorColor = .clear
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 86.0
         tableView.setHeaderView(text: LocalizedStrings.Menu.sendProtocol)
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = addSendButtonAsTableFooterView()
     }
     
+    override func updateTextInputFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
+        viewModel.updateFieldValue(value, at: indexPath)
+    }
+    
+    // MARK: - Private methods
+    
     private func setupViews() {
-//        navigationItem.configureTitleView()
+        navigationItem.configureTitleView()
         setupTableView()
     }
 }
@@ -57,20 +53,45 @@ extension SendProtocolViewController: UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return SendProtocolSection.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1//viewModel.protocols.count
+        return section == 0 ? viewModel.data.count : viewModel.pictures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
-        
-        guard let cell = reusableCell as? TextCell else {
+        if indexPath.section == SendProtocolSection.data.rawValue {
+            let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
+            
+            guard let textCell = reusableCell as? TextCell else {
+                return UITableViewCell()
+            }
+            
+            textCell.textInputField.configureWith(viewModel.data[indexPath.row])
+            textCell.textInputField.textField.delegate = self
+            
+            return textCell
+        } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard section == SendProtocolSection.pictures.rawValue else {
+            return 0.0
+        }
         
-        //cell.configure(viewModel.protocols[indexPath.row], at: indexPath)
+        return TibTheme().photoButtonsTableFooterSectionHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard section == SendProtocolSection.pictures.rawValue else {
+            return nil
+        }
         
-        return cell
+        return addPhotoButtonsAsSectionFooterView()
     }
 }
 

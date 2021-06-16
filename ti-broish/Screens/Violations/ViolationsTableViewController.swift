@@ -8,10 +8,8 @@
 import UIKit
 import Combine
 
-final class ViolationsTableViewController: BaseViewController {
+final class ViolationsTableViewController: BaseTableViewController {
 
-    @IBOutlet private weak var tableView: UITableView!
-    
     private let viewModel = ViolationsViewModel()
     
     // MARK: - View lifecycle
@@ -24,25 +22,17 @@ final class ViolationsTableViewController: BaseViewController {
         // TODO: - implement pagination
     }
     
-    override func applyTheme() {
-        super.applyTheme()
-        
-        let theme = TibTheme()
-        tableView.backgroundColor = theme.backgroundColor
-    }
-    
-    // MARK: - Private methods
-    
-    private func setupTableView() {
+    override func setupTableView() {
+        super.setupTableView()
         tableView.registerCell(ViolationCell.self)
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = .darkTextColor
-        tableView.rowHeight = 86.0
         tableView.setHeaderView(text: LocalizedStrings.Violations.title)
-        tableView.tableFooterView = UIView()
     }
+    
+    // MARK: - Private methods
     
     private func setupViews() {
         setupTableView()

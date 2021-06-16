@@ -104,7 +104,7 @@ final class ContentContainerViewController: BaseViewController {
     
     private func setupNavigationBar() {
         let menuButton = UIBarButtonItem(
-            title: LocalizedStrings.menu,
+            title: LocalizedStrings.Buttons.menu,
             style: .plain,
             target: self,
             action: #selector(toggleMainMenu)

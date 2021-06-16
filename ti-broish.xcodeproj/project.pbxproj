@@ -118,6 +118,7 @@
 		10D0FAA92674724C00DCF0EA /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D0FAA82674724C00DCF0EA /* ImageCell.swift */; };
 		10D0FAAB2674726E00DCF0EA /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D0FAAA2674726E00DCF0EA /* ImageCell.xib */; };
 		10D0FAB32674802100DCF0EA /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D0FAB22674802000DCF0EA /* BaseCollectionViewController.swift */; };
+		10D35E8D267A9290009798CD /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D35E8C267A9290009798CD /* BaseTableViewController.swift */; };
 		10DC9FA8264C115A00A7C941 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FA7264C115A00A7C941 /* SearchViewController.swift */; };
 		10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DC9FA9264C18B700A7C941 /* SearchViewController.xib */; };
 		10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FAB264C195400A7C941 /* SearchCell.swift */; };
@@ -305,6 +306,7 @@
 		10D0FAA82674724C00DCF0EA /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		10D0FAAA2674726E00DCF0EA /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		10D0FAB22674802000DCF0EA /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		10D35E8C267A9290009798CD /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		10DC9FA7264C115A00A7C941 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		10DC9FA9264C18B700A7C941 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		10DC9FAB264C195400A7C941 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
@@ -890,6 +892,7 @@
 			children = (
 				CFB138CD263592EF001B373D /* BaseViewController.swift */,
 				10D0FAB22674802000DCF0EA /* BaseCollectionViewController.swift */,
+				10D35E8C267A9290009798CD /* BaseTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1199,6 +1202,7 @@
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,
+				10D35E8D267A9290009798CD /* BaseTableViewController.swift in Sources */,
 				10B11E0226545C0B001E6B0E /* CheckboxCell.swift in Sources */,
 				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,
 				105802A02649EA4B00A88528 /* PickerCell.swift in Sources */,

@@ -44,7 +44,7 @@ final class ResetPasswordViewController: BaseViewController {
         emailInputField.textField.delegate = self
         
         let theme = TibTheme()
-        sendButton.configureSolidButton(title: LocalizedStrings.ResetPassword.sendButton, theme: theme)
+        sendButton.configureSolidButton(title: LocalizedStrings.Buttons.send, theme: theme)
     }
     
     @IBAction private func handleSendButton(_ sender: UIButton) {

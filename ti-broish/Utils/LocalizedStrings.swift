@@ -8,10 +8,16 @@
 
 struct LocalizedStrings {
     
-    static let menu: String = "Меню"
-    static let back: String = "Назад"
-    static let cancel: String = "Откажи"
-    static let save: String = "Запази"
+    struct Buttons {
+        
+        static let menu: String = "Меню"
+        static let back: String = "Назад"
+        static let cancel: String = "Откажи"
+        static let save: String = "Запази"
+        static let send: String = "Изпрати"
+        static let gallery: String = "Качи снимка"
+        static let camera: String = "Снимай"
+    }
     
     struct Violations {
         
@@ -31,6 +37,7 @@ struct LocalizedStrings {
         
         static let title: String = "Протоколи"
         static let section: String = "Секция"
+        static let sectionNumberPlaceholder = "Въведете номер на секция"
         
         struct ProtocolDetails {
             
@@ -133,9 +140,6 @@ struct LocalizedStrings {
         
         static let email: String = "Потребител:"
         static let emailPlaceholder: String = "Въведете вашия имейл"
-        
-        static let sendButton: String = "Изпрати"
-        static let backButton: String = "Назад"
         
         static let message: String = "За да промените паролата отворете връзката получена на Вашия имейл адрес."
     }
