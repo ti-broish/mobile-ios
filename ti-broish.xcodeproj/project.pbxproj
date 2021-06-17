@@ -22,6 +22,9 @@
 		0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		1004C793267BFB96003CBA71 /* PhotosPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1004C792267BFB96003CBA71 /* PhotosPickerViewController.swift */; };
+		1004C795267BFBDB003CBA71 /* PhotosPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1004C794267BFBDB003CBA71 /* PhotosPickerViewController.xib */; };
+		1004C797267BFBFB003CBA71 /* PhotosPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1004C796267BFBFB003CBA71 /* PhotosPickerViewModel.swift */; };
 		100A798426716D1500508DB8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39B1261D001E0005BF38 /* HomeViewController.xib */; };
 		100C03CE264ADF3900B01B0E /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100C03CD264ADF3900B01B0E /* TextCell.swift */; };
 		100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100C03CF264ADF4400B01B0E /* TextCell.xib */; };
@@ -127,6 +130,7 @@
 		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
 		10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */; };
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
+		10EF3B89267BD4ED00601939 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EF3B88267BD4ED00601939 /* Photos.framework */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
@@ -214,6 +218,9 @@
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		1004C792267BFB96003CBA71 /* PhotosPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerViewController.swift; sourceTree = "<group>"; };
+		1004C794267BFBDB003CBA71 /* PhotosPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosPickerViewController.xib; sourceTree = "<group>"; };
+		1004C796267BFBFB003CBA71 /* PhotosPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerViewModel.swift; sourceTree = "<group>"; };
 		100C03CD264ADF3900B01B0E /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		100C03CF264ADF4400B01B0E /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		10123A4C26739B3F0089799B /* ProtocolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolCell.swift; sourceTree = "<group>"; };
@@ -315,6 +322,7 @@
 		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
 		10EB5AA0263A0F9200690F88 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
+		10EF3B88267BD4ED00601939 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -367,6 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10EF3B89267BD4ED00601939 /* Photos.framework in Frameworks */,
 				10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */,
 				10482D9026710848001C260F /* Alamofire in Frameworks */,
 				10482D93267108F2001C260F /* FirebaseAuth in Frameworks */,
@@ -408,6 +417,7 @@
 				0AEB396B261CF9CE0005BF38 /* ti-broishTests */,
 				0AEB3976261CF9CE0005BF38 /* ti-broishUITests */,
 				0AEB3953261CF9CD0005BF38 /* Products */,
+				10EF3B87267BD4ED00601939 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -595,6 +605,9 @@
 				1080EB662675EFE6004AFC2A /* Details */,
 				101DA7742674A926003AE2A2 /* ImagePreviewViewController.swift */,
 				101DA7762674A93F003AE2A2 /* ImagePreviewViewController.xib */,
+				1004C792267BFB96003CBA71 /* PhotosPickerViewController.swift */,
+				1004C794267BFBDB003CBA71 /* PhotosPickerViewController.xib */,
+				1004C796267BFBFB003CBA71 /* PhotosPickerViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -701,6 +714,14 @@
 				10EB5AA2263A1A8F00690F88 /* TibTextField.swift */,
 			);
 			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		10EF3B87267BD4ED00601939 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10EF3B88267BD4ED00601939 /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF390FDE2637323700999369 /* Communication */ = {
@@ -1054,6 +1075,7 @@
 				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
 				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
+				1004C795267BFBDB003CBA71 /* PhotosPickerViewController.xib in Resources */,
 				10123A4F26739B4B0089799B /* ProtocolCell.xib in Resources */,
 				10C4EAAA26334C31005FD07F /* TermsViewController.xib in Resources */,
 				101DA7772674A93F003AE2A2 /* ImagePreviewViewController.xib in Resources */,
@@ -1134,6 +1156,7 @@
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
 				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */,
+				1004C793267BFB96003CBA71 /* PhotosPickerViewController.swift in Sources */,
 				102B84832676607700839324 /* ProfileDataBuilder.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */,
@@ -1213,6 +1236,7 @@
 				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				101DA7752674A926003AE2A2 /* ImagePreviewViewController.swift in Sources */,
+				1004C797267BFBFB003CBA71 /* PhotosPickerViewModel.swift in Sources */,
 				CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Photos
 
 final class ImageCell: UICollectionViewCell, Cell {
     
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private (set) weak var imageView: UIImageView!
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     override func awakeFromNib() {
@@ -19,6 +20,10 @@ final class ImageCell: UICollectionViewCell, Cell {
         spinner.color = .darkTextColor
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
+    }
+    
+    func setSelected(_ isSelected: Bool) {
+        isSelected ? imageView.setBorder(color: .primaryColor) : imageView.removeBorder()
     }
     
     func configure(picture: Picture?) {
@@ -42,7 +47,7 @@ final class ImageCell: UICollectionViewCell, Cell {
                 
                 DispatchQueue.main.async {
                     strongSelf.imageView.image = UIImage(data: data)
-                    strongSelf.imageView.layer.borderWidth = 0.0
+                    strongSelf.imageView.removeBorder()
                     strongSelf.spinner.stopAnimating()
                 }
             } catch {
@@ -51,6 +56,26 @@ final class ImageCell: UICollectionViewCell, Cell {
                 DispatchQueue.main.async {
                     strongSelf.spinner.stopAnimating()
                 }
+            }
+        }
+    }
+    
+    func configure(asset: PHAsset?) {
+        guard let asset = asset else {
+            spinner.stopAnimating()
+            return
+        }
+        
+        PHImageManager.default().requestImage(
+            for: asset,
+            targetSize: imageView.frame.size,
+            contentMode: .aspectFit,
+            options: nil
+        ) { (image, _) in
+            DispatchQueue.main.async { [unowned self] in
+                imageView.image = image
+                imageView.removeBorder()
+                spinner.stopAnimating()
             }
         }
     }

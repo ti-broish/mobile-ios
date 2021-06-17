@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class BaseTableViewController: BaseViewController {
 
@@ -56,8 +57,48 @@ class BaseTableViewController: BaseViewController {
         return container
     }
     
-    @objc func handleGalleryButton(_ sender: UIButton) {
-        assertionFailure("handleGalleryButton not implemented")
+    private func showPhotosPickerViewController() {
+        let viewController = PhotosPickerViewController(nibName: PhotosPickerViewController.nibName, bundle: nil)
+        viewController.delegate = self
+        
+        present(viewController, animated: true)
+    }
+    
+    private func showSettings() {
+        let alertController = UIAlertController(
+            title: LocalizedStrings.Photos.Settings.title,
+            message: LocalizedStrings.Photos.Settings.message,
+            preferredStyle: .alert
+        )
+        
+        alertController.addAction(UIAlertAction(title: LocalizedStrings.Buttons.cancel, style: .default))
+        alertController.addAction(UIAlertAction(title: LocalizedStrings.Photos.Settings.settings, style: .cancel) { _ in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url)
+            }
+        })
+        
+        present(alertController, animated: true)
+    }
+    
+    @objc func handlePhotoGalleryButton(_ sender: UIButton) {
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
+        
+        switch authorizationStatus {
+        // User has not yet made a choice with regards to this application
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { [weak self] status in
+                if status == .authorized {
+                    DispatchQueue.main.async {
+                        self?.showPhotosPickerViewController()
+                    }
+                }
+            }
+        case .authorized:
+            showPhotosPickerViewController()
+        default:
+            showSettings()
+        }
     }
     
     @objc func handleCameraButton(_ sender: UIButton) {
@@ -69,7 +110,7 @@ class BaseTableViewController: BaseViewController {
         let galleryButton = UIButton(type: .custom)
         galleryButton.translatesAutoresizingMaskIntoConstraints = false
         galleryButton.configureSolidButton(title: LocalizedStrings.Buttons.gallery, theme: theme)
-        galleryButton.addTarget(self, action: #selector(handleGalleryButton), for: .touchUpInside)
+        galleryButton.addTarget(self, action: #selector(handlePhotoGalleryButton), for: .touchUpInside)
         
         let cameraButton = UIButton(type: .custom)
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
@@ -131,5 +172,15 @@ extension BaseTableViewController: UITextFieldDelegate {
         {
             updateTextInputFieldValue(textField.text as AnyObject, at: indexPath)
         }
+    }
+}
+
+// MARK: - PhotosPickerDelegate
+
+extension BaseTableViewController: PhotosPickerDelegate {
+    
+    func didSelectPhotos(_ photos: [UIImage], sender: PhotosPickerViewController) {
+        print(photos)
+        sender.dismiss(animated: true, completion: nil)
     }
 }

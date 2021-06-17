@@ -19,6 +19,18 @@ struct LocalizedStrings {
         static let camera: String = "Снимай"
     }
     
+    struct Photos {
+        
+        static let selected: String = "Избрани"
+        
+        struct Settings {
+            
+            static let title: String = "Достъпа е забранен"
+            static let message: String = "За да използвате снимки и камера трябва да разрешите достъпа до тях в секцията Настройки"
+            static let settings: String = "Настройки"
+        }
+    }
+    
     struct Violations {
         
         static let title: String = "Сигнали"

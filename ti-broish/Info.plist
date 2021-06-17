@@ -22,6 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take protocol or violation photos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Store camera photos to Photo Library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To pick protocol or violation photos from Photo Library</string>
+	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Bold.ttf</string>
