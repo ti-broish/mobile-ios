@@ -22,6 +22,7 @@ struct LocalizedStrings {
     struct Photos {
         
         static let selected: String = "Избрани"
+        static let message: String = "Моля добавете 4 снимки, съдържащи прървата страница на протокола, страниците с общ брой гласове и страниците с разпределение на гласовете по партии"
         
         struct Settings {
             

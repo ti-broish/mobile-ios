@@ -22,6 +22,8 @@ final class SendProtocolViewController: BaseTableViewController {
     override func setupTableView() {
         super.setupTableView()
         tableView.registerCell(TextCell.self)
+        tableView.registerCell(UploadImageCell.self)
+        tableView.registerCell(PhotoButtonsCell.self)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -31,6 +33,11 @@ final class SendProtocolViewController: BaseTableViewController {
     
     override func updateTextInputFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         viewModel.updateFieldValue(value, at: indexPath)
+    }
+    
+    override func updateSelectedImages(_ images: [UIImage]) {
+        viewModel.setImages(images)
+        tableView.reloadData()
     }
     
     // MARK: - Private methods
@@ -58,11 +65,25 @@ extension SendProtocolViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? viewModel.data.count : viewModel.pictures.count
+        let section = SendProtocolSection(rawValue: section)
+        
+        switch section {
+        case .data:
+            return viewModel.data.count
+        case .images:
+            return viewModel.images.count
+        case .buttons:
+            return 1
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == SendProtocolSection.data.rawValue {
+        let section = SendProtocolSection(rawValue: indexPath.section)
+        
+        switch section {
+        case .data:
             let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
             
             guard let textCell = reusableCell as? TextCell else {
@@ -73,25 +94,50 @@ extension SendProtocolViewController: UITableViewDataSource {
             textCell.textInputField.textField.delegate = self
             
             return textCell
-        } else {
+        case .images:
+            let reusableCell = tableView.dequeueReusableCell(
+                withIdentifier: UploadImageCell.cellIdentifier,
+                for: indexPath
+            )
+            
+            guard let uploadImageCell = reusableCell as? UploadImageCell else {
+                return UITableViewCell()
+            }
+            
+            uploadImageCell.configure(image: viewModel.images[indexPath.row], indexPath: indexPath)
+            uploadImageCell.deleteButton.addTarget(self, action: #selector(handleDeleteImage), for: .touchUpInside)
+            
+            return uploadImageCell
+        case .buttons:
+            let reusableCell = tableView.dequeueReusableCell(
+                withIdentifier: PhotoButtonsCell.cellIdentifier,
+                for: indexPath
+            )
+            
+            guard let photoButtonsCell = reusableCell as? PhotoButtonsCell else {
+                return UITableViewCell()
+            }
+            
+            photoButtonsCell.galleryButton.addTarget(self, action: #selector(handlePhotoGalleryButton), for: .touchUpInside)
+            photoButtonsCell.cameraButton.addTarget(self, action: #selector(handleCameraButton), for: .touchUpInside)
+            
+            return photoButtonsCell
+        default:
             return UITableViewCell()
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        guard section == SendProtocolSection.pictures.rawValue else {
-            return 0.0
-        }
-        
-        return TibTheme().photoButtonsTableFooterSectionHeight
-    }
+    // MARK: - Private methods
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard section == SendProtocolSection.pictures.rawValue else {
-            return nil
+    @objc private func handleDeleteImage(_ sender: UIButton) {
+        let indexPath = IndexPath(row: sender.tag, section: SendProtocolSection.images.rawValue)
+        
+        guard let _ = tableView.cellForRow(at: indexPath) as? UploadImageCell else {
+            return
         }
         
-        return addPhotoButtonsAsSectionFooterView()
+        viewModel.removeImage(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 

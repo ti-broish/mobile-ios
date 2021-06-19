@@ -125,6 +125,10 @@
 		10DC9FA8264C115A00A7C941 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FA7264C115A00A7C941 /* SearchViewController.swift */; };
 		10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DC9FA9264C18B700A7C941 /* SearchViewController.xib */; };
 		10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC9FAB264C195400A7C941 /* SearchCell.swift */; };
+		10E02094267E70BD007420D9 /* UploadImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E02093267E70BD007420D9 /* UploadImageCell.swift */; };
+		10E02096267E70E1007420D9 /* UploadImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10E02095267E70E1007420D9 /* UploadImageCell.xib */; };
+		10E02098267E7785007420D9 /* PhotoButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E02097267E7785007420D9 /* PhotoButtonsCell.swift */; };
+		10E0209E267E82B2007420D9 /* PhotoButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10E0209D267E82B2007420D9 /* PhotoButtonsCell.xib */; };
 		10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E250D42655BC7D008A2121 /* InputFieldConfig.swift */; };
 		10E622C1263A013300381A83 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E622C0263A013300381A83 /* RegistrationViewModel.swift */; };
 		10EB5A9F263A099B00690F88 /* RegistrationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */; };
@@ -317,6 +321,10 @@
 		10DC9FA7264C115A00A7C941 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		10DC9FA9264C18B700A7C941 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		10DC9FAB264C195400A7C941 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		10E02093267E70BD007420D9 /* UploadImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageCell.swift; sourceTree = "<group>"; };
+		10E02095267E70E1007420D9 /* UploadImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadImageCell.xib; sourceTree = "<group>"; };
+		10E02097267E7785007420D9 /* PhotoButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoButtonsCell.swift; sourceTree = "<group>"; };
+		10E0209D267E82B2007420D9 /* PhotoButtonsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoButtonsCell.xib; sourceTree = "<group>"; };
 		10E250D42655BC7D008A2121 /* InputFieldConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldConfig.swift; sourceTree = "<group>"; };
 		10E622C0263A013300381A83 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataBuilder.swift; sourceTree = "<group>"; };
@@ -561,6 +569,10 @@
 				10B11E0326545C18001E6B0E /* CheckboxCell.xib */,
 				10D0FAA82674724C00DCF0EA /* ImageCell.swift */,
 				10D0FAAA2674726E00DCF0EA /* ImageCell.xib */,
+				10E02093267E70BD007420D9 /* UploadImageCell.swift */,
+				10E02095267E70E1007420D9 /* UploadImageCell.xib */,
+				10E02097267E7785007420D9 /* PhotoButtonsCell.swift */,
+				10E0209D267E82B2007420D9 /* PhotoButtonsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1072,6 +1084,7 @@
 				1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */,
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
 				1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */,
+				10E02096267E70E1007420D9 /* UploadImageCell.xib in Resources */,
 				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
 				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
@@ -1081,6 +1094,7 @@
 				101DA7772674A93F003AE2A2 /* ImagePreviewViewController.xib in Resources */,
 				105802A12649EA4B00A88528 /* PickerCell.xib in Resources */,
 				0AEB395F261CF9CE0005BF38 /* Assets.xcassets in Resources */,
+				10E0209E267E82B2007420D9 /* PhotoButtonsCell.xib in Resources */,
 				10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */,
 				100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
@@ -1133,6 +1147,7 @@
 				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
+				10E02098267E7785007420D9 /* PhotoButtonsCell.swift in Sources */,
 				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
 				1062087F267188A100F28D83 /* UINavigationItemExtension.swift in Sources */,
 				1080EB652675EF6D004AFC2A /* DetailsViewModel.swift in Sources */,
@@ -1220,6 +1235,7 @@
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
+				10E02094267E70BD007420D9 /* UploadImageCell.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
 				CF3DB0D4264BB87700AAB618 /* CreateUserRequest.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,

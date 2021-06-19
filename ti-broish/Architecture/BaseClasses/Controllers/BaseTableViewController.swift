@@ -57,30 +57,6 @@ class BaseTableViewController: BaseViewController {
         return container
     }
     
-    private func showPhotosPickerViewController() {
-        let viewController = PhotosPickerViewController(nibName: PhotosPickerViewController.nibName, bundle: nil)
-        viewController.delegate = self
-        
-        present(viewController, animated: true)
-    }
-    
-    private func showSettings() {
-        let alertController = UIAlertController(
-            title: LocalizedStrings.Photos.Settings.title,
-            message: LocalizedStrings.Photos.Settings.message,
-            preferredStyle: .alert
-        )
-        
-        alertController.addAction(UIAlertAction(title: LocalizedStrings.Buttons.cancel, style: .default))
-        alertController.addAction(UIAlertAction(title: LocalizedStrings.Photos.Settings.settings, style: .cancel) { _ in
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url)
-            }
-        })
-        
-        present(alertController, animated: true)
-    }
-    
     @objc func handlePhotoGalleryButton(_ sender: UIButton) {
         let authorizationStatus = PHPhotoLibrary.authorizationStatus()
         
@@ -105,36 +81,34 @@ class BaseTableViewController: BaseViewController {
         assertionFailure("handleCameraButton not implemented")
     }
     
-    func addPhotoButtonsAsSectionFooterView() -> UIView {
-        let theme = TibTheme()        
-        let galleryButton = UIButton(type: .custom)
-        galleryButton.translatesAutoresizingMaskIntoConstraints = false
-        galleryButton.configureSolidButton(title: LocalizedStrings.Buttons.gallery, theme: theme)
-        galleryButton.addTarget(self, action: #selector(handlePhotoGalleryButton), for: .touchUpInside)
+    func updateSelectedImages(_ images: [UIImage]) {
+        assertionFailure("updateSelectedImages not implemented")
+    }
+    
+    // MARK: - Private methods
+    
+    private func showPhotosPickerViewController() {
+        let viewController = PhotosPickerViewController(nibName: PhotosPickerViewController.nibName, bundle: nil)
+        viewController.delegate = self
         
-        let cameraButton = UIButton(type: .custom)
-        cameraButton.translatesAutoresizingMaskIntoConstraints = false
-        cameraButton.configureSolidButton(title: LocalizedStrings.Buttons.camera, theme: theme)
-        cameraButton.addTarget(self, action: #selector(handleCameraButton), for: .touchUpInside)
+        present(viewController, animated: true)
+    }
+    
+    private func showSettings() {
+        let alertController = UIAlertController(
+            title: LocalizedStrings.Photos.Settings.title,
+            message: LocalizedStrings.Photos.Settings.message,
+            preferredStyle: .alert
+        )
         
-        let bounds = UIScreen.main.bounds
-        let container = UIView(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: 1.0))
-        container.backgroundColor = theme.backgroundColor
+        alertController.addAction(UIAlertAction(title: LocalizedStrings.Buttons.cancel, style: .default))
+        alertController.addAction(UIAlertAction(title: LocalizedStrings.Photos.Settings.settings, style: .cancel) { _ in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url)
+            }
+        })
         
-        let stackView = UIStackView(arrangedSubviews: [galleryButton, cameraButton])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 16.0
-        container.addSubview(stackView)
-        
-        NSLayoutConstraint.activate([
-            galleryButton.widthAnchor.constraint(equalToConstant: bounds.size.width * 0.35),
-            cameraButton.widthAnchor.constraint(equalToConstant: bounds.size.width * 0.35),
-            stackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 8.0),
-            stackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8.0),
-            stackView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-        ])
-        
-        return container
+        present(alertController, animated: true)
     }
 }
 
@@ -180,7 +154,8 @@ extension BaseTableViewController: UITextFieldDelegate {
 extension BaseTableViewController: PhotosPickerDelegate {
     
     func didSelectPhotos(_ photos: [UIImage], sender: PhotosPickerViewController) {
-        print(photos)
+        print("didSelectPhotos: \(photos)")
+        updateSelectedImages(photos)
         sender.dismiss(animated: true, completion: nil)
     }
 }

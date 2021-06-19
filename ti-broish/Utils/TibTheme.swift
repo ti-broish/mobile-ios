@@ -60,8 +60,4 @@ class TibTheme {
     var defaultButtonHeight: CGFloat {
         return 44.0
     }
-    
-    var photoButtonsTableFooterSectionHeight: CGFloat {
-        return 60.0
-    }
 }

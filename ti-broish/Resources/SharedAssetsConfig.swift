@@ -14,4 +14,6 @@ struct SharedAssetsConfig {
     static let arrowNext: String = "next-arrow"
     static let close: String = "close"
     static let delete: String = "trash"
+    static let gallery: String = "gallery"
+    static let camera: String = "camera"
 }

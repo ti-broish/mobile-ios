@@ -5,17 +5,18 @@
 //  Created by Krasimir Slavkov on 15.06.21.
 //
 
-import Foundation
+import UIKit
 
 enum SendProtocolSection: Int, CaseIterable {
     
     case data
-    case pictures
+    case images
+    case buttons
 }
 
 final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     
-    private (set) var pictures = [Picture]()
+    private (set) var images = [UIImage]()
     
     override func loadDataFields() {
         let builder = SendProtocolDataBuilder()
@@ -31,6 +32,18 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
         }
         
         setFieldValue(value, forFieldAt: field.rawValue)
+    }
+    
+    func setImages(_ images: [UIImage]) {
+        images.forEach { image in
+            if self.images.first(where: { $0 == image }) == nil {
+                self.images.append(image)
+            }
+        }
+    }
+    
+    func removeImage(at index: Int) {
+        images.remove(at: index)
     }
     
     func start() {
