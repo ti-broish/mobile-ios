@@ -78,7 +78,11 @@ class BaseTableViewController: BaseViewController {
     }
     
     @objc func handleCameraButton(_ sender: UIButton) {
-        assertionFailure("handleCameraButton not implemented")
+        let controller = UIImagePickerController()
+        controller.sourceType = .camera
+        controller.allowsEditing = true
+        controller.delegate = self
+        present(controller, animated: true)
     }
     
     func updateSelectedImages(_ images: [UIImage]) {
@@ -157,5 +161,24 @@ extension BaseTableViewController: PhotosPickerDelegate {
         print("didSelectPhotos: \(photos)")
         updateSelectedImages(photos)
         sender.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension BaseTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+
+        updateSelectedImages([image])
     }
 }
