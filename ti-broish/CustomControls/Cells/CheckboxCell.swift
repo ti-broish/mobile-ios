@@ -49,7 +49,7 @@ final class CheckboxCell: TibTableViewCell, Configurable {
         checkboxButton.setTitleColor(.primaryColor, for: .normal)
         
         titleLabel.font = .regularFont(size: 14.0)
-        titleLabel.textColor = theme.titleLabelTextColor
+        titleLabel.textColor = theme.textColor
         titleLabel.numberOfLines = 0
     }
     

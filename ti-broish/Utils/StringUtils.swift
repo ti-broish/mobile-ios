@@ -12,7 +12,7 @@ struct StringUtils {
     static func makeAttributedText(prefix: String, text: String, textColor: UIColor) -> NSAttributedString {
         let attrText = NSMutableAttributedString(
             string: "\(prefix): ",
-            attributes: [.foregroundColor: UIColor.darkTextColor, .font: UIFont.regularFont(size: 14.0)]
+            attributes: [.foregroundColor: TibTheme().darkTextColor, .font: UIFont.regularFont(size: 14.0)]
         )
         
         let attrSection = NSAttributedString(
@@ -33,7 +33,7 @@ struct StringUtils {
         }
         
         if ((cString.count) != 6) {
-            return .darkTextColor
+            return TibTheme().darkTextColor
         }
         
         var rgbValue:UInt64 = 0

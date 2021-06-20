@@ -15,9 +15,10 @@ final class ImageCell: UICollectionViewCell, Cell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.setBorder(color: .darkTextColor)
+        let theme = TibTheme()
+        imageView.setBorder(color: theme.darkTextColor)
         
-        spinner.color = .darkTextColor
+        spinner.color = theme.darkTextColor
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
     }

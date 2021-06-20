@@ -48,7 +48,7 @@ final class PhotosPickerViewController: BaseCollectionViewController {
     
     private func setupSelectedPhotosLabel() {
         selectedPhotosLabel.font = .semiBoldFont(size: 16)
-        selectedPhotosLabel.textColor = .darkText
+        selectedPhotosLabel.textColor = TibTheme().darkTextColor
         selectedPhotosLabel.isHidden = true
     }
     

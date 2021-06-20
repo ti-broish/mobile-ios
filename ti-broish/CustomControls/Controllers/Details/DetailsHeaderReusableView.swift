@@ -35,16 +35,29 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
             )
         )
         
+        let theme = TibTheme()
         stackView.addArrangedSubview(
-            makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.protocolId, text: protocolItem.id)
+            makeLabel(
+                prefix: LocalizedStrings.Protocols.ProtocolDetails.protocolId,
+                text: protocolItem.id,
+                textColor: theme.darkTextColor
+            )
         )
         
         stackView.addArrangedSubview(
-            makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.sectionNumber, text: protocolItem.section.id)
+            makeLabel(
+                prefix: LocalizedStrings.Protocols.ProtocolDetails.sectionNumber,
+                text: protocolItem.section.id,
+                textColor: theme.darkTextColor
+            )
         )
         
         stackView.addArrangedSubview(
-            makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.location, text: protocolItem.section.place)
+            makeLabel(
+                prefix: LocalizedStrings.Protocols.ProtocolDetails.location,
+                text: protocolItem.section.place,
+                textColor: theme.darkTextColor
+            )
         )
     }
     
@@ -57,8 +70,13 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
             )
         )
         
+        let theme = TibTheme()
         stackView.addArrangedSubview(
-            makeLabel(prefix: LocalizedStrings.Violations.ViolationDetails.violationId, text: violation.id)
+            makeLabel(
+                prefix: LocalizedStrings.Violations.ViolationDetails.violationId,
+                text: violation.id,
+                textColor: theme.darkTextColor
+            )
         )
         
         if violation.sections != nil {
@@ -73,7 +91,11 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         }
         
         stackView.addArrangedSubview(
-            makeLabel(prefix: LocalizedStrings.Violations.ViolationDetails.description, text: violation.description)
+            makeLabel(
+                prefix: LocalizedStrings.Violations.ViolationDetails.description,
+                text: violation.description,
+                textColor: theme.darkTextColor
+            )
         )
     }
     
@@ -94,7 +116,7 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         ])
     }
     
-    private func makeLabel(prefix: String, text: String, textColor: UIColor = .darkTextColor) -> UILabel {
+    private func makeLabel(prefix: String, text: String, textColor: UIColor) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setContentHuggingPriority(UILayoutPriority(250.0), for: .vertical)

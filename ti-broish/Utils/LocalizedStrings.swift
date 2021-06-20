@@ -35,6 +35,8 @@ struct LocalizedStrings {
     struct Violations {
         
         static let title: String = "Сигнали"
+        static let country: String = "България"
+        static let abroad: String = "Чужбина"
         
         struct ViolationDetails {
             

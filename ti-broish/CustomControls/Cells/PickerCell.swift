@@ -21,11 +21,11 @@ final class PickerCell: TibTableViewCell, Configurable {
         
         let theme = TibTheme()
         titleLabel.font = .regularFont(size: 14.0)
-        titleLabel.textColor = theme.titleLabelTextColor
+        titleLabel.textColor = theme.textColor
         titleLabel.numberOfLines = 0
         
         valueLabel.font = .regularFont(size: 16.0)
-        valueLabel.textColor = theme.textFieldColor
+        valueLabel.textColor = theme.textColor
         valueLabel.numberOfLines = 0
     }
     
@@ -42,7 +42,7 @@ final class PickerCell: TibTableViewCell, Configurable {
         } else if let placeholderText = data.placeholderText {
             valueLabel.attributedText = NSAttributedString(
                 string: placeholderText,
-                attributes: [.foregroundColor: TibTheme().textFieldPlaceholderColor]
+                attributes: [.foregroundColor: TibTheme().placeholderColor]
             )
         } else {
             valueLabel.text = nil

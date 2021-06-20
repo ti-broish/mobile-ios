@@ -22,7 +22,7 @@ final class ProtocolCell: TibTableViewCell {
         titleLabel.numberOfLines = 0
         
         locationLabel.numberOfLines = 0
-        locationLabel.textColor = .darkTextColor
+        locationLabel.textColor = TibTheme().darkTextColor
         locationLabel.font = .regularFont(size: 14.0)
         
         statusLabel.font = .semiBoldFont(size: 14.0)
@@ -33,7 +33,7 @@ final class ProtocolCell: TibTableViewCell {
         titleLabel.attributedText = StringUtils.makeAttributedText(
             prefix: "\(indexPath.row + 1). \(LocalizedStrings.Protocols.section): ",
             text: model.section.code,
-            textColor: .darkTextColor
+            textColor: TibTheme().darkTextColor
         )
         
         locationLabel.text = model.section.place

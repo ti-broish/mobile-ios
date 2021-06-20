@@ -29,15 +29,15 @@ class TibTheme {
         return .primaryColor
     }
     
-    var titleLabelTextColor: UIColor {
+    var textColor: UIColor {
         return .black
     }
     
-    var textFieldColor: UIColor {
-        return .black
+    var darkTextColor: UIColor {
+        return .darkTextColor
     }
     
-    var textFieldPlaceholderColor: UIColor {
+    var placeholderColor: UIColor {
         return .placeholderTextColor
     }
     

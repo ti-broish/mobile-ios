@@ -17,7 +17,7 @@ extension UITableView {
         let theme = TibTheme()
         let bounds = UIScreen.main.bounds
         let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: bounds.size.height * 0.1))
-        label.textColor = theme.textFieldColor
+        label.textColor = theme.textColor
         label.font = .semiBoldFont(size: 22.0)
         label.text = text
         label.textAlignment = .center

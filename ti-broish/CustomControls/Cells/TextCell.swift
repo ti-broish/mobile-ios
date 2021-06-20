@@ -19,6 +19,6 @@ final class TextCell: TibTableViewCell {
     
     func markAsDisabled() {
         textInputField.textField.isEnabled = false
-        textInputField.textField.backgroundColor = .darkTextColor.withAlphaComponent(0.5)
+        textInputField.textField.backgroundColor = TibTheme().darkTextColor.withAlphaComponent(0.5)
     }
 }

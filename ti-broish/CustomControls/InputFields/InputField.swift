@@ -49,10 +49,10 @@ class InputField: UIView, Configurable {
     func setupViews() {
         let theme = TibTheme()
         titleLabel.font = .regularFont(size: 14.0)
-        titleLabel.textColor = theme.titleLabelTextColor
+        titleLabel.textColor = theme.textColor
         
         textField.font = .regularFont(size: 16.0)
-        textField.textColor = theme.textFieldColor
+        textField.textColor = theme.textColor
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
     }
@@ -67,7 +67,7 @@ class InputField: UIView, Configurable {
             
             textField.attributedPlaceholder = NSAttributedString(
                 string: placeholderText,
-                attributes: [.foregroundColor: theme.textFieldPlaceholderColor]
+                attributes: [.foregroundColor: theme.placeholderColor]
             )
         } else {
             textField.text = nil

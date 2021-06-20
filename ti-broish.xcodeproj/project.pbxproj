@@ -97,6 +97,8 @@
 		10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAC42637557E0067FAE2 /* InputField.swift */; };
 		10B9EADA26375BE30067FAE2 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9EAD926375BE30067FAE2 /* TextInputField.swift */; };
 		10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B9EAE126375C390067FAE2 /* TextInputField.xib */; };
+		10C29D60267F8F35008B19BE /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C29D5F267F8F35008B19BE /* CountryCell.swift */; };
+		10C29D62267F8F5E008B19BE /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C29D61267F8F5E008B19BE /* CountryCell.xib */; };
 		10C4EA3826333AB4005FD07F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */; };
 		10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */; };
 		10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */; };
@@ -293,6 +295,8 @@
 		10B9EAC42637557E0067FAE2 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		10B9EAD926375BE30067FAE2 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		10B9EAE126375C390067FAE2 /* TextInputField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputField.xib; sourceTree = "<group>"; };
+		10C29D5F267F8F35008B19BE /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		10C29D61267F8F5E008B19BE /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		10C4EA4526333BCD005FD07F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -573,6 +577,8 @@
 				10E02095267E70E1007420D9 /* UploadImageCell.xib */,
 				10E02097267E7785007420D9 /* PhotoButtonsCell.swift */,
 				10E0209D267E82B2007420D9 /* PhotoButtonsCell.xib */,
+				10C29D5F267F8F35008B19BE /* CountryCell.swift */,
+				10C29D61267F8F5E008B19BE /* CountryCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1081,6 +1087,7 @@
 				0AE2CB5F2624EEEE00C178C9 /* ProfileViewController.xib in Resources */,
 				10B11E0426545C18001E6B0E /* CheckboxCell.xib in Resources */,
 				0AEB3962261CF9CE0005BF38 /* LaunchScreen.storyboard in Resources */,
+				10C29D62267F8F5E008B19BE /* CountryCell.xib in Resources */,
 				1042B3E82634AAFD00764ACF /* Montserrat-Light.ttf in Resources */,
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
 				1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */,
@@ -1238,6 +1245,7 @@
 				10E02094267E70BD007420D9 /* UploadImageCell.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
 				CF3DB0D4264BB87700AAB618 /* CreateUserRequest.swift in Sources */,
+				10C29D60267F8F35008B19BE /* CountryCell.swift in Sources */,
 				CF390FF5263732BA00999369 /* APIError.swift in Sources */,
 				CF7AEDC22635F2DC001F3EF8 /* BaseViewConfigurator.swift in Sources */,
 				CF390FE42637326300999369 /* APIManager.swift in Sources */,

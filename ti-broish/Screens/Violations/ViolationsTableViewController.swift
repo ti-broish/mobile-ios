@@ -28,7 +28,8 @@ final class ViolationsTableViewController: BaseTableViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorColor = .darkTextColor
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = TibTheme().darkTextColor
         tableView.setHeaderView(text: LocalizedStrings.Violations.title)
     }
     
