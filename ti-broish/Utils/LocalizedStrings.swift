@@ -8,6 +8,19 @@
 
 struct LocalizedStrings {
     
+    struct SendInputField {
+        
+        static let country: String = "Държава"
+        static let electionRegion: String = "МИР"
+        static let municipality: String = "Община"
+        static let town: String = "Населено място"
+        static let cityRegion: String = "Район"
+        static let description: String = "Описание"
+        static let section: String = "Секция"
+        static let sectionNumber: String = "Номер на секция"
+        static let sectionNumberPlaceholder = "Въведете номер на секция"
+    }
+    
     struct Buttons {
         
         static let menu: String = "Меню"
@@ -42,17 +55,13 @@ struct LocalizedStrings {
             
             static let status: String = "Статус"
             static let violationId: String = "Сигнал"
-            static let sectionNumber: String = "Номер на секция"
             static let location: String = "Локация"
-            static let description: String = "Описание"
         }
     }
     
     struct Protocols {
         
         static let title: String = "Протоколи"
-        static let section: String = "Секция"
-        static let sectionNumberPlaceholder = "Въведете номер на секция"
         
         struct ProtocolDetails {
             

@@ -17,8 +17,7 @@ final class SearchViewController: UIViewController, TibViewControllable {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private let viewModel = SearchViewModel()
-    
+    let viewModel = SearchViewModel()
     var selectedItem: SearchItem?
     var parentCellIndexPath: IndexPath?
     var reloadDataSubscription: AnyCancellable?
@@ -34,7 +33,7 @@ final class SearchViewController: UIViewController, TibViewControllable {
         setupSearchController()
         applyTheme()
         addObservers()
-        viewModel.getOrganizations()
+        viewModel.start()
     }
     
     func applyTheme() {

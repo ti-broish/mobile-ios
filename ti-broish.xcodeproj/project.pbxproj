@@ -67,6 +67,8 @@
 		10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D94267108F2001C260F /* FirebaseMessaging */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
+		10569EE12680D6AC00843E71 /* SendViolationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */; };
+		10569EE42680D82300843E71 /* SendViolationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569EE32680D82300843E71 /* SendViolationDataBuilder.swift */; };
 		10577056267A8BE60003C1DC /* ResetPasswordDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */; };
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
 		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
@@ -265,6 +267,8 @@
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationViewModel.swift; sourceTree = "<group>"; };
+		10569EE32680D82300843E71 /* SendViolationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationDataBuilder.swift; sourceTree = "<group>"; };
 		10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDataBuilder.swift; sourceTree = "<group>"; };
 		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
@@ -617,6 +621,17 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		10569EE22680D6D500843E71 /* SendViolation */ = {
+			isa = PBXGroup;
+			children = (
+				10C4EA7826334AB9005FD07F /* SendViolationViewController.swift */,
+				10C4EA8026334ACC005FD07F /* SendViolationViewController.xib */,
+				10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */,
+				10569EE32680D82300843E71 /* SendViolationDataBuilder.swift */,
+			);
+			path = SendViolation;
+			sourceTree = "<group>";
+		};
 		1080EB5F2675EEC8004AFC2A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,8 +705,7 @@
 		10C4EA7726334AA2005FD07F /* Violations */ = {
 			isa = PBXGroup;
 			children = (
-				10C4EA7826334AB9005FD07F /* SendViolationViewController.swift */,
-				10C4EA8026334ACC005FD07F /* SendViolationViewController.xib */,
+				10569EE22680D6D500843E71 /* SendViolation */,
 				10C4EA8526334AE6005FD07F /* ViolationsTableViewController.swift */,
 				10C4EA8A26334B13005FD07F /* ViolationsTableViewController.xib */,
 				1080EB672675F0F9004AFC2A /* ViolationsViewModel.swift */,
@@ -1167,6 +1181,7 @@
 				CF3DB0C9264BB83B00AAB618 /* User.swift in Sources */,
 				102B84812676600C00839324 /* ProfileViewModel.swift in Sources */,
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
+				10569EE12680D6AC00843E71 /* SendViolationViewModel.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
@@ -1191,6 +1206,7 @@
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
 				1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
+				10569EE42680D82300843E71 /* SendViolationDataBuilder.swift in Sources */,
 				1016B68F264C3EDA00515612 /* SearchResultsMapper.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,

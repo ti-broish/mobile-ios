@@ -9,6 +9,16 @@ import Foundation
 
 struct SearchResultsMapper {
     
+    static func mapElectionRegions(_ electionRegions: [ElectionRegion]) -> [SearchItem] {
+        var items = [SearchItem]()
+        
+        for region in electionRegions {
+            items.append(SearchItem(id: -1, name: region.name, code: region.code, type: .electionRegion))
+        }
+        
+        return items
+    }
+    
     static func mapOrganizations(_ organizations: [Organization]) -> [SearchItem] {
         var items = [SearchItem]()
         

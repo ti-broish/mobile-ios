@@ -41,7 +41,7 @@ final class ViolationCell: TibTableViewCell {
         }
         
         descriptionLabel.attributedText = StringUtils.makeAttributedText(
-            prefix: "\(rowIndex)\(LocalizedStrings.Violations.ViolationDetails.description)",
+            prefix: "\(rowIndex)\(LocalizedStrings.SendInputField.description)",
             text: model.description,
             textColor: TibTheme().darkTextColor
         )

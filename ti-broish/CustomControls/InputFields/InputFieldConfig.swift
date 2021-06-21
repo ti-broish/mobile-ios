@@ -14,6 +14,7 @@ struct InputFieldConfig {
     let placeholderText: String?
     let isRequired: Bool
     var data: AnyObject?
+    var dataType: AnyObject?
     
     var isTextField: Bool {
         return type != .picker && type != .checkbox
@@ -32,14 +33,14 @@ struct InputFieldConfig {
         title: String,
         placeholderText: String?,
         isRequired: Bool = false,
-        data: AnyObject? = nil
+        data: AnyObject? = nil,
+        dataType: AnyObject? = nil
     ) {
         self.type = type
         self.title = title
         self.placeholderText = placeholderText
         self.isRequired = isRequired
         self.data = data
+        self.dataType = dataType
     }
 }
-
-

@@ -1,33 +1,26 @@
 //
-//  SendProtocolViewModel.swift
+//  SendViolationViewModel.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 15.06.21.
+//  Created by Krasimir Slavkov on 21.06.21.
 //
 
 import UIKit
 
-enum SendSectionFieldType: Int, CaseIterable {
-    
-    case data
-    case images
-    case buttons
-}
-
-final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
+final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     
     private (set) var images = [UIImage]()
     
     override func loadDataFields() {
-        let builder = SendProtocolDataBuilder()
+        let builder = SendViolationDataBuilder()
         
-        SendProtocolFieldType.allCases.forEach {
+        SendViolationFieldType.allCases.forEach {
             data.append(builder.makeConfig(for: $0))
         }
     }
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        guard let field = SendProtocolFieldType(rawValue: indexPath.row) else {
+        guard let field = SendViolationFieldType(rawValue: indexPath.row) else {
             return
         }
         
@@ -50,6 +43,5 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
         loadDataFields()
     }
     
-    // MARK: - Private methods    
+    // MARK: - Private methods
 }
-

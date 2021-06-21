@@ -92,7 +92,7 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         
         stackView.addArrangedSubview(
             makeLabel(
-                prefix: LocalizedStrings.Violations.ViolationDetails.description,
+                prefix: LocalizedStrings.SendInputField.description,
                 text: violation.description,
                 textColor: theme.darkTextColor
             )

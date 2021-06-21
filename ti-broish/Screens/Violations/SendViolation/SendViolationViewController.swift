@@ -1,5 +1,5 @@
 //
-//  SendProtocolViewController.swift
+//  SendViolationViewController.swift
 //  ti-broish
 //
 //  Created by Krasimir Slavkov on 23.04.21.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class SendProtocolViewController: BaseTableViewController {
+final class SendViolationViewController: BaseTableViewController {
     
-    private let viewModel = SendProtocolViewModel()
+    private let viewModel = SendViolationViewModel()
     
     // MARK: - View lifecycle
     
@@ -22,6 +22,7 @@ final class SendProtocolViewController: BaseTableViewController {
     override func setupTableView() {
         super.setupTableView()
         tableView.registerCell(TextCell.self)
+        tableView.registerCell(PickerCell.self)
         tableView.registerCell(UploadImageCell.self)
         tableView.registerCell(PhotoButtonsCell.self)
         
@@ -50,7 +51,7 @@ final class SendProtocolViewController: BaseTableViewController {
 
 // MARK: - UITableViewDataSource
 
-extension SendProtocolViewController: UITableViewDataSource {
+extension SendViolationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -84,16 +85,31 @@ extension SendProtocolViewController: UITableViewDataSource {
         
         switch section {
         case .data:
-            let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
+            let model = viewModel.data[indexPath.row]
+            let cell: UITableViewCell
             
-            guard let textCell = reusableCell as? TextCell else {
-                return UITableViewCell()
+            if model.isTextField {
+                let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
+                guard let textCell = reusableCell as? TextCell  else {
+                    return UITableViewCell()
+                }
+
+                textCell.textInputField.configureWith(model)
+                textCell.textInputField.textField.delegate = self
+                cell = textCell
+            } else if model.isPickerField {
+                let reusableCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
+                guard let pickerCell = reusableCell as? PickerCell else {
+                    return UITableViewCell()
+                }
+
+                pickerCell.configureWith(model)
+                cell = pickerCell
+            } else {
+                cell = UITableViewCell()
             }
             
-            textCell.textInputField.configureWith(viewModel.data[indexPath.row])
-            textCell.textInputField.textField.delegate = self
-            
-            return textCell
+            return cell
         case .images:
             let reusableCell = tableView.dequeueReusableCell(
                 withIdentifier: UploadImageCell.cellIdentifier,
@@ -143,20 +159,61 @@ extension SendProtocolViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension SendProtocolViewController: UITableViewDelegate {
+extension SendViolationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //showDetails(protocolItem: viewModel.protocols[indexPath.row])
+        if viewModel.data[indexPath.row].isPickerField {
+            showSearchController(for: indexPath)
+        }
     }
     
     // MARK: - Private methods (UITableViewDelegate)
     
-//    private func showDetails(protocolItem: Protocol) {
-//        let viewController = DetailsViewController.init(nibName: DetailsViewController.nibName, bundle: nil)
-//        viewController.viewModel.protocolItem = protocolItem
-//
-//        navigationController?.pushViewController(viewController, animated: true)
-//    }
+    private func getSearchType(for indexPath: IndexPath) -> SearchType? {
+        let model = viewModel.data[indexPath.row]
+        
+        guard let fieldType = model.dataType as? SendViolationFieldType else {
+            return nil
+        }
+        
+        switch fieldType {
+        case .electionRegion:
+            return .electionRegions
+        case .municipality:
+            return .municipalities
+        case .town:
+            return .towns
+        case .cityRegion:
+            return .cityRegions
+        case .sectionNumber:
+            return .sections
+        }
+    }
+    
+    private func showSearchController(for indexPath: IndexPath) {
+        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
+        viewController.viewModel.setSearchType(getSearchType(for: indexPath), isAbroad: false)
+        viewController.delegate = self
+        viewController.parentCellIndexPath = indexPath
+        viewController.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        self.present(navController, animated: true)
+    }
+}
+
+// MARK: - SearchViewControllerDelegate
+
+extension SendViolationViewController: SearchViewControllerDelegate {
+    
+    func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
+        if let indexPath = sender.parentCellIndexPath {
+            viewModel.updateFieldValue(value as AnyObject, at: indexPath)
+        }
+        
+        tableView.reloadData()
+        sender.dismiss(animated: true, completion: nil)
+    }
 }

@@ -142,12 +142,13 @@ extension RegistrationViewController: UITableViewDelegate {
     // MARK: - Private methods (UITableViewDelegate)
     
     private func showSearchController(for indexPath: IndexPath) {
-        let controller = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
-        controller.delegate = self
-        controller.parentCellIndexPath = indexPath
-        controller.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
+        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
+        viewController.viewModel.setSearchType(.organizations, isAbroad: false)
+        viewController.delegate = self
+        viewController.parentCellIndexPath = indexPath
+        viewController.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
         
-        let navController = UINavigationController(rootViewController: controller)
+        let navController = UINavigationController(rootViewController: viewController)
         self.present(navController, animated: true)
     }
 }

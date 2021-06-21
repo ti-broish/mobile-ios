@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendViolationViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="deB-II-Qx3" id="KAP-Ib-R68"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Cif-Bh-ixN"/>
             </connections>
         </placeholder>
@@ -19,18 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_send_violation_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYH-lQ-Bef">
-                    <rect key="frame" x="142.5" y="442.5" width="129.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="deB-II-Qx3" userLabel="tableView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="gYH-lQ-Bef" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="LC7-Et-26V"/>
-                <constraint firstItem="gYH-lQ-Bef" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="nYL-kJ-iRc"/>
+                <constraint firstAttribute="bottom" secondItem="deB-II-Qx3" secondAttribute="bottom" id="5ed-jX-MEZ"/>
+                <constraint firstAttribute="trailing" secondItem="deB-II-Qx3" secondAttribute="trailing" id="dXz-kc-YxC"/>
+                <constraint firstItem="deB-II-Qx3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jrg-l3-n9X"/>
+                <constraint firstItem="deB-II-Qx3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qRJ-W1-dlp"/>
             </constraints>
             <point key="canvasLocation" x="-26" y="123"/>
         </view>
