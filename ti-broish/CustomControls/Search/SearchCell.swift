@@ -22,8 +22,10 @@ final class SearchCell: TibTableViewCell, Configurable {
     
     func configureWith(_ data: SearchItem) {
         switch data.type {
-        case .electionRegion:
+        case .electionRegion, .section:
             titleLabel.text = "\(data.code) \(data.name)"
+        case .municipality, .town, .cityRegion:
+            titleLabel.text = data.name
         case .organization:
             titleLabel.text = "\(data.id) \(data.name)"
         default:

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Region: Decodable {
+struct CityRegion: Decodable {
     
     // MARK: Properties
     

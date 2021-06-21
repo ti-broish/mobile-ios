@@ -25,6 +25,8 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     private var filteredSearchData = [SearchItem]()
     private var searchType: SearchType?
     private var isAbroad: Bool = false
+    private var electionRegions = [ElectionRegion]()
+    private var municipalities = [Municipality]()
     
     var numberOfRows: Int {
         return lastSearchedText.isEmpty ? searchData.count : filteredSearchData.count
@@ -36,7 +38,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     
     // MARK: - Public Methods
     
-    func setSearchType(_ searchType: SearchType?, isAbroad: Bool) {
+    func setSearchType(_ searchType: SearchType?, isAbroad: Bool = false) {
         self.searchType = searchType
         self.isAbroad = isAbroad
     }
@@ -52,16 +54,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             getCountries(isAbroad: isAbroad)
         case .electionRegions:
             getElectionRegions(isAbroad: isAbroad)
-        case .municipalities:
-            getMunicipalities()
-        case .towns:
-            getTowns()
-        case .cityRegions:
-            getCityRegions()
-        case .sections:
-            getSections()
         case .organizations:
             getOrganizations()
+        default:
+            break
         }
     }
     
@@ -71,15 +67,62 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
         filteredSearchData.removeAll()
         filteredSearchData = searchData.filter { $0.name.lowercased().contains(lastSearchedText.lowercased()) }
     }
+       
+    func loadMunicipalities(_ municipalities: [Municipality]) {
+        searchData = SearchResultsMapper.mapMunicipalities(municipalities)
+        reloadDataPublisher.send()
+    }
+    
+    func getTowns(country: Country, electionRegion: ElectionRegion?, municipality: Municipality?) {
+        APIManager.shared.getTowns(
+            country: country,
+            electionRegion: electionRegion,
+            municipality: municipality
+        ) { [weak self] response in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            switch response {
+            case .success(let towns):
+                strongSelf.searchData = SearchResultsMapper.mapTowns(towns)
+                
+                strongSelf.reloadDataPublisher.send()
+            case .failure(let error):
+                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+            }
+        }
+    }
+    
+    func loadCityRegions(_ cityRegions: [CityRegion]) {
+        searchData = SearchResultsMapper.mapCityRegions(cityRegions)
+        reloadDataPublisher.send()
+    }
+    
+    func getSections(town: Town, cityRegion: CityRegion?) {
+        APIManager.shared.getSections(town: town, cityRegion: cityRegion) { [weak self] response in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            switch response {
+            case .success(let sections):
+                strongSelf.searchData = SearchResultsMapper.mapSections(sections)
+                
+                strongSelf.reloadDataPublisher.send()
+            case .failure(let error):
+                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+            }
+        }
+    }
     
     // MARK: - Private methods
+    
     private func getCountries(isAbroad: Bool) {
-        data.removeAll()
+        
     }
-        
+    
     private func getElectionRegions(isAbroad: Bool) {
-        data.removeAll()
-        
         APIManager.shared.getElectionRegions(isAbroad: isAbroad) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -95,25 +138,19 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
         
-    private func getMunicipalities() {
-        data.removeAll()
-    }
-        
     private func getTowns() {
-        data.removeAll()
+        
     }
     
     private func getCityRegions() {
-        data.removeAll()
+        
     }
     
     private func getSections() {
-        data.removeAll()
+        
     }
     
     private func getOrganizations() {
-        data.removeAll()
-        
         APIManager.shared.getOrganizations() { [weak self] response in
             guard let strongSelf = self else {
                 return

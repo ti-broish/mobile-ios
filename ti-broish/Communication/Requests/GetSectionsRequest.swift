@@ -12,7 +12,7 @@ struct GetSectionsRequest: RequestProvider {
     // MARK: Properites
     
     let town: Town
-    let region: Region?
+    let cityRegion: CityRegion?
     
     // MARK: - RequestProvider
     
@@ -21,10 +21,11 @@ struct GetSectionsRequest: RequestProvider {
     }
     
     var parameters: [String : Any?] {
-        [
-            "town": town.id,
-            "region": region?.code
-        ]
+        if let cityRegion = cityRegion {
+            return [ "town": town.id, "city_region": cityRegion.code ]
+        } else {
+            return [ "town": town.id ]
+        }
     }
     
 }

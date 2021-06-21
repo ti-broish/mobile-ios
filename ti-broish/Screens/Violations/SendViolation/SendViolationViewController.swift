@@ -104,6 +104,7 @@ extension SendViolationViewController: UITableViewDataSource {
                 }
 
                 pickerCell.configureWith(model)
+                
                 cell = pickerCell
             } else {
                 cell = UITableViewCell()
@@ -171,6 +172,17 @@ extension SendViolationViewController: UITableViewDelegate {
     
     // MARK: - Private methods (UITableViewDelegate)
     
+    private func hasCityRegions() -> Bool {
+        guard
+            let item = getInputFieldConfigData(type: .town) as? SearchItem,
+            let town = item.data as? Town
+        else {
+            return false
+        }
+        
+        return town.cityRegions.count > 0
+    }
+    
     private func getSearchType(for indexPath: IndexPath) -> SearchType? {
         let model = viewModel.data[indexPath.row]
         
@@ -187,17 +199,73 @@ extension SendViolationViewController: UITableViewDelegate {
             return .towns
         case .cityRegion:
             return .cityRegions
-        case .sectionNumber:
+        case .section:
             return .sections
         }
     }
     
+    private func getInputFieldConfigData(type: SendViolationFieldType) -> AnyObject? {
+        let inputFieldConfig = viewModel.data.first(where: { inputFieldConfig in
+            if let fieldType = inputFieldConfig.dataType as? SendViolationFieldType {
+                return fieldType == type
+            } else {
+                return false
+            }
+        })
+        
+        return inputFieldConfig?.data
+    }
+    
     private func showSearchController(for indexPath: IndexPath) {
+        // TODO: - is abroad?
         let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
-        viewController.viewModel.setSearchType(getSearchType(for: indexPath), isAbroad: false)
+        let searchType = getSearchType(for: indexPath)
+        viewController.viewModel.setSearchType(searchType, isAbroad: false)
         viewController.delegate = self
         viewController.parentCellIndexPath = indexPath
         viewController.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
+        
+        switch searchType {
+        case .municipalities:
+            if let searchItem = getInputFieldConfigData(type: .electionRegion) as? SearchItem,
+               let electionRegion = searchItem.data as? ElectionRegion
+            {
+                viewController.viewModel.loadMunicipalities(electionRegion.municipalities)
+            }
+        case .towns:
+            let electionRegionItem = getInputFieldConfigData(type: .electionRegion) as? SearchItem
+            let electionRegion = electionRegionItem?.data as? ElectionRegion
+            // TODO: - country
+            let country = Country(code: "00", name: "България", isAbroad: false)
+            let municipalityItem = getInputFieldConfigData(type: .municipality) as? SearchItem
+            let municipality = municipalityItem?.data as? Municipality
+            
+            viewController.viewModel.getTowns(
+                country: country,
+                electionRegion: electionRegion,
+                municipality: municipality
+            )
+        case .cityRegions:
+            if let searchItem = getInputFieldConfigData(type: .town) as? SearchItem,
+               let town = searchItem.data as? Town
+            {
+                viewController.viewModel.loadCityRegions(town.cityRegions)
+            }
+        case .sections:
+            guard
+                let townItem = getInputFieldConfigData(type: .town) as? SearchItem,
+                let town = townItem.data as? Town
+            else {
+                return
+            }
+            
+            let cityRegionItem = getInputFieldConfigData(type: .cityRegion) as? SearchItem
+            let cityRegion = cityRegionItem?.data as? CityRegion
+            
+            viewController.viewModel.getSections(town: town, cityRegion: cityRegion)
+        default:
+            break
+        }
         
         let navController = UINavigationController(rootViewController: viewController)
         self.present(navController, animated: true)

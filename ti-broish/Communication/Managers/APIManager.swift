@@ -103,8 +103,8 @@ extension APIManager: APIClientInterface {
 
     // MARK: - Sections
     
-    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
-        apiClient.getSections(town: town, region: region, completion: completion)
+    func getSections(town: Town, cityRegion: CityRegion? = nil, completion: APIResult<SectionsResponse>?) {
+        apiClient.getSections(town: town, cityRegion: cityRegion, completion: completion)
     }
     
     // MARK: - Upload Photo

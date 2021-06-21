@@ -13,7 +13,7 @@ enum SendViolationFieldType: Int, CaseIterable {
     case municipality
     case town
     case cityRegion
-    case sectionNumber
+    case section
 }
 
 struct SendViolationDataBuilder {
@@ -52,13 +52,13 @@ struct SendViolationDataBuilder {
                 isRequired: true,
                 dataType: SendViolationFieldType.cityRegion as AnyObject
             )
-        case .sectionNumber:
+        case .section:
             return InputFieldConfig(
-                type: .text,
+                type: .picker,
                 title: LocalizedStrings.SendInputField.section,
                 placeholderText: LocalizedStrings.SendInputField.sectionNumberPlaceholder,
                 isRequired: true,
-                dataType: SendViolationFieldType.sectionNumber as AnyObject
+                dataType: SendViolationFieldType.section as AnyObject
             )
         }
     }

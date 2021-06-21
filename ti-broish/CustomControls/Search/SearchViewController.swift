@@ -91,20 +91,42 @@ final class SearchViewController: UIViewController, TibViewControllable {
 
 extension SearchViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.cellIdentifier, for: indexPath) as? SearchCell else {
+        let reusableCell = tableView.dequeueReusableCell(withIdentifier: SearchCell.cellIdentifier, for: indexPath)
+        guard let cell = reusableCell as? SearchCell else {
             return UITableViewCell()
         }
         
         let item = viewModel.items[indexPath.row]
         cell.configureWith(item)
-        cell.accessoryType = item.id == selectedItem?.id ? .checkmark : .none
+        markAsSelected(item: item, cell: cell)
         
         return cell
+    }
+    
+    // MARK: - Private methods (UITableViewDataSource)
+    
+    private func markAsSelected(item: SearchItem, cell: SearchCell) {
+        switch item.type {
+        case .electionRegion, .municipality, .cityRegion:
+            cell.accessoryType = item.code == selectedItem?.code ? .checkmark : .none
+        case .organization, .town, .section:
+            cell.accessoryType = item.id == selectedItem?.id ? .checkmark : .none
+        default:
+            cell.accessoryType = .none
+        }
     }
 }
 

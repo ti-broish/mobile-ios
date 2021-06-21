@@ -34,7 +34,7 @@ protocol APIClientInterface {
         completion: APIResult<TownsResponse>?
     )
     
-    func getSections(town: Town, region: Region?, completion: APIResult<SectionsResponse>?)
+    func getSections(town: Town, cityRegion: CityRegion?, completion: APIResult<SectionsResponse>?)
 
     // MARK: - Upload Photo
     func uploadPhoto(_ photo: Photo, completion: APIResult<UploadPhoto>?)
@@ -239,8 +239,8 @@ extension APIClient: APIClientInterface {
         }
     }
     
-    func getSections(town: Town, region: Region? = nil, completion: APIResult<SectionsResponse>?) {
-        let request = GetSectionsRequest(town: town, region: region)
+    func getSections(town: Town, cityRegion: CityRegion? = nil, completion: APIResult<SectionsResponse>?) {
+        let request = GetSectionsRequest(town: town, cityRegion: cityRegion)
         send(request) { (result: Result<SectionsResponse, APIError>) in
             switch result {
             case .success(var sections):
