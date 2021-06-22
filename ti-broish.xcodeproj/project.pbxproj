@@ -145,6 +145,23 @@
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
 		10EF3B89267BD4ED00601939 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EF3B88267BD4ED00601939 /* Photos.framework */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
+		B8149E732689BF10001D0D5C /* JsonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8149E722689BF10001D0D5C /* JsonExt.swift */; };
+		B83A1219267F7CE900304AC1 /* Streaming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B83A1218267F7CE900304AC1 /* Streaming.storyboard */; };
+		B83A121B2680C0C000304AC1 /* StreamingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A121A2680C0C000304AC1 /* StreamingBaseViewController.swift */; };
+		B83A121D2680C13700304AC1 /* LaunchStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A121C2680C13600304AC1 /* LaunchStreamViewController.swift */; };
+		B83A121F2680C16900304AC1 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A121E2680C16900304AC1 /* StreamViewController.swift */; };
+		B83A12212680C17200304AC1 /* CaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12202680C17200304AC1 /* CaptureDevice.swift */; };
+		B83A12232680C17B00304AC1 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12222680C17B00304AC1 /* InstructionsViewController.swift */; };
+		B83A12252680C18400304AC1 /* StreamSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12242680C18400304AC1 /* StreamSettings.swift */; };
+		B83A12272680C18B00304AC1 /* StreamReconnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12262680C18B00304AC1 /* StreamReconnectViewController.swift */; };
+		B83A122F2680C1CC00304AC1 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12292680C1CC00304AC1 /* StringExt.swift */; };
+		B83A12302680C1CC00304AC1 /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A122A2680C1CC00304AC1 /* NetworkConnectivity.swift */; };
+		B83A12332680C1CC00304AC1 /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A122D2680C1CC00304AC1 /* ImageExt.swift */; };
+		B83A12342680C1CC00304AC1 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A122E2680C1CC00304AC1 /* ViewExt.swift */; };
+		B83A12362680C2EA00304AC1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B83A12352680C2EA00304AC1 /* Localizable.strings */; };
+		B83A12392680C4D800304AC1 /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = B83A12382680C4D800304AC1 /* HaishinKit */; };
+		B83A123E2680CE9C00304AC1 /* UserStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A123D2680CE9C00304AC1 /* UserStream.swift */; };
+		B83A12402680D0EE00304AC1 /* UserStreamingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A123F2680D0EE00304AC1 /* UserStreamingSession.swift */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
@@ -349,6 +366,22 @@
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
 		10EF3B88267BD4ED00601939 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
+		B8149E722689BF10001D0D5C /* JsonExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonExt.swift; sourceTree = "<group>"; };
+		B83A1218267F7CE900304AC1 /* Streaming.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Streaming.storyboard; sourceTree = "<group>"; };
+		B83A121A2680C0C000304AC1 /* StreamingBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingBaseViewController.swift; sourceTree = "<group>"; };
+		B83A121C2680C13600304AC1 /* LaunchStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStreamViewController.swift; sourceTree = "<group>"; };
+		B83A121E2680C16900304AC1 /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
+		B83A12202680C17200304AC1 /* CaptureDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureDevice.swift; sourceTree = "<group>"; };
+		B83A12222680C17B00304AC1 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		B83A12242680C18400304AC1 /* StreamSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettings.swift; sourceTree = "<group>"; };
+		B83A12262680C18B00304AC1 /* StreamReconnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReconnectViewController.swift; sourceTree = "<group>"; };
+		B83A12292680C1CC00304AC1 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		B83A122A2680C1CC00304AC1 /* NetworkConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
+		B83A122D2680C1CC00304AC1 /* ImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExt.swift; sourceTree = "<group>"; };
+		B83A122E2680C1CC00304AC1 /* ViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		B83A12352680C2EA00304AC1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B83A123D2680CE9C00304AC1 /* UserStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStream.swift; sourceTree = "<group>"; };
+		B83A123F2680D0EE00304AC1 /* UserStreamingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStreamingSession.swift; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
@@ -403,6 +436,7 @@
 				10EF3B89267BD4ED00601939 /* Photos.framework in Frameworks */,
 				10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */,
 				10482D9026710848001C260F /* Alamofire in Frameworks */,
+				B83A12392680C4D800304AC1 /* HaishinKit in Frameworks */,
 				109FB6CC26877DC800A24FAC /* Toast in Frameworks */,
 				10482D93267108F2001C260F /* FirebaseAuth in Frameworks */,
 			);
@@ -461,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				102B847D2676555C00839324 /* Errors */,
+				B83A1217267F7CB000304AC1 /* Streaming */,
 				0AEB398E261CFD800005BF38 /* Screens */,
 				CFB138B726359162001B373D /* Architecture */,
 				CF390FDE2637323700999369 /* Communication */,
@@ -472,6 +507,7 @@
 				0AEB395E261CF9CE0005BF38 /* Assets.xcassets */,
 				0AEB3960261CF9CE0005BF38 /* LaunchScreen.storyboard */,
 				CFA575002637D925002BCECD /* GoogleService-Info.plist */,
+				B83A12352680C2EA00304AC1 /* Localizable.strings */,
 				0AEB3963261CF9CE0005BF38 /* Info.plist */,
 			);
 			path = "ti-broish";
@@ -768,6 +804,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B83A1217267F7CB000304AC1 /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				B83A123C2680CE9100304AC1 /* Model */,
+				B83A12282680C1CC00304AC1 /* Ext */,
+				B83A121A2680C0C000304AC1 /* StreamingBaseViewController.swift */,
+				B83A12202680C17200304AC1 /* CaptureDevice.swift */,
+				B83A121C2680C13600304AC1 /* LaunchStreamViewController.swift */,
+				B83A121E2680C16900304AC1 /* StreamViewController.swift */,
+				B83A12242680C18400304AC1 /* StreamSettings.swift */,
+				B83A12222680C17B00304AC1 /* InstructionsViewController.swift */,
+				B83A12262680C18B00304AC1 /* StreamReconnectViewController.swift */,
+				B83A1218267F7CE900304AC1 /* Streaming.storyboard */,
+			);
+			path = Streaming;
+			sourceTree = "<group>";
+		};
+		B83A12282680C1CC00304AC1 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				B83A12292680C1CC00304AC1 /* StringExt.swift */,
+				B8149E722689BF10001D0D5C /* JsonExt.swift */,
+				B83A122A2680C1CC00304AC1 /* NetworkConnectivity.swift */,
+				B83A122D2680C1CC00304AC1 /* ImageExt.swift */,
+				B83A122E2680C1CC00304AC1 /* ViewExt.swift */,
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
+		B83A123C2680CE9100304AC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B83A123D2680CE9C00304AC1 /* UserStream.swift */,
+				B83A123F2680D0EE00304AC1 /* UserStreamingSession.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CF390FDE2637323700999369 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,6 +1093,7 @@
 				10482D8F26710848001C260F /* Alamofire */,
 				10482D92267108F2001C260F /* FirebaseAuth */,
 				10482D94267108F2001C260F /* FirebaseMessaging */,
+				B83A12382680C4D800304AC1 /* HaishinKit */,
 				109FB6CB26877DC800A24FAC /* Toast */,
 			);
 			productName = "ti-broish";
@@ -1096,6 +1171,7 @@
 			packageReferences = (
 				10482D8E26710848001C260F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */,
 				109FB6CA26877DC800A24FAC /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 0AEB3953261CF9CD0005BF38 /* Products */;
@@ -1135,10 +1211,12 @@
 				10B9EAE226375C390067FAE2 /* TextInputField.xib in Resources */,
 				100C03D0264ADF4400B01B0E /* TextCell.xib in Resources */,
 				0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */,
+				B83A1219267F7CE900304AC1 /* Streaming.storyboard in Resources */,
 				CFA575012637D925002BCECD /* GoogleService-Info.plist in Resources */,
 				1042B3C52634A26000764ACF /* CredentialInputField.xib in Resources */,
 				102B847C2676526000839324 /* terms.html in Resources */,
 				1080EB6C2675F1E7004AFC2A /* ViolationCell.xib in Resources */,
+				B83A12362680C2EA00304AC1 /* Localizable.strings in Resources */,
 				1042B3E12634AAFD00764ACF /* Montserrat-Regular.ttf in Resources */,
 				0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */,
 				1042B3E42634AAFD00764ACF /* Montserrat-Italic.ttf in Resources */,
@@ -1188,7 +1266,11 @@
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
 				10321C9226871B9000EBE2B5 /* SendFieldType.swift in Sources */,
 				10E02098267E7785007420D9 /* PhotoButtonsCell.swift in Sources */,
+				B83A12342680C1CC00304AC1 /* ViewExt.swift in Sources */,
+				B8149E732689BF10001D0D5C /* JsonExt.swift in Sources */,
+				B83A121D2680C13700304AC1 /* LaunchStreamViewController.swift in Sources */,
 				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
+				B83A121B2680C0C000304AC1 /* StreamingBaseViewController.swift in Sources */,
 				1062087F267188A100F28D83 /* UINavigationItemExtension.swift in Sources */,
 				1080EB652675EF6D004AFC2A /* DetailsViewModel.swift in Sources */,
 				0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */,
@@ -1207,8 +1289,10 @@
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
+				B83A121F2680C16900304AC1 /* StreamViewController.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				1080EB682675F0F9004AFC2A /* ViolationsViewModel.swift in Sources */,
+				B83A12402680D0EE00304AC1 /* UserStreamingSession.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
 				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */,
@@ -1266,6 +1350,7 @@
 				10DC9FAC264C195400A7C941 /* SearchCell.swift in Sources */,
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				10123A5626739FFB0089799B /* ProtocolsViewModel.swift in Sources */,
+				B83A123E2680CE9C00304AC1 /* UserStream.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
 				CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,
@@ -1274,9 +1359,12 @@
 				CFA575532637FC23002BCECD /* Photo.swift in Sources */,
 				CFA5768C263949AE002BCECD /* ElectionRegion.swift in Sources */,
 				102B847F2676557500839324 /* CommonError.swift in Sources */,
+				B83A12272680C18B00304AC1 /* StreamReconnectViewController.swift in Sources */,
 				10D0FAB32674802100DCF0EA /* BaseCollectionViewController.swift in Sources */,
 				CFA5766926393133002BCECD /* Protocol.swift in Sources */,
+				B83A12232680C17B00304AC1 /* InstructionsViewController.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
+				B83A12302680C1CC00304AC1 /* NetworkConnectivity.swift in Sources */,
 				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
 				10E02094267E70BD007420D9 /* UploadImageCell.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
@@ -1291,8 +1379,11 @@
 				105802A02649EA4B00A88528 /* PickerCell.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
+				B83A12212680C17200304AC1 /* CaptureDevice.swift in Sources */,
 				10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */,
+				B83A122F2680C1CC00304AC1 /* StringExt.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
+				B83A12332680C1CC00304AC1 /* ImageExt.swift in Sources */,
 				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				101DA7752674A926003AE2A2 /* ImagePreviewViewController.swift in Sources */,
@@ -1306,6 +1397,7 @@
 				1062087D2671843B00F28D83 /* ContentContainerCoordinator.swift in Sources */,
 				1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */,
 				CFA575172637EBD0002BCECD /* BaseResponse.swift in Sources */,
+				B83A12252680C18400304AC1 /* StreamSettings.swift in Sources */,
 				1080EB5E2675ECBB004AFC2A /* UIViewExtension.swift in Sources */,
 				106B7EF82644187600571859 /* Validator.swift in Sources */,
 				1016B691264C3F2000515612 /* SearchItem.swift in Sources */,
@@ -1666,6 +1758,14 @@
 				minimumVersion = 8.1.0;
 			};
 		};
+		B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shogo4405/HaishinKit.swift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.5;
+			};
+		};
 		109FB6CA26877DC800A24FAC /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift";
@@ -1691,6 +1791,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		B83A12382680C4D800304AC1 /* HaishinKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */;
+			productName = HaishinKit;
 		};
 		109FB6CB26877DC800A24FAC /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;

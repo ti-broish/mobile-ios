@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  YouCountLive
+
+  Created by Vassil Angelov on 27.03.21.
+  
+*/
+
+"launch_stream_error_no_internet" = "Нямате свързаност с интернет!\nМоля, свържете се и опитайте отново.";
+"launch_stream_error_generic" = "Възникна грешка, моля, опитайте отново.\n\nАко проблемът продължи, излезте и опитайте отново.";
+"launch_stream_error_stream_unavailable" = "В момента все още не е възможно да предавате на живо.\n\nМоля, опитайте отново след известно време!";
+
+"instructions_title" = "Малко инструкции";
+"instructions_use_landscape_text" = "Предпочитайте хоризонтална ориентация на телефона";
+"instructions_keep_focus_in_center" = "Уверете се, че важното действие се намира в центъра на екрана";
+"instructions_battery_usage" = "Следете нивото на батерията";
+"instructions_interruptions_stop_stream" = "Живото предаване ще прекъсне ако напуснете приложението, получите обаждане или екрана се заключи.";
+
+"stream_message_unavailable" = "Живото предаване в момента не е възможно";
+"stream_message_stream_disrupted" = "Връзката е прекъсната";
+"stream_message_no_internet_connection_try_again" = "Няма връзка с Интернет. Свържете се и опитайте отново";
+
+"stream_share_title" = "Tи Броиш Live";
+
+"stream_permissions_text" = "За да започнете живо предаване е необходимо да дадете разрешения за достъп до камерата и микрофона на устройството";
+
+"stream_live_label" = "Live";
+
+"confirm_exit_title" = "Изход";
+"confirm_exit_message" = "Потвърдете, че искате да прекъснете живото предаване.";
+
+"label_loading" = "Свързване...";
+
+"button_close" = "Затвори";
+"button_next" = "Напред";
+"button_logout" = "Изход";
+"button_try_again" = "Опитай отново";
+"button_exit" = "Изход";
+"button_yes" = "Да";
+"button_no" = "Не";
+"button_share_stream" = "Сподели живото предаване";
+"button_allow" = "Разреши";
