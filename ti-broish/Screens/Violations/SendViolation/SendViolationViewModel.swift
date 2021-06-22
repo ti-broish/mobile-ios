@@ -20,6 +20,37 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
     
+    override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
+        guard let fieldType = SendViolationFieldType(rawValue: indexPath.row) else {
+            return
+        }
+        
+        resetFieldsData(for: fieldType)
+        setFieldValue(value, forFieldAt: fieldType.rawValue)
+        
+        if fieldType != .cityRegion && fieldType != .section {
+            toggleCityRegionField(value: value)
+        }
+    }
+    
+    func setImages(_ images: [UIImage]) {
+        images.forEach { image in
+            if self.images.first(where: { $0 == image }) == nil {
+                self.images.append(image)
+            }
+        }
+    }
+    
+    func removeImage(at index: Int) {
+        images.remove(at: index)
+    }
+    
+    func start() {
+        loadDataFields()
+    }
+    
+    // MARK: - Private methods
+    
     private func resetFields(_ fields: [SendViolationFieldType]) {
         fields.forEach { field in
             let index = field.rawValue
@@ -45,41 +76,14 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
     
-    override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        guard let fieldType = SendViolationFieldType(rawValue: indexPath.row) else {
-            return
-        }
+    private func toggleCityRegionField(value: AnyObject?) {
+        let index = SendViolationFieldType.cityRegion.rawValue
+        let item = value as? SearchItem
         
-        resetFieldsData(for: fieldType)
-        setFieldValue(value, forFieldAt: fieldType.rawValue)
-        
-        if fieldType == .town {
-            let index = SendViolationFieldType.cityRegion.rawValue
-            let item = value as? SearchItem
-            
-            if let town = item?.data as? Town, town.cityRegions.count > 0 {
-                data.insert(builder.cityRegionConfig, at: index)
-            } else if let dataType = data[index].dataType as? SendViolationFieldType, dataType == .cityRegion {
-                data.remove(at: index)
-            }
+        if let town = item?.data as? Town, town.cityRegions.count > 0 {
+            data.insert(builder.cityRegionConfig, at: index)
+        } else if let dataType = data[index].dataType as? SendViolationFieldType, dataType == .cityRegion {
+            data.remove(at: index)
         }
     }
-    
-    func setImages(_ images: [UIImage]) {
-        images.forEach { image in
-            if self.images.first(where: { $0 == image }) == nil {
-                self.images.append(image)
-            }
-        }
-    }
-    
-    func removeImage(at index: Int) {
-        images.remove(at: index)
-    }
-    
-    func start() {
-        loadDataFields()
-    }
-    
-    // MARK: - Private methods
 }
