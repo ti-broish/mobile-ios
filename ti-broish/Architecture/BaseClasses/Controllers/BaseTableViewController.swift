@@ -34,7 +34,7 @@ class BaseTableViewController: BaseViewController {
         assertionFailure("handleSendButton not implemented")
     }
     
-    func addSendButtonAsTableFooterView() -> UIView {
+    func sendButtonTableFooterView() -> UIView {
         let theme = TibTheme()
         let bounds = UIScreen.main.bounds
         let container = UIView(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: bounds.size.height * 0.2))

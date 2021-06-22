@@ -18,7 +18,17 @@ enum SendViolationFieldType: Int, CaseIterable {
 
 struct SendViolationDataBuilder {
     
-    func makeConfig(for type: SendViolationFieldType) -> InputFieldConfig {
+    var cityRegionConfig: InputFieldConfig {
+        return InputFieldConfig(
+            type: .picker,
+            title: LocalizedStrings.SendInputField.cityRegion,
+            placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
+            isRequired: true,
+            dataType: SendViolationFieldType.cityRegion as AnyObject
+        )
+    }
+    
+    func makeConfig(for type: SendViolationFieldType) -> InputFieldConfig? {
         switch type {
         case .electionRegion:
             return InputFieldConfig(
@@ -45,18 +55,12 @@ struct SendViolationDataBuilder {
                 dataType: SendViolationFieldType.town as AnyObject
             )
         case .cityRegion:
-            return InputFieldConfig(
-                type: .picker,
-                title: LocalizedStrings.SendInputField.cityRegion,
-                placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
-                isRequired: true,
-                dataType: SendViolationFieldType.cityRegion as AnyObject
-            )
+            return nil
         case .section:
             return InputFieldConfig(
                 type: .picker,
                 title: LocalizedStrings.SendInputField.section,
-                placeholderText: LocalizedStrings.SendInputField.sectionNumberPlaceholder,
+                placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
                 isRequired: true,
                 dataType: SendViolationFieldType.section as AnyObject
             )

@@ -28,8 +28,8 @@ final class SendViolationViewController: BaseTableViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.setHeaderView(text: LocalizedStrings.Menu.sendProtocol)
-        tableView.tableFooterView = addSendButtonAsTableFooterView()
+        tableView.setHeaderView(text: LocalizedStrings.Menu.sendViolation)
+        tableView.tableFooterView = sendButtonTableFooterView()
     }
     
     override func updateTextInputFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
