@@ -9,6 +9,24 @@ import Foundation
 
 struct SearchResultsMapper {
     
+    static func mapCountries(_ countries: [Country]) -> [SearchItem] {
+        var items = [SearchItem]()
+        
+        for country in countries {
+            items.append(
+                SearchItem(
+                    id: -1,
+                    name: country.name,
+                    code: country.code,
+                    type: .country,
+                    data: country as AnyObject
+                )
+            )
+        }
+        
+        return items
+    }
+    
     static func mapElectionRegions(_ electionRegions: [ElectionRegion]) -> [SearchItem] {
         var items = [SearchItem]()
         
@@ -94,7 +112,7 @@ struct SearchResultsMapper {
             )
         }
         
-        items.sort(by: { $0.name < $1.name })
+        items.sort(by: { $0.code < $1.code })
         
         return items
     }

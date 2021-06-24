@@ -119,7 +119,19 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     // MARK: - Private methods
     
     private func getCountries(isAbroad: Bool) {
-        
+        APIManager.shared.getCountries(isAbroad: isAbroad) { [weak self] response in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            switch response {
+            case .success(let countries):
+                strongSelf.searchData = SearchResultsMapper.mapCountries(countries)
+                strongSelf.reloadDataPublisher.send()
+            case .failure(let error):
+                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+            }
+        }
     }
     
     private func getElectionRegions(isAbroad: Bool) {
@@ -136,18 +148,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))
             }
         }
-    }
-        
-    private func getTowns() {
-        
-    }
-    
-    private func getCityRegions() {
-        
-    }
-    
-    private func getSections() {
-        
     }
     
     private func getOrganizations() {

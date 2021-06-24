@@ -36,5 +36,4 @@ struct GetTownsRequest: RequestProvider {
         
         return ["country": country.code]
     }
-    
 }

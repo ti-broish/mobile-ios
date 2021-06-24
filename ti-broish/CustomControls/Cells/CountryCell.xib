@@ -17,21 +17,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iJX-zY-cm7" userLabel="stackView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-XF-nii" userLabel="stackView">
+                        <rect key="frame" x="16" y="0.0" width="382" height="44"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNa-3Y-NXM" userLabel="countryView">
-                                <rect key="frame" x="0.0" y="0.0" width="207" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="191" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ID-yK-Gb6" userLabel="countryButton">
-                                        <rect key="frame" x="0.0" y="7" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="10" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="CYo-27-eZT"/>
-                                            <constraint firstAttribute="width" constant="30" id="PnS-lf-XZX"/>
+                                            <constraint firstAttribute="height" constant="24" id="CYo-27-eZT"/>
+                                            <constraint firstAttribute="width" constant="24" id="PnS-lf-XZX"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="handleCountryButton:" destination="ExK-3z-KgR" eventType="touchUpInside" id="2lc-dc-FOJ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_country_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nll-aC-fov" userLabel="countryLabel">
-                                        <rect key="frame" x="38" y="12" width="153" height="20.5"/>
+                                        <rect key="frame" x="32" y="12" width="143" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,17 +50,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRk-jz-SHR" userLabel="abroadCountryView">
-                                <rect key="frame" x="207" y="0.0" width="207" height="44"/>
+                                <rect key="frame" x="191" y="0.0" width="191" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPX-XQ-Ubf" userLabel="abroadCountryButton">
-                                        <rect key="frame" x="0.0" y="7" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="10" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="7Pl-Ks-blA"/>
-                                            <constraint firstAttribute="width" constant="30" id="DHC-cg-eYJ"/>
+                                            <constraint firstAttribute="height" constant="24" id="7Pl-Ks-blA"/>
+                                            <constraint firstAttribute="width" constant="24" id="DHC-cg-eYJ"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="handleAbroadCountryButton:" destination="ExK-3z-KgR" eventType="touchUpInside" id="cpM-pS-SRQ"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_country_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-Ba-s4w" userLabel="abroadCountryLabel">
-                                        <rect key="frame" x="38" y="12" width="153" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_abroad_country_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-Ba-s4w" userLabel="abroadCountryLabel">
+                                        <rect key="frame" x="32" y="12" width="143" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -73,15 +79,27 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="moB-3X-OXw"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="iJX-zY-cm7" secondAttribute="trailing" id="2Cy-mo-39L"/>
-                    <constraint firstAttribute="bottom" secondItem="iJX-zY-cm7" secondAttribute="bottom" id="5Q3-QF-ubO"/>
-                    <constraint firstItem="iJX-zY-cm7" firstAttribute="leading" secondItem="8PL-OH-Wdn" secondAttribute="leading" id="XfB-xt-zY9"/>
-                    <constraint firstItem="iJX-zY-cm7" firstAttribute="top" secondItem="8PL-OH-Wdn" secondAttribute="top" id="aN7-B1-BR2"/>
+                    <constraint firstItem="AE2-XF-nii" firstAttribute="leading" secondItem="8PL-OH-Wdn" secondAttribute="leading" constant="16" id="TgF-50-9Nz"/>
+                    <constraint firstAttribute="bottom" secondItem="AE2-XF-nii" secondAttribute="bottom" id="bFW-Yf-Egf"/>
+                    <constraint firstItem="AE2-XF-nii" firstAttribute="top" secondItem="8PL-OH-Wdn" secondAttribute="top" id="ohd-9l-esV"/>
+                    <constraint firstAttribute="trailing" secondItem="AE2-XF-nii" secondAttribute="trailing" constant="16" id="t7S-o9-Lon"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="abroadCountryButton" destination="SPX-XQ-Ubf" id="BB6-NT-Nk6"/>
+                <outlet property="abroadCountryLabel" destination="okZ-Ba-s4w" id="8xA-Js-QX1"/>
+                <outlet property="abroadCountryView" destination="FRk-jz-SHR" id="fCj-8D-5IA"/>
+                <outlet property="countryButton" destination="0ID-yK-Gb6" id="4bo-EV-GhA"/>
+                <outlet property="countryLabel" destination="nll-aC-fov" id="nAS-Nk-QZn"/>
+                <outlet property="countryView" destination="jNa-3Y-NXM" id="7PE-At-bQs"/>
+                <outlet property="stackView" destination="AE2-XF-nii" id="LiC-Dn-cYb"/>
+            </connections>
             <point key="canvasLocation" x="134" y="50"/>
         </tableViewCell>
     </objects>

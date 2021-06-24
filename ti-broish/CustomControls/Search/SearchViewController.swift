@@ -120,7 +120,7 @@ extension SearchViewController: UITableViewDataSource {
     
     private func markAsSelected(item: SearchItem, cell: SearchCell) {
         switch item.type {
-        case .electionRegion, .municipality, .cityRegion:
+        case .country, .electionRegion, .municipality, .cityRegion:
             cell.accessoryType = item.code == selectedItem?.code ? .checkmark : .none
         case .organization, .town, .section:
             cell.accessoryType = item.id == selectedItem?.id ? .checkmark : .none

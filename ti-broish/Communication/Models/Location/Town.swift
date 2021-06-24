@@ -15,6 +15,5 @@ struct Town: Decodable {
     
     let id: Int
     let name: String
-    let cityRegions: [CityRegion]
-    
+    let cityRegions: [CityRegion]?
 }

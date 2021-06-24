@@ -47,6 +47,8 @@
 		102B847F2676557500839324 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B847E2676557500839324 /* CommonError.swift */; };
 		102B84812676600C00839324 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B84802676600C00839324 /* ProfileViewModel.swift */; };
 		102B84832676607700839324 /* ProfileDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B84822676607700839324 /* ProfileDataBuilder.swift */; };
+		102DC28726851DD7003582BB /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102DC28626851DD7003582BB /* DescriptionCell.swift */; };
+		102DC28926851DF2003582BB /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102DC28826851DF2003582BB /* DescriptionCell.xib */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
 		103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A678A2649958F00D93853 /* HomeViewModel.swift */; };
@@ -250,6 +252,8 @@
 		102B847E2676557500839324 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		102B84802676600C00839324 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		102B84822676607700839324 /* ProfileDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataBuilder.swift; sourceTree = "<group>"; };
+		102DC28626851DD7003582BB /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		102DC28826851DF2003582BB /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		103A678A2649958F00D93853 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -583,6 +587,8 @@
 				10E0209D267E82B2007420D9 /* PhotoButtonsCell.xib */,
 				10C29D5F267F8F35008B19BE /* CountryCell.swift */,
 				10C29D61267F8F5E008B19BE /* CountryCell.xib */,
+				102DC28626851DD7003582BB /* DescriptionCell.swift */,
+				102DC28826851DF2003582BB /* DescriptionCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1138,6 +1144,7 @@
 				10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */,
 				1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */,
 				10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */,
+				102DC28926851DF2003582BB /* DescriptionCell.xib in Resources */,
 				100A798426716D1500508DB8 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1163,6 +1170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				102DC28726851DD7003582BB /* DescriptionCell.swift in Sources */,
 				10123A5A2673AC7A0089799B /* StringUtils.swift in Sources */,
 				10ABFA0A2678F0C700E34D32 /* SendProtocolDataBuilder.swift in Sources */,
 				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,

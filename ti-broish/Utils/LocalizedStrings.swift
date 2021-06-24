@@ -16,6 +16,7 @@ struct LocalizedStrings {
         static let town: String = "Населено място"
         static let cityRegion: String = "Район"
         static let description: String = "Описание"
+        static let descriptionPlaceholder: String = "Опишете нарушението. Моля въведете повече от 20 символа."
         static let section: String = "Секция"
         static let sectionNumber: String = "Номер на секция"
         static let sectionNumberPlaceholder = "Въведете номер на секция"
