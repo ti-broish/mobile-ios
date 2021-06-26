@@ -17,6 +17,22 @@ final class TextCell: TibTableViewCell {
         textInputField.textField.backgroundColor = .white
     }
     
+    func configureWith(_ data: InputFieldConfig) {
+        let fieldType = data.dataType as! SendFieldType
+        
+        if fieldType == .sectionNumber {
+            if let item = data.data as? SearchItem,
+               let section = item.data as? Section
+            {
+                textInputField.configureSectionNumber(section: section, data: data)
+            } else {
+                textInputField.configureWith(data)
+            }
+        } else {
+            textInputField.configureWith(data)
+        }
+    }
+    
     func markAsDisabled() {
         textInputField.textField.isEnabled = false
         textInputField.textField.backgroundColor = TibTheme().darkTextColor.withAlphaComponent(0.5)

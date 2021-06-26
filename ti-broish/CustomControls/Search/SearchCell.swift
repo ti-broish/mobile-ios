@@ -15,6 +15,8 @@ final class SearchCell: TibTableViewCell, Configurable {
         super.awakeFromNib()
         
         backgroundColor = .clear
+        tintColor = .primaryColor
+        
         titleLabel.font = .regularFont(size: 14.0)
         titleLabel.textColor = TibTheme().textColor
         titleLabel.numberOfLines = 0

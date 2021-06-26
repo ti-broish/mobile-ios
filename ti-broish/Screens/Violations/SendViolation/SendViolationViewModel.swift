@@ -23,6 +23,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         resetFieldsData(for: fieldType)
         setFieldValue(value, forFieldAt: index)
         toggleCityRegionField()
+        prefillFieldValues(for: fieldType, value: value)
     }
     
     func reloadDataFields(isAbroad: Bool) {
@@ -95,7 +96,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
             let item = dataForField(type: .countries) as? SearchItem,
             let country = item.data as? Country
         else {
-            return Country(code: "00", name: "България", isAbroad: false)
+            return Country.defaultCountry
         }
         
         return country
@@ -114,13 +115,13 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     private func resetFieldsData(for fieldType: SendFieldType) {
         switch fieldType {
         case .electionRegion:
-            resetFields([.municipality, .town, .cityRegion, .section])
+            resetFields([.municipality, .town, .cityRegion, .section, .sectionNumber])
         case .municipality:
-            resetFields([.town, .cityRegion, .section])
+            resetFields([.town, .cityRegion, .section, .sectionNumber])
         case .town:
-            resetFields([.cityRegion, .section])
+            resetFields([.cityRegion, .section, .sectionNumber])
         case .cityRegion:
-            resetFields([.section])
+            resetFields([.section, .sectionNumber])
         default:
             break
         }
@@ -154,6 +155,17 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
             if let config = builder.makeConfig(for: fieldType) {
                 data.append(config)
             }
+        }
+    }
+    
+    private func prefillFieldValues(for fieldType: SendFieldType, value: AnyObject?) {
+        switch fieldType {
+        case .section:
+            if let sectionNumberIndex = indexForField(type: .sectionNumber) {
+                setFieldValue(value, forFieldAt: sectionNumberIndex)
+            }
+        default:
+            break
         }
     }
 }

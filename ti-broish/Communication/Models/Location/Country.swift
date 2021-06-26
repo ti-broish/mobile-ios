@@ -11,10 +11,13 @@ typealias CountriesResponse = [Country]
 
 struct Country: Decodable {
     
+    static var defaultCountry: Country {
+        return Country(code: "00", name: "България", isAbroad: false)
+    }
+    
     // MARK: Properties
     
     let code: String
     let name: String
     let isAbroad: Bool
-    
 }

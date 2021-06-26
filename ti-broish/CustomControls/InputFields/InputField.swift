@@ -77,6 +77,14 @@ class InputField: UIView, Configurable {
         configureTextFieldKeyboardType(inputFieldType: data.type)
     }
     
+    func configureSectionNumber(section: Section, data: InputFieldConfig) {
+        titleLabel.setText(data.title, isRequired: data.isRequired)
+        
+        textField.isEnabled = false
+        textField.textAlignment = .center
+        textField.text = section.id
+    }
+    
     // MARK: - Private methods
     
     private func configureTextFieldKeyboardType(inputFieldType: InputFieldType) {

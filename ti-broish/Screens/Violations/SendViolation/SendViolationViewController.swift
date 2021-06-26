@@ -118,13 +118,8 @@ extension SendViolationViewController: UITableViewDataSource {
                         return UITableViewCell()
                     }
 
-                    textCell.textInputField.configureWith(model)
+                    textCell.configureWith(model)
                     textCell.textInputField.textField.delegate = self
-                    
-                    if fieldType == .sectionNumber {
-                        textCell.textInputField.textField.isEnabled = false
-                        textCell.textInputField.textField.textAlignment = .center
-                    }
                     
                     cell = textCell
                 }

@@ -48,12 +48,16 @@ final class SearchViewController: UIViewController, TibViewControllable {
     }
     
     private func setupDoneBarButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+        let barButton = UIBarButtonItem(
             title: LocalizedStrings.Search.doneButton,
             style: .plain,
             target: self,
             action: #selector(handleDoneBarButton)
         )
+        
+        barButton.setTitleTextAttributes([.foregroundColor: UIColor.primaryColor], for: .normal)
+        
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     private func setupTableView() {

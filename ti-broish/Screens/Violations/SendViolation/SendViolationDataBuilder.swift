@@ -23,7 +23,7 @@ struct SendViolationDataBuilder {
         return InputFieldConfig(
             type: .text,
             title: LocalizedStrings.SendInputField.sectionNumber,
-            placeholderText: "",
+            placeholderText: nil,
             isRequired: false,
             dataType: SendFieldType.cityRegion as AnyObject
         )
@@ -35,7 +35,7 @@ struct SendViolationDataBuilder {
             return InputFieldConfig(
                 type: .checkbox,
                 title: LocalizedStrings.SendInputField.country,
-                placeholderText: "",
+                placeholderText: nil,
                 isRequired: true,
                 dataType: SendFieldType.countryCheckbox as AnyObject
             )
@@ -85,7 +85,7 @@ struct SendViolationDataBuilder {
             return InputFieldConfig(
                 type: .text,
                 title: LocalizedStrings.SendInputField.sectionNumber,
-                placeholderText: "",
+                placeholderText: nil,
                 isRequired: false,
                 dataType: SendFieldType.sectionNumber as AnyObject
             )
