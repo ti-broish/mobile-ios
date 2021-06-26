@@ -13,20 +13,23 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     private (set) var images = [UIImage]()
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        guard let fieldType = SendViolationFieldType(rawValue: indexPath.row) else {
+        guard
+            let fieldType = data[indexPath.row].dataType as? SendFieldType,
+            let index = indexForField(type: fieldType)
+        else {
             return
         }
         
         resetFieldsData(for: fieldType)
-        setFieldValue(value, forFieldAt: fieldType.rawValue)
+        setFieldValue(value, forFieldAt: index)
         toggleCityRegionField()
     }
     
     func reloadDataFields(isAbroad: Bool) {
         if isAbroad {
-            resetAndReload(fields: SendViolationFieldType.abroadFields)
+            resetAndReload(fields: SendFieldType.violationAbroadFields)
         } else {
-            resetAndReload(fields: SendViolationFieldType.defaultFields)
+            resetAndReload(fields: SendFieldType.violationFields)
         }
     }
     
@@ -46,24 +49,6 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         reloadDataFields(isAbroad: false)
     }
     
-    func indexForField(type: SendViolationFieldType) -> Int? {
-        return data.firstIndex(where: { config in
-            guard let dataType = config.dataType as? SendViolationFieldType else {
-                return false
-            }
-            
-            return dataType == type
-        })
-    }
-    
-    func dataForField(type: SendViolationFieldType) -> AnyObject? {
-        guard let index = indexForField(type: type) else {
-            return nil
-        }
-        
-        return data[index].data
-    }
-    
     func hasCityRegions() -> Bool {
         guard
             let item = dataForField(type: .town) as? SearchItem,
@@ -79,7 +64,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     func getSearchType(for indexPath: IndexPath) -> SearchType? {
         let model = data[indexPath.row]
         
-        guard let fieldType = model.dataType as? SendViolationFieldType else {
+        guard let fieldType = model.dataType as? SendFieldType else {
             return nil
         }
         
@@ -98,6 +83,8 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
             return .cityRegions
         case .section:
             return .sections
+        case .sectionNumber:
+            return nil
         case .description:
             return nil
         }
@@ -116,17 +103,15 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     
     // MARK: - Private methods
     
-    private func resetFields(_ fields: [SendViolationFieldType]) {
+    private func resetFields(_ fields: [SendFieldType]) {
         fields.forEach { field in
-            let index = field.rawValue
-            
-            if index < data.count {
+            if let index = indexForField(type: field), index < data.count {
                 data[index].data = nil
             }
         }
     }
     
-    private func resetFieldsData(for fieldType: SendViolationFieldType) {
+    private func resetFieldsData(for fieldType: SendFieldType) {
         switch fieldType {
         case .electionRegion:
             resetFields([.municipality, .town, .cityRegion, .section])
@@ -162,7 +147,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
     
-    private func resetAndReload(fields: [SendViolationFieldType]) {
+    private func resetAndReload(fields: [SendFieldType]) {
         data.removeAll()
         
         fields.forEach { fieldType in

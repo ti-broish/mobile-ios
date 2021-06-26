@@ -7,13 +7,6 @@
 
 import UIKit
 
-enum SendSectionFieldType: Int, CaseIterable {
-    
-    case data
-    case images
-    case buttons
-}
-
 final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     
     private (set) var images = [UIImage]()
@@ -21,17 +14,22 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     override func loadDataFields() {
         let builder = SendProtocolDataBuilder()
         
-        SendProtocolFieldType.allCases.forEach {
-            data.append(builder.makeConfig(for: $0))
+        SendFieldType.protocolFields.forEach {
+            if let config = builder.makeConfig(for: $0) {
+                data.append(config)
+            }
         }
     }
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        guard let field = SendProtocolFieldType(rawValue: indexPath.row) else {
+        guard
+            let field = data[indexPath.row].dataType as? SendFieldType,
+            let index = indexForField(type: field)
+        else {
             return
         }
         
-        setFieldValue(value, forFieldAt: field.rawValue)
+        setFieldValue(value, forFieldAt: index)
     }
     
     func setImages(_ images: [UIImage]) {

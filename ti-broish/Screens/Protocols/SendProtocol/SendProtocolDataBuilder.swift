@@ -7,14 +7,9 @@
 
 import Foundation
 
-enum SendProtocolFieldType: Int, CaseIterable {
-    
-    case sectionNumber
-}
-
 struct SendProtocolDataBuilder {
     
-    func makeConfig(for type: SendProtocolFieldType) -> InputFieldConfig {
+    func makeConfig(for type: SendFieldType) -> InputFieldConfig? {
         switch type {
         case .sectionNumber:
             return InputFieldConfig(
@@ -23,6 +18,8 @@ struct SendProtocolDataBuilder {
                 placeholderText: LocalizedStrings.SendInputField.sectionNumberPlaceholder,
                 isRequired: true
             )
+        default:
+            return nil
         }
     }
 }

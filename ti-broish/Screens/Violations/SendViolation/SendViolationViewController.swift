@@ -70,11 +70,11 @@ extension SendViolationViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return SendSectionFieldType.allCases.count
+        return SendSectionType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = SendSectionFieldType(rawValue: section)
+        let section = SendSectionType(rawValue: section)
         
         switch section {
         case .data:
@@ -89,7 +89,7 @@ extension SendViolationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = SendSectionFieldType(rawValue: indexPath.section)
+        let section = SendSectionType(rawValue: indexPath.section)
         
         switch section {
         case .data:
@@ -97,7 +97,7 @@ extension SendViolationViewController: UITableViewDataSource {
             let cell: UITableViewCell
             
             if model.isTextField {
-                let fieldType = model.dataType as! SendViolationFieldType
+                let fieldType = model.dataType as! SendFieldType
                 
                 if fieldType == .description {
                     let reusableCell = tableView.dequeueReusableCell(
@@ -120,6 +120,12 @@ extension SendViolationViewController: UITableViewDataSource {
 
                     textCell.textInputField.configureWith(model)
                     textCell.textInputField.textField.delegate = self
+                    
+                    if fieldType == .sectionNumber {
+                        textCell.textInputField.textField.isEnabled = false
+                        textCell.textInputField.textField.textAlignment = .center
+                    }
+                    
                     cell = textCell
                 }
             } else if model.isPickerField {
@@ -181,7 +187,7 @@ extension SendViolationViewController: UITableViewDataSource {
     // MARK: - Private methods
     
     @objc private func handleDeleteImage(_ sender: UIButton) {
-        let indexPath = IndexPath(row: sender.tag, section: SendSectionFieldType.images.rawValue)
+        let indexPath = IndexPath(row: sender.tag, section: SendSectionType.images.rawValue)
         
         guard let _ = tableView.cellForRow(at: indexPath) as? UploadImageCell else {
             return
@@ -302,7 +308,7 @@ extension SendViolationViewController: UITextViewDelegate {
             textView.resignFirstResponder()
             
             if let index = viewModel.indexForField(type: .description) {
-                let indexPath = IndexPath(row: index, section: SendSectionFieldType.data.rawValue)
+                let indexPath = IndexPath(row: index, section: SendSectionType.data.rawValue)
                 viewModel.updateFieldValue(textView.text as AnyObject, at: indexPath)
             }
         }

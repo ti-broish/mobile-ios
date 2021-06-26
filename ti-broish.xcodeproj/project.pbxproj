@@ -50,6 +50,8 @@
 		102DC28726851DD7003582BB /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102DC28626851DD7003582BB /* DescriptionCell.swift */; };
 		102DC28926851DF2003582BB /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102DC28826851DF2003582BB /* DescriptionCell.xib */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
+		10321C9226871B9000EBE2B5 /* SendFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10321C9126871B9000EBE2B5 /* SendFieldType.swift */; };
+		10321C9426871BA200EBE2B5 /* SendSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10321C9326871BA200EBE2B5 /* SendSectionType.swift */; };
 		103A67892649902300D93853 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A67882649902300D93853 /* HomeCoordinator.swift */; };
 		103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A678A2649958F00D93853 /* HomeViewModel.swift */; };
 		1042B3C02634A1D500764ACF /* CredentialInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3BF2634A1D500764ACF /* CredentialInputField.swift */; };
@@ -255,6 +257,8 @@
 		102DC28626851DD7003582BB /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
 		102DC28826851DF2003582BB /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
+		10321C9126871B9000EBE2B5 /* SendFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFieldType.swift; sourceTree = "<group>"; };
+		10321C9326871BA200EBE2B5 /* SendSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSectionType.swift; sourceTree = "<group>"; };
 		103A67882649902300D93853 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		103A678A2649958F00D93853 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1042B3BF2634A1D500764ACF /* CredentialInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialInputField.swift; sourceTree = "<group>"; };
@@ -931,6 +935,8 @@
 				CFB138B82635917D001B373D /* BaseClasses */,
 				CFB138C82635929C001B373D /* AppCoordinator.swift */,
 				10C4EADC263362AD005FD07F /* TibViewControllable.swift */,
+				10321C9126871B9000EBE2B5 /* SendFieldType.swift */,
+				10321C9326871BA200EBE2B5 /* SendSectionType.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -1176,6 +1182,7 @@
 				CFB138C92635929C001B373D /* AppCoordinator.swift in Sources */,
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
+				10321C9226871B9000EBE2B5 /* SendFieldType.swift in Sources */,
 				10E02098267E7785007420D9 /* PhotoButtonsCell.swift in Sources */,
 				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
 				1062087F267188A100F28D83 /* UINavigationItemExtension.swift in Sources */,
@@ -1214,6 +1221,7 @@
 				CFA575332637F596002BCECD /* GetViolationsRequest.swift in Sources */,
 				1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
+				10321C9426871BA200EBE2B5 /* SendSectionType.swift in Sources */,
 				10569EE42680D82300843E71 /* SendViolationDataBuilder.swift in Sources */,
 				1016B68F264C3EDA00515612 /* SearchResultsMapper.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,

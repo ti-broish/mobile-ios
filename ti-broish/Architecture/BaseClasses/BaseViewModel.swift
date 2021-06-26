@@ -39,4 +39,22 @@ class BaseViewModel: DataFieldModel {
     func getFieldValue(forFieldAt index: Int) -> AnyObject? {
         return data[index].data
     }
+    
+    func indexForField(type: SendFieldType) -> Int? {
+        return data.firstIndex(where: { config in
+            guard let dataType = config.dataType as? SendFieldType else {
+                return false
+            }
+            
+            return dataType == type
+        })
+    }
+    
+    func dataForField(type: SendFieldType) -> AnyObject? {
+        guard let index = indexForField(type: type) else {
+            return nil
+        }
+        
+        return data[index].data
+    }
 }

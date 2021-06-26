@@ -7,27 +7,6 @@
 
 import Foundation
 
-enum SendViolationFieldType: Int, CaseIterable {
-    
-    case countryCheckbox
-    case countries
-    case electionRegion
-    case municipality
-    case town
-    case cityRegion
-    case section
-    case sectionNumber
-    case description
-    
-    static var defaultFields: [SendViolationFieldType] {
-        return [.countryCheckbox, .electionRegion, .municipality, .town, .section, .description]
-    }
-    
-    static var abroadFields: [SendViolationFieldType] {
-        return [.countryCheckbox, .countries, .town, .section, .description]
-    }
-}
-
 struct SendViolationDataBuilder {
     
     var cityRegionConfig: InputFieldConfig {
@@ -36,7 +15,7 @@ struct SendViolationDataBuilder {
             title: LocalizedStrings.SendInputField.cityRegion,
             placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
             isRequired: true,
-            dataType: SendViolationFieldType.cityRegion as AnyObject
+            dataType: SendFieldType.cityRegion as AnyObject
         )
     }
     
@@ -46,11 +25,11 @@ struct SendViolationDataBuilder {
             title: LocalizedStrings.SendInputField.sectionNumber,
             placeholderText: "",
             isRequired: false,
-            dataType: SendViolationFieldType.cityRegion as AnyObject
+            dataType: SendFieldType.cityRegion as AnyObject
         )
     }
     
-    func makeConfig(for type: SendViolationFieldType) -> InputFieldConfig? {
+    func makeConfig(for type: SendFieldType) -> InputFieldConfig? {
         switch type {
         case .countryCheckbox:
             return InputFieldConfig(
@@ -58,7 +37,7 @@ struct SendViolationDataBuilder {
                 title: LocalizedStrings.SendInputField.country,
                 placeholderText: "",
                 isRequired: true,
-                dataType: SendViolationFieldType.countryCheckbox as AnyObject
+                dataType: SendFieldType.countryCheckbox as AnyObject
             )
         case .countries:
             return InputFieldConfig(
@@ -66,7 +45,7 @@ struct SendViolationDataBuilder {
                 title: LocalizedStrings.SendInputField.country,
                 placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
                 isRequired: true,
-                dataType: SendViolationFieldType.countries as AnyObject
+                dataType: SendFieldType.countries as AnyObject
             )
         case .electionRegion:
             return InputFieldConfig(
@@ -74,7 +53,7 @@ struct SendViolationDataBuilder {
                 title: LocalizedStrings.SendInputField.electionRegion,
                 placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
                 isRequired: true,
-                dataType: SendViolationFieldType.electionRegion as AnyObject
+                dataType: SendFieldType.electionRegion as AnyObject
             )
         case .municipality:
             return InputFieldConfig(
@@ -82,7 +61,7 @@ struct SendViolationDataBuilder {
                 title: LocalizedStrings.SendInputField.municipality,
                 placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
                 isRequired: true,
-                dataType: SendViolationFieldType.municipality as AnyObject
+                dataType: SendFieldType.municipality as AnyObject
             )
         case .town:
             return InputFieldConfig(
@@ -90,7 +69,7 @@ struct SendViolationDataBuilder {
                 title: LocalizedStrings.SendInputField.town,
                 placeholderText: LocalizedStrings.Search.searchBarPlaceholder, 
                 isRequired: true,
-                dataType: SendViolationFieldType.town as AnyObject
+                dataType: SendFieldType.town as AnyObject
             )
         case .cityRegion:
             return nil
@@ -100,17 +79,23 @@ struct SendViolationDataBuilder {
                 title: LocalizedStrings.SendInputField.section,
                 placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
                 isRequired: true,
-                dataType: SendViolationFieldType.section as AnyObject
+                dataType: SendFieldType.section as AnyObject
             )
         case .sectionNumber:
-            return nil
+            return InputFieldConfig(
+                type: .text,
+                title: LocalizedStrings.SendInputField.sectionNumber,
+                placeholderText: "",
+                isRequired: false,
+                dataType: SendFieldType.sectionNumber as AnyObject
+            )
         case .description:
             return InputFieldConfig(
                 type: .text,
                 title: LocalizedStrings.SendInputField.description,
                 placeholderText: LocalizedStrings.SendInputField.descriptionPlaceholder,
                 isRequired: true,
-                dataType: SendViolationFieldType.description as AnyObject
+                dataType: SendFieldType.description as AnyObject
             )
         }
     }

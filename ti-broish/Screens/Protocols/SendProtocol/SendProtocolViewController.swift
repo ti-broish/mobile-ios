@@ -61,11 +61,11 @@ extension SendProtocolViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return SendSectionFieldType.allCases.count
+        return SendSectionType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = SendSectionFieldType(rawValue: section)
+        let section = SendSectionType(rawValue: section)
         
         switch section {
         case .data:
@@ -80,7 +80,7 @@ extension SendProtocolViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = SendSectionFieldType(rawValue: indexPath.section)
+        let section = SendSectionType(rawValue: indexPath.section)
         
         switch section {
         case .data:
@@ -130,7 +130,7 @@ extension SendProtocolViewController: UITableViewDataSource {
     // MARK: - Private methods
     
     @objc private func handleDeleteImage(_ sender: UIButton) {
-        let indexPath = IndexPath(row: sender.tag, section: SendSectionFieldType.images.rawValue)
+        let indexPath = IndexPath(row: sender.tag, section: SendSectionType.images.rawValue)
         
         guard let _ = tableView.cellForRow(at: indexPath) as? UploadImageCell else {
             return

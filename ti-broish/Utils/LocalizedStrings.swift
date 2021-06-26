@@ -18,8 +18,8 @@ struct LocalizedStrings {
         static let description: String = "Описание"
         static let descriptionPlaceholder: String = "Опишете нарушението. Моля въведете повече от 20 символа."
         static let section: String = "Секция"
-        static let sectionNumber: String = "Номер на секция"
-        static let sectionNumberPlaceholder = "Въведете номер на секция"
+        static let sectionNumber: String = "Единен номер на секция"
+        static let sectionNumberPlaceholder = "Въведете единен номер на секция"
     }
     
     struct Buttons {
