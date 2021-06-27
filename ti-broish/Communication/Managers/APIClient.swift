@@ -117,9 +117,12 @@ final class APIClient {
                     
                     do {
                         let apiResponseError = try JSONDecoder().decode(APIResponseError.self, from: data)
-                        
+
                         print(apiResponseError)
                     } catch {
+                        let apiResponseError = String(data: data, encoding: .utf8) ?? "invalid api response error data"
+                        print("[API_RESPONSE_ERROR]: \(apiResponseError)")
+                        
                         completion(.failure(.jsonDecodingFailed(error: error)))
                     }
                 } else {

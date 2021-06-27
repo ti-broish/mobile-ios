@@ -14,8 +14,7 @@ struct UploadPhoto: Codable {
     let id: String
     let url: String
     let path: String
-    let createdAt: String?
-    let sortPosition: Int
-    let index: Int?
-    
+//    let createdAt: String?
+//    let sortPosition: Int?
+//    let index: Int?
 }

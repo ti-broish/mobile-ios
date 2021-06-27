@@ -11,12 +11,13 @@ struct SendProtocolDataBuilder {
     
     func makeConfig(for type: SendFieldType) -> InputFieldConfig? {
         switch type {
-        case .sectionNumber:
+        case .section:
             return InputFieldConfig(
                 type: .text,
                 title: LocalizedStrings.SendInputField.section,
                 placeholderText: LocalizedStrings.SendInputField.sectionNumberPlaceholder,
-                isRequired: true
+                isRequired: true,
+                dataType: SendFieldType.section as AnyObject
             )
         default:
             return nil

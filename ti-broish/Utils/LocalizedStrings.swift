@@ -102,6 +102,9 @@ struct LocalizedStrings {
         static let userDisabled: String = "Достъпа до акаунта е временно спрян. Моля опитайте по-късно."
         static let wrongPassword: String = "Невалидна парола. Паролата трябва да съдържа 6 или повече символа."
         static let userNotFound: String = "Не е открит регистриран потребител с въведения имейл адрес."
+        static let invalidSection: String = "Невалидна секция"
+        static let invalidPhotos: String = "Моля изберете най-малко 4 снимки"
+        static let sendProtocolFailed: String = "Грешка при изпращането на протокола."
     }
     
     struct Menu {

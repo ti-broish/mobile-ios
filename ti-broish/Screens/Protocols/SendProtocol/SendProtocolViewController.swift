@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import Combine
 
 final class SendProtocolViewController: BaseTableViewController {
     
     private let viewModel = SendProtocolViewModel()
+    private var sendSubscription: AnyCancellable?
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        addObservers()
         viewModel.start()
     }
     
@@ -32,7 +35,12 @@ final class SendProtocolViewController: BaseTableViewController {
     }
     
     override func updateTextInputFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        viewModel.updateFieldValue(value, at: indexPath)
+        guard let sectionId = value as? String, sectionId.count > 5 else {
+            return
+        }
+        
+        let section = Section(id: sectionId, code: "", place: "")
+        viewModel.updateFieldValue(section as AnyObject, at: indexPath)
     }
     
     override func updateSelectedImages(_ images: [UIImage]) {
@@ -40,11 +48,54 @@ final class SendProtocolViewController: BaseTableViewController {
         tableView.reloadData()
     }
     
+    override func handleSendButton(_ sender: UIButton) {
+        guard
+            let index = viewModel.indexForField(type: .section),
+            let section = viewModel.data[index].data as? Section
+        else {
+            view.showMessage(LocalizedStrings.Errors.invalidSection)
+            return
+        }
+        
+        guard viewModel.images.count > 3 else {
+            view.showMessage(LocalizedStrings.Errors.invalidPhotos)
+            return
+        }
+        
+        viewModel.uploadImages(section: section)
+    }
+    
     // MARK: - Private methods
     
     private func setupViews() {
         navigationItem.configureTitleView()
         setupTableView()
+    }
+    
+    private func observeSendPublisher() {
+        sendSubscription = viewModel
+            .sendPublisher
+            .sink(
+                receiveCompletion: { [unowned self] error in
+                    print("send protocol failed: \(error)")
+                    tableView.reloadData()
+                    view.showMessage(LocalizedStrings.Errors.defaultError)
+                },
+                receiveValue: { [unowned self] _ in
+                    tableView.reloadData()
+                    view.hideLoading()
+                })
+    }
+    
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeSendPublisher()
+        observeLoadingPublisher()
     }
 }
 
@@ -147,16 +198,5 @@ extension SendProtocolViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        //showDetails(protocolItem: viewModel.protocols[indexPath.row])
     }
-    
-    // MARK: - Private methods (UITableViewDelegate)
-    
-//    private func showDetails(protocolItem: Protocol) {
-//        let viewController = DetailsViewController.init(nibName: DetailsViewController.nibName, bundle: nil)
-//        viewController.viewModel.protocolItem = protocolItem
-//
-//        navigationController?.pushViewController(viewController, animated: true)
-//    }
 }

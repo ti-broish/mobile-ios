@@ -10,6 +10,7 @@ import UIKit
 final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     
     private (set) var images = [UIImage]()
+    private var uploadPhotos = [UploadPhoto]()
     
     override func loadDataFields() {
         let builder = SendProtocolDataBuilder()
@@ -48,6 +49,62 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
         loadDataFields()
     }
     
-    // MARK: - Private methods    
+    func uploadImages(section: Section) {
+        loadingPublisher.send(true)
+        images.forEach { [weak self] image in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            if let imageData = image.jpegData(compressionQuality: 1.0) {
+                let base64String = imageData.base64EncodedString()
+                let photo = Photo(base64: base64String)
+                
+                APIManager.shared.uploadPhoto(photo) { result in
+                    switch result {
+                    case .success(let uploadPhoto):
+                        print("upload photo: \(uploadPhoto)")
+                        strongSelf.uploadPhotos.append(uploadPhoto)
+                        
+                        if strongSelf.uploadPhotos.count == strongSelf.images.count {
+                            strongSelf.sendProtocol(section: section)
+                        }
+                    case .failure(let error):
+                        print("failed to upload photo: \(error)")
+                        strongSelf.sendPublisher.send(completion: .failure(error))
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: - Private methods
+    
+    private func resetData() {
+        if let index = indexForField(type: .section) {
+            setFieldValue(nil, forFieldAt: index)
+        }
+        
+        images.removeAll()
+    }
+    
+    private func sendProtocol(section: Section) {
+        let pictures = uploadPhotos.map { $0.id }
+        APIManager.shared.sendProtocol(section: section, pictures: pictures) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let item):
+                print("protocol sent: \(item)")
+                strongSelf.resetData()
+                strongSelf.sendPublisher.send()
+                strongSelf.loadingPublisher.send(false)
+            case .failure(let error):
+                strongSelf.sendPublisher.send(completion: .failure(error))
+            }
+        }
+    }
 }
 

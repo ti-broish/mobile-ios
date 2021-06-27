@@ -23,6 +23,7 @@ class BaseViewModel: DataFieldModel {
     
     let reloadDataPublisher = PassthroughSubject<Void, Error>()
     let loadingPublisher = PassthroughSubject<Bool, Never>()
+    let sendPublisher = PassthroughSubject<Void, Error>()
     var data: [InputFieldConfig] = [InputFieldConfig]()
     
     func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {

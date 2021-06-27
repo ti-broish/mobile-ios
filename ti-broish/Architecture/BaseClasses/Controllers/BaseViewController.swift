@@ -19,6 +19,7 @@ class BaseViewController: UIViewController, TibViewControllable {
     
     private var pullToRefreshCustomView: UIView?
     var reloadDataSubscription: AnyCancellable?
+    var loadingSubscription: AnyCancellable?
     
     /// Override for custom logic for pull to refresh
     var pullToRefreshAction: (() -> Void)? {

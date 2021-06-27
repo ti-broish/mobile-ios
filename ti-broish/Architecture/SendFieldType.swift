@@ -20,7 +20,7 @@ enum SendFieldType {
     case description
     
     static var protocolFields: [SendFieldType] {
-        return [.sectionNumber]
+        return [.section]
     }
     
     static var violationFields: [SendFieldType] {

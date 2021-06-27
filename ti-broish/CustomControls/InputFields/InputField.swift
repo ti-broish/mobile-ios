@@ -65,6 +65,10 @@ class InputField: UIView, Configurable {
         } else if let placeholderText = data.placeholderText {
             let theme = TibTheme()
             
+            if data.data == nil {
+                textField.text = nil
+            }
+            
             textField.attributedPlaceholder = NSAttributedString(
                 string: placeholderText,
                 attributes: [.foregroundColor: theme.placeholderColor]

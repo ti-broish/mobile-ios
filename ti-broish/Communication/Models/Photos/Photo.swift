@@ -11,11 +11,5 @@ struct Photo: Codable {
     
     // MARK: Properties
     
-    let filename: String
-    let filepath: String
-    let webviewPath: String?
     let base64: String
-    let isSelected: Bool
-    let index: Int
-    
 }
