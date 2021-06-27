@@ -16,6 +16,7 @@ final class RegistrationViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        viewModel.start()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
