@@ -16,6 +16,7 @@ protocol SearchViewControllerDelegate: AnyObject {
 final class SearchViewController: UIViewController, TibViewControllable {
     
     @IBOutlet private weak var tableView: UITableView!
+    private var loadingSubscription: AnyCancellable?
     
     let viewModel = SearchViewModel()
     var selectedItem: SearchItem?
@@ -77,17 +78,30 @@ final class SearchViewController: UIViewController, TibViewControllable {
         definesPresentationContext = true
     }
     
-    private func addObservers() {
+    private func observeReloadDataPublisher() {
         reloadDataSubscription = viewModel
             .reloadDataPublisher
             .sink(
                 receiveCompletion: { [unowned self] error in
                     print("reload data failed \(error)")
                     tableView.reloadData()
+                    view.showMessage(LocalizedStrings.Errors.defaultError)
                 },
                 receiveValue: { [unowned self] _ in
                     tableView.reloadData()
+                    view.hideLoading()
                 })
+    }
+    
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeReloadDataPublisher()
+        observeLoadingPublisher()
     }
 }
 

@@ -22,6 +22,7 @@ final class SendViolationViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        addObservers()
         viewModel.start()
     }
     
@@ -54,6 +55,22 @@ final class SendViolationViewController: BaseTableViewController {
     private func setupViews() {
         navigationItem.configureTitleView()
         setupTableView()
+    }
+    
+    private func addObservers() {
+        reloadDataSubscription = viewModel
+            .reloadDataPublisher
+            .sink(
+                receiveCompletion: { [unowned self] error in
+                    print("reload data failed \(error)")
+                    tableView.reloadData()
+                    view.showMessage(LocalizedStrings.Errors.defaultError)
+                },
+                receiveValue: { [unowned self] _ in
+                    print("reload data finished")
+                    tableView.reloadData()
+                    view.hideLoading()
+                })
     }
 }
 
@@ -199,13 +216,61 @@ extension SendViolationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let data = viewModel.data[indexPath.row]
         
-        if viewModel.data[indexPath.row].isPickerField {
+        if data.isPickerField && shouldShowSearchController(for: indexPath) {
             showSearchController(for: indexPath)
         }
     }
     
     // MARK: - Private methods (UITableViewDelegate)
+    
+    private func shouldShowSearchController(for indexPath: IndexPath) -> Bool {
+        guard let fieldType = viewModel.data[indexPath.row].dataType as? SendFieldType else {
+            return false
+        }
+        
+        switch fieldType {
+        case .municipality:
+            if let _ = viewModel.dataForField(type: .electionRegion) {
+                return true
+            } else {
+                view.showMessage(LocalizedStrings.SendInputField.electionRegionNotSet)
+                return false
+            }
+        case .town:
+            if let _ = viewModel.dataForField(type: isAbroad ? .countries : .municipality) {
+                return true
+            } else {
+                if isAbroad {
+                    view.showMessage(LocalizedStrings.SendInputField.countryNotSet)
+                } else {
+                    view.showMessage(LocalizedStrings.SendInputField.municipalityNotSet)
+                }
+                return false
+            }
+        case .section:
+            if let town = viewModel.dataForField(type: .town) as? Town {
+                let cityRegionsCount = town.cityRegions?.count ?? 0
+                
+                if  cityRegionsCount > 0 {
+                    if let _ = viewModel.dataForField(type: .cityRegion) {
+                        return true
+                    } else {
+                        view.showMessage(LocalizedStrings.SendInputField.cityRegionNotSet)
+                        return false
+                    }
+                } else {
+                    return true
+                }
+            } else {
+                view.showMessage(LocalizedStrings.SendInputField.townNotSet)
+                return false
+            }
+        default:
+            return true
+        }
+    }
     
     private func showSearchController(for indexPath: IndexPath) {
         let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
@@ -217,17 +282,13 @@ extension SendViolationViewController: UITableViewDelegate {
         
         switch searchType {
         case .municipalities:
-            if let searchItem = viewModel.dataForField(type: .electionRegion) as? SearchItem,
-               let electionRegion = searchItem.data as? ElectionRegion
-            {
+            if let electionRegion = viewModel.dataForField(type: .electionRegion) as? ElectionRegion {
                 viewController.viewModel.loadMunicipalities(electionRegion.municipalities)
             }
         case .towns:
-            let electionRegionItem = viewModel.dataForField(type: .electionRegion) as? SearchItem
-            let electionRegion = electionRegionItem?.data as? ElectionRegion
-            let country = viewModel.getCountry()
-            let municipalityItem = viewModel.dataForField(type: .municipality) as? SearchItem
-            let municipality = municipalityItem?.data as? Municipality
+            let electionRegion = viewModel.dataForField(type: .electionRegion) as? ElectionRegion
+            let country = viewModel.dataForField(type: .countries) as? Country ?? Country.defaultCountry
+            let municipality = viewModel.dataForField(type: .municipality) as? Municipality
             
             viewController.viewModel.getTowns(
                 country: country,
@@ -235,22 +296,17 @@ extension SendViolationViewController: UITableViewDelegate {
                 municipality: municipality
             )
         case .cityRegions:
-            if let searchItem = viewModel.dataForField(type: .town) as? SearchItem,
-               let town = searchItem.data as? Town,
+            if let town = viewModel.dataForField(type: .town) as? Town,
                let cityRegions = town.cityRegions
             {
                 viewController.viewModel.loadCityRegions(cityRegions)
             }
         case .sections:
-            guard
-                let townItem = viewModel.dataForField(type: .town) as? SearchItem,
-                let town = townItem.data as? Town
-            else {
+            guard let town = viewModel.dataForField(type: .town) as? Town else {
                 return
             }
             
-            let cityRegionItem = viewModel.dataForField(type: .cityRegion) as? SearchItem
-            let cityRegion = cityRegionItem?.data as? CityRegion
+            let cityRegion = viewModel.dataForField(type: .cityRegion) as? CityRegion
             
             viewController.viewModel.getSections(town: town, cityRegion: cityRegion)
         default:

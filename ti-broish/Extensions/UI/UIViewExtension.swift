@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 extension UIView {
 
@@ -18,5 +19,19 @@ extension UIView {
     func removeBorder() {
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 0.0
+    }
+    
+    // MARK: - Toast
+    
+    func showLoading() {
+        self.makeToastActivity(.center)
+    }
+    
+    func hideLoading() {
+        self.hideToastActivity()
+    }
+    
+    func showMessage(_ message: String, position: ToastPosition = .bottom) {
+        self.makeToast(message, duration: 3.0, position: position)
     }
 }

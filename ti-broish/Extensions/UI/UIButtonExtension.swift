@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
     
-    func configureButton(title: String, theme: TibTheme, fontSize: CGFloat = 14.0) {
+    func configureButton(title: String, theme: TibTheme, fontSize: CGFloat = 16.0) {
         backgroundColor = theme.buttonBackgroundColor
         setTitleColor(theme.buttonTextColor, for: .normal)
         setTitle(title, for: .normal)

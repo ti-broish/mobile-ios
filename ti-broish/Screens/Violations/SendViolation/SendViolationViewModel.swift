@@ -52,8 +52,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     
     func hasCityRegions() -> Bool {
         guard
-            let item = dataForField(type: .town) as? SearchItem,
-            let town = item.data as? Town,
+            let town = dataForField(type: .town) as? Town,
             let cityRegions = town.cityRegions
         else {
             return false
@@ -91,17 +90,6 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
     
-    func getCountry() -> Country {
-        guard
-            let item = dataForField(type: .countries) as? SearchItem,
-            let country = item.data as? Country
-        else {
-            return Country.defaultCountry
-        }
-        
-        return country
-    }
-    
     // MARK: - Private methods
     
     private func resetFields(_ fields: [SendFieldType]) {
@@ -129,9 +117,8 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     
     private func toggleCityRegionField() {
         guard
-            let townIndex = indexForField(type: .town),
-            let item = data[townIndex].data as? SearchItem,
-            let town = item.data as? Town
+            let index = indexForField(type: .town),
+            let town = dataForField(type: .town) as? Town
         else {
             return
         }
@@ -141,7 +128,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         
         if cityRegions.count > 0 {
             if cityRegionIndex == nil {
-                data.insert(builder.cityRegionConfig, at: townIndex + 1)
+                data.insert(builder.cityRegionConfig, at: index + 1)
             }
         } else if let cityRegionIndex = cityRegionIndex {
             data.remove(at: cityRegionIndex)

@@ -22,6 +22,7 @@ protocol DataFieldModel {
 class BaseViewModel: DataFieldModel {
     
     let reloadDataPublisher = PassthroughSubject<Void, Error>()
+    let loadingPublisher = PassthroughSubject<Bool, Never>()
     var data: [InputFieldConfig] = [InputFieldConfig]()
     
     func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
@@ -51,10 +52,13 @@ class BaseViewModel: DataFieldModel {
     }
     
     func dataForField(type: SendFieldType) -> AnyObject? {
-        guard let index = indexForField(type: type) else {
+        guard
+            let index = indexForField(type: type),
+            let item = data[index].data as? SearchItem
+        else {
             return nil
         }
         
-        return data[index].data
+        return item.data
     }
 }

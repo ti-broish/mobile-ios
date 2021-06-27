@@ -74,6 +74,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func getTowns(country: Country, electionRegion: ElectionRegion?, municipality: Municipality?) {
+        loadingPublisher.send(true)
         APIManager.shared.getTowns(
             country: country,
             electionRegion: electionRegion,
@@ -88,8 +89,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
                 strongSelf.searchData = SearchResultsMapper.mapTowns(towns)
                 
                 strongSelf.reloadDataPublisher.send()
+                strongSelf.loadingPublisher.send(false)
             case .failure(let error):
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.loadingPublisher.send(false)
             }
         }
     }
@@ -100,6 +103,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func getSections(town: Town, cityRegion: CityRegion?) {
+        loadingPublisher.send(true)
         APIManager.shared.getSections(town: town, cityRegion: cityRegion) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -110,8 +114,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
                 strongSelf.searchData = SearchResultsMapper.mapSections(sections)
                 
                 strongSelf.reloadDataPublisher.send()
+                strongSelf.loadingPublisher.send(false)
             case .failure(let error):
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.loadingPublisher.send(false)
             }
         }
     }
@@ -119,6 +125,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     // MARK: - Private methods
     
     private func getCountries(isAbroad: Bool) {
+        loadingPublisher.send(true)
         APIManager.shared.getCountries(isAbroad: isAbroad) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -128,13 +135,16 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             case .success(let countries):
                 strongSelf.searchData = SearchResultsMapper.mapCountries(countries)
                 strongSelf.reloadDataPublisher.send()
+                strongSelf.loadingPublisher.send(false)
             case .failure(let error):
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.loadingPublisher.send(false)
             }
         }
     }
     
     private func getElectionRegions(isAbroad: Bool) {
+        loadingPublisher.send(true)
         APIManager.shared.getElectionRegions(isAbroad: isAbroad) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -144,13 +154,16 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             case .success(let electionRegions):
                 strongSelf.searchData = SearchResultsMapper.mapElectionRegions(electionRegions)
                 strongSelf.reloadDataPublisher.send()
+                strongSelf.loadingPublisher.send(false)
             case .failure(let error):
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.loadingPublisher.send(false)
             }
         }
     }
     
     private func getOrganizations() {
+        loadingPublisher.send(true)
         APIManager.shared.getOrganizations() { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -160,8 +173,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             case .success(let organizations):
                 strongSelf.searchData = SearchResultsMapper.mapOrganizations(organizations)
                 strongSelf.reloadDataPublisher.send()
+                strongSelf.loadingPublisher.send(false)
             case .failure(let error):
                 strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.loadingPublisher.send(false)
             }
         }
     }

@@ -19,7 +19,15 @@ struct LocalizedStrings {
         static let descriptionPlaceholder: String = "Опишете нарушението. Моля въведете повече от 20 символа."
         static let section: String = "Секция"
         static let sectionNumber: String = "Единен номер на секция"
-        static let sectionNumberPlaceholder = "Въведете единен номер на секция"
+        static let sectionNumberPlaceholder: String = "Въведете единен номер на секция"
+        
+        static let countryNotSet: String = "Моля изберете държава"
+        static let electionRegionNotSet: String = "Моля изберете МИР"
+        static let municipalityNotSet: String = "Моля изберете община"
+        static let townNotSet: String = "Моля изберете населено място"
+        static let cityRegionNotSet: String = "Моля изберете район"
+        static let descriptionNotSet: String = "Моля въведете описане"
+        static let sectionNotSet: String = "Моля изберете секция"
     }
     
     struct Buttons {
