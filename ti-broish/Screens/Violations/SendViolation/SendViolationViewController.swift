@@ -272,25 +272,18 @@ extension SendViolationViewController: UITableViewDelegate {
         }
     }
     
-    private func showSearchController(for indexPath: IndexPath) {
-        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
-        let searchType = viewModel.getSearchType(for: indexPath)
-        viewController.viewModel.setSearchType(searchType, isAbroad: isAbroad)
-        viewController.delegate = self
-        viewController.parentCellIndexPath = indexPath
-        viewController.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
-        
-        switch searchType {
+    private func loadData(searchController: SearchViewController) {
+        switch searchController.viewModel.searchType {
         case .municipalities:
             if let electionRegion = viewModel.dataForField(type: .electionRegion) as? ElectionRegion {
-                viewController.viewModel.loadMunicipalities(electionRegion.municipalities)
+                searchController.viewModel.loadMunicipalities(electionRegion.municipalities)
             }
         case .towns:
             let electionRegion = viewModel.dataForField(type: .electionRegion) as? ElectionRegion
             let country = viewModel.dataForField(type: .countries) as? Country ?? Country.defaultCountry
             let municipality = viewModel.dataForField(type: .municipality) as? Municipality
             
-            viewController.viewModel.getTowns(
+            searchController.viewModel.getTowns(
                 country: country,
                 electionRegion: electionRegion,
                 municipality: municipality
@@ -299,7 +292,7 @@ extension SendViolationViewController: UITableViewDelegate {
             if let town = viewModel.dataForField(type: .town) as? Town,
                let cityRegions = town.cityRegions
             {
-                viewController.viewModel.loadCityRegions(cityRegions)
+                searchController.viewModel.loadCityRegions(cityRegions)
             }
         case .sections:
             guard let town = viewModel.dataForField(type: .town) as? Town else {
@@ -308,10 +301,20 @@ extension SendViolationViewController: UITableViewDelegate {
             
             let cityRegion = viewModel.dataForField(type: .cityRegion) as? CityRegion
             
-            viewController.viewModel.getSections(town: town, cityRegion: cityRegion)
+            searchController.viewModel.getSections(town: town, cityRegion: cityRegion)
         default:
             break
         }
+    }
+    
+    private func showSearchController(for indexPath: IndexPath) {
+        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
+        let searchType = viewModel.getSearchType(for: indexPath)
+        viewController.viewModel.setSearchType(searchType, isAbroad: isAbroad)
+        viewController.delegate = self
+        viewController.parentCellIndexPath = indexPath
+        viewController.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
+        loadData(searchController: viewController)
         
         let navController = UINavigationController(rootViewController: viewController)
         self.present(navController, animated: true)

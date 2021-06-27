@@ -23,7 +23,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     private var lastSearchedText = ""
     private var searchData = [SearchItem]()
     private var filteredSearchData = [SearchItem]()
-    private var searchType: SearchType?
+    private (set) var searchType: SearchType?
     private var isAbroad: Bool = false
     private var electionRegions = [ElectionRegion]()
     private var municipalities = [Municipality]()
@@ -49,11 +49,17 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             return
         }
         
+        loadingPublisher.send(true)
+        
         switch searchType {
         case .countries:
             getCountries(isAbroad: isAbroad)
         case .electionRegions:
             getElectionRegions(isAbroad: isAbroad)
+        case .municipalities:
+            loadingPublisher.send(false)
+        case .cityRegions:
+            loadingPublisher.send(false)
         case .organizations:
             getOrganizations()
         default:
@@ -74,7 +80,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func getTowns(country: Country, electionRegion: ElectionRegion?, municipality: Municipality?) {
-        loadingPublisher.send(true)
         APIManager.shared.getTowns(
             country: country,
             electionRegion: electionRegion,
@@ -103,7 +108,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func getSections(town: Town, cityRegion: CityRegion?) {
-        loadingPublisher.send(true)
         APIManager.shared.getSections(town: town, cityRegion: cityRegion) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -125,7 +129,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     // MARK: - Private methods
     
     private func getCountries(isAbroad: Bool) {
-        loadingPublisher.send(true)
         APIManager.shared.getCountries(isAbroad: isAbroad) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -144,7 +147,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     private func getElectionRegions(isAbroad: Bool) {
-        loadingPublisher.send(true)
         APIManager.shared.getElectionRegions(isAbroad: isAbroad) { [weak self] response in
             guard let strongSelf = self else {
                 return
@@ -163,7 +165,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     private func getOrganizations() {
-        loadingPublisher.send(true)
         APIManager.shared.getOrganizations() { [weak self] response in
             guard let strongSelf = self else {
                 return
