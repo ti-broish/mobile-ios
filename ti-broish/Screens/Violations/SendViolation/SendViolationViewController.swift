@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 final class SendViolationViewController: BaseTableViewController {
     
     private let viewModel = SendViolationViewModel()
+    private var sendSubscription: AnyCancellable?
     
     private var isAbroad: Bool = false {
         didSet {
@@ -50,6 +52,10 @@ final class SendViolationViewController: BaseTableViewController {
         tableView.reloadData()
     }
     
+    override func handleSendButton(_ sender: UIButton) {
+        viewModel.sendViolation()
+    }
+    
     // MARK: - Private methods
     
     private func setupViews() {
@@ -57,20 +63,36 @@ final class SendViolationViewController: BaseTableViewController {
         setupTableView()
     }
     
-    private func addObservers() {
-        reloadDataSubscription = viewModel
-            .reloadDataPublisher
+    private func observeSendPublisher() {
+        sendSubscription = viewModel
+            .sendPublisher
             .sink(
-                receiveCompletion: { [unowned self] error in
-                    print("reload data failed \(error)")
-                    tableView.reloadData()
-                    view.showMessage(LocalizedStrings.Errors.defaultError)
-                },
-                receiveValue: { [unowned self] _ in
-                    print("reload data finished")
+                receiveCompletion: { [unowned self] _ in
                     tableView.reloadData()
                     view.hideLoading()
+                },
+                receiveValue: { [unowned self] error in
+                    tableView.reloadData()
+                    view.hideLoading()
+
+                    switch error {
+                    case .requestFailed(let responseError) :
+                        view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
+                    default:
+                        break
+                    }
                 })
+    }
+    
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeSendPublisher()
+        observeLoadingPublisher()
     }
 }
 

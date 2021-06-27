@@ -39,17 +39,33 @@ final class ViolationsTableViewController: BaseTableViewController {
         setupTableView()
     }
     
-    private func addObservers() {
+    private func observeReloadDataPublisher() {
         reloadDataSubscription = viewModel
             .reloadDataPublisher
             .sink(
-                receiveCompletion: { [unowned self] error in
-                    print("reload data failed \(error)")
+                receiveCompletion: { [unowned self] _ in
                     tableView.reloadData()
+                    viewModel.loadingPublisher.send(false)
                 },
-                receiveValue: { [unowned self] _ in
+                receiveValue: { [unowned self] error in
+                    if let error = error {
+                        print("reload data failed \(error)")
+                    }
+                    
                     tableView.reloadData()
+                    viewModel.loadingPublisher.send(false)
                 })
+    }
+    
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeReloadDataPublisher()
+        observeLoadingPublisher()
     }
 }
 

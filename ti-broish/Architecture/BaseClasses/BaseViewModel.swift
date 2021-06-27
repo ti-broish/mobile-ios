@@ -21,7 +21,7 @@ protocol DataFieldModel {
 
 class BaseViewModel: DataFieldModel {
     
-    let reloadDataPublisher = PassthroughSubject<Void, Error>()
+    let reloadDataPublisher = PassthroughSubject<Error?, Never>()
     let loadingPublisher = PassthroughSubject<Bool, Never>()
     let sendPublisher = PassthroughSubject<APIError?, Never>()
     var data: [InputFieldConfig] = [InputFieldConfig]()

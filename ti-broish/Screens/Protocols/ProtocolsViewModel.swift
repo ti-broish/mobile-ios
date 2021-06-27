@@ -18,6 +18,7 @@ final class ProtocolsViewModel: BaseViewModel, CoordinatableViewModel {
     // MARK: - Private methods
     
     private func getProtocols() {
+        loadingPublisher.send(true)
         APIManager.shared.getProtocols { [weak self] result in
             guard let strongSelf = self else {
                 return
@@ -26,9 +27,9 @@ final class ProtocolsViewModel: BaseViewModel, CoordinatableViewModel {
             switch result {
             case .success(let protocols):
                 strongSelf.protocols = protocols
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
             }
         }
     }

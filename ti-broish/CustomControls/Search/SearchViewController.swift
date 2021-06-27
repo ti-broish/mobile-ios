@@ -82,12 +82,15 @@ final class SearchViewController: UIViewController, TibViewControllable {
         reloadDataSubscription = viewModel
             .reloadDataPublisher
             .sink(
-                receiveCompletion: { [unowned self] error in
-                    print("reload data failed \(error)")
+                receiveCompletion: { [unowned self] _ in
                     tableView.reloadData()
-                    view.showMessage(LocalizedStrings.Errors.defaultError)
+                    view.hideLoading()
                 },
-                receiveValue: { [unowned self] _ in
+                receiveValue: { [unowned self] error in
+                    if let error = error {
+                        print("reload data failed \(error)")
+                    }
+                    
                     tableView.reloadData()
                     view.hideLoading()
                 })

@@ -40,11 +40,15 @@ final class TermsViewController: BaseViewController {
         reloadDataSubscription = viewModel
             .reloadDataPublisher
             .sink(
-                receiveCompletion: { error in
-                    print("reload data failed \(error)")
-                },
-                receiveValue: { [unowned self] _ in
+                receiveCompletion: { [unowned self] _ in
                     webView.loadHTMLString(viewModel.htmlString ?? "", baseURL: nil)
+                },
+                receiveValue: { [unowned self] error in
+                    if let error = error {
+                        print("reload data failed \(error)")
+                    } else {
+                        webView.loadHTMLString(viewModel.htmlString ?? "", baseURL: nil)
+                    }
                 })
     }
 }

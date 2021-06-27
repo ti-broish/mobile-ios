@@ -26,12 +26,10 @@ final class TermsViewModel: BaseViewModel, CoordinatableViewModel {
             if let filepath = Bundle.main.path(forResource: "terms", ofType: "html") {
                 do {
                     strongSelf.htmlString = try String(contentsOfFile: filepath)
-                    strongSelf.reloadDataPublisher.send()
+                    strongSelf.reloadDataPublisher.send(nil)
                 } catch {
-                    strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                    strongSelf.reloadDataPublisher.send(error)
                 }
-            } else {
-                strongSelf.reloadDataPublisher.send(completion: .failure(ErrorCommon.defaultError))
             }
         }
     }

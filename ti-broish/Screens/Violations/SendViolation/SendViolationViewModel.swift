@@ -90,6 +90,10 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
     
+    func sendViolation() {
+        
+    }
+    
     // MARK: - Private methods
     
     private func resetFields(_ fields: [SendFieldType]) {

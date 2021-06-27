@@ -49,9 +49,9 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
         APIManager.shared.updateUserDetails(user) { [weak self] result in
             switch result {
             case .success(_):
-                self?.reloadDataPublisher.send()
+                self?.reloadDataPublisher.send(nil)
             case .failure(let error):
-                self?.reloadDataPublisher.send(completion: .failure(error))
+                self?.reloadDataPublisher.send(error)
             }
         }
     }
@@ -72,10 +72,11 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
         let state: CheckboxState = userDetails.hasAgreedToKeepData ? .checked : .unchecked
         setFieldValue(state as AnyObject, forFieldAt: indexFor(field: .hasAgreedToKeepData))
         
-        reloadDataPublisher.send()
+        reloadDataPublisher.send(nil)
     }
     
     private func getProfile() {
+        loadingPublisher.send(true)
         APIManager.shared.getUserDetails { [weak self] result in
             guard let strongSelf = self else {
                 return
@@ -86,7 +87,7 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
                 strongSelf.userDetails = userDetails
                 strongSelf.updateData(userDetails)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
             }
         }
     }

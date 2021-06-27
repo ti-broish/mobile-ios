@@ -44,7 +44,7 @@ final class PhotosPickerViewModel: BaseViewModel, CoordinatableViewModel {
         allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         allPhotos = PHAsset.fetchAssets(with: allPhotosOptions)
         // TODO: - implement some pagination (batch)
-        reloadDataPublisher.send()
+        reloadDataPublisher.send(nil)
     }
 }
 

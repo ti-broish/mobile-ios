@@ -73,12 +73,14 @@ final class PhotosPickerViewController: BaseCollectionViewController {
         reloadDataSubscription = viewModel
             .reloadDataPublisher
             .sink(
-                receiveCompletion: { [unowned self] error in
-                    print("reload data failed \(error)")
+                receiveCompletion: { [unowned self] _ in
                     collectionView.reloadData()
                 },
-                receiveValue: { [unowned self] _ in
-                    print("reload data finished")
+                receiveValue: { [unowned self] error in
+                    if let error = error {
+                        print("reload data failed \(error)")
+                    }
+                    
                     collectionView.reloadData()
                 })
     }

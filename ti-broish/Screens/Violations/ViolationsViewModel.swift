@@ -18,6 +18,7 @@ final class ViolationsViewModel: BaseViewModel, CoordinatableViewModel {
     // MARK: - Private methods
     
     private func getViolations() {
+        loadingPublisher.send(true)
         APIManager.shared.getViolations { [weak self] result in
             guard let strongSelf = self else {
                 return
@@ -26,9 +27,9 @@ final class ViolationsViewModel: BaseViewModel, CoordinatableViewModel {
             switch result {
             case .success(let violations):
                 strongSelf.violations = violations
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
             }
         }
     }

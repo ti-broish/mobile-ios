@@ -76,7 +76,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
        
     func loadMunicipalities(_ municipalities: [Municipality]) {
         searchData = SearchResultsMapper.mapMunicipalities(municipalities)
-        reloadDataPublisher.send()
+        reloadDataPublisher.send(nil)
     }
     
     func getTowns(country: Country, electionRegion: ElectionRegion?, municipality: Municipality?) {
@@ -93,10 +93,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             case .success(let towns):
                 strongSelf.searchData = SearchResultsMapper.mapTowns(towns)
                 
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
                 strongSelf.loadingPublisher.send(false)
             }
         }
@@ -104,7 +104,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     
     func loadCityRegions(_ cityRegions: [CityRegion]) {
         searchData = SearchResultsMapper.mapCityRegions(cityRegions)
-        reloadDataPublisher.send()
+        reloadDataPublisher.send(nil)
     }
     
     func getSections(town: Town, cityRegion: CityRegion?) {
@@ -117,10 +117,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             case .success(let sections):
                 strongSelf.searchData = SearchResultsMapper.mapSections(sections)
                 
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
                 strongSelf.loadingPublisher.send(false)
             }
         }
@@ -137,10 +137,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             switch response {
             case .success(let countries):
                 strongSelf.searchData = SearchResultsMapper.mapCountries(countries)
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
                 strongSelf.loadingPublisher.send(false)
             }
         }
@@ -155,10 +155,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             switch response {
             case .success(let electionRegions):
                 strongSelf.searchData = SearchResultsMapper.mapElectionRegions(electionRegions)
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
                 strongSelf.loadingPublisher.send(false)
             }
         }
@@ -173,10 +173,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             switch response {
             case .success(let organizations):
                 strongSelf.searchData = SearchResultsMapper.mapOrganizations(organizations)
-                strongSelf.reloadDataPublisher.send()
+                strongSelf.reloadDataPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.reloadDataPublisher.send(completion: .failure(error))
+                strongSelf.reloadDataPublisher.send(error)
                 strongSelf.loadingPublisher.send(false)
             }
         }
