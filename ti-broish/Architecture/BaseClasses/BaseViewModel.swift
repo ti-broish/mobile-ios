@@ -53,13 +53,17 @@ class BaseViewModel: DataFieldModel {
     }
     
     func dataForField(type: SendFieldType) -> AnyObject? {
-        guard
-            let index = indexForField(type: type),
-            let item = data[index].data as? SearchItem
-        else {
+        guard let index = indexForField(type: type) else {
             return nil
         }
         
-        return item.data
+        switch type {
+        case .description:
+            return data[index].data
+        default:
+            let item = data[index].data as? SearchItem
+            
+            return item?.data
+        }
     }
 }

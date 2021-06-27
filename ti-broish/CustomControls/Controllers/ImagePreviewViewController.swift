@@ -31,7 +31,7 @@ final class ImagePreviewViewController: BaseViewController {
     private func setupViews() {
         closeButton.layer.cornerRadius = 4.0
         closeButton.backgroundColor = .primaryColor
-        closeButton.setImage(UIImage(named: SharedAssetsConfig.close), for: .normal)
+        closeButton.setImage(UIImage(named: SharedAssetsConfig.close)?.withTintColor(.white), for: .normal)
     }
     
     private func loadImage() {

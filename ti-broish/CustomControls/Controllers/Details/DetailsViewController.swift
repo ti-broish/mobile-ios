@@ -15,6 +15,7 @@ final class DetailsViewController: BaseCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(viewModel.protocolItem != nil || viewModel.violation != nil, "invalid protocol or violation")
         setupViews()
     }
     
@@ -47,7 +48,7 @@ extension DetailsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.imagesCount
+        return viewModel.pictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +58,7 @@ extension DetailsViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        imageCell.configure(picture: viewModel.protocolItem?.pictures[indexPath.row])
+        imageCell.configure(picture: viewModel.pictures[indexPath.row])
         
         return imageCell
     }
@@ -110,7 +111,8 @@ extension DetailsViewController: UICollectionViewDataSource {
 extension DetailsViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showImage(viewModel.protocolItem?.pictures[indexPath.row])
+        
+        showImage(viewModel.pictures[indexPath.row])
     }
     
     // MARK: - Private methods (UICollectionViewDelegate)

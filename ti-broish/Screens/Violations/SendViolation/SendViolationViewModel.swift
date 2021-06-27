@@ -11,6 +11,8 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     
     private let builder = SendViolationDataBuilder()
     private (set) var images = [UIImage]()
+    private var uploadPhotos = [UploadPhoto]()
+    private var isAbroad: Bool = false
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
@@ -27,6 +29,8 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func reloadDataFields(isAbroad: Bool) {
+        self.isAbroad = isAbroad
+        
         if isAbroad {
             resetAndReload(fields: SendFieldType.violationAbroadFields)
         } else {
@@ -90,8 +94,13 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         }
     }
     
-    func sendViolation() {
-        
+    func trySendViolation() {
+        if images.count > 0 {
+            uploadImages()
+        } else {
+            loadingPublisher.send(true)
+            sendViolation()
+        }
     }
     
     // MARK: - Private methods
@@ -157,6 +166,75 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
             }
         default:
             break
+        }
+    }
+    
+    private func reset() {
+        resetFields(isAbroad ? SendFieldType.violationAbroadFields : SendFieldType.violationFields)
+        uploadPhotos.removeAll()
+        images.removeAll()
+    }
+    
+    private func sendViolation() {
+        guard
+            let town = dataForField(type: .town) as? Town,
+            let descriptionText = dataForField(type: .description) as? String
+        else {
+            return
+        }
+        
+        let pictures = uploadPhotos.map { $0.id }
+        let section = dataForField(type: .section) as? Section
+        
+        APIManager.shared.sendViolation(
+            town: town,
+            pictures: pictures,
+            description: descriptionText,
+            section: section
+        ) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let violation):
+                print("violation sent: \(violation)")
+                strongSelf.reset()
+                strongSelf.sendPublisher.send(nil)
+            case .failure(let error):
+                strongSelf.uploadPhotos.removeAll()
+                strongSelf.sendPublisher.send(error)
+            }
+        }
+    }
+    
+    private func uploadImages() {
+        loadingPublisher.send(true)
+        images.forEach { [weak self] image in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            if let imageData = image.jpegData(compressionQuality: 1.0) {
+                let base64String = imageData.base64EncodedString()
+                let photo = Photo(base64: base64String)
+                
+                APIManager.shared.uploadPhoto(photo) { result in
+                    switch result {
+                    case .success(let uploadPhoto):
+                        print("upload photo: \(uploadPhoto)")
+                        strongSelf.uploadPhotos.append(uploadPhoto)
+                        
+                        if strongSelf.uploadPhotos.count == strongSelf.images.count {
+                            strongSelf.sendViolation()
+                        }
+                    case .failure(let error):
+                        print("failed to upload photo: \(error)")
+                        strongSelf.uploadPhotos.removeAll()
+                        strongSelf.sendPublisher.send(error)
+                    }
+                }
+            }
         }
     }
 }

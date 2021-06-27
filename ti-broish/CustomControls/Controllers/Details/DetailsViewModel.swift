@@ -9,17 +9,10 @@ import Foundation
 
 final class DetailsViewModel: CoordinatableViewModel {
     
-    var imagesCount: Int = 0
+    var protocolItem: Protocol?
+    var violation: Violation?
     
-    var protocolItem: Protocol? {
-        didSet {
-            imagesCount = protocolItem?.pictures.count ?? 0
-        }
-    }
-    
-    var violation: Violation? {
-        didSet {
-            imagesCount = violation?.pictures.count ?? 0
-        }
+    var pictures: [Picture] {
+        return protocolItem?.pictures ?? violation?.pictures ?? []
     }
 }

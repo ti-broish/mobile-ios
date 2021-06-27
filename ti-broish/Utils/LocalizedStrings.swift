@@ -26,7 +26,7 @@ struct LocalizedStrings {
         static let municipalityNotSet: String = "Моля изберете община"
         static let townNotSet: String = "Моля изберете населено място"
         static let cityRegionNotSet: String = "Моля изберете район"
-        static let descriptionNotSet: String = "Моля въведете описане"
+        static let descriptionNotSet: String = "Моля въведете описане (повече от 20 символа)"
         static let sectionNotSet: String = "Моля изберете секция"
     }
     

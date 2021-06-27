@@ -44,4 +44,9 @@ final class PhotoButtonsCell: TibTableViewCell {
         cameraLabel.textColor = .white
         cameraLabel.text = LocalizedStrings.Buttons.camera
     }
+    
+    func hideMessage() {
+        messageLabel.text = ""
+        messageLabel.isHidden = true
+    }
 }

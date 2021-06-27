@@ -53,7 +53,24 @@ final class SendViolationViewController: BaseTableViewController {
     }
     
     override func handleSendButton(_ sender: UIButton) {
-        viewModel.sendViolation()
+        let dataFields: [SendFieldType] = isAbroad
+            ? [.countries, .town, .description]
+            : [.electionRegion, .municipality, .town, .description]
+        
+        var message: String? = nil
+        
+        for field in dataFields {
+            if let errorMessage = errorMessageForField(type: field) {
+                message = errorMessage
+                break
+            }
+        }
+        
+        if let message = message {
+            view.showMessage(message)
+        } else {
+            viewModel.trySendViolation()
+        }
     }
     
     // MARK: - Private methods
@@ -93,6 +110,42 @@ final class SendViolationViewController: BaseTableViewController {
     private func addObservers() {
         observeSendPublisher()
         observeLoadingPublisher()
+    }
+    
+    private func errorMessageForField(type: SendFieldType) -> String? {
+        guard let data = viewModel.dataForField(type: type) else {
+            switch type {
+            case .countries:
+                return LocalizedStrings.SendInputField.countryNotSet
+            case .electionRegion:
+                return LocalizedStrings.SendInputField.electionRegionNotSet
+            case .municipality:
+                return LocalizedStrings.SendInputField.municipalityNotSet
+            case .town:
+                return LocalizedStrings.SendInputField.townNotSet
+            case .description:
+                return LocalizedStrings.SendInputField.descriptionNotSet
+            default:
+                return LocalizedStrings.Errors.defaultError
+            }
+        }
+        
+        if type == .town,
+           let town = data as? Town,
+           let cityRegions = town.cityRegions
+        {
+            if cityRegions.count > 0 && viewModel.dataForField(type: .cityRegion) == nil {
+                return LocalizedStrings.SendInputField.cityRegionNotSet
+            }
+        } else if type == .description {
+            if let desc = data as? String, desc.count >= 20 {
+                return nil
+            } else {
+                return LocalizedStrings.SendInputField.descriptionNotSet
+            }
+        }
+        
+        return nil
     }
 }
 
@@ -209,6 +262,7 @@ extension SendViolationViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             
+            photoButtonsCell.hideMessage()
             photoButtonsCell.galleryButton.addTarget(self, action: #selector(handlePhotoGalleryButton), for: .touchUpInside)
             photoButtonsCell.cameraButton.addTarget(self, action: #selector(handleCameraButton), for: .touchUpInside)
             

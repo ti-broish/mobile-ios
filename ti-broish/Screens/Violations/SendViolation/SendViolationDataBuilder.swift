@@ -78,7 +78,7 @@ struct SendViolationDataBuilder {
                 type: .picker,
                 title: LocalizedStrings.SendInputField.section,
                 placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
-                isRequired: true,
+                isRequired: false,
                 dataType: SendFieldType.section as AnyObject
             )
         case .sectionNumber:
