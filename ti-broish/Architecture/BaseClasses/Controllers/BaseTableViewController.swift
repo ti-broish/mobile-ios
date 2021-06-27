@@ -37,7 +37,7 @@ class BaseTableViewController: BaseViewController {
     func sendButtonTableFooterView() -> UIView {
         let theme = TibTheme()
         let bounds = UIScreen.main.bounds
-        let container = UIView(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: bounds.size.height * 0.2))
+        let container = UIView(frame: CGRect(x: 0.0, y: 0.0, width: bounds.size.width, height: 100.0))
         container.backgroundColor = theme.backgroundColor
         
         let button = UIButton(type: .custom)

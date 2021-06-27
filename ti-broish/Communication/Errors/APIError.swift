@@ -7,6 +7,19 @@
 
 import Foundation
 
+enum APIResponseErrorType: String, Codable {
+    
+    case BadRequestException
+}
+
+struct APIResponseError: Codable {
+    
+    let error: String
+    let errorType: APIResponseErrorType
+    let message: [String]
+    let statusCode: Int
+}
+
 enum APIError: Error {
     
     case unknown
@@ -16,6 +29,9 @@ enum APIError: Error {
 
     /// Api Request failed with an underlying error.
     case requestFailed(error: Error)
+    
+    /// Api Request failed with an underlying error.
+    case requestFailed(responseError: APIResponseError)
     
     /// Api response no data
     case invalidResponseData
@@ -39,19 +55,6 @@ enum APIError: Error {
     /// Violation not found
     case violationNotFound
     
-    /// Protocol  not found
+    /// Protocol not found
     case protocolNotFound
-}
-
-enum APIResponseErrorType: String, Codable {
-    
-    case BadRequestException
-}
-
-struct APIResponseError: Codable {
-    
-    let error: String
-    let errorType: APIResponseErrorType
-    let message: [String]
-    let statusCode: Int
 }

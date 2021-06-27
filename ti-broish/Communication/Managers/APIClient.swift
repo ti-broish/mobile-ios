@@ -116,12 +116,13 @@ final class APIClient {
                     }
                     
                     do {
-                        let apiResponseError = try JSONDecoder().decode(APIResponseError.self, from: data)
-
-                        print(apiResponseError)
+                        let responseError = try JSONDecoder().decode(APIResponseError.self, from: data)
+                        print("[API_RESPONSE_ERROR]: \(responseError)")
+                        
+                        completion(.failure(.requestFailed(responseError: responseError)))
                     } catch {
-                        let apiResponseError = String(data: data, encoding: .utf8) ?? "invalid api response error data"
-                        print("[API_RESPONSE_ERROR]: \(apiResponseError)")
+                        let responseError = String(data: data, encoding: .utf8) ?? "invalid api response error data"
+                        print("[API_RESPONSE_ERROR]: \(responseError)")
                         
                         completion(.failure(.jsonDecodingFailed(error: error)))
                     }

@@ -42,6 +42,10 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func removeImage(at index: Int) {
+        guard index < images.count else {
+            return
+        }
+        
         images.remove(at: index)
     }
     
@@ -71,7 +75,8 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
                         }
                     case .failure(let error):
                         print("failed to upload photo: \(error)")
-                        strongSelf.sendPublisher.send(completion: .failure(error))
+                        strongSelf.uploadPhotos.removeAll()
+                        strongSelf.sendPublisher.send(error)
                     }
                 }
             }
@@ -85,6 +90,7 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
             setFieldValue(nil, forFieldAt: index)
         }
         
+        uploadPhotos.removeAll()
         images.removeAll()
     }
     
@@ -99,10 +105,11 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
             case .success(let item):
                 print("protocol sent: \(item)")
                 strongSelf.resetData()
-                strongSelf.sendPublisher.send()
+                strongSelf.sendPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.sendPublisher.send(completion: .failure(error))
+                strongSelf.uploadPhotos.removeAll()
+                strongSelf.sendPublisher.send(error)
             }
         }
     }

@@ -76,14 +76,20 @@ final class SendProtocolViewController: BaseTableViewController {
         sendSubscription = viewModel
             .sendPublisher
             .sink(
-                receiveCompletion: { [unowned self] error in
-                    print("send protocol failed: \(error)")
-                    tableView.reloadData()
-                    view.showMessage(LocalizedStrings.Errors.defaultError)
-                },
-                receiveValue: { [unowned self] _ in
+                receiveCompletion: { [unowned self] _ in
                     tableView.reloadData()
                     view.hideLoading()
+                },
+                receiveValue: { [unowned self] error in
+                    tableView.reloadData()
+                    view.hideLoading()
+
+                    switch error {
+                    case .requestFailed(let responseError) :
+                        view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
+                    default:
+                        break
+                    }
                 })
     }
     
