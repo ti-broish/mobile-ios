@@ -37,7 +37,7 @@ struct LocalizedStrings {
         static let cancel: String = "Откажи"
         static let save: String = "Запази"
         static let send: String = "Изпрати"
-        static let gallery: String = "Качи снимка"
+        static let gallery: String = "Избери снимки"
         static let camera: String = "Снимай"
     }
     
