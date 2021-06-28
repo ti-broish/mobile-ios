@@ -25,6 +25,7 @@ final class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        addObservers()
     }
     
     override func applyTheme() {
@@ -55,28 +56,35 @@ final class LoginViewController: BaseViewController {
         resetPasswordButton.configureButton(title: LocalizedStrings.Login.resetPasswordButton, theme: theme)
     }
     
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeLoadingPublisher()
+    }
+    
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
         guard let email = emailInputField.textField.text, validator.isValidEmail(email) else {
-            // TODO: - show invalid email
+            view.showMessage(LocalizedStrings.Errors.invalidEmail)
             return
         }
         
         guard let password = passwordInputField.textField.text, validator.isValidPassword(password) else {
-            // TODO: - show invalid password
+            view.showMessage(LocalizedStrings.Errors.wrongPassword)
             return
         }
         
-        viewModel.login(email: email, password: password) { [weak self] result in
+        viewModel.login(email: email, password: password) { [weak self] result in 
             switch result {
-            case .success(let isSuccessful):
-                if isSuccessful {
-                    self?.viewModel.coordinator?.showHomeScreen()
-                } else {
-                    print("login failed: ???")
-                }
+            case .success(_):
+                self?.viewModel.coordinator?.showHomeScreen()
             case .failure(let error):
-                // TODO: - show toast
-                print("login failed: \(error.localizedString)")
+                print("login failed: \(error)")
+                
+                self?.view.showMessage(error.localizedString)
             }
         }
     }

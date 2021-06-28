@@ -12,7 +12,7 @@ enum LoginFieldType {
     case email, password
 }
 
-final class LoginViewModel: CoordinatableViewModel {
+final class LoginViewModel: BaseViewModel, CoordinatableViewModel {
     
     weak var coordinator: LoginCoordinator?
     
@@ -34,14 +34,17 @@ final class LoginViewModel: CoordinatableViewModel {
     }
     
     func login(email: String, password: String, completion: @escaping (Result<Bool, FirebaseError>) -> (Void)) {
-        APIManager.shared.login(email: email, password: password) { result in
+        loadingPublisher.send(true)
+        APIManager.shared.login(email: email, password: password) { [weak self] result in
             switch result {
             case .success(let jwt):
                 print("firebase jwt: \(jwt)")
                 LocalStorage.Login().save(email: email)
                 LocalStorage.User().setJwt(jwt)
+                self?.loadingPublisher.send(false)
                 completion(.success(true))
             case .failure(let error):
+                self?.loadingPublisher.send(false)
                 completion(.failure(error))
             }
         }
