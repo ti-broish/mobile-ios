@@ -61,7 +61,7 @@ final class APIClient {
     
     // MARK: Properties
     
-    #if InDebug
+    #if d1t
     private let baseUrl = "https://d1tapi.dabulgaria.bg"
     #else
     private let baseUrl = "https://api.tibroish.bg"

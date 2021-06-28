@@ -59,6 +59,7 @@ struct LocalizedStrings {
         static let title: String = "Сигнали"
         static let country: String = "България"
         static let abroad: String = "Чужбина"
+        static let sent: String = "Сигналът е изпратен успешно."
         
         struct ViolationDetails {
             
@@ -71,6 +72,7 @@ struct LocalizedStrings {
     struct Protocols {
         
         static let title: String = "Протоколи"
+        static let sent: String = "Протоколът е изпратен успешно."
         
         struct ProtocolDetails {
             
@@ -102,7 +104,7 @@ struct LocalizedStrings {
         static let userDisabled: String = "Достъпа до акаунта е временно спрян. Моля опитайте по-късно."
         static let wrongPassword: String = "Невалидна парола. Паролата трябва да съдържа 6 или повече символа."
         static let userNotFound: String = "Не е открит регистриран потребител с въведения имейл адрес."
-        static let invalidSection: String = "Невалидна секция"
+        static let invalidSection: String = "Невалидна секция. Номера на секцията трябва да бъде 9 или повече символа."
         static let invalidPhotos: String = "Моля изберете най-малко 4 снимки"
         static let sendProtocolFailed: String = "Грешка при изпращането на протокола."
     }

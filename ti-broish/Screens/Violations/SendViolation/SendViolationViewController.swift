@@ -92,11 +92,15 @@ final class SendViolationViewController: BaseTableViewController {
                     tableView.reloadData()
                     view.hideLoading()
 
-                    switch error {
-                    case .requestFailed(let responseError) :
-                        view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
-                    default:
-                        break
+                    if error != nil {
+                        switch error {
+                        case .requestFailed(let responseError) :
+                            view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
+                        default:
+                            break
+                        }
+                    } else {
+                        view.showMessage(LocalizedStrings.Violations.sent)
                     }
                 })
     }

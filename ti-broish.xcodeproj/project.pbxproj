@@ -299,6 +299,7 @@
 		1080EB6D2676000D004AFC2A /* TermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewModel.swift; sourceTree = "<group>"; };
 		108F202126496D8800E54F64 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		108F20232649753400E54F64 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		108F9FD72689D27E008EC41B /* ti-broish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ti-broish.entitlements"; sourceTree = "<group>"; };
 		109027FF264DD4190011E4BD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		10ABFA072678F05B00E34D32 /* SendProtocolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolViewModel.swift; sourceTree = "<group>"; };
 		10ABFA092678F0C700E34D32 /* SendProtocolDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolDataBuilder.swift; sourceTree = "<group>"; };
@@ -460,6 +461,7 @@
 		0AEB3954261CF9CD0005BF38 /* ti-broish */ = {
 			isa = PBXGroup;
 			children = (
+				108F9FD72689D27E008EC41B /* ti-broish.entitlements */,
 				102B847D2676555C00839324 /* Errors */,
 				0AEB398E261CFD800005BF38 /* Screens */,
 				CFB138B726359162001B373D /* Architecture */,
@@ -1480,7 +1482,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ti-broish/ti-broish.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1488,8 +1492,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
+				MARKETING_VERSION = 2.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D d1t";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1503,7 +1507,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ti-broish/ti-broish.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1511,8 +1517,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DInDebug";
+				MARKETING_VERSION = 2.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D d1t";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
