@@ -136,8 +136,7 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
         case .terms:
             loadViewController(nibName: TermsViewController.nibName)
         case .live:
-            // TODO: - implement
-            break
+            loadViewController(nibName: LaunchStreamController.storyboardId)
         case .logout:
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 do {

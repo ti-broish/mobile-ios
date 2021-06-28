@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "background_clock.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

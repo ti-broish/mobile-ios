@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_rotation.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

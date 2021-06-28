@@ -16,6 +16,10 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera, so we can capture what you are seeing and be able to stream it.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access to your microphone, so we can capture what you are hearing and be able to stream it.</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
@@ -50,6 +54,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
