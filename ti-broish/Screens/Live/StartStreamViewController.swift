@@ -25,6 +25,12 @@ final class StartStreamViewController: BaseTableViewController {
         baseViewModel = viewModel
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     override func setupTableView() {
         super.setupTableView()
         tableView.registerCell(CountryCell.self)
@@ -36,7 +42,7 @@ final class StartStreamViewController: BaseTableViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.setHeaderView(text: LocalizedStrings.Menu.sendViolation)
+        tableView.setHeaderView(text: LocalizedStrings.Menu.live)
         tableView.tableFooterView = sendButtonTableFooterView()
     }
     
