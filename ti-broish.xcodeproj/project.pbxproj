@@ -66,13 +66,16 @@
 		1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */; };
 		1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */; };
 		1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */; };
+		1044A815268A22B600EEAB80 /* StartStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044A814268A22B600EEAB80 /* StartStreamViewController.swift */; };
+		1044A817268A22C400EEAB80 /* StartStreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1044A816268A22C400EEAB80 /* StartStreamViewController.xib */; };
+		1044A819268A23A200EEAB80 /* StartStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044A818268A23A200EEAB80 /* StartStreamViewModel.swift */; };
+		1044A81D268A244300EEAB80 /* SendFieldsDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */; };
 		10482D9026710848001C260F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D8F26710848001C260F /* Alamofire */; };
 		10482D93267108F2001C260F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D92267108F2001C260F /* FirebaseAuth */; };
 		10482D95267108F2001C260F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D94267108F2001C260F /* FirebaseMessaging */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		10569EE12680D6AC00843E71 /* SendViolationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */; };
-		10569EE42680D82300843E71 /* SendViolationDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569EE32680D82300843E71 /* SendViolationDataBuilder.swift */; };
 		10577056267A8BE60003C1DC /* ResetPasswordDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */; };
 		105802A02649EA4B00A88528 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058029D2649EA4B00A88528 /* PickerCell.swift */; };
 		105802A12649EA4B00A88528 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058029E2649EA4B00A88528 /* PickerCell.xib */; };
@@ -291,10 +294,13 @@
 		1042B3D82634AAFD00764ACF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		1042B3D92634AAFD00764ACF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		1042B3FB2634AD4E00764ACF /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		1044A814268A22B600EEAB80 /* StartStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStreamViewController.swift; sourceTree = "<group>"; };
+		1044A816268A22C400EEAB80 /* StartStreamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartStreamViewController.xib; sourceTree = "<group>"; };
+		1044A818268A23A200EEAB80 /* StartStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStreamViewModel.swift; sourceTree = "<group>"; };
+		1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFieldsDataBuilder.swift; sourceTree = "<group>"; };
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationViewModel.swift; sourceTree = "<group>"; };
-		10569EE32680D82300843E71 /* SendViolationDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationDataBuilder.swift; sourceTree = "<group>"; };
 		10577055267A8BE60003C1DC /* ResetPasswordDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDataBuilder.swift; sourceTree = "<group>"; };
 		1058029D2649EA4B00A88528 /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1058029E2649EA4B00A88528 /* PickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
@@ -536,6 +542,7 @@
 		0AEB398E261CFD800005BF38 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1044A813268A213000EEAB80 /* Live */,
 				0AE2CB552624EECC00C178C9 /* Profile */,
 				0AEB39B6261D01A10005BF38 /* Menu */,
 				0AEB39A3261CFF8C0005BF38 /* Home */,
@@ -671,13 +678,22 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		1044A813268A213000EEAB80 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				1044A814268A22B600EEAB80 /* StartStreamViewController.swift */,
+				1044A816268A22C400EEAB80 /* StartStreamViewController.xib */,
+				1044A818268A23A200EEAB80 /* StartStreamViewModel.swift */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 		10569EE22680D6D500843E71 /* SendViolation */ = {
 			isa = PBXGroup;
 			children = (
 				10C4EA7826334AB9005FD07F /* SendViolationViewController.swift */,
 				10C4EA8026334ACC005FD07F /* SendViolationViewController.xib */,
 				10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */,
-				10569EE32680D82300843E71 /* SendViolationDataBuilder.swift */,
 			);
 			path = SendViolation;
 			sourceTree = "<group>";
@@ -1015,6 +1031,7 @@
 				10C4EADC263362AD005FD07F /* TibViewControllable.swift */,
 				10321C9126871B9000EBE2B5 /* SendFieldType.swift */,
 				10321C9326871BA200EBE2B5 /* SendSectionType.swift */,
+				1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -1200,6 +1217,7 @@
 				10C4EAEA263363CF005FD07F /* MenuCell.xib in Resources */,
 				1042B3EA2634AAFD00764ACF /* Montserrat-Medium.ttf in Resources */,
 				10E02096267E70E1007420D9 /* UploadImageCell.xib in Resources */,
+				1044A817268A22C400EEAB80 /* StartStreamViewController.xib in Resources */,
 				10C4EA6B263349A5005FD07F /* SendProtocolViewController.xib in Resources */,
 				1042B3E72634AAFD00764ACF /* Montserrat-ExtraBold.ttf in Resources */,
 				10C4EA8B26334B13005FD07F /* ViolationsTableViewController.xib in Resources */,
@@ -1290,8 +1308,10 @@
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
 				10E250D52655BC7D008A2121 /* InputFieldConfig.swift in Sources */,
+				1044A819268A23A200EEAB80 /* StartStreamViewModel.swift in Sources */,
 				CFA5765826392669002BCECD /* GetProtocolRequest.swift in Sources */,
 				B83A121F2680C16900304AC1 /* StreamViewController.swift in Sources */,
+				1044A81D268A244300EEAB80 /* SendFieldsDataBuilder.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				1080EB682675F0F9004AFC2A /* ViolationsViewModel.swift in Sources */,
 				B83A12402680D0EE00304AC1 /* UserStreamingSession.swift in Sources */,
@@ -1312,7 +1332,6 @@
 				1013FC882644A62D00BDAB8A /* OrganizationsRequest.swift in Sources */,
 				CFA5754D2637FB06002BCECD /* Violation.swift in Sources */,
 				10321C9426871BA200EBE2B5 /* SendSectionType.swift in Sources */,
-				10569EE42680D82300843E71 /* SendViolationDataBuilder.swift in Sources */,
 				1016B68F264C3EDA00515612 /* SearchResultsMapper.swift in Sources */,
 				10C4EABD26335B02005FD07F /* UIColorExtension.swift in Sources */,
 				0AE2CB642624F10200C178C9 /* MenuViewModel.swift in Sources */,
@@ -1387,6 +1406,7 @@
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				B83A12332680C1CC00304AC1 /* ImageExt.swift in Sources */,
 				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
+				1044A815268A22B600EEAB80 /* StartStreamViewController.swift in Sources */,
 				0AE2CB572624EEDF00C178C9 /* ProfileViewController.swift in Sources */,
 				101DA7752674A926003AE2A2 /* ImagePreviewViewController.swift in Sources */,
 				1004C797267BFBFB003CBA71 /* PhotosPickerViewModel.swift in Sources */,
@@ -1764,20 +1784,20 @@
 				minimumVersion = 8.1.0;
 			};
 		};
-		B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/shogo4405/HaishinKit.swift";
-			requirement = {
-				kind = exactVersion;
-				version = 1.1.5;
-			};
-		};
 		109FB6CA26877DC800A24FAC /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.1;
+			};
+		};
+		B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shogo4405/HaishinKit.swift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1798,15 +1818,15 @@
 			package = 10482D91267108F2001C260F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		B83A12382680C4D800304AC1 /* HaishinKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */;
-			productName = HaishinKit;
-		};
 		109FB6CB26877DC800A24FAC /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 109FB6CA26877DC800A24FAC /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		B83A12382680C4D800304AC1 /* HaishinKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B83A12372680C4D800304AC1 /* XCRemoteSwiftPackageReference "HaishinKit" */;
+			productName = HaishinKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

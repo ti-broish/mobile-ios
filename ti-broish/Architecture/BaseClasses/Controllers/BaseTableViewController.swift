@@ -12,6 +12,8 @@ class BaseTableViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var baseViewModel = BaseViewModel()
+    
     override func applyTheme() {
         super.applyTheme()
         
@@ -89,6 +91,101 @@ class BaseTableViewController: BaseViewController {
         assertionFailure("updateSelectedImages not implemented")
     }
     
+    func shouldShowSearchController(for indexPath: IndexPath) -> Bool {
+        guard let fieldType = baseViewModel.data[indexPath.row].dataType as? SendFieldType else {
+            return false
+        }
+        
+        switch fieldType {
+        case .municipality:
+            if let _ = baseViewModel.dataForField(type: .electionRegion) {
+                return true
+            } else {
+                view.showMessage(LocalizedStrings.SendInputField.electionRegionNotSet)
+                return false
+            }
+        case .town:
+            if let _ = baseViewModel.dataForField(type: baseViewModel.isAbroad ? .countries : .municipality) {
+                return true
+            } else {
+                if baseViewModel.isAbroad {
+                    view.showMessage(LocalizedStrings.SendInputField.countryNotSet)
+                } else {
+                    view.showMessage(LocalizedStrings.SendInputField.municipalityNotSet)
+                }
+                return false
+            }
+        case .section:
+            if let town = baseViewModel.dataForField(type: .town) as? Town {
+                let cityRegionsCount = town.cityRegions?.count ?? 0
+                
+                if  cityRegionsCount > 0 {
+                    if let _ = baseViewModel.dataForField(type: .cityRegion) {
+                        return true
+                    } else {
+                        view.showMessage(LocalizedStrings.SendInputField.cityRegionNotSet)
+                        return false
+                    }
+                } else {
+                    return true
+                }
+            } else {
+                view.showMessage(LocalizedStrings.SendInputField.townNotSet)
+                return false
+            }
+        default:
+            return true
+        }
+    }
+    
+    func loadData(searchController: SearchViewController) {
+        switch searchController.viewModel.searchType {
+        case .municipalities:
+            if let electionRegion = baseViewModel.dataForField(type: .electionRegion) as? ElectionRegion {
+                searchController.viewModel.loadMunicipalities(electionRegion.municipalities)
+            }
+        case .towns:
+            let electionRegion = baseViewModel.dataForField(type: .electionRegion) as? ElectionRegion
+            let country = baseViewModel.dataForField(type: .countries) as? Country ?? Country.defaultCountry
+            let municipality = baseViewModel.dataForField(type: .municipality) as? Municipality
+            
+            searchController.viewModel.getTowns(
+                country: country,
+                electionRegion: electionRegion,
+                municipality: municipality
+            )
+        case .cityRegions:
+            if let town = baseViewModel.dataForField(type: .town) as? Town,
+               let cityRegions = town.cityRegions
+            {
+                searchController.viewModel.loadCityRegions(cityRegions)
+            }
+        case .sections:
+            guard let town = baseViewModel.dataForField(type: .town) as? Town else {
+                return
+            }
+            
+            let cityRegion = baseViewModel.dataForField(type: .cityRegion) as? CityRegion
+            
+            searchController.viewModel.getSections(town: town, cityRegion: cityRegion)
+        default:
+            break
+        }
+    }
+    
+    func showSearchController(for indexPath: IndexPath) {
+        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
+        let searchType = baseViewModel.getSearchType(for: indexPath)
+        viewController.viewModel.setSearchType(searchType, isAbroad: baseViewModel.isAbroad)
+        viewController.delegate = self
+        viewController.parentCellIndexPath = indexPath
+        viewController.selectedItem = baseViewModel.data[indexPath.row].data as? SearchItem
+        loadData(searchController: viewController)
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        self.present(navController, animated: true)
+    }
+    
     // MARK: - Private methods
     
     private func showPhotosPickerViewController() {
@@ -113,6 +210,19 @@ class BaseTableViewController: BaseViewController {
         })
         
         present(alertController, animated: true)
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension BaseTableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if baseViewModel.data[indexPath.row].isPickerField {
+            showSearchController(for: indexPath)
+        }
     }
 }
 
@@ -182,3 +292,29 @@ extension BaseTableViewController: UIImagePickerControllerDelegate, UINavigation
         updateSelectedImages([image])
     }
 }
+
+// MARK: - SearchViewControllerDelegate
+
+extension BaseTableViewController: SearchViewControllerDelegate {
+    
+    func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
+        if let indexPath = sender.parentCellIndexPath {
+            baseViewModel.updateFieldValue(value as AnyObject, at: indexPath)
+        }
+        
+        tableView.reloadData()
+        sender.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - CountryCellDelegate
+
+extension BaseTableViewController: CountryCellDelegate {
+    
+    func didChangeCountryType(_ type: CountryType, sender: CountryCell) {
+        baseViewModel.isAbroad = type == .abroad
+        
+        tableView.reloadData()
+    }
+}
+

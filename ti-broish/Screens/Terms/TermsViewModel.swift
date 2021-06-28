@@ -23,6 +23,8 @@ final class TermsViewModel: BaseViewModel, CoordinatableViewModel {
                 return
             }
             
+            strongSelf.loadingPublisher.send(true)
+            
             if let filepath = Bundle.main.path(forResource: "terms", ofType: "html") {
                 do {
                     strongSelf.htmlString = try String(contentsOfFile: filepath)

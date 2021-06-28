@@ -30,4 +30,12 @@ enum SendFieldType {
     static var violationAbroadFields: [SendFieldType] {
         return [.countryCheckbox, .countries, .town, .section, .sectionNumber, .description]
     }
+    
+    static var streamingFields: [SendFieldType] {
+        return [.countryCheckbox, .electionRegion, .municipality, .town, .section, .sectionNumber]
+    }
+    
+    static var streamingAbroadFields: [SendFieldType] {
+        return [.countryCheckbox, .countries, .town, .section, .sectionNumber]
+    }
 }

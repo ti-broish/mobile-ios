@@ -54,6 +54,6 @@ final class HomeViewController: BaseViewController {
     }
     
     @IBAction private func handleLiveButton(_ sender: UIButton) {
-        viewModel.coordinator?.loadViewController(nibName: LaunchStreamController.storyboardId)
+        viewModel.coordinator?.loadViewController(nibName: StartStreamViewController.nibName)
     }
 }

@@ -190,48 +190,6 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
-
-extension ProfileViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if viewModel.data[indexPath.row].isPickerField {
-            showSearchController(for: indexPath)
-        }
-    }
-    
-    // MARK: - Private methods (UITableViewDelegate)
-    
-    private func showSearchController(for indexPath: IndexPath) {
-        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
-        viewController.viewModel.setSearchType(.organizations)
-        viewController.delegate = self
-        viewController.parentCellIndexPath = indexPath
-        viewController.selectedItem = viewModel.data[indexPath.row].data as? SearchItem
-        
-        let navController = UINavigationController(rootViewController: viewController)
-        self.present(navController, animated: true)
-    }
-}
-
-// MARK: - SearchViewControllerDelegate
-
-extension ProfileViewController: SearchViewControllerDelegate {
-    
-    func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
-        if let indexPath = sender.parentCellIndexPath, let value = value {
-            let organization = Organization(id: value.id, name: value.name)
-            
-            viewModel.updateFieldValue(organization as AnyObject, at: indexPath)
-        }
-        
-        tableView.reloadData()
-        sender.dismiss(animated: true, completion: nil)
-    }
-}
-
 // MARK: - CheckbboxCellDelegate
 
 extension ProfileViewController: CheckboxCellDelegate {

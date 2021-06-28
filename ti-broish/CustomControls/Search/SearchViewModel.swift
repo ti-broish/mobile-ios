@@ -24,7 +24,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     private var searchData = [SearchItem]()
     private var filteredSearchData = [SearchItem]()
     private (set) var searchType: SearchType?
-    private var isAbroad: Bool = false
     private var electionRegions = [ElectionRegion]()
     private var municipalities = [Municipality]()
     
@@ -37,6 +36,10 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     // MARK: - Public Methods
+    
+    override func loadDataFields() {
+        
+    }
     
     func setSearchType(_ searchType: SearchType?, isAbroad: Bool = false) {
         self.searchType = searchType

@@ -19,18 +19,20 @@ final class HomeCoordinator: Coordinator {
         let controller: UIViewController?
         
         switch nibName {
-            case SendProtocolViewController.nibName:
-                controller = SendProtocolViewController.init(nibName: nibName, bundle: nil)
-            case SendViolationViewController.nibName:
-                controller = SendViolationViewController.init(nibName: nibName, bundle: nil)
-            case TermsViewController.nibName:
-                controller = TermsViewController.init(nibName: nibName, bundle: nil)
-            case LaunchStreamController.storyboardId:
-                controller = LaunchStreamController.instantiate()
-            default:
-                controller = nil
-                assertionFailure("Invalid or not handled view controller nibName")
-                break
+        case SendProtocolViewController.nibName:
+            controller = SendProtocolViewController.init(nibName: nibName, bundle: nil)
+        case SendViolationViewController.nibName:
+            controller = SendViolationViewController.init(nibName: nibName, bundle: nil)
+        case TermsViewController.nibName:
+            controller = TermsViewController.init(nibName: nibName, bundle: nil)
+        case StartStreamViewController.nibName:
+            controller = StartStreamViewController.init(nibName: nibName, bundle: nil)
+        case LaunchStreamController.storyboardId:
+            controller = LaunchStreamController.instantiate()
+        default:
+            controller = nil
+            assertionFailure("Invalid or not handled view controller nibName")
+            break
         }
         
         if let controller = controller {

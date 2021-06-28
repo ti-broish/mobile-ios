@@ -100,9 +100,9 @@ extension ProtocolsTableViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ProtocolsTableViewController: UITableViewDelegate {
+extension ProtocolsTableViewController {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         showDetails(protocolItem: viewModel.protocols[indexPath.row])

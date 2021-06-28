@@ -1,13 +1,13 @@
 //
-//  SendViolationDataBuilder.swift
+//  SendFieldsDataBuilder.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 21.06.21.
+//  Created by Krasimir Slavkov on 28.06.21.
 //
 
 import Foundation
 
-struct SendViolationDataBuilder {
+struct SendFieldsDataBuilder {
     
     var cityRegionConfig: InputFieldConfig {
         return InputFieldConfig(
@@ -15,16 +15,6 @@ struct SendViolationDataBuilder {
             title: LocalizedStrings.SendInputField.cityRegion,
             placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
             isRequired: true,
-            dataType: SendFieldType.cityRegion as AnyObject
-        )
-    }
-    
-    var sectionNumberConfig: InputFieldConfig {
-        return InputFieldConfig(
-            type: .text,
-            title: LocalizedStrings.SendInputField.sectionNumber,
-            placeholderText: nil,
-            isRequired: false,
             dataType: SendFieldType.cityRegion as AnyObject
         )
     }
@@ -67,7 +57,7 @@ struct SendViolationDataBuilder {
             return InputFieldConfig(
                 type: .picker,
                 title: LocalizedStrings.SendInputField.town,
-                placeholderText: LocalizedStrings.Search.searchBarPlaceholder, 
+                placeholderText: LocalizedStrings.Search.searchBarPlaceholder,
                 isRequired: true,
                 dataType: SendFieldType.town as AnyObject
             )

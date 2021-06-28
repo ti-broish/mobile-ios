@@ -19,6 +19,8 @@ final class ViolationsTableViewController: BaseTableViewController {
         setupViews()
         addObservers()
         viewModel.start()
+        
+        baseViewModel = viewModel
         // TODO: - implement pagination
     }
     
@@ -100,9 +102,9 @@ extension ViolationsTableViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ViolationsTableViewController: UITableViewDelegate {
+extension ViolationsTableViewController {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         showDetails(violation: viewModel.violations[indexPath.row])
