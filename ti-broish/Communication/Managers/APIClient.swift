@@ -55,6 +55,9 @@ protocol APIClientInterface {
     func sendProtocol(section: Section, pictures: [String], completion: APIResult<SendProtocolResponse>?)
     func getProtocol(id: String, completion: APIResult<Protocol>?)
     func getProtocols(completion: APIResult<ProtocolsResponse>?)
+    
+    // MARK: - Stream
+    func startStream(section: Section, completion: APIResult<StreamResponse>?)
 }
 
 final class APIClient {
@@ -338,6 +341,16 @@ extension APIClient: APIClientInterface {
     
     func getProtocols(completion: APIResult<ProtocolsResponse>?) {
         let request = GetProtocolRequest()
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    // MARK: - Stream
+    
+    func startStream(section: Section, completion: APIResult<StreamResponse>?) {
+        let request = StartStreamRequest(section: section)
         
         send(request) { result in
             completion?(result)

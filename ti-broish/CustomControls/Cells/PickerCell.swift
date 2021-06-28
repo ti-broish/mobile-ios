@@ -18,6 +18,7 @@ final class PickerCell: TibTableViewCell, Configurable {
         super.awakeFromNib()
         
         backgroundColor = .clear
+        containerView.backgroundColor = .white
         
         let theme = TibTheme()
         titleLabel.font = .regularFont(size: 14.0)

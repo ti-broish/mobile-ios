@@ -22,6 +22,8 @@ class LaunchStreamController: StreamingBaseViewController {
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var backgroundView: UIImageView!
     
+    var streamInfo: UserStream?
+    
     private var launchedStream = false
     
     override func viewDidLoad() {
@@ -65,9 +67,9 @@ class LaunchStreamController: StreamingBaseViewController {
     
     private func fetchStream() {
         showLoading()
-        #warning("Fetch the actual streaming info")
+        
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { [weak self] _ in
-            UserStreamingSession.default.streamInfo = UserStream(streamUrl: "rtmp://strm.ludost.net/st/streamtest", viewUrl: "https://strm.ludost.net/hls/streamtest.m3u8")
+            UserStreamingSession.default.streamInfo = self?.streamInfo
             self?.hideLoading()
             self?.launchedStream = true
             self?.performSegue(withIdentifier: "StartStreaming", sender: nil)

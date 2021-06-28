@@ -48,6 +48,8 @@ class InputField: UIView, Configurable {
     
     func setupViews() {
         let theme = TibTheme()
+        view.backgroundColor = theme.backgroundColor
+        
         titleLabel.font = .regularFont(size: 14.0)
         titleLabel.textColor = theme.textColor
         
@@ -81,11 +83,15 @@ class InputField: UIView, Configurable {
         configureTextFieldKeyboardType(inputFieldType: data.type)
     }
     
-    func configureSectionNumber(section: Section, data: InputFieldConfig) {
-        titleLabel.setText(data.title, isRequired: data.isRequired)
-        
+    func disableTextField() {
         textField.isEnabled = false
         textField.textAlignment = .center
+    }
+    
+    func configureSectionNumber(section: Section, data: InputFieldConfig) {
+        titleLabel.setText(data.title, isRequired: data.isRequired)
+        disableTextField()
+        
         textField.text = section.id
     }
     

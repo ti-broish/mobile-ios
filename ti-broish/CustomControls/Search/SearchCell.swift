@@ -14,7 +14,7 @@ final class SearchCell: TibTableViewCell, Configurable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = .clear
+        backgroundColor = .white
         tintColor = .primaryColor
         
         titleLabel.font = .regularFont(size: 14.0)

@@ -23,6 +23,7 @@ final class DescriptionCell: TibTableViewCell {
         
         textView.font = .regularFont(size: 16.0)
         textView.textColor = theme.textColor
+        textView.backgroundColor = .white
         textView.autocorrectionType = .no
         textView.autocapitalizationType = .none
     }

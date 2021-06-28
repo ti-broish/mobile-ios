@@ -98,6 +98,8 @@
 		108F202226496D8800E54F64 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F202126496D8800E54F64 /* Town.swift */; };
 		108F20242649753400E54F64 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F20232649753400E54F64 /* RequestInterceptor.swift */; };
 		10902800264DD4190011E4BD /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109027FF264DD4190011E4BD /* APIManagerTests.swift */; };
+		1091BD4F268A6A79008CF1F3 /* StreamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091BD4E268A6A79008CF1F3 /* StreamResponse.swift */; };
+		1091BD51268A6B9E008CF1F3 /* StartStreamRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091BD50268A6B9E008CF1F3 /* StartStreamRequest.swift */; };
 		109FB6CC26877DC800A24FAC /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 109FB6CB26877DC800A24FAC /* Toast */; };
 		10ABFA082678F05B00E34D32 /* SendProtocolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABFA072678F05B00E34D32 /* SendProtocolViewModel.swift */; };
 		10ABFA0A2678F0C700E34D32 /* SendProtocolDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABFA092678F0C700E34D32 /* SendProtocolDataBuilder.swift */; };
@@ -324,6 +326,8 @@
 		108F20232649753400E54F64 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		108F9FD72689D27E008EC41B /* ti-broish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ti-broish.entitlements"; sourceTree = "<group>"; };
 		109027FF264DD4190011E4BD /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
+		1091BD4E268A6A79008CF1F3 /* StreamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamResponse.swift; sourceTree = "<group>"; };
+		1091BD50268A6B9E008CF1F3 /* StartStreamRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStreamRequest.swift; sourceTree = "<group>"; };
 		10ABFA072678F05B00E34D32 /* SendProtocolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolViewModel.swift; sourceTree = "<group>"; };
 		10ABFA092678F0C700E34D32 /* SendProtocolDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProtocolDataBuilder.swift; sourceTree = "<group>"; };
 		10B11E0126545C0B001E6B0E /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
@@ -897,6 +901,7 @@
 				CFA5766D26393D20002BCECD /* UploadPhotoRequest.swift */,
 				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
 				CFA57680263943E0002BCECD /* GetSectionsRequest.swift */,
+				1091BD50268A6B9E008CF1F3 /* StartStreamRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -960,6 +965,7 @@
 				CFA575402637F768002BCECD /* Section.swift */,
 				CFA5767B26393FA3002BCECD /* Party.swift */,
 				1013FC892644A84700BDAB8A /* Organization.swift */,
+				1091BD4E268A6A79008CF1F3 /* StreamResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1318,7 +1324,9 @@
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
 				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */,
+				1091BD4F268A6A79008CF1F3 /* StreamResponse.swift in Sources */,
 				1004C793267BFB96003CBA71 /* PhotosPickerViewController.swift in Sources */,
+				1091BD51268A6B9E008CF1F3 /* StartStreamRequest.swift in Sources */,
 				102B84832676607700839324 /* ProfileDataBuilder.swift in Sources */,
 				0AE2CB512624E08400C178C9 /* ContentContainerViewController.swift in Sources */,
 				10613F1C2642F2BD00062B33 /* ErrorHandler.swift in Sources */,

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 final class StartStreamViewModel: BaseViewModel, CoordinatableViewModel {
+    
+    let startStreamPublisher = PassthroughSubject<StreamResponse, Never>()
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
@@ -33,5 +36,22 @@ final class StartStreamViewModel: BaseViewModel, CoordinatableViewModel {
     
     func start() {
         loadDataFields()
+    }
+    
+    func tryStartStream(section: Section) {
+        loadingPublisher.send(true)
+        APIManager.shared.startStream(section: section) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let stream):
+                print("start stream: \(stream)")
+                strongSelf.startStreamPublisher.send(stream)
+            case .failure(let error):
+                strongSelf.sendPublisher.send(error)
+            }
+        }
     }
 }

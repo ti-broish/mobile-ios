@@ -45,10 +45,7 @@ final class ViolationsTableViewController: BaseTableViewController {
         reloadDataSubscription = viewModel
             .reloadDataPublisher
             .sink(
-                receiveCompletion: { [unowned self] _ in
-                    tableView.reloadData()
-                    viewModel.loadingPublisher.send(false)
-                },
+                receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
                     if let error = error {
                         print("reload data failed \(error)")

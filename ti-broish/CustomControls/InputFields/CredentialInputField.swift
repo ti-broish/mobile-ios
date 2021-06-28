@@ -19,7 +19,6 @@ final class CredentialInputField: InputField {
         super.setupViews()
         
         let theme = TibTheme()
-        view.backgroundColor = .clear
         separatorView.backgroundColor = theme.tableViewSeparatorColor
     }
 }

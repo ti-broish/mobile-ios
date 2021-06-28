@@ -178,6 +178,8 @@ class BaseViewModel: DataFieldModel {
                 return LocalizedStrings.SendInputField.municipalityNotSet
             case .town:
                 return LocalizedStrings.SendInputField.townNotSet
+            case .section:
+                return LocalizedStrings.SendInputField.sectionNotSet
             case .description:
                 return LocalizedStrings.SendInputField.descriptionNotSet
             default:

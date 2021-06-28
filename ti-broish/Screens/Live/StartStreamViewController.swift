@@ -12,6 +12,7 @@ final class StartStreamViewController: BaseTableViewController {
     
     private let viewModel = StartStreamViewModel()
     private var sendSubscription: AnyCancellable?
+    private var startStreamSubscription: AnyCancellable?
         
     // MARK: - View lifecycle
     
@@ -40,7 +41,28 @@ final class StartStreamViewController: BaseTableViewController {
     }
     
     override func handleSendButton(_ sender: UIButton) {
+        let dataFields: [SendFieldType] = viewModel.isAbroad
+            ? [.countries, .town, .section]
+            : [.electionRegion, .municipality, .town, .section]
         
+        var message: String? = nil
+        
+        for field in dataFields {
+            if let errorMessage = viewModel.errorMessageForField(type: field) {
+                message = errorMessage
+                break
+            }
+        }
+        
+        if let message = message {
+            view.showMessage(message)
+        } else {
+            if let section = viewModel.dataForField(type: .section) as? Section {
+                viewModel.tryStartStream(section: section)
+            } else {
+                view.showMessage(LocalizedStrings.Errors.invalidSection)
+            }
+        }
     }
     
     // MARK: - Private methods
@@ -54,23 +76,16 @@ final class StartStreamViewController: BaseTableViewController {
         sendSubscription = viewModel
             .sendPublisher
             .sink(
-                receiveCompletion: { [unowned self] _ in
-                    tableView.reloadData()
-                    view.hideLoading()
-                },
+                receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
                     tableView.reloadData()
                     view.hideLoading()
-
-                    if error != nil {
-                        switch error {
-                        case .requestFailed(let responseError) :
-                            view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
-                        default:
-                            break
-                        }
-                    } else {
-                        view.showMessage(LocalizedStrings.Violations.sent)
+                    
+                    switch error {
+                    case .requestFailed(let responseError) :
+                        view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
+                    default:
+                        break
                     }
                 })
     }
@@ -81,9 +96,29 @@ final class StartStreamViewController: BaseTableViewController {
         })
     }
     
+    private func showStartStream(stream: StreamResponse) {
+        let controller = LaunchStreamController.instantiate()
+        controller.streamInfo = UserStream(streamUrl: stream.streamUrl, viewUrl: stream.viewUrl)
+        
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func observeStartStreamPublisher() {
+        startStreamSubscription = viewModel
+            .startStreamPublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] stream in
+                    showStartStream(stream: stream)
+                    view.hideLoading()
+                })
+    }
+    
     private func addObservers() {
         observeSendPublisher()
         observeLoadingPublisher()
+        observeStartStreamPublisher()
     }
 }
 

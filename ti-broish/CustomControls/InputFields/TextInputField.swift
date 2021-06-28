@@ -12,11 +12,4 @@ final class TextInputField: InputField {
     override var nibName: String {
         return "TextInputField"
     }
-        
-    override func setupViews() {
-        super.setupViews()
-        
-        let theme = TibTheme()
-        view.backgroundColor = theme.backgroundColor
-    }
 }

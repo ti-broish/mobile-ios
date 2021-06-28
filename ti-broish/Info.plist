@@ -16,10 +16,6 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera, so we can capture what you are seeing and be able to stream it.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need access to your microphone, so we can capture what you are hearing and be able to stream it.</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
@@ -28,6 +24,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Take protocol or violation photos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access to your microphone, so we can capture what you are hearing and be able to stream it.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Store camera photos to Photo Library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -69,5 +67,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 </dict>
 </plist>

@@ -220,7 +220,7 @@ extension BaseTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if baseViewModel.data[indexPath.row].isPickerField {
+        if baseViewModel.data[indexPath.row].isPickerField, shouldShowSearchController(for: indexPath) {
             showSearchController(for: indexPath)
         }
     }

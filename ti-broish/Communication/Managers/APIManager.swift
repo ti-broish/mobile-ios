@@ -152,4 +152,10 @@ extension APIManager: APIClientInterface {
     func getProtocols(completion: APIResult<ProtocolsResponse>?) {
         apiClient.getProtocols(completion: completion)
     }
+    
+    // MARK: - Live
+    
+    func startStream(section: Section, completion: APIResult<StreamResponse>?) {
+        apiClient.startStream(section: section, completion: completion)
+    }
 }

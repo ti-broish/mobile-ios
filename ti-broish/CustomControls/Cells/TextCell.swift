@@ -27,6 +27,7 @@ final class TextCell: TibTableViewCell {
                 textInputField.configureSectionNumber(section: section, data: data)
             } else {
                 textInputField.configureWith(data)
+                textInputField.disableTextField()
             }
         } else {
             textInputField.configureWith(data)

@@ -80,10 +80,7 @@ final class SendViolationViewController: BaseTableViewController {
         sendSubscription = viewModel
             .sendPublisher
             .sink(
-                receiveCompletion: { [unowned self] _ in
-                    tableView.reloadData()
-                    view.hideLoading()
-                },
+                receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
                     tableView.reloadData()
                     view.hideLoading()
