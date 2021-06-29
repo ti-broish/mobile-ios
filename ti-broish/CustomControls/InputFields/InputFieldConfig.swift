@@ -12,7 +12,7 @@ struct InputFieldConfig {
     let type: InputFieldType
     let title: String
     let placeholderText: String?
-    let isRequired: Bool
+    var isRequired: Bool
     var data: AnyObject?
     var dataType: AnyObject?
     

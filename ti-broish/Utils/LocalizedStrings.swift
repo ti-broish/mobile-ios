@@ -109,6 +109,7 @@ struct LocalizedStrings {
         static let invalidPhotos: String = "Моля изберете най-малко 4 снимки"
         static let sendProtocolFailed: String = "Грешка при изпращането на протокола."
         static let emailAlreadyInUse: String = "Имейл адреса е регистриран. Моля въведете друг имейл адрес."
+        static let emailNotVerified: String = "За да продължите трябва да потвърдите имейл адреса си"
         
         static let invalidFirstName: String = "Невалидно име"
         static let invalidLastName: String = "Невалидна фамилия"

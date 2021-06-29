@@ -52,28 +52,28 @@ final class ContentContainerCoordinator: Coordinator {
     
     func getViewController(nibName: String) -> UIViewController? {
         switch nibName {
-            case HomeViewController.nibName:
-                let controller = HomeViewController.init(nibName: nibName, bundle: nil)
-                controller.viewModel.coordinator = homeCoordinator
-                
-                return controller
-            case ProfileViewController.nibName:
-                return ProfileViewController.init(nibName: nibName, bundle: nil)
-            case SendProtocolViewController.nibName:
-                return SendProtocolViewController.init(nibName: nibName, bundle: nil)
-            case SendViolationViewController.nibName:
-                return SendViolationViewController.init(nibName: nibName, bundle: nil)
-            case ProtocolsTableViewController.nibName:
-                return ProtocolsTableViewController.init(nibName: nibName, bundle: nil)
-            case ViolationsTableViewController.nibName:
-                return ViolationsTableViewController.init(nibName: nibName, bundle: nil)
-            case TermsViewController.nibName:
-                return TermsViewController.init(nibName: nibName, bundle: nil)
-            case LaunchStreamController.storyboardId:
-                return LaunchStreamController.instantiate()
-            default:
-                assertionFailure("Invalid or not handled nibName")
-                return nil
+        case HomeViewController.nibName:
+            let controller = HomeViewController.init(nibName: nibName, bundle: nil)
+            controller.viewModel.coordinator = homeCoordinator
+            
+            return controller
+        case ProfileViewController.nibName:
+            return ProfileViewController.init(nibName: nibName, bundle: nil)
+        case SendProtocolViewController.nibName:
+            return SendProtocolViewController.init(nibName: nibName, bundle: nil)
+        case SendViolationViewController.nibName:
+            return SendViolationViewController.init(nibName: nibName, bundle: nil)
+        case ProtocolsTableViewController.nibName:
+            return ProtocolsTableViewController.init(nibName: nibName, bundle: nil)
+        case ViolationsTableViewController.nibName:
+            return ViolationsTableViewController.init(nibName: nibName, bundle: nil)
+        case TermsViewController.nibName:
+            return TermsViewController.init(nibName: nibName, bundle: nil)
+        case StartStreamViewController.nibName:
+            return StartStreamViewController.init(nibName: nibName, bundle: nil)
+        default:
+            assertionFailure("Invalid or not handled nibName")
+            return nil
         }
     }
     

@@ -50,8 +50,18 @@ class FirebaseClient {
             if let error = error {
                 completion(.failure(ErrorHandler.handleFirebaseError(error)))
             } else {
-                // TODO: - implement emailVerified
-                self?.refreshToken(completion: completion)
+                if authResult?.user.isEmailVerified ?? false {
+                    self?.refreshToken(completion: completion)
+                } else {
+                    self?.sendEmailVerification { result in
+                        switch result {
+                        case .success:
+                            completion(.failure(.emailNotVerified))
+                        case .failure(let error):
+                            completion(.failure(ErrorHandler.handleFirebaseError(error)))
+                        }
+                    }
+                }
             }
         }
     }

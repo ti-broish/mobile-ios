@@ -133,7 +133,11 @@ class BaseViewModel: DataFieldModel {
         data.removeAll()
         
         fields.forEach { fieldType in
-            if let config = builder.makeConfig(for: fieldType) {
+            if var config = builder.makeConfig(for: fieldType) {
+                if fieldType == .section && self is StartStreamViewModel {
+                    config.isRequired = true
+                }
+                
                 data.append(config)
             }
         }
