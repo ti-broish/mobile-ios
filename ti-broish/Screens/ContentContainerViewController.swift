@@ -29,6 +29,7 @@ final class ContentContainerViewController: BaseViewController {
         setupContentViewController()
         setupMenuViewController()
         setupNavigationBar()
+        addObservers()
     }
     
     // MARK: - Private methods
@@ -113,6 +114,33 @@ final class ContentContainerViewController: BaseViewController {
         menuButton.setTitleTextAttributes([.font: UIFont.semiBoldFont(size: 17.0)], for: .normal)
         navigationItem.setLeftBarButton(menuButton, animated: true)
     }
+    
+    private func signOut() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        do {
+            try Auth.auth().signOut()
+            LocalStorage.User().reset()
+            appDelegate.appCoordinator?.logout()
+        } catch {
+            print("signOut failed: \(error)")
+        }
+    }
+    
+    @objc private func handleForceLogoutNotification(_ notification: Notification) {
+        signOut()
+    }
+    
+    private func addObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleForceLogoutNotification),
+            name: Notification.Name.forceLogout,
+            object: nil
+        )
+    }
 }
 
 // MARK: - MenuViewControllerDelegate
@@ -138,15 +166,7 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
         case .live:
             loadViewController(nibName: StartStreamViewController.nibName)
         case .logout:
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                do {
-                    try Auth.auth().signOut()
-                    LocalStorage.User().reset()
-                    appDelegate.appCoordinator?.logout()
-                } catch {
-                    print("logout failed: \(error)")
-                }
-            }
+            signOut()
         }
     }
 }

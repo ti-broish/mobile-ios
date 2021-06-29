@@ -100,6 +100,8 @@ class BaseViewModel: DataFieldModel {
             return nil
         case .description:
             return nil
+        case .organization:
+            return .organizations
         }
     }
     

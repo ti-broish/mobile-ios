@@ -87,6 +87,7 @@
 		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
 		106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFD26441E6500571859 /* LocalStorage.swift */; };
 		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
+		10790F5C268B9BAE00610D23 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */; };
 		107F71F9268AF3AC00658F2C /* RegistrationPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */; };
 		107F71FB268AF43B00658F2C /* RegistrationPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */; };
 		107F71FD268AFE1800658F2C /* CountryPhoneCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F71FC268AFE1700658F2C /* CountryPhoneCode.swift */; };
@@ -318,6 +319,7 @@
 		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		106B7EFD26441E6500571859 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneCell.swift; sourceTree = "<group>"; };
 		107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationPhoneCell.xib; sourceTree = "<group>"; };
 		107F71FC268AFE1700658F2C /* CountryPhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPhoneCode.swift; sourceTree = "<group>"; };
@@ -812,6 +814,7 @@
 			children = (
 				CFB138D5263593AF001B373D /* UI */,
 				106B7EFF2644226400571859 /* UserDefaultsExtension.swift */,
+				10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1305,6 +1308,7 @@
 				10C4EAA526334C1E005FD07F /* TermsViewController.swift in Sources */,
 				0AEB39A5261CFFA00005BF38 /* HomeViewController.swift in Sources */,
 				10321C9226871B9000EBE2B5 /* SendFieldType.swift in Sources */,
+				10790F5C268B9BAE00610D23 /* NotificationNameExtension.swift in Sources */,
 				10E02098267E7785007420D9 /* PhotoButtonsCell.swift in Sources */,
 				B83A12342680C1CC00304AC1 /* ViewExt.swift in Sources */,
 				B8149E732689BF10001D0D5C /* JsonExt.swift in Sources */,

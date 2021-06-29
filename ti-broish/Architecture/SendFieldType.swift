@@ -18,7 +18,8 @@ enum SendFieldType {
     case section
     case sectionNumber
     case description
-    
+    case organization
+
     static var protocolFields: [SendFieldType] {
         return [.section]
     }

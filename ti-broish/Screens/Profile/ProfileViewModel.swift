@@ -35,15 +35,16 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     
     func saveProfile() {
         guard let uid = Auth.auth().currentUser?.uid else {
-            // TODO: - show error
+            NotificationCenter.default.post(name: NSNotification.Name.forceLogout, object: nil)
             return
         }
 
         guard let userDetails = makeUserDetails() else {
-            // TODO: - show error
+            print("failed to make user details")
             return
         }
 
+        loadingPublisher.send(true)
         let user = User(firebaseUid: uid, userDetails: userDetails)
         
         APIManager.shared.updateUserDetails(user) { [weak self] result in
@@ -67,7 +68,18 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
         setFieldValue(userDetails.lastName as AnyObject, forFieldAt: indexFor(field: .lastName))
         setFieldValue(userDetails.email as AnyObject, forFieldAt: indexFor(field: .email))
         setFieldValue(userDetails.phone as AnyObject, forFieldAt: indexFor(field: .phone))
-        setFieldValue(userDetails.organization as AnyObject, forFieldAt: indexFor(field: .organization))
+        
+        if let organization = userDetails.organization {
+            let searchItem = SearchItem(
+                id: organization.id,
+                name: organization.name,
+                code: "",
+                type: .organization,
+                data: organization as AnyObject
+            )
+            
+            setFieldValue(searchItem as AnyObject, forFieldAt: indexFor(field: .organization))
+        }
         
         let state: CheckboxState = userDetails.hasAgreedToKeepData ? .checked : .unchecked
         setFieldValue(state as AnyObject, forFieldAt: indexFor(field: .hasAgreedToKeepData))
@@ -99,7 +111,7 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
             let email = getFieldValue(forFieldAt: indexFor(field: .email)) as? String,
             let phone = getFieldValue(forFieldAt: indexFor(field: .phone)) as? String,
             let pin = userDetails?.pin,
-            let organization = getFieldValue(forFieldAt: indexFor(field: .organization)) as? Organization,
+            let organization = dataForSendField(type: .organization) as? Organization,
             let hasAgreedToKeepData = getFieldValue(forFieldAt: indexFor(field: .hasAgreedToKeepData)) as? CheckboxState
         else {
             return nil

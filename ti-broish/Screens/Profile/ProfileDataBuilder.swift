@@ -54,7 +54,8 @@ struct ProfileDataBuilder {
                 type: .picker,
                 title: LocalizedStrings.CommonInputField.organization,
                 placeholderText: LocalizedStrings.CommonInputField.organizationPlaceholder,
-                isRequired: true
+                isRequired: true,
+                dataType: SendFieldType.organization as AnyObject
             )
         case .hasAgreedToKeepData:
             return InputFieldConfig(

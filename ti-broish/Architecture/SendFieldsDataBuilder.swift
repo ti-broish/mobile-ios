@@ -87,6 +87,8 @@ struct SendFieldsDataBuilder {
                 isRequired: true,
                 dataType: SendFieldType.description as AnyObject
             )
+        case .organization:
+            return nil
         }
     }
 }

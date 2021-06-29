@@ -19,6 +19,8 @@ final class ProfileViewController: BaseTableViewController {
         setupViews()
         addObservers()
         viewModel.start()
+        
+        baseViewModel = viewModel
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,7 +48,6 @@ final class ProfileViewController: BaseTableViewController {
     // MARK: - Private methods
     
     @objc private func handleSaveButton(_ sender: UIButton) {
-        // TODO: - show loading
         viewModel.saveProfile()
     }
     
@@ -104,12 +105,14 @@ final class ProfileViewController: BaseTableViewController {
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
+                    tableView.reloadData()
+                    
                     if let error = error {
                         print("reload data failed \(error)")
+                        view.showMessage(error.localizedDescription)
+                    } else {
+                        viewModel.loadingPublisher.send(false)
                     }
-                    
-                    tableView.reloadData()
-                    viewModel.loadingPublisher.send(false)
                 })
     }
     
