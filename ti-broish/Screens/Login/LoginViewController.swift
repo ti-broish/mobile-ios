@@ -62,8 +62,26 @@ final class LoginViewController: BaseViewController {
         })
     }
     
+    @objc private func handleEmailVerificationNotification(_ notification: Notification) {
+        guard let message = notification.object as? String else {
+            return
+        }
+        
+        view.showMessage(message)
+    }
+    
+    private func observeEmailVerificationNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleEmailVerificationNotification),
+            name: Notification.Name.emailVerification,
+            object: nil
+        )
+    }
+    
     private func addObservers() {
         observeLoadingPublisher()
+        observeEmailVerificationNotification()
     }
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {

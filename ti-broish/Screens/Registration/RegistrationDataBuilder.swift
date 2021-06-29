@@ -95,6 +95,7 @@ struct RegistrationDataBuilder {
                 title: LocalizedStrings.CommonInputField.hasAgreedToKeepData,
                 placeholderText: nil,
                 isRequired: false,
+                data: CheckboxState.unchecked as AnyObject, 
                 dataType: RegistrationFieldType.hasAgreedToKeepData as AnyObject
             )
         case .hasAdulthood:

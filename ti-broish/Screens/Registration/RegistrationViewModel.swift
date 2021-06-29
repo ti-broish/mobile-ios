@@ -12,6 +12,7 @@ import Firebase
 final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
     
     let registrationPublisher = PassthroughSubject<String, Never>()
+    let registrationFailedPublisher = PassthroughSubject<String, Never>()
     let validator = Validator()
     var countryPhoneCode: CountryPhoneCode?
     private var registrationAttempts = 0
@@ -57,7 +58,7 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
             let password = getFieldValue(forFieldAt: indexFor(field: .password)) as? String,
             let userDetails = makeUserDetails()
         else {
-            registrationPublisher.send(LocalizedStrings.Errors.invalidUserDetails)
+            registrationFailedPublisher.send(LocalizedStrings.Errors.invalidUserDetails)
             return
         }
         
@@ -70,8 +71,7 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
                 if error == .emailAlreadyInUse && self?.registrationAttempts == 0 {
                     self?.loginUser(email: email, password: password, userDetails: userDetails)
                 } else {
-                    LocalStorage.User().reset()
-                    self?.registrationPublisher.send(error.localizedString)
+                    self?.registrationFailedPublisher.send(error.localizedString)
                 }
             }
         }
@@ -109,16 +109,25 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
         )
     }
     
+    private func sendEmailVerification() {
+        APIManager.shared.sendEmailVerification { [weak self] result in
+            switch result {
+            case .success:
+                self?.registrationPublisher.send(LocalizedStrings.Registration.emailVerification)
+            case .failure(let error):
+                self?.registrationFailedPublisher.send(error.localizedDescription)
+            }
+        }
+    }
+    
     /// Create user (API)
     private func createUser(user: User) {
         APIManager.shared.createUser(user) { [weak self] result in
             switch result {
             case .success:
-                // TODO: - verify email
-                self?.registrationPublisher.send("Успешна регистрация")
+                self?.sendEmailVerification()
             case .failure(let error):
-                LocalStorage.User().reset() // TODO: - refactor
-                self?.registrationPublisher.send(error.localizedDescription)
+                self?.registrationFailedPublisher.send(error.localizedDescription)
             }
         }
     }
@@ -134,12 +143,10 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
                     
                     self?.createUser(user: User(firebaseUid: uid, userDetails: userDetails))
                 } else {
-                    LocalStorage.User().reset() // TODO: - refactor
-                    self?.registrationPublisher.send(LocalizedStrings.Errors.defaultError)
+                    self?.registrationFailedPublisher.send(LocalizedStrings.Errors.defaultError)
                 }
             case .failure(let error):
-                LocalStorage.User().reset() // TODO: - refactor
-                self?.registrationPublisher.send(error.localizedString)
+                self?.registrationFailedPublisher.send(error.localizedString)
             }
         }
     }

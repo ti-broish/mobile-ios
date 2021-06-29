@@ -12,6 +12,7 @@ final class RegistrationViewController: BaseTableViewController {
     
     private var viewModel = RegistrationViewModel()
     private var registrationSubscription: AnyCancellable?
+    private var registrationFailedSubscription: AnyCancellable?
     
     // MARK: - View lifecycle
     
@@ -55,7 +56,24 @@ final class RegistrationViewController: BaseTableViewController {
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [unowned self] message in
+                    LocalStorage.User().reset()
                     tableView.reloadData()
+                    view.hideLoading()
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name.emailVerification, object: message)
+                    navigationController?.popToRootViewController(animated: true)
+                })
+    }
+    
+    private func observeRegistrationFailedPublisher() {
+        registrationFailedSubscription = viewModel
+            .registrationPublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] message in
+                    LocalStorage.User().reset()
+                    tableView.reloadData()
+                    
                     view.hideLoading()
                     view.showMessage(message)
                 })
@@ -69,6 +87,7 @@ final class RegistrationViewController: BaseTableViewController {
     
     private func addObservers() {
         observeRegistrationPublisher()
+        observeRegistrationFailedPublisher()
         observeLoadingPublisher()
     }
     
@@ -201,7 +220,7 @@ extension RegistrationViewController: CheckboxCellDelegate {
     
     func didChangeCheckboxState(state: CheckboxState, sender: CheckboxCell) {
         if let indexPath = tableView.indexPath(for: sender) {
-            viewModel.updateFieldValue((state == .checked) as AnyObject, at: indexPath)
+            viewModel.updateFieldValue(state as AnyObject, at: indexPath)
         }
     }
 }

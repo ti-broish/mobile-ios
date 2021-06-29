@@ -10,5 +10,5 @@ import Foundation
 extension Notification.Name {
 
     static let forceLogout = Notification.Name("forceLogoutNotificationName")
-
+    static let emailVerification = Notification.Name("emailVerificationNotificationName")
 }

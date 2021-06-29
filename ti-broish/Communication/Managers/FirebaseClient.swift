@@ -65,4 +65,14 @@ class FirebaseClient {
             }
         }
     }
+    
+    func sendEmailVerification(completion: @escaping (Result<Void, FirebaseError>) -> Void) {
+        Auth.auth().currentUser?.sendEmailVerification { error in
+            if let error = error {
+                completion(.failure(ErrorHandler.handleFirebaseError(error)))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
 }

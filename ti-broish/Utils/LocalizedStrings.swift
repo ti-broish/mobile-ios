@@ -180,6 +180,8 @@ struct LocalizedStrings {
 
         static let hasAdulthood: String = "Имам навършени 18 години."
         static let registerButton: String = "СЪЗДАЙ ПРОФИЛ"
+        
+        static let emailVerification: String = "Моля потвърдете регистрацията си с отваряне на връзката получена на Вашия имейл адрес."
     }
     
     struct ResetPassword {
