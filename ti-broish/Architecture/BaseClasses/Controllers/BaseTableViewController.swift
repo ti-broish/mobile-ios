@@ -246,6 +246,8 @@ extension BaseTableViewController: UITextFieldDelegate {
         return tableView.visibleCells.filter { cell in
             if let textCell = cell as? TextCell {
                 return textCell.textInputField.textField == textField
+            } else if let phoneCell = cell as? RegistrationPhoneCell {
+                return phoneCell.numberTextField == textField
             } else {
                 return false
             }

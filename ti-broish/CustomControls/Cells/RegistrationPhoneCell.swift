@@ -18,9 +18,9 @@ final class RegistrationPhoneCell: TibTableViewCell {
         setupViews()
     }
     
-    func configureWith(_ data: InputFieldConfig, countryCode: CountryPhoneCode) {
+    func configureWith(_ data: InputFieldConfig, countryPhoneCode: CountryPhoneCode) {
         titleLabel.setText(data.title, isRequired: data.isRequired)
-        codeButton.setTitle(countryCode.code, for: .normal)
+        codeButton.setTitle(countryPhoneCode.code, for: .normal)
         
         if let text = data.data as? String {
             numberTextField.text = text

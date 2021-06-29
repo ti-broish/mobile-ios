@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import Combine
+import Firebase
 
 final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
     
+    let registrationPublisher = PassthroughSubject<String, Never>()
+    let validator = Validator()
     var countryPhoneCode: CountryPhoneCode?
+    private var registrationAttempts = 0
     
     var phoneIndexPath: IndexPath? {
         guard let index = data.firstIndex(where: { $0.type == .phone }) else {
@@ -24,7 +29,6 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
         
         return SearchItem(id: -1, name: countryPhoneCode.name, code: countryPhoneCode.code, type: .phoneCode)
     }
-    // MARK: - Public Methods
     
     override func loadDataFields() {
         let builder = RegistrationDataBuilder()
@@ -44,5 +48,99 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
     
     func start() {
         loadDataFields()
+    }
+    
+    /// Register firebase user
+    func register() {
+        guard
+            let email = getFieldValue(forFieldAt: indexFor(field: .email)) as? String,
+            let password = getFieldValue(forFieldAt: indexFor(field: .password)) as? String,
+            let userDetails = makeUserDetails()
+        else {
+            registrationPublisher.send(LocalizedStrings.Errors.invalidUserDetails)
+            return
+        }
+        
+        loadingPublisher.send(true)
+        APIManager.shared.register(email: email, password: password) { [weak self] result in
+            switch result {
+            case .success(let firebaseUid):
+                self?.createUser(user: User(firebaseUid: firebaseUid, userDetails: userDetails))
+            case .failure(let error):
+                if error == .emailAlreadyInUse && self?.registrationAttempts == 0 {
+                    self?.loginUser(email: email, password: password, userDetails: userDetails)
+                } else {
+                    LocalStorage.User().reset()
+                    self?.registrationPublisher.send(error.localizedString)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Private methods
+    
+    private func indexFor(field: RegistrationFieldType) -> Int {
+        return field.rawValue
+    }
+    
+    private func makeUserDetails() -> UserDetails? {
+        guard
+            let firstName = getFieldValue(forFieldAt: indexFor(field: .firstName)) as? String,
+            let lastName = getFieldValue(forFieldAt: indexFor(field: .lastName)) as? String,
+            let email = getFieldValue(forFieldAt: indexFor(field: .email)) as? String,
+            let phone = getFieldValue(forFieldAt: indexFor(field: .phone)) as? String,
+            let pin = getFieldValue(forFieldAt: indexFor(field: .pin)) as? String,
+            let organization = dataForSendField(type: .organization) as? Organization,
+            let hasAgreedToKeepData = getFieldValue(forFieldAt: indexFor(field: .hasAgreedToKeepData)) as? CheckboxState
+        else {
+            return nil
+        }
+        
+        let phoneCode = countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
+        
+        return UserDetails(
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            phone: "\(phoneCode.code)\(phone)",
+            pin: pin,
+            hasAgreedToKeepData: hasAgreedToKeepData == .checked,
+            organization: organization
+        )
+    }
+    
+    /// Create user (API)
+    private func createUser(user: User) {
+        APIManager.shared.createUser(user) { [weak self] result in
+            switch result {
+            case .success:
+                // TODO: - verify email
+                self?.registrationPublisher.send("Успешна регистрация")
+            case .failure(let error):
+                LocalStorage.User().reset() // TODO: - refactor
+                self?.registrationPublisher.send(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func loginUser(email: String, password: String, userDetails: UserDetails) {
+        APIManager.shared.login(email: email, password: password) { [weak self] result in
+            switch result {
+            case .success(let token):
+                LocalStorage.User().setJwt(token)
+                
+                if let uid = Auth.auth().currentUser?.uid {
+                    self?.registrationAttempts += 1
+                    
+                    self?.createUser(user: User(firebaseUid: uid, userDetails: userDetails))
+                } else {
+                    LocalStorage.User().reset() // TODO: - refactor
+                    self?.registrationPublisher.send(LocalizedStrings.Errors.defaultError)
+                }
+            case .failure(let error):
+                LocalStorage.User().reset() // TODO: - refactor
+                self?.registrationPublisher.send(error.localizedString)
+            }
+        }
     }
 }

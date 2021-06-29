@@ -22,6 +22,8 @@ enum FirebaseError: Error {
     case invalidRecipientEmail
     /// Indicates the user account was not found
     case userNotFound
+    /// The email address is already in use by another account
+    case emailAlreadyInUse
     
     var localizedString: String {
         switch self {
@@ -35,6 +37,8 @@ enum FirebaseError: Error {
             return LocalizedStrings.Errors.userNotFound
         case .userNotFound:
             return LocalizedStrings.Errors.userNotFound
+        case .emailAlreadyInUse:
+            return LocalizedStrings.Errors.emailAlreadyInUse
         default:
             return LocalizedStrings.Errors.defaultError
         }

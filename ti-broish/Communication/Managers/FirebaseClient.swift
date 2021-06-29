@@ -10,8 +10,25 @@ import Firebase
 
 class FirebaseClient {
     
-    func register() {
-        
+    func register(email: String, password: String, completion: @escaping (Result<String, FirebaseError>) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(.failure(ErrorHandler.handleFirebaseError(error)))
+            } else {
+                authResult?.user.getIDToken(completion: { token, error in
+                    if let error = error {
+                        completion(.failure(ErrorHandler.handleFirebaseError(error)))
+                    } else {
+                        if let token = token, let uid = authResult?.user.uid {
+                            LocalStorage.User().setJwt(token)
+                            completion(.success(uid))
+                        } else {
+                            completion(.failure(.unknownError))
+                        }
+                    }
+                })
+            }
+        }
     }
     
     func refreshToken(completion: @escaping (Result<String, FirebaseError>) -> Void) {
@@ -19,7 +36,11 @@ class FirebaseClient {
             if let token = token {
                 completion(.success(token))
             } else {
-                completion(.failure(.unknownError))
+                if let error = error {
+                    completion(.failure(ErrorHandler.handleFirebaseError(error)))
+                } else {
+                    completion(.failure(.unknownError))
+                }
             }
         }
     }

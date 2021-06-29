@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import Combine
 
 final class RegistrationViewController: BaseTableViewController {
     
     private var viewModel = RegistrationViewModel()
+    private var registrationSubscription: AnyCancellable?
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        addObservers()
         viewModel.start()
         
         baseViewModel = viewModel
@@ -46,8 +49,35 @@ final class RegistrationViewController: BaseTableViewController {
     
     // MARK: - Private methods
     
+    private func observeRegistrationPublisher() {
+        registrationSubscription = viewModel
+            .registrationPublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] message in
+                    tableView.reloadData()
+                    view.hideLoading()
+                    view.showMessage(message)
+                })
+    }
+    
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeRegistrationPublisher()
+        observeLoadingPublisher()
+    }
+    
     @objc private func tryRegistration(_ sender: UIButton) {
-        print("tryRegistration is not implemented")
+        if let errorMessage = viewModel.validator.validateRegistration(fields: viewModel.data).first {
+            view.showMessage(errorMessage)
+        } else {
+            viewModel.register()
+        }
     }
     
     private func registrationButtonView() -> UIView {
@@ -122,7 +152,7 @@ extension RegistrationViewController: UITableViewDataSource {
 
             phoneCell.configureWith(
                 model,
-                countryCode: viewModel.countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
+                countryPhoneCode: viewModel.countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
             )
             
             phoneCell.codeButton.addTarget(self, action: #selector(handleCountryCodeButton), for: .touchUpInside)

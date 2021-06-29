@@ -34,12 +34,16 @@ extension APIManager {
         firebaseClient.login(email: email, password: password, completion: completion)
     }
     
-    func register() {
-        firebaseClient.register()
+    func register(email: String, password: String, completion: @escaping (Result<String, FirebaseError>) -> Void) {
+        firebaseClient.register(email: email, password: password, completion: completion)
     }
     
     func resetPassword(email: String, completion: @escaping (Result<Void, FirebaseError>) -> Void) {
         firebaseClient.resetPassword(email: email, completion: completion)
+    }
+    
+    func refreshToken(completion: @escaping (Result<String, FirebaseError>) -> Void) {
+        firebaseClient.refreshToken(completion: completion)
     }
 }
 

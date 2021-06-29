@@ -67,12 +67,18 @@ final class LoginViewController: BaseViewController {
     }
     
     @IBAction private func didPressLoginButton(_ sender: UIButton) {
-        guard let email = emailInputField.textField.text, validator.isValidEmail(email) else {
+        guard
+            let email = emailInputField.textField.text,
+            validator.validate(email: email)
+        else {
             view.showMessage(LocalizedStrings.Errors.invalidEmail)
             return
         }
         
-        guard let password = passwordInputField.textField.text, validator.isValidPassword(password) else {
+        guard
+            let password = passwordInputField.textField.text,
+            validator.validate(password: password)
+        else {
             view.showMessage(LocalizedStrings.Errors.wrongPassword)
             return
         }

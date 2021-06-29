@@ -30,7 +30,7 @@ struct CreateUserRequest: RequestProvider {
             "email": user.userDetails.email,
             "phone": user.userDetails.phone,
             "pin": user.userDetails.pin,
-            "organization": user.userDetails.organization,
+            "organization": user.userDetails.organization?.toDictionary() ?? nil,
             "firebaseUid": user.firebaseUid,
             "hasAgreedToKeepData": user.userDetails.hasAgreedToKeepData
         ]

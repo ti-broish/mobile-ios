@@ -103,10 +103,20 @@ struct LocalizedStrings {
         static let invalidEmail: String = "Невалиден имейл адрес"
         static let userDisabled: String = "Достъпа до акаунта е временно спрян. Моля опитайте по-късно."
         static let wrongPassword: String = "Невалидна парола. Паролата трябва да съдържа 6 или повече символа."
+        static let wrongConfirmPassword: String = "Невалидна парола. Проверете дали паролите съвпадат."
         static let userNotFound: String = "Не е открит регистриран потребител с въведения имейл адрес."
         static let invalidSection: String = "Невалидна секция. Номера на секцията трябва да бъде 9 или повече символа."
         static let invalidPhotos: String = "Моля изберете най-малко 4 снимки"
         static let sendProtocolFailed: String = "Грешка при изпращането на протокола."
+        static let emailAlreadyInUse: String = "Имейл адреса е регистриран. Моля въведете друг имейл адрес."
+        
+        static let invalidFirstName: String = "Невалидно име"
+        static let invalidLastName: String = "Невалидна фамилия"
+        static let invalidPhone: String = "Невалиден формат на телефонен номер."
+        static let invalidPin: String = "Невалидни цифри от ЕГН (последните 4)"
+        static let invalidOrganization: String = "Невалидна организация"
+        static let invalidHasAdulthood: String = "Моля потвърдете, че имате навършени 18 години"
+        static let invalidUserDetails: String = "Невалидни данни. Моля опитайте отново."
     }
     
     struct Menu {

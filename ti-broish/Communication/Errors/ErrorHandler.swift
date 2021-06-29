@@ -30,6 +30,8 @@ struct ErrorHandler {
             return .invalidRecipientEmail
         case .userNotFound: 
             return .userNotFound
+        case .emailAlreadyInUse:
+            return .emailAlreadyInUse
         default:
             return .unknownError
         }
