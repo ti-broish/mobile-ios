@@ -98,14 +98,14 @@ class BaseTableViewController: BaseViewController {
         
         switch fieldType {
         case .municipality:
-            if let _ = baseViewModel.dataForField(type: .electionRegion) {
+            if let _ = baseViewModel.dataForSendField(type: .electionRegion) {
                 return true
             } else {
                 view.showMessage(LocalizedStrings.SendInputField.electionRegionNotSet)
                 return false
             }
         case .town:
-            if let _ = baseViewModel.dataForField(type: baseViewModel.isAbroad ? .countries : .municipality) {
+            if let _ = baseViewModel.dataForSendField(type: baseViewModel.isAbroad ? .countries : .municipality) {
                 return true
             } else {
                 if baseViewModel.isAbroad {
@@ -116,11 +116,11 @@ class BaseTableViewController: BaseViewController {
                 return false
             }
         case .section:
-            if let town = baseViewModel.dataForField(type: .town) as? Town {
+            if let town = baseViewModel.dataForSendField(type: .town) as? Town {
                 let cityRegionsCount = town.cityRegions?.count ?? 0
                 
                 if  cityRegionsCount > 0 {
-                    if let _ = baseViewModel.dataForField(type: .cityRegion) {
+                    if let _ = baseViewModel.dataForSendField(type: .cityRegion) {
                         return true
                     } else {
                         view.showMessage(LocalizedStrings.SendInputField.cityRegionNotSet)
@@ -141,13 +141,13 @@ class BaseTableViewController: BaseViewController {
     func loadData(searchController: SearchViewController) {
         switch searchController.viewModel.searchType {
         case .municipalities:
-            if let electionRegion = baseViewModel.dataForField(type: .electionRegion) as? ElectionRegion {
+            if let electionRegion = baseViewModel.dataForSendField(type: .electionRegion) as? ElectionRegion {
                 searchController.viewModel.loadMunicipalities(electionRegion.municipalities)
             }
         case .towns:
-            let electionRegion = baseViewModel.dataForField(type: .electionRegion) as? ElectionRegion
-            let country = baseViewModel.dataForField(type: .countries) as? Country ?? Country.defaultCountry
-            let municipality = baseViewModel.dataForField(type: .municipality) as? Municipality
+            let electionRegion = baseViewModel.dataForSendField(type: .electionRegion) as? ElectionRegion
+            let country = baseViewModel.dataForSendField(type: .countries) as? Country ?? Country.defaultCountry
+            let municipality = baseViewModel.dataForSendField(type: .municipality) as? Municipality
             
             searchController.viewModel.getTowns(
                 country: country,
@@ -155,17 +155,17 @@ class BaseTableViewController: BaseViewController {
                 municipality: municipality
             )
         case .cityRegions:
-            if let town = baseViewModel.dataForField(type: .town) as? Town,
+            if let town = baseViewModel.dataForSendField(type: .town) as? Town,
                let cityRegions = town.cityRegions
             {
                 searchController.viewModel.loadCityRegions(cityRegions)
             }
         case .sections:
-            guard let town = baseViewModel.dataForField(type: .town) as? Town else {
+            guard let town = baseViewModel.dataForSendField(type: .town) as? Town else {
                 return
             }
             
-            let cityRegion = baseViewModel.dataForField(type: .cityRegion) as? CityRegion
+            let cityRegion = baseViewModel.dataForSendField(type: .cityRegion) as? CityRegion
             
             searchController.viewModel.getSections(town: town, cityRegion: cityRegion)
         default:
@@ -298,7 +298,11 @@ extension BaseTableViewController: UIImagePickerControllerDelegate, UINavigation
 extension BaseTableViewController: SearchViewControllerDelegate {
     
     func didFinishSearching(value: SearchItem?, sender: SearchViewController) {
-        if let indexPath = sender.parentCellIndexPath {
+        if value?.type == .phoneCode {
+            if let viewModel = baseViewModel as? RegistrationViewModel {
+                viewModel.countryPhoneCode = value?.data as? CountryPhoneCode
+            }
+        } else if let indexPath = sender.parentCellIndexPath {
             baseViewModel.updateFieldValue(value as AnyObject, at: indexPath)
         }
         

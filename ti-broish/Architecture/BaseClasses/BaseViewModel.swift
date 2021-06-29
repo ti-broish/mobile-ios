@@ -49,7 +49,7 @@ class BaseViewModel: DataFieldModel {
         return data[index].data
     }
     
-    func indexForField(type: SendFieldType) -> Int? {
+    func indexForSendField(type: SendFieldType) -> Int? {
         return data.firstIndex(where: { config in
             guard let dataType = config.dataType as? SendFieldType else {
                 return false
@@ -59,8 +59,8 @@ class BaseViewModel: DataFieldModel {
         })
     }
     
-    func dataForField(type: SendFieldType) -> AnyObject? {
-        guard let index = indexForField(type: type) else {
+    func dataForSendField(type: SendFieldType) -> AnyObject? {
+        guard let index = indexForSendField(type: type) else {
             return nil
         }
         
@@ -105,17 +105,17 @@ class BaseViewModel: DataFieldModel {
     
     func toggleCityRegionField() {
         guard
-            let index = indexForField(type: .town),
-            let town = dataForField(type: .town) as? Town
+            let index = indexForSendField(type: .town),
+            let town = dataForSendField(type: .town) as? Town
         else {
-            if let cityRegionIndex = indexForField(type: .cityRegion) {
+            if let cityRegionIndex = indexForSendField(type: .cityRegion) {
                 data.remove(at: cityRegionIndex)
             }
             
             return
         }
 
-        let cityRegionIndex = indexForField(type: .cityRegion)
+        let cityRegionIndex = indexForSendField(type: .cityRegion)
         let cityRegions = town.cityRegions ?? []
         
         if cityRegions.count > 0 {
@@ -159,7 +159,7 @@ class BaseViewModel: DataFieldModel {
     func prefillFieldValue(for fieldType: SendFieldType, value: AnyObject?) {
         switch fieldType {
         case .section:
-            if let sectionNumberIndex = indexForField(type: .sectionNumber) {
+            if let sectionNumberIndex = indexForSendField(type: .sectionNumber) {
                 setFieldValue(value, forFieldAt: sectionNumberIndex)
             }
         default:
@@ -168,7 +168,7 @@ class BaseViewModel: DataFieldModel {
     }
     
     func errorMessageForField(type: SendFieldType) -> String? {
-        guard let data = dataForField(type: type) else {
+        guard let data = dataForSendField(type: type) else {
             switch type {
             case .countries:
                 return LocalizedStrings.SendInputField.countryNotSet
@@ -191,7 +191,7 @@ class BaseViewModel: DataFieldModel {
            let town = data as? Town,
            let cityRegions = town.cityRegions
         {
-            if cityRegions.count > 0 && dataForField(type: .cityRegion) == nil {
+            if cityRegions.count > 0 && dataForSendField(type: .cityRegion) == nil {
                 return LocalizedStrings.SendInputField.cityRegionNotSet
             }
         } else if type == .description {
@@ -209,7 +209,7 @@ class BaseViewModel: DataFieldModel {
     
     private func resetFieldsData(_ fields: [SendFieldType]) {
         fields.forEach { field in
-            if let index = indexForField(type: field), index < data.count {
+            if let index = indexForSendField(type: field), index < data.count {
                 data[index].data = nil
             }
         }

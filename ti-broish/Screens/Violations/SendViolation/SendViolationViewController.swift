@@ -252,7 +252,7 @@ extension SendViolationViewController: UITableViewDataSource {
 extension SendViolationViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if viewModel.dataForField(type: .description) == nil {
+        if viewModel.dataForSendField(type: .description) == nil {
             textView.textColor = TibTheme().textColor
             textView.text = ""
         }
@@ -262,7 +262,7 @@ extension SendViolationViewController: UITextViewDelegate {
         if text == "\n" {
             textView.resignFirstResponder()
             
-            if let index = viewModel.indexForField(type: .description) {
+            if let index = viewModel.indexForSendField(type: .description) {
                 let indexPath = IndexPath(row: index, section: SendSectionType.data.rawValue)
                 viewModel.updateFieldValue(textView.text as AnyObject, at: indexPath)
             }

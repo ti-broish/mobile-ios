@@ -25,7 +25,7 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
             let fieldType = data[indexPath.row].dataType as? SendFieldType,
-            let index = indexForField(type: fieldType)
+            let index = indexForSendField(type: fieldType)
         else {
             return
         }
@@ -86,7 +86,7 @@ final class SendProtocolViewModel: BaseViewModel, CoordinatableViewModel {
     // MARK: - Private methods
     
     private func resetData() {
-        if let index = indexForField(type: .section) {
+        if let index = indexForSendField(type: .section) {
             setFieldValue(nil, forFieldAt: index)
         }
         

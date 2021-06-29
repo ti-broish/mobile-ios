@@ -17,6 +17,8 @@ final class RegistrationViewController: BaseTableViewController {
         super.viewDidLoad()
         setupTableView()
         viewModel.start()
+        
+        baseViewModel = viewModel
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -28,6 +30,7 @@ final class RegistrationViewController: BaseTableViewController {
     override func setupTableView() {
         super.setupTableView()
         tableView.registerCell(TextCell.self)
+        tableView.registerCell(RegistrationPhoneCell.self)
         tableView.registerCell(PickerCell.self)
         tableView.registerCell(CheckboxCell.self)
         
@@ -69,6 +72,22 @@ final class RegistrationViewController: BaseTableViewController {
         
         return container
     }
+    
+    @objc private func handleCountryCodeButton(_ sender: UIButton) {
+        guard let indexPath = viewModel.phoneIndexPath else {
+            return
+        }
+        
+        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
+        viewController.viewModel.setSearchType(.countryPhoneCodes, isAbroad: false)
+        viewController.delegate = self
+        viewController.parentCellIndexPath = indexPath
+        viewController.selectedItem = viewModel.countryPhoneCodeSearchItem
+        loadData(searchController: viewController)
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        self.present(navController, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -91,7 +110,25 @@ extension RegistrationViewController: UITableViewDataSource {
         let model = viewModel.data[indexPath.row]
         let cell: UITableViewCell
         
-        if model.isTextField {
+        if model.type == .phone {
+            let reusableCell = tableView.dequeueReusableCell(
+                withIdentifier: RegistrationPhoneCell.cellIdentifier,
+                for: indexPath
+            )
+            
+            guard let phoneCell = reusableCell as? RegistrationPhoneCell  else {
+                return UITableViewCell()
+            }
+
+            phoneCell.configureWith(
+                model,
+                countryCode: viewModel.countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
+            )
+            
+            phoneCell.codeButton.addTarget(self, action: #selector(handleCountryCodeButton), for: .touchUpInside)
+            phoneCell.numberTextField.delegate = self
+            cell = phoneCell
+        } else if model.isTextField {
             let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
             guard let textCell = reusableCell as? TextCell  else {
                 return UITableViewCell()

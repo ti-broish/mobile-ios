@@ -9,6 +9,21 @@ import Foundation
 
 final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
     
+    var countryPhoneCode: CountryPhoneCode?
+    
+    var phoneIndexPath: IndexPath? {
+        guard let index = data.firstIndex(where: { $0.type == .phone }) else {
+            return nil
+        }
+        
+        return IndexPath(row: index, section: 0)
+    }
+    
+    var countryPhoneCodeSearchItem: SearchItem? {
+        let countryPhoneCode = countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
+        
+        return SearchItem(id: -1, name: countryPhoneCode.name, code: countryPhoneCode.code, type: .phoneCode)
+    }
     // MARK: - Public Methods
     
     override func loadDataFields() {

@@ -52,7 +52,7 @@ final class SendProtocolViewController: BaseTableViewController {
     
     override func handleSendButton(_ sender: UIButton) {
         guard
-            let index = viewModel.indexForField(type: .section),
+            let index = viewModel.indexForSendField(type: .section),
             let section = viewModel.data[index].data as? Section,
             section.id.count > 8
         else {

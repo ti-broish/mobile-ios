@@ -9,7 +9,7 @@ import Foundation
 
 enum SearchItemType {
     
-    case organization, country, electionRegion, town, municipality, cityRegion, phone, section, parties
+    case organization, country, electionRegion, town, municipality, cityRegion, phone, phoneCode, section, parties
 }
 
 struct SearchItem {

@@ -5,6 +5,7 @@
 //  Created by Krasimir Slavkov on 12.05.21.
 //
 
+import UIKit
 import Combine
 
 enum SearchType {
@@ -16,6 +17,7 @@ enum SearchType {
     case cityRegions
     case sections
     case organizations
+    case countryPhoneCodes
 }
 
 final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
@@ -65,16 +67,20 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             loadingPublisher.send(false)
         case .organizations:
             getOrganizations()
+        case .countryPhoneCodes:
+            getCountryPhoneCodes()
         default:
             break
         }
     }
     
     func filter(by text: String) {
-        lastSearchedText = text
+        lastSearchedText = text.lowercased()
         
         filteredSearchData.removeAll()
-        filteredSearchData = searchData.filter { $0.name.lowercased().contains(lastSearchedText.lowercased()) }
+        filteredSearchData = searchData.filter {
+            $0.name.lowercased().contains(lastSearchedText) || $0.code.lowercased().contains(lastSearchedText)
+        }
     }
        
     func loadMunicipalities(_ municipalities: [Municipality]) {
@@ -182,6 +188,27 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
                 strongSelf.reloadDataPublisher.send(error)
                 strongSelf.loadingPublisher.send(false)
             }
+        }
+    }
+    
+    private func getCountryPhoneCodes() {
+        guard let path = Bundle.main.path(forResource: "phone-codes", ofType: "json") else {
+            return
+        }
+            
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            
+            let decoder = JSONDecoder()
+            let jsonData = try decoder.decode(CountryCodes.self, from: data)
+            
+            searchData = SearchResultsMapper.mapCountryPhoneCodes(jsonData.countries)
+            reloadDataPublisher.send(nil)
+            loadingPublisher.send(false)
+        } catch {
+            print("makeCountryCodes failed: \(error)")
+            reloadDataPublisher.send(error)
+            loadingPublisher.send(false)
         }
     }
 }

@@ -87,6 +87,10 @@
 		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
 		106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFD26441E6500571859 /* LocalStorage.swift */; };
 		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
+		107F71F9268AF3AC00658F2C /* RegistrationPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */; };
+		107F71FB268AF43B00658F2C /* RegistrationPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */; };
+		107F71FD268AFE1800658F2C /* CountryPhoneCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F71FC268AFE1700658F2C /* CountryPhoneCode.swift */; };
+		107F71FF268B011000658F2C /* phone-codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 107F71FE268B010F00658F2C /* phone-codes.json */; };
 		1080EB5E2675ECBB004AFC2A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080EB5D2675ECBB004AFC2A /* UIViewExtension.swift */; };
 		1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080EB602675EEF5004AFC2A /* DetailsViewController.swift */; };
 		1080EB632675EF07004AFC2A /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1080EB622675EF07004AFC2A /* DetailsViewController.xib */; };
@@ -314,6 +318,10 @@
 		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		106B7EFD26441E6500571859 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneCell.swift; sourceTree = "<group>"; };
+		107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationPhoneCell.xib; sourceTree = "<group>"; };
+		107F71FC268AFE1700658F2C /* CountryPhoneCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPhoneCode.swift; sourceTree = "<group>"; };
+		107F71FE268B010F00658F2C /* phone-codes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "phone-codes.json"; sourceTree = "<group>"; };
 		1080EB5D2675ECBB004AFC2A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1080EB602675EEF5004AFC2A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1080EB622675EF07004AFC2A /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
@@ -644,6 +652,8 @@
 				10C29D61267F8F5E008B19BE /* CountryCell.xib */,
 				102DC28626851DD7003582BB /* DescriptionCell.swift */,
 				102DC28826851DF2003582BB /* DescriptionCell.xib */,
+				107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */,
+				107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -662,6 +672,7 @@
 				1042B3CA2634AAE300764ACF /* fonts */,
 				106306A22671168100133598 /* SharedAssetsConfig.swift */,
 				102B847B2676526000839324 /* terms.html */,
+				107F71FE268B010F00658F2C /* phone-codes.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -744,6 +755,7 @@
 				10C4EA3726333AB4005FD07F /* RegistrationViewController.swift */,
 				10C4EA3C26333ADC005FD07F /* RegistrationViewController.xib */,
 				10EB5A9E263A099B00690F88 /* RegistrationDataBuilder.swift */,
+				107F71FC268AFE1700658F2C /* CountryPhoneCode.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -1256,6 +1268,8 @@
 				10C4EA3D26333ADC005FD07F /* RegistrationViewController.xib in Resources */,
 				1042B3E52634AAFD00764ACF /* Montserrat-ExtraLight.ttf in Resources */,
 				10C4EA8126334ACC005FD07F /* SendViolationViewController.xib in Resources */,
+				107F71FF268B011000658F2C /* phone-codes.json in Resources */,
+				107F71FB268AF43B00658F2C /* RegistrationPhoneCell.xib in Resources */,
 				1042B3EB2634AAFD00764ACF /* Montserrat-Thin.ttf in Resources */,
 				10DC9FAA264C18B700A7C941 /* SearchViewController.xib in Resources */,
 				102DC28926851DF2003582BB /* DescriptionCell.xib in Resources */,
@@ -1310,6 +1324,7 @@
 				CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */,
 				10569EE12680D6AC00843E71 /* SendViolationViewModel.swift in Sources */,
 				CFA574E626374C8D002BCECD /* FirebaseClient.swift in Sources */,
+				107F71FD268AFE1800658F2C /* CountryPhoneCode.swift in Sources */,
 				CFA5767426393F6D002BCECD /* GetPartiesRequest.swift in Sources */,
 				10C4EA8626334AE6005FD07F /* ViolationsTableViewController.swift in Sources */,
 				CFB138CE263592EF001B373D /* BaseViewController.swift in Sources */,
@@ -1407,6 +1422,7 @@
 				CF390FED2637329000999369 /* RequestProvider.swift in Sources */,
 				105802A02649EA4B00A88528 /* PickerCell.swift in Sources */,
 				10C4EA4626333BCD005FD07F /* ResetPasswordViewController.swift in Sources */,
+				107F71F9268AF3AC00658F2C /* RegistrationPhoneCell.swift in Sources */,
 				CFB138C0263591F7001B373D /* CoordinatableViewModel.swift in Sources */,
 				B83A12212680C17200304AC1 /* CaptureDevice.swift in Sources */,
 				10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */,

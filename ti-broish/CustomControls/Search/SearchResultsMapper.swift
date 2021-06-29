@@ -9,6 +9,24 @@ import Foundation
 
 struct SearchResultsMapper {
     
+    static func mapCountryPhoneCodes(_ countryPhoneCodes: [CountryPhoneCode]) -> [SearchItem] {
+        var items = [SearchItem]()
+        
+        for code in countryPhoneCodes {
+            items.append(
+                SearchItem(
+                    id: -1,
+                    name: code.name,
+                    code: code.code,
+                    type: .phoneCode,
+                    data: code as AnyObject
+                )
+            )
+        }
+        
+        return items
+    }
+    
     static func mapCountries(_ countries: [Country]) -> [SearchItem] {
         var items = [SearchItem]()
         

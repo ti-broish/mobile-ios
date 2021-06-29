@@ -15,7 +15,7 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
             let fieldType = data[indexPath.row].dataType as? SendFieldType,
-            let index = indexForField(type: fieldType)
+            let index = indexForSendField(type: fieldType)
         else {
             return
         }
@@ -70,14 +70,14 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     
     private func sendViolation() {
         guard
-            let town = dataForField(type: .town) as? Town,
-            let descriptionText = dataForField(type: .description) as? String
+            let town = dataForSendField(type: .town) as? Town,
+            let descriptionText = dataForSendField(type: .description) as? String
         else {
             return
         }
         
         let pictures = uploadPhotos.map { $0.id }
-        let section = dataForField(type: .section) as? Section
+        let section = dataForSendField(type: .section) as? Section
         
         APIManager.shared.sendViolation(
             town: town,

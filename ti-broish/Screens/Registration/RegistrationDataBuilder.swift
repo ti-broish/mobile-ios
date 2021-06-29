@@ -22,7 +22,7 @@ enum RegistrationFieldType: Int, CaseIterable {
 }
 
 struct RegistrationDataBuilder {
-    
+
     func makeConfig(for type: RegistrationFieldType) -> InputFieldConfig {
         switch type {
         case .firstName:

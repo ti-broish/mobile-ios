@@ -63,7 +63,7 @@ final class StartStreamViewController: BaseTableViewController {
         if let message = message {
             view.showMessage(message)
         } else {
-            if let section = viewModel.dataForField(type: .section) as? Section {
+            if let section = viewModel.dataForSendField(type: .section) as? Section {
                 viewModel.tryStartStream(section: section)
             } else {
                 view.showMessage(LocalizedStrings.Errors.invalidSection)

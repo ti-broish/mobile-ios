@@ -15,7 +15,7 @@ final class StartStreamViewModel: BaseViewModel, CoordinatableViewModel {
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
             let fieldType = data[indexPath.row].dataType as? SendFieldType,
-            let index = indexForField(type: fieldType)
+            let index = indexForSendField(type: fieldType)
         else {
             return
         }
