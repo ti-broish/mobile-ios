@@ -10,6 +10,11 @@ import UIKit
 class TibTheme {
     
     static func changeAppearance() {
+        let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: TibTheme().textColor]
+        UIBarButtonItem
+            .appearance(whenContainedInInstancesOf: [UISearchBar.self])
+            .setTitleTextAttributes(cancelButtonAttributes , for: .normal)
+        
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = LocalizedStrings.Buttons.cancel
     }
     

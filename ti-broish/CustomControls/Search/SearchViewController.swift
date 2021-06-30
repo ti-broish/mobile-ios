@@ -73,6 +73,7 @@ final class SearchViewController: UIViewController, TibViewControllable {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = LocalizedStrings.Search.searchBarPlaceholder
         navigationItem.searchController = searchController
         definesPresentationContext = true
@@ -154,10 +155,11 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         selectedItem = viewModel.items[indexPath.row]
         
         tableView.reloadData()
+        delegate?.didFinishSearching(value: selectedItem, sender: self)
     }
 }
 
