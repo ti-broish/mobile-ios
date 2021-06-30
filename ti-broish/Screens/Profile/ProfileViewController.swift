@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import Combine
 
 final class ProfileViewController: BaseTableViewController {
     
     private let viewModel = ProfileViewModel()
+    private var saveSubscription: AnyCancellable?
+    private var deleteSubscription: AnyCancellable?
+    
+    weak var coordinator: ContentContainerCoordinator?
     
     // MARK: - View lifecycle
     
@@ -48,11 +53,15 @@ final class ProfileViewController: BaseTableViewController {
     // MARK: - Private methods
     
     @objc private func handleSaveButton(_ sender: UIButton) {
-        viewModel.saveProfile()
+        if let errorMessage = viewModel.validator.validateProfile(fields: viewModel.data).first {
+            view.showMessage(errorMessage)
+        } else {
+            viewModel.saveProfile()
+        }
     }
     
     @objc private func handleDeleteButton(_ sender: UIBarButtonItem) {
-        assertionFailure("handleDeleteButton is not implemented")
+        viewModel.deleteProfile()
     }
     
     private func saveButtonView() -> UIView {
@@ -116,6 +125,52 @@ final class ProfileViewController: BaseTableViewController {
                 })
     }
     
+    @objc private func navigateToHome() {
+        coordinator?.start()
+    }
+    
+    private func observeSavePublisher() {
+        saveSubscription = viewModel
+            .savePublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] error in
+                    tableView.reloadData()
+                    viewModel.loadingPublisher.send(false)
+                    
+                    if let error = error {
+                        print("reload data failed \(error)")
+                        
+                        switch error {
+                        case .requestFailed(let responseError):
+                            view.showMessage(responseError.firstError ?? LocalizedStrings.Errors.defaultError)
+                        default:
+                            view.showMessage(LocalizedStrings.Errors.defaultError)
+                        }
+                    } else {
+                        view.showMessage(LocalizedStrings.Profile.saved)
+                        perform(#selector(navigateToHome), with: nil, afterDelay: 1)
+                    }
+                })
+    }
+    
+    @objc private func forceLogout() {
+        NotificationCenter.default.post(name: NSNotification.Name.forceLogout, object: nil)
+    }
+    
+    private func observeDeletePublisher() {
+        deleteSubscription = viewModel
+            .deletePublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] error in
+                    tableView.reloadData()
+                    viewModel.loadingPublisher.send(false)
+                    view.showMessage(LocalizedStrings.Profile.deleted)
+                    perform(#selector(forceLogout), with: nil, afterDelay: 1)
+                })
+    }
+    
     private func observeLoadingPublisher() {
         loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
             isLoading ? view.showLoading() : view.hideLoading()
@@ -124,6 +179,8 @@ final class ProfileViewController: BaseTableViewController {
     
     private func addObservers() {
         observeReloadDataPublisher()
+        observeSavePublisher()
+        observeDeletePublisher()
         observeLoadingPublisher()
     }
 }
@@ -169,6 +226,7 @@ extension ProfileViewController: UITableViewDataSource {
             }
 
             pickerCell.configureWith(model)
+            pickerCell.markAsDisabled()
             cell = pickerCell
         } else if model.isCheckboxField {
             let reusableCell = tableView.dequeueReusableCell(withIdentifier: CheckboxCell.cellIdentifier, for: indexPath)
@@ -190,13 +248,22 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
+extension ProfileViewController {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
 // MARK: - CheckbboxCellDelegate
 
 extension ProfileViewController: CheckboxCellDelegate {
     
     func didChangeCheckboxState(state: CheckboxState, sender: CheckboxCell) {
         if let indexPath = tableView.indexPath(for: sender) {
-            viewModel.updateFieldValue((state == .checked) as AnyObject, at: indexPath)
+            viewModel.updateFieldValue(state as AnyObject, at: indexPath)
         }
     }
 }

@@ -26,6 +26,7 @@ class BaseViewModel: DataFieldModel {
     let loadingPublisher = PassthroughSubject<Bool, Never>()
     let sendPublisher = PassthroughSubject<APIError?, Never>()
     var data: [InputFieldConfig] = [InputFieldConfig]()
+    let validator = Validator()
     
     var isAbroad: Bool = false {
         didSet {

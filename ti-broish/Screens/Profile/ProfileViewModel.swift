@@ -7,10 +7,14 @@
 
 import Foundation
 import Firebase
+import Combine
 
 final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     
     private var userDetails: UserDetails?
+    
+    let savePublisher = PassthroughSubject<APIError?, Never>()
+    let deletePublisher = PassthroughSubject<Void, Never>()
     
     override func loadDataFields() {
         let builder = ProfileDataBuilder()
@@ -50,10 +54,17 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
         APIManager.shared.updateUserDetails(user) { [weak self] result in
             switch result {
             case .success(_):
-                self?.reloadDataPublisher.send(nil)
+                self?.savePublisher.send(nil)
             case .failure(let error):
-                self?.reloadDataPublisher.send(error)
+                self?.savePublisher.send(error)
             }
+        }
+    }
+    
+    func deleteProfile() {
+        loadingPublisher.send(true)
+        APIManager.shared.deleteUser { [weak self] _ in
+            self?.deletePublisher.send()
         }
     }
     

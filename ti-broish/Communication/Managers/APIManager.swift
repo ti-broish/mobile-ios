@@ -69,7 +69,7 @@ extension APIManager: APIClientInterface {
         apiClient.updateUserDetails(user, completion: completion)
     }
     
-    func deleteUser(completion: APIResult<UserDetails>?) {
+    func deleteUser(completion: APIResult<BaseResponse>?) {
         apiClient.deleteUser(completion: completion)
     }
     

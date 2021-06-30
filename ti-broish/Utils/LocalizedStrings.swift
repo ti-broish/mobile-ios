@@ -8,6 +8,12 @@
 
 struct LocalizedStrings {
     
+    struct Profile {
+        
+        static let saved: String = "Промените са запазени."
+        static let deleted: String = "Успешно изтрихте личните си данни."
+    }
+    
     struct SendInputField {
         
         static let country: String = "Държава"
@@ -161,7 +167,7 @@ struct LocalizedStrings {
         static let organizationPlaceholder: String = "Избери организация"
         
         static let hasAgreedToKeepData: String = """
-        Съгласен съм да съхранявате данните ми и за целите на застъпнически кампании за следващите избори (след 04.04.2021).
+        Съгласен съм да съхранявате данните ми и за целите на застъпнически кампании за следващите избори (след 11.07.2021).
         Данните ви се съхраняват по подразбиране до 30 дни след изборния ден на база на легитимния интерес на администратора и изискванията на Изборния кодекс.
         """
     }

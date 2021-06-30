@@ -13,7 +13,6 @@ final class RegistrationViewModel: BaseViewModel, CoordinatableViewModel {
     
     let registrationPublisher = PassthroughSubject<String, Never>()
     let registrationFailedPublisher = PassthroughSubject<String, Never>()
-    let validator = Validator()
     var countryPhoneCode: CountryPhoneCode?
     private var registrationAttempts = 0
     

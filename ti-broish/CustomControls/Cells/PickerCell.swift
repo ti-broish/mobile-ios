@@ -49,4 +49,8 @@ final class PickerCell: TibTableViewCell, Configurable {
             valueLabel.text = nil
         }
     }
+    
+    func markAsDisabled() {
+        containerView.backgroundColor = TibTheme().darkTextColor.withAlphaComponent(0.5)
+    }
 }

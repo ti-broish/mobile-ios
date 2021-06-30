@@ -36,7 +36,7 @@ struct Validator {
             return false
         }
         
-        let regEx = "^[0-9]+$"
+        let regEx = "^[+]{0,1}\\d+$"
         let predicate = NSPredicate(format:"SELF MATCHES %@", regEx)
         
         return predicate.evaluate(with: phone)
@@ -127,6 +127,24 @@ struct Validator {
         
         if !validate(hasAdulthood: fields[RegistrationFieldType.hasAdulthood.rawValue].data as? CheckboxState) {
             errors.append(LocalizedStrings.Errors.invalidHasAdulthood)
+        }
+        
+        return errors
+    }
+    
+    func validateProfile(fields: [InputFieldConfig]) -> [String] {
+        var errors = [String]()
+        
+        if !validate(name: fields[ProfileFieldType.firstName.rawValue].data as? String) {
+            errors.append(LocalizedStrings.Errors.invalidFirstName)
+        }
+        
+        if !validate(name: fields[ProfileFieldType.lastName.rawValue].data as? String) {
+            errors.append(LocalizedStrings.Errors.invalidLastName)
+        }
+        
+        if !validate(phone: fields[ProfileFieldType.phone.rawValue].data as? String) {
+            errors.append(LocalizedStrings.Errors.invalidPhone)
         }
         
         return errors

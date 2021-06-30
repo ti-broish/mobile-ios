@@ -53,12 +53,15 @@ final class ContentContainerCoordinator: Coordinator {
     func getViewController(nibName: String) -> UIViewController? {
         switch nibName {
         case HomeViewController.nibName:
-            let controller = HomeViewController.init(nibName: nibName, bundle: nil)
-            controller.viewModel.coordinator = homeCoordinator
+            let viewController = HomeViewController.init(nibName: nibName, bundle: nil)
+            viewController.viewModel.coordinator = homeCoordinator
             
-            return controller
+            return viewController
         case ProfileViewController.nibName:
-            return ProfileViewController.init(nibName: nibName, bundle: nil)
+            let viewController = ProfileViewController.init(nibName: nibName, bundle: nil)
+            viewController.coordinator = self
+            
+            return viewController
         case SendProtocolViewController.nibName:
             return SendProtocolViewController.init(nibName: nibName, bundle: nil)
         case SendViolationViewController.nibName:

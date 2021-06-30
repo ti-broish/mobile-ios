@@ -105,9 +105,9 @@ class InputField: UIView, Configurable {
             textField.keyboardType = .default
             textField.isSecureTextEntry = true
         case .phone:
-            textField.keyboardType = .phonePad
+            textField.keyboardType = .numbersAndPunctuation
         case .pin:
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .numbersAndPunctuation
         default:
             textField.keyboardType = .default
         }

@@ -18,6 +18,22 @@ struct APIResponseError: Codable {
     let errorType: APIResponseErrorType
     let message: [String]
     let statusCode: Int
+    
+    var firstError: String? {
+        if let message = message.first, message.count > 1 {
+            return message
+        } else {
+            var text: String? = nil
+            
+            message.forEach { item in
+                if let c = item.first {
+                    text?.append(c)
+                }
+            }
+            
+            return text
+        }
+    }
 }
 
 enum APIError: Error {
