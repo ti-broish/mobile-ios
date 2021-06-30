@@ -31,8 +31,8 @@ final class ProtocolCell: TibTableViewCell {
     
     func configure(_ model: Protocol, at indexPath: IndexPath) {
         titleLabel.attributedText = StringUtils.makeAttributedText(
-            prefix: "\(indexPath.row + 1). \(LocalizedStrings.SendInputField.section): ",
-            text: model.section.code,
+            prefix: "\(indexPath.row + 1). \(LocalizedStrings.SendInputField.section)",
+            text: model.section.id,
             textColor: TibTheme().darkTextColor
         )
         

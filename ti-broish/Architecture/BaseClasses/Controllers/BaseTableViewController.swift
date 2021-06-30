@@ -14,6 +14,13 @@ class BaseTableViewController: BaseViewController {
     
     var baseViewModel = BaseViewModel()
     
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addObservers()
+    }
+    
     override func applyTheme() {
         super.applyTheme()
         
@@ -187,6 +194,37 @@ class BaseTableViewController: BaseViewController {
     }
     
     // MARK: - Private methods
+    
+    private func addObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if tableView.frame.origin.y == 0 {
+                tableView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if tableView.frame.origin.y != 0 {
+            tableView.frame.origin.y = 0
+        }
+    }
     
     private func showPhotosPickerViewController() {
         let viewController = PhotosPickerViewController(nibName: PhotosPickerViewController.nibName, bundle: nil)
