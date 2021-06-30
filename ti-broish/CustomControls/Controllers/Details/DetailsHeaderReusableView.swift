@@ -79,15 +79,22 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
             )
         )
         
-        if violation.sections != nil {
-//            stackView.addArrangedSubview(
-//                makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.sectionNumber, text: violation.section.id)
-//            )
-//
-//            stackView.addArrangedSubview(
-//                makeLabel(prefix: LocalizedStrings.Protocols.ProtocolDetails.location, text: violation.section.place)
-//            )
-            assertionFailure("violation sections are not handled")
+        if let section = violation.section {
+            stackView.addArrangedSubview(
+                makeLabel(
+                    prefix: LocalizedStrings.Protocols.ProtocolDetails.sectionNumber,
+                    text: section.id,
+                    textColor: theme.darkTextColor
+                )
+            )
+
+            stackView.addArrangedSubview(
+                makeLabel(
+                    prefix: LocalizedStrings.Violations.ViolationDetails.location,
+                    text: section.place,
+                    textColor: theme.darkTextColor
+                )
+            )
         }
         
         stackView.addArrangedSubview(

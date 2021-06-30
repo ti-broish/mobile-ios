@@ -211,11 +211,27 @@ class BaseTableViewController: BaseViewController {
             object: nil
         )
     }
+    
+    private func getFirstResponderPosition() -> CGPoint? {
+        let cell = tableView.visibleCells.first(where: { visibleCell in
+            if let textCell = visibleCell as? TextCell {
+                return textCell.textInputField.textField.isFirstResponder
+            } else if let descriptionCell = visibleCell as? DescriptionCell {
+                return descriptionCell.textView.isFirstResponder
+            } else {
+                return false
+            }
+        })
+        
+        return cell?.frame.origin ?? nil
+    }
 
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if tableView.frame.origin.y == 0 {
-                tableView.frame.origin.y -= keyboardSize.height
+                if let frame = getFirstResponderPosition(), frame.y > (tableView.frame.size.height / 2.0) {
+                    tableView.frame.origin.y -= keyboardSize.height
+                }
             }
         }
     }

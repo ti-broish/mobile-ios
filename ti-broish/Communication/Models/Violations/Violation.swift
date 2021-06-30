@@ -34,7 +34,7 @@ struct Violation: Decodable {
     let id: String
     let description: String
     let pictures: [Picture]
-    let sections: [Section]?
+    let section: Section?
     let status: ViolationStatus
     let statusLocalized: String
     let statusColor: String?

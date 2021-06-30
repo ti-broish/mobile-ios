@@ -29,22 +29,37 @@ final class ViolationCell: TibTableViewCell {
     }
     
     func configure(_ model: Violation, at indexPath: IndexPath) {
-        let rowIndex: String
+        let rowIndex = "\(indexPath.row + 1). "
+        let textColor = TibTheme().darkTextColor
         
-        if model.sections != nil {
-            rowIndex = ""
-            assertionFailure("violation sections are not handled")
+        if let section = model.section {
+            sectionLabel.attributedText = StringUtils.makeAttributedText(
+                prefix: "\(rowIndex)\(LocalizedStrings.SendInputField.section)",
+                text: section.id,
+                textColor: textColor
+            )
+            
+            locationLabel.attributedText = StringUtils.makeAttributedText(
+                prefix: LocalizedStrings.Violations.ViolationDetails.location,
+                text: section.place,
+                textColor: textColor
+            )
+            
+            descriptionLabel.attributedText = StringUtils.makeAttributedText(
+                prefix: LocalizedStrings.SendInputField.description,
+                text: model.description,
+                textColor: textColor
+            )
         } else {
             sectionLabel.isHidden = true
             locationLabel.isHidden = true
-            rowIndex = "\(indexPath.row + 1). "
+            
+            descriptionLabel.attributedText = StringUtils.makeAttributedText(
+                prefix: "\(rowIndex)\(LocalizedStrings.SendInputField.description)",
+                text: model.description,
+                textColor: textColor
+            )
         }
-        
-        descriptionLabel.attributedText = StringUtils.makeAttributedText(
-            prefix: "\(rowIndex)\(LocalizedStrings.SendInputField.description)",
-            text: model.description,
-            textColor: TibTheme().darkTextColor
-        )
         
         statusLabel.text = model.statusLocalized
         
