@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct APNSTokenRequest: RequestProvider {
     
@@ -13,9 +14,9 @@ struct APNSTokenRequest: RequestProvider {
         "/me/clients"
     }
     
-    // TODO: - refactor firebase APN token is different from user.getIDToken
-//    var parameters: [String : Any?] {
-//        ["token": token]
-//    }
-    
+    var parameters: [String : Any?] {
+        [
+            "token": Messaging.messaging().fcmToken
+        ]
+    }
 }

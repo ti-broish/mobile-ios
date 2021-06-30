@@ -64,12 +64,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 // MARK: - UNUserNotificationCenterDelegate
+
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        guard let token = String(data: deviceToken, encoding: .utf8) else { return }
+        guard Messaging.messaging().fcmToken != nil else {
+            return
+        }
+        
         Messaging.messaging().delegate = self
-        print("APNS token: \(token)")
+        APIManager.shared.sendAPNsToken { _ in }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -78,10 +82,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 // MARK: - MessagingDelegate
+
 extension AppDelegate: MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-      print("Firebase registration token: \(String(describing: fcmToken))")
+        APIManager.shared.sendAPNsToken { _ in }
     }
-    
 }
