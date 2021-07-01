@@ -12,6 +12,8 @@ import AVFoundation
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    private (set) var isKeyboardVisible = false
+    
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
 
@@ -28,8 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator?.start()
         
         registerRemoteNotifications(for: application)
-        
         setupAvSession()
+        addObservers()
         
         return true
     }
@@ -60,6 +62,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print(error)
         }
+    }
+    
+    private func addObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        isKeyboardVisible = true
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        isKeyboardVisible = false
     }
 }
 

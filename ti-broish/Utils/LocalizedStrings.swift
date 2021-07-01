@@ -12,6 +12,13 @@ struct LocalizedStrings {
         
         static let saved: String = "Промените са запазени."
         static let deleted: String = "Успешно изтрихте личните си данни."
+        
+        struct ConfirmDelete {
+            
+            static let message: String = "Потвърдете изтриване на профила"
+            static let deleteAction: String = "Да"
+            static let cancelAction: String = "Не"
+        }
     }
     
     struct SendInputField {

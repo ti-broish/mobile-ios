@@ -61,7 +61,25 @@ final class ProfileViewController: BaseTableViewController {
     }
     
     @objc private func handleDeleteButton(_ sender: UIBarButtonItem) {
-        viewModel.deleteProfile()
+        let alertController = UIAlertController(
+            title: nil,
+            message: LocalizedStrings.Profile.ConfirmDelete.message,
+            preferredStyle: .alert
+        )
+        
+        let deleteAction = UIAlertAction(
+            title: LocalizedStrings.Profile.ConfirmDelete.deleteAction,
+            style: .destructive,
+            handler: { [weak self] _ in
+                self?.viewModel.deleteProfile()
+            })
+        
+        let cancelAction = UIAlertAction(title: LocalizedStrings.Profile.ConfirmDelete.cancelAction, style: .cancel)
+        
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     private func saveButtonView() -> UIView {

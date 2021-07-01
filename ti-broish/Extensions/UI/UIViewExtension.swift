@@ -31,7 +31,11 @@ extension UIView {
         self.hideToastActivity()
     }
     
-    func showMessage(_ message: String, position: ToastPosition = .bottom) {
-        self.makeToast(message, duration: 3.0, position: position)
+    func showMessage(_ message: String, position: ToastPosition = .top) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            self.makeToast(message, duration: 3.0, position: appDelegate.isKeyboardVisible ? .top : .bottom)
+        } else {
+            self.makeToast(message, duration: 3.0, position: position)
+        }
     }
 }
