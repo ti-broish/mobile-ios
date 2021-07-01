@@ -13,7 +13,7 @@
         <!--Stream View Controller-->
         <scene sceneID="59W-34-gjL">
             <objects>
-                <viewController id="9mp-mJ-LVQ" customClass="StreamViewController" customModule="ti_broish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Streaming" id="9mp-mJ-LVQ" customClass="StreamViewController" customModule="ti_broish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cxV-Wb-3is">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,98 +150,12 @@
                         <outlet property="permissionsDeniedMessage" destination="hlX-gg-1VR" id="lhj-Hb-qmy"/>
                         <outlet property="startStopButton" destination="a11-C4-Oqm" id="aK5-qx-KfJ"/>
                         <outlet property="timerLabel" destination="4a2-j2-h5Y" id="hD8-0l-c4d"/>
-                        <segue destination="riu-ON-Pfq" kind="show" identifier="ShowInstructions" id="jTZ-zw-9om"/>
+                        <segue destination="riu-ON-Pfq" kind="presentation" identifier="ShowInstructions" id="jTZ-zw-9om"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPD-fx-S8s" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="94"/>
-        </scene>
-        <!--Launch Stream Controller-->
-        <scene sceneID="tSq-b4-C8f">
-            <objects>
-                <viewController storyboardIdentifier="LaunchStream" id="ePE-qd-ndZ" customClass="LaunchStreamController" customModule="ti_broish" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TGr-Ys-H4z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundMain" translatesAutoresizingMaskIntoConstraints="NO" id="Cw4-YP-3S6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dU-vJ-DN5" userLabel="Content View">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-Dz-fJq">
-                                        <rect key="frame" x="24" y="100" width="366" height="0.0"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="Black"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-op-DG2">
-                                        <rect key="frame" x="24" y="180" width="366" height="0.0"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="Black"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="mXv-oc-ig4">
-                                        <rect key="frame" x="188.5" y="204" width="37" height="37"/>
-                                        <color key="color" name="StreamingPrimary"/>
-                                    </activityIndicatorView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEm-xa-8Jt" userLabel="Try Again Button">
-                                        <rect key="frame" x="117" y="662" width="180" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="Pnr-c7-Mcn"/>
-                                            <constraint firstAttribute="height" constant="36" id="yTm-xJ-5ly"/>
-                                        </constraints>
-                                        <state key="normal" title="Опитай отново"/>
-                                        <connections>
-                                            <action selector="onTryAgainClick:" destination="ePE-qd-ndZ" eventType="touchUpInside" id="4ZF-Ki-18K"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="FTc-Dz-fJq" firstAttribute="top" secondItem="1dU-vJ-DN5" secondAttribute="top" constant="100" id="8zm-WR-lQO"/>
-                                    <constraint firstItem="mXv-oc-ig4" firstAttribute="top" secondItem="nYh-op-DG2" secondAttribute="bottom" constant="24" id="CKL-nd-uHc"/>
-                                    <constraint firstItem="mXv-oc-ig4" firstAttribute="centerX" secondItem="1dU-vJ-DN5" secondAttribute="centerX" id="Fzw-VD-OjS"/>
-                                    <constraint firstItem="nYh-op-DG2" firstAttribute="leading" secondItem="1dU-vJ-DN5" secondAttribute="leading" constant="24" id="GsV-rK-Mzd"/>
-                                    <constraint firstItem="nYh-op-DG2" firstAttribute="top" secondItem="FTc-Dz-fJq" secondAttribute="bottom" constant="80" id="MBO-wT-sSj"/>
-                                    <constraint firstAttribute="trailing" secondItem="FTc-Dz-fJq" secondAttribute="trailing" constant="24" id="P9P-cX-CBP"/>
-                                    <constraint firstItem="FTc-Dz-fJq" firstAttribute="leading" secondItem="1dU-vJ-DN5" secondAttribute="leading" constant="24" id="SOe-ro-Far"/>
-                                    <constraint firstAttribute="bottom" secondItem="MEm-xa-8Jt" secondAttribute="bottom" constant="120" id="ary-vu-cmW"/>
-                                    <constraint firstItem="MEm-xa-8Jt" firstAttribute="centerX" secondItem="1dU-vJ-DN5" secondAttribute="centerX" id="hiA-SK-QuU"/>
-                                    <constraint firstAttribute="trailing" secondItem="nYh-op-DG2" secondAttribute="trailing" constant="24" id="qDC-4e-Udu"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bjv-BJ-vqi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bjv-BJ-vqi" firstAttribute="bottom" secondItem="1dU-vJ-DN5" secondAttribute="bottom" id="Ak7-xf-fF9"/>
-                            <constraint firstItem="1dU-vJ-DN5" firstAttribute="top" secondItem="bjv-BJ-vqi" secondAttribute="top" id="IaL-9L-R3h"/>
-                            <constraint firstItem="Cw4-YP-3S6" firstAttribute="bottom" secondItem="TGr-Ys-H4z" secondAttribute="bottom" id="KDk-Nq-QBN"/>
-                            <constraint firstItem="Cw4-YP-3S6" firstAttribute="trailing" secondItem="TGr-Ys-H4z" secondAttribute="trailing" id="Npe-mr-bh7"/>
-                            <constraint firstItem="Cw4-YP-3S6" firstAttribute="leading" secondItem="bjv-BJ-vqi" secondAttribute="leading" id="WVZ-dO-Q7t"/>
-                            <constraint firstItem="1dU-vJ-DN5" firstAttribute="trailing" secondItem="bjv-BJ-vqi" secondAttribute="trailing" id="cal-iN-8KC"/>
-                            <constraint firstItem="Cw4-YP-3S6" firstAttribute="top" secondItem="TGr-Ys-H4z" secondAttribute="top" id="tm4-BZ-oQV"/>
-                            <constraint firstItem="1dU-vJ-DN5" firstAttribute="leading" secondItem="bjv-BJ-vqi" secondAttribute="leading" id="zyr-OK-6pM"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="hqI-Ut-1fk"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="mXv-oc-ig4" id="pC8-IZ-vlj"/>
-                        <outlet property="backgroundView" destination="Cw4-YP-3S6" id="qv5-m9-xDq"/>
-                        <outlet property="loadingLabel" destination="nYh-op-DG2" id="0Cg-CN-jCe"/>
-                        <outlet property="messageLabel" destination="FTc-Dz-fJq" id="f0o-rZ-7iV"/>
-                        <outlet property="tryAgainButton" destination="MEm-xa-8Jt" id="k32-jK-xf0"/>
-                        <segue destination="9mp-mJ-LVQ" kind="presentation" identifier="StartStreaming" modalPresentationStyle="fullScreen" id="GmL-Ma-Yqf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="evt-y9-ouh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="736" y="94"/>
         </scene>
         <!--Instructions View Controller-->
         <scene sceneID="IZC-cR-6bx">
@@ -439,56 +353,54 @@
                                         <color key="textColor" name="Black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UD-Rz-EST" customClass="UIActivityIndicatorView">
-                                        <rect key="frame" x="147" y="137" width="24" height="24"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Ier-Zu-iJI">
+                                        <rect key="frame" x="140.5" y="137" width="37" height="37"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="PN1-Ng-GzF"/>
-                                            <constraint firstAttribute="height" constant="24" id="U9G-qQ-YtR"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bU7-SI-X7I" customClass="UIButton" customModule="ti_broish" customModuleProvider="target">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="color" name="StreamingPrimary"/>
+                                    </activityIndicatorView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-CU-QyB" userLabel="Try Again Button">
                                         <rect key="frame" x="69" y="280" width="180" height="36"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="Yee-kX-Udl"/>
-                                            <constraint firstAttribute="height" constant="36" id="wcM-uT-IFj"/>
+                                            <constraint firstAttribute="width" constant="180" id="XXR-MN-WFO"/>
+                                            <constraint firstAttribute="height" constant="36" id="rAh-cA-XNz"/>
                                         </constraints>
+                                        <state key="normal" title="Опитай отново"/>
                                         <connections>
-                                            <action selector="onTryAgainClick:" destination="WVF-Kg-qAi" eventType="touchUpInside" id="9Ij-aK-KkG"/>
+                                            <action selector="onTryAgainClick:" destination="WVF-Kg-qAi" eventType="touchUpInside" id="jb1-3f-axu"/>
                                         </connections>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDj-Bg-Xeb" customClass="UIButton" customModule="ti_broish" customModuleProvider="target">
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weE-YJ-Na4" userLabel="Close Button">
                                         <rect key="frame" x="69" y="340" width="180" height="36"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="Iuv-SF-mAq"/>
-                                            <constraint firstAttribute="height" constant="36" id="JxV-Qj-quY"/>
+                                            <constraint firstAttribute="width" constant="180" id="KjU-xH-vxL"/>
+                                            <constraint firstAttribute="height" constant="36" id="ukg-Jj-Wfp"/>
                                         </constraints>
+                                        <state key="normal" title="Затвори"/>
                                         <connections>
-                                            <action selector="onExitClick:" destination="WVF-Kg-qAi" eventType="touchUpInside" id="dn2-yB-zTv"/>
+                                            <action selector="onCancelClick:" destination="WVF-Kg-qAi" eventType="touchUpInside" id="Eo6-oZ-pFt"/>
                                         </connections>
-                                    </view>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="1UD-Rz-EST" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="7ey-eD-lL5"/>
+                                    <constraint firstItem="Ier-Zu-iJI" firstAttribute="top" secondItem="drZ-4v-quZ" secondAttribute="bottom" constant="24" id="4uy-Ff-qO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="weE-YJ-Na4" secondAttribute="bottom" constant="24" id="7Sn-ko-qY5"/>
                                     <constraint firstAttribute="height" constant="400" id="FJC-7H-w8D"/>
                                     <constraint firstItem="drZ-4v-quZ" firstAttribute="top" secondItem="pL6-2h-5L7" secondAttribute="bottom" constant="24" id="H0U-D4-G4P"/>
-                                    <constraint firstItem="bU7-SI-X7I" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="IWQ-o0-2TE"/>
                                     <constraint firstItem="pL6-2h-5L7" firstAttribute="top" secondItem="VRf-Cy-bew" secondAttribute="top" constant="48" id="NJN-d2-Z5b"/>
                                     <constraint firstItem="pL6-2h-5L7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VRf-Cy-bew" secondAttribute="leading" id="No1-fP-N06"/>
                                     <constraint firstItem="pL6-2h-5L7" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="RqF-uC-RBD"/>
-                                    <constraint firstItem="XDj-Bg-Xeb" firstAttribute="top" secondItem="bU7-SI-X7I" secondAttribute="bottom" constant="24" id="W2w-f1-nHO"/>
+                                    <constraint firstItem="weE-YJ-Na4" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="UJI-bJ-0Ja"/>
+                                    <constraint firstItem="OOi-CU-QyB" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="dJm-vu-3Db"/>
                                     <constraint firstItem="drZ-4v-quZ" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="dSP-5b-GUy"/>
-                                    <constraint firstItem="XDj-Bg-Xeb" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="ewT-zD-XRQ"/>
                                     <constraint firstItem="cMF-Tf-6fr" firstAttribute="top" secondItem="VRf-Cy-bew" secondAttribute="top" id="ffM-CV-pUt"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pL6-2h-5L7" secondAttribute="trailing" id="lsW-VQ-NqB"/>
-                                    <constraint firstItem="1UD-Rz-EST" firstAttribute="top" secondItem="drZ-4v-quZ" secondAttribute="bottom" constant="24" id="m6q-SY-znQ"/>
+                                    <constraint firstItem="weE-YJ-Na4" firstAttribute="top" secondItem="OOi-CU-QyB" secondAttribute="bottom" constant="24" id="mmX-sK-ZwD"/>
                                     <constraint firstAttribute="trailing" secondItem="cMF-Tf-6fr" secondAttribute="trailing" id="pbW-gf-O0b"/>
                                     <constraint firstItem="cMF-Tf-6fr" firstAttribute="leading" secondItem="VRf-Cy-bew" secondAttribute="leading" id="srp-qk-TZe"/>
-                                    <constraint firstAttribute="bottom" secondItem="XDj-Bg-Xeb" secondAttribute="bottom" constant="24" id="tBm-yH-dbl"/>
                                     <constraint firstAttribute="bottom" secondItem="cMF-Tf-6fr" secondAttribute="bottom" id="wa1-cO-rn1"/>
+                                    <constraint firstItem="Ier-Zu-iJI" firstAttribute="centerX" secondItem="VRf-Cy-bew" secondAttribute="centerX" id="yHo-5O-pNE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -502,11 +414,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="TOw-Fv-4PE"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="1UD-Rz-EST" id="oNk-XW-IR3"/>
-                        <outlet property="exitButton" destination="XDj-Bg-Xeb" id="FSu-pp-MBC"/>
+                        <outlet property="activityIndicator" destination="Ier-Zu-iJI" id="XNm-mU-naS"/>
+                        <outlet property="cancelButton" destination="weE-YJ-Na4" id="2PH-vP-Lc7"/>
                         <outlet property="loadingLabel" destination="drZ-4v-quZ" id="29w-Uj-saC"/>
                         <outlet property="titleLabel" destination="pL6-2h-5L7" id="kex-s0-IIJ"/>
-                        <outlet property="tryAgainButton" destination="bU7-SI-X7I" id="Ug8-gi-kD2"/>
+                        <outlet property="tryAgainButton" destination="OOi-CU-QyB" id="GZU-ZX-K3s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUY-AT-PMa" sceneMemberID="firstResponder"/>
@@ -528,13 +440,13 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Gray">
-            <color red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84700000286102295" green="0.84700000286102295" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="StreamingPrimary">
-            <color red="0.0" green="0.69019607843137254" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.68999999761581421" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="StreamingSecondary">
-            <color red="0.87058823529411766" green="0.2196078431372549" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.87099999189376831" green="0.2199999988079071" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

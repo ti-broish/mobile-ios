@@ -17,6 +17,15 @@ import FirebaseAuth
 
 class StreamViewController: StreamingBaseViewController, StreamReconnectControllerDelegate {
     
+    static let storyboardId = "Streaming"
+    
+    static func instantiate(stream: StreamResponse) -> StreamViewController {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Streaming", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: StreamViewController.storyboardId) as! StreamViewController
+        controller.streamInfo = UserStream(streamUrl: stream.streamUrl, viewUrl: stream.viewUrl)
+        return controller
+    }
+    
     // Views
     @IBOutlet weak var cameraFeedView: HKView!
     @IBOutlet weak var startStopButton: UIButton!
@@ -40,6 +49,7 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
     private var rtmpStream: RTMPStream!
     private var connectionUrl = ""
     private var streamName = ""
+    private var streamInfo: UserStream?
     private var videoQuality: VideoStreamQuality = .lowQuality
     private var videoOrientation: VideoStreamOrientation = .portrait
     
@@ -69,8 +79,8 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        connectionUrl = UserStreamingSession.default.streamInfo?.streamConnectionUrl ?? ""
-        streamName = UserStreamingSession.default.streamInfo?.streamName ?? ""
+        connectionUrl = streamInfo?.streamConnectionUrl ?? ""
+        streamName = streamInfo?.streamName ?? ""
         
         reconnectionWorkItem = DispatchWorkItem { [weak self] in
             guard let strongSelf = self else {return}
@@ -89,6 +99,7 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         checkPermissionsAndInitStream()
     }
     
@@ -104,6 +115,7 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         deinitStreaming()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     
@@ -148,14 +160,14 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
     @IBAction func onMoreMenuClick(_ sender: Any) {
         let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let cancelActionButton = UIAlertAction(title: .localized("button_close"), style: .cancel, handler: nil)
+        let cancelActionButton = UIAlertAction(title: .localized("button_close_menu"), style: .cancel, handler: nil)
         actionSheetController.addAction(cancelActionButton)
         
-        let exitActionButton = UIAlertAction(title: .localized("button_exit"), style: .destructive) { [weak self] _ in
+        let exitActionButton = UIAlertAction(title: .localized("button_exit_live"), style: .destructive) { [weak self] _ in
             self?.confirmExit()
         }
         
-        if let shareUrl = URL(string: UserStreamingSession.default.streamInfo?.viewUrl ?? "") {
+        if let shareUrl = URL(string: streamInfo?.viewUrl ?? "") {
             let shareActionButton = UIAlertAction(title: .localized("button_share_stream"), style: .default) { [weak self] _ in
                 self?.share(title: .localized("stream_share_title"), url: shareUrl)
             }
@@ -182,7 +194,7 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
             stopStreaming()
         }
         
-        dismissToRoot(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     private func confirmExit() {
@@ -271,6 +283,7 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
         startStopButton.isEnabled = false
         UIApplication.shared.isIdleTimerDisabled = true
         rtmpConnection.connect(connectionUrl)
+        view.showLoading()
         rtmpConnection.addEventListener(.rtmpStatus, selector: #selector(rtmpStatusHandler), observer: self)
         rtmpConnection.addEventListener(.ioError, selector: #selector(rtmpErrorHandler), observer: self)
         isStreamStarted = true
@@ -308,6 +321,10 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
     }
     
     @objc private func rtmpStatusHandler(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.view.hideLoading()
+        }
+        
         let e = Event.from(notification)
         guard let data: ASObject = e.data as? ASObject, let code: String = data["code"] as? String else {
             return
@@ -324,29 +341,36 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
                     self.onStreamStarted()
                 }
             case RTMPConnection.Code.connectFailed.rawValue, RTMPConnection.Code.connectClosed.rawValue:
-                if (streamConnectRetryCount <= streamConnectRetryMax) {
-                    DispatchQueue.main.async {
-                        self.showReconnectDialog(reason: .streamInterrupted)
-                        self.reconnectDialogVc?.isLoading = true
-                        self.onStreamInterrupted()
-                    }
-                    
-                    if let reconnectWork = reconnectionWorkItem {
-                        reconnectQueue.asyncAfter(deadline: .now() + pow(2.0, Double(streamConnectRetryCount)), execute: reconnectWork)
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self.reconnectDialogVc?.isLoading = false
-                        self.onStreamInterrupted()
-                    }
-                }
+                self.handleConnectionError(reason: .streamInterrupted)
             default:
                 break
         }
     }
     
     @objc private func rtmpErrorHandler(_ notification: Notification) {
-        rtmpConnection.connect(connectionUrl)
+        DispatchQueue.main.async {
+            self.view.hideLoading()
+        }
+        handleConnectionError(reason: .connectionError)
+    }
+    
+    private func handleConnectionError(reason: ReconnectReason) {
+        if (streamConnectRetryCount < streamConnectRetryMax) {
+            DispatchQueue.main.async {
+                self.showReconnectDialog(reason: reason)
+                self.reconnectDialogVc?.isLoading = true
+                self.onStreamInterrupted()
+            }
+            
+            if let reconnectWork = reconnectionWorkItem {
+                reconnectQueue.asyncAfter(deadline: .now() + pow(2.0, Double(streamConnectRetryCount)), execute: reconnectWork)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.reconnectDialogVc?.isLoading = false
+                self.onStreamInterrupted()
+            }
+        }
     }
     
     //MARK: - Orientation Change
@@ -454,8 +478,8 @@ class StreamViewController: StreamingBaseViewController, StreamReconnectControll
         }
     }
     
-    func onExitClick() {
-        exitStreaming()
+    func onCancelClick() {
+        reconnectionWorkItem?.cancel()
     }
     
     private func showReconnectDialog(reason: ReconnectReason) {

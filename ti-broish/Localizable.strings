@@ -18,6 +18,7 @@
 
 "stream_message_unavailable" = "Живото предаване в момента не е възможно";
 "stream_message_stream_disrupted" = "Връзката е прекъсната";
+"stream_message_stream_cannot_connect" = "Връзката не можа да бъде осъществена";
 "stream_message_no_internet_connection_try_again" = "Няма връзка с Интернет. Свържете се и опитайте отново";
 
 "stream_share_title" = "Tи Броиш Live";
@@ -27,13 +28,15 @@
 "stream_live_label" = "Live";
 
 "confirm_exit_title" = "Изход";
-"confirm_exit_message" = "Потвърдете, че искате да прекъснете живото предаване.";
+"confirm_exit_message" = "Потвърдете, че искате да приключите с живото предаване.";
 
 "label_loading" = "Свързване...";
 
 "button_close" = "Затвори";
+"button_close_menu" = "Затвори менюто";
+"button_cancel" = "Прекъсни";
 "button_next" = "Напред";
-"button_logout" = "Изход";
+"button_exit_live" = "Изход от Live";
 "button_try_again" = "Опитай отново";
 "button_exit" = "Изход";
 "button_yes" = "Да";
