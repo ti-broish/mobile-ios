@@ -87,6 +87,7 @@
 		106B7EF82644187600571859 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EF72644187600571859 /* Validator.swift */; };
 		106B7EFE26441E6500571859 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFD26441E6500571859 /* LocalStorage.swift */; };
 		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
+		106CA8CB268DE80B00026043 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CA8CA268DE80B00026043 /* DeviceType.swift */; };
 		10790F5C268B9BAE00610D23 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */; };
 		107F71F9268AF3AC00658F2C /* RegistrationPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */; };
 		107F71FB268AF43B00658F2C /* RegistrationPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */; };
@@ -316,6 +317,7 @@
 		106B7EF72644187600571859 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		106B7EFD26441E6500571859 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		106CA8CA268DE80B00026043 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneCell.swift; sourceTree = "<group>"; };
 		107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationPhoneCell.xib; sourceTree = "<group>"; };
@@ -1100,6 +1102,7 @@
 				106B7EF72644187600571859 /* Validator.swift */,
 				106B7EFD26441E6500571859 /* LocalStorage.swift */,
 				10123A592673AC7A0089799B /* StringUtils.swift */,
+				106CA8CA268DE80B00026043 /* DeviceType.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1329,6 +1332,7 @@
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				1080EB682675F0F9004AFC2A /* ViolationsViewModel.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
+				106CA8CB268DE80B00026043 /* DeviceType.swift in Sources */,
 				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */,
 				1091BD4F268A6A79008CF1F3 /* StreamResponse.swift in Sources */,

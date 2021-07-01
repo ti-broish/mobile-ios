@@ -33,16 +33,22 @@ final class PhotoButtonsCell: TibTableViewCell {
         galleryView.layer.cornerRadius = 4.0
         galleryView.backgroundColor = .primaryColor
         galleryImageView.image = UIImage(named: SharedAssetsConfig.gallery)?.withTintColor(.white)
-        galleryLabel.font = .regularFont(size: 16.0)
+        galleryLabel.font = .regularFont(size: 14.0)
         galleryLabel.textColor = .white
         galleryLabel.text = LocalizedStrings.Buttons.gallery
         
         cameraView.layer.cornerRadius = 4.0
         cameraView.backgroundColor = .primaryColor
         cameraImageView.image = UIImage(named: SharedAssetsConfig.camera)?.withTintColor(.white)
-        cameraLabel.font = .regularFont(size: 16.0)
+        cameraLabel.font = .regularFont(size: 14.0)
         cameraLabel.textColor = .white
         cameraLabel.text = LocalizedStrings.Buttons.camera
+        
+        if DeviceType.isPad {
+            stackView.distribution = .fillEqually
+            galleryLabel.textAlignment = .center
+            cameraLabel.textAlignment = .center
+        }
     }
     
     func hideMessage() {
