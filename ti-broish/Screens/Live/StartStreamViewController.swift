@@ -103,9 +103,7 @@ final class StartStreamViewController: BaseTableViewController {
     }
     
     private func showStartStream(stream: StreamResponse) {
-        let controller = LaunchStreamController.instantiate()
-        controller.streamInfo = UserStream(streamUrl: stream.streamUrl, viewUrl: stream.viewUrl)
-        
+        let controller = StreamViewController.instantiate(stream: stream)
         navigationController?.navigationBar.isHidden = true
         navigationController?.pushViewController(controller, animated: true)
     }

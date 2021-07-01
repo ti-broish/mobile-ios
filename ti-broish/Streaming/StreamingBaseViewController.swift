@@ -11,17 +11,4 @@ class StreamingBaseViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
-    
-    func dismissToRoot(animated: Bool, completion: (() -> Void)?) {
-        var presentingController = presentingViewController
-        while presentingController?.presentingViewController != nil {
-            presentingController = presentingController?.presentingViewController
-        }
-        
-        if presentingController != nil {
-            presentingController?.dismiss(animated: animated, completion: completion)
-        } else {
-            dismiss(animated: animated, completion: completion)
-        }
-    }
 }

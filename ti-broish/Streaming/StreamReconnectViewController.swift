@@ -9,12 +9,13 @@ import UIKit
 
 protocol StreamReconnectControllerDelegate {
     func onTryAgainClick()
-    func onExitClick()
+    func onCancelClick()
 }
 
 enum ReconnectReason {
     case noInternet
     case streamInterrupted
+    case connectionError
 }
 
 class StreamReconnectViewController: StreamingBaseViewController {
@@ -23,7 +24,7 @@ class StreamReconnectViewController: StreamingBaseViewController {
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tryAgainButton: UIButton!
-    @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var delegate: StreamReconnectControllerDelegate? = nil
     
@@ -48,26 +49,32 @@ class StreamReconnectViewController: StreamingBaseViewController {
         updateTitle()
         loadingLabel.text = .localized("label_loading")
         tryAgainButton.configureSolidButton(title: .localized("button_try_again"), theme: theme)
-        exitButton.configureSolidButton(title: .localized("button_exit"), theme: theme)
+        cancelButton.configureSolidButton(title: .localized("button_cancel"), theme: theme)
     }
     
     @IBAction func onTryAgainClick(_ sender: Any) {
         delegate?.onTryAgainClick()
+        isLoading = true
     }
     
-    @IBAction func onExitClick(_ sender: Any) {
-        delegate?.onExitClick()
+    @IBAction func onCancelClick(_ sender: Any) {
+        delegate?.onCancelClick()
+        dismiss(animated: true, completion: nil)
     }
     
     private func updateLoadingState() {
         if (isLoading) {
             loadingLabel?.isHidden = false
+            activityIndicator?.isHidden = false
             activityIndicator?.startAnimating()
             tryAgainButton?.isHidden = true
+            cancelButton.configureSolidButton(title: .localized("button_cancel"), theme: theme)
         } else {
             loadingLabel?.isHidden = true
             activityIndicator?.stopAnimating()
+            activityIndicator?.isHidden = true
             tryAgainButton?.isHidden = false
+            cancelButton.configureSolidButton(title: .localized("button_close"), theme: theme)
         }
     }
     
@@ -77,6 +84,8 @@ class StreamReconnectViewController: StreamingBaseViewController {
                 titleLabel?.text = .localized("stream_message_no_internet_connection_try_again")
             case .streamInterrupted:
                 titleLabel?.text = .localized("stream_message_stream_disrupted")
+            case .connectionError:
+                titleLabel?.text = .localized("stream_message_stream_cannot_connect")
         }
     }
 }

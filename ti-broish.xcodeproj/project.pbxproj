@@ -155,10 +155,8 @@
 		10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5AA2263A1A8F00690F88 /* TibTextField.swift */; };
 		10EF3B89267BD4ED00601939 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EF3B88267BD4ED00601939 /* Photos.framework */; };
 		10F78C312642E43900407284 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F78C302642E43900407284 /* FirebaseError.swift */; };
-		B8149E732689BF10001D0D5C /* JsonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8149E722689BF10001D0D5C /* JsonExt.swift */; };
 		B83A1219267F7CE900304AC1 /* Streaming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B83A1218267F7CE900304AC1 /* Streaming.storyboard */; };
 		B83A121B2680C0C000304AC1 /* StreamingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A121A2680C0C000304AC1 /* StreamingBaseViewController.swift */; };
-		B83A121D2680C13700304AC1 /* LaunchStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A121C2680C13600304AC1 /* LaunchStreamViewController.swift */; };
 		B83A121F2680C16900304AC1 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A121E2680C16900304AC1 /* StreamViewController.swift */; };
 		B83A12212680C17200304AC1 /* CaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12202680C17200304AC1 /* CaptureDevice.swift */; };
 		B83A12232680C17B00304AC1 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A12222680C17B00304AC1 /* InstructionsViewController.swift */; };
@@ -171,7 +169,6 @@
 		B83A12362680C2EA00304AC1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B83A12352680C2EA00304AC1 /* Localizable.strings */; };
 		B83A12392680C4D800304AC1 /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = B83A12382680C4D800304AC1 /* HaishinKit */; };
 		B83A123E2680CE9C00304AC1 /* UserStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A123D2680CE9C00304AC1 /* UserStream.swift */; };
-		B83A12402680D0EE00304AC1 /* UserStreamingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A123F2680D0EE00304AC1 /* UserStreamingSession.swift */; };
 		CF390FCE2637097400999369 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FCD2637097400999369 /* LoginCoordinator.swift */; };
 		CF390FE42637326300999369 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FE32637326300999369 /* APIManager.swift */; };
 		CF390FED2637329000999369 /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF390FEC2637329000999369 /* RequestProvider.swift */; };
@@ -387,10 +384,8 @@
 		10EB5AA2263A1A8F00690F88 /* TibTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TibTextField.swift; sourceTree = "<group>"; };
 		10EF3B88267BD4ED00601939 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		10F78C302642E43900407284 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
-		B8149E722689BF10001D0D5C /* JsonExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonExt.swift; sourceTree = "<group>"; };
 		B83A1218267F7CE900304AC1 /* Streaming.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Streaming.storyboard; sourceTree = "<group>"; };
 		B83A121A2680C0C000304AC1 /* StreamingBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingBaseViewController.swift; sourceTree = "<group>"; };
-		B83A121C2680C13600304AC1 /* LaunchStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStreamViewController.swift; sourceTree = "<group>"; };
 		B83A121E2680C16900304AC1 /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		B83A12202680C17200304AC1 /* CaptureDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureDevice.swift; sourceTree = "<group>"; };
 		B83A12222680C17B00304AC1 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
@@ -402,7 +397,6 @@
 		B83A122E2680C1CC00304AC1 /* ViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		B83A12352680C2EA00304AC1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B83A123D2680CE9C00304AC1 /* UserStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStream.swift; sourceTree = "<group>"; };
-		B83A123F2680D0EE00304AC1 /* UserStreamingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStreamingSession.swift; sourceTree = "<group>"; };
 		CF390FCD2637097400999369 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CF390FE32637326300999369 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CF390FEC2637329000999369 /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
@@ -848,7 +842,6 @@
 				B83A12282680C1CC00304AC1 /* Ext */,
 				B83A121A2680C0C000304AC1 /* StreamingBaseViewController.swift */,
 				B83A12202680C17200304AC1 /* CaptureDevice.swift */,
-				B83A121C2680C13600304AC1 /* LaunchStreamViewController.swift */,
 				B83A121E2680C16900304AC1 /* StreamViewController.swift */,
 				B83A12242680C18400304AC1 /* StreamSettings.swift */,
 				B83A12222680C17B00304AC1 /* InstructionsViewController.swift */,
@@ -862,7 +855,6 @@
 			isa = PBXGroup;
 			children = (
 				B83A12292680C1CC00304AC1 /* StringExt.swift */,
-				B8149E722689BF10001D0D5C /* JsonExt.swift */,
 				B83A122A2680C1CC00304AC1 /* NetworkConnectivity.swift */,
 				B83A122D2680C1CC00304AC1 /* ImageExt.swift */,
 				B83A122E2680C1CC00304AC1 /* ViewExt.swift */,
@@ -874,7 +866,6 @@
 			isa = PBXGroup;
 			children = (
 				B83A123D2680CE9C00304AC1 /* UserStream.swift */,
-				B83A123F2680D0EE00304AC1 /* UserStreamingSession.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1311,8 +1302,6 @@
 				10790F5C268B9BAE00610D23 /* NotificationNameExtension.swift in Sources */,
 				10E02098267E7785007420D9 /* PhotoButtonsCell.swift in Sources */,
 				B83A12342680C1CC00304AC1 /* ViewExt.swift in Sources */,
-				B8149E732689BF10001D0D5C /* JsonExt.swift in Sources */,
-				B83A121D2680C13700304AC1 /* LaunchStreamViewController.swift in Sources */,
 				103A678B2649958F00D93853 /* HomeViewModel.swift in Sources */,
 				B83A121B2680C0C000304AC1 /* StreamingBaseViewController.swift in Sources */,
 				1062087F267188A100F28D83 /* UINavigationItemExtension.swift in Sources */,
@@ -1339,7 +1328,6 @@
 				1044A81D268A244300EEAB80 /* SendFieldsDataBuilder.swift in Sources */,
 				CFA575412637F768002BCECD /* Section.swift in Sources */,
 				1080EB682675F0F9004AFC2A /* ViolationsViewModel.swift in Sources */,
-				B83A12402680D0EE00304AC1 /* UserStreamingSession.swift in Sources */,
 				CFA5769426394A28002BCECD /* Municipality.swift in Sources */,
 				CF3DB0CE264BB84100AAB618 /* UserDetails.swift in Sources */,
 				1080EB612675EEF5004AFC2A /* DetailsViewController.swift in Sources */,
