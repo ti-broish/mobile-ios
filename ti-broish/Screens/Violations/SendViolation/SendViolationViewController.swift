@@ -243,7 +243,7 @@ extension SendViolationViewController: UITableViewDataSource {
         }
         
         viewModel.removeImage(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
     }
 }
 

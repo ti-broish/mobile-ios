@@ -50,6 +50,10 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
     }
     
     func removeImage(at index: Int) {
+        guard index < images.count else {
+            return
+        }
+        
         images.remove(at: index)
     }
     
