@@ -307,9 +307,15 @@ extension APIClient: APIClientInterface {
     
     func getViolations(completion: APIResult<ViolationsResponse>?) {
         let request = GetViolationsRequest()
-        
-        send(request) { result in
-            completion?(result)
+
+        send(request) { (result: Result<ViolationsResponse, APIError>) in
+            switch result {
+            case .success(var violations):
+                violations.sort(by: { $0.id < $1.id })
+                completion?(.success(violations))
+            case .failure(let error):
+                completion?(.failure(.requestFailed(error: error)))
+            }
         }
     }
 
