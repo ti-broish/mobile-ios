@@ -51,7 +51,6 @@ final class SendProtocolViewModel: SendViewModel, CoordinatableViewModel {
                 strongSelf.sendPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.uploadPhotos.removeAll()
                 strongSelf.sendPublisher.send(error)
             }
         }

@@ -67,13 +67,13 @@ final class ImagePreviewViewController: BaseViewController {
             return
         }
         
-        let imageWidth = CGFloat(view.bounds.size.width / image.size.width)
-        let imageHeight = CGFloat(view.bounds.size.height / image.size.height)
+        let imageWidth = CGFloat(scrollView.bounds.size.width / image.size.width)
+        let imageHeight = CGFloat(scrollView.bounds.size.height / image.size.height)
         let minZoom: CGFloat = min(imageWidth, imageHeight)
         
         if (minZoom <= 1.0) {
-            scrollView!.minimumZoomScale = minZoom
-            scrollView!.zoomScale = minZoom
+            scrollView.minimumZoomScale = minZoom
+            scrollView.zoomScale = minZoom
         }
     }
     

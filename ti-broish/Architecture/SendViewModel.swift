@@ -32,6 +32,7 @@ class SendViewModel: BaseViewModel {
             return
         }
         
+        uploadPhotos.remove(at: index)
         images.remove(at: index)
     }
     
