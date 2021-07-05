@@ -69,7 +69,7 @@ final class ImageCell: UICollectionViewCell, Cell {
         
         PHImageManager.default().requestImage(
             for: asset,
-            targetSize: imageView.frame.size,
+            targetSize: CGSize(width: 2048, height: 2048),
             contentMode: .aspectFit,
             options: nil
         ) { (image, _) in

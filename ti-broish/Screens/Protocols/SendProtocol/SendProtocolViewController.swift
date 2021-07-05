@@ -12,6 +12,8 @@ final class SendProtocolViewController: BaseTableViewController {
     
     private let viewModel = SendProtocolViewModel()
     private var sendSubscription: AnyCancellable?
+    private var uploadPhotoSubscription: AnyCancellable?
+    private var section: Section?
     
     // MARK: - View lifecycle
     
@@ -65,7 +67,13 @@ final class SendProtocolViewController: BaseTableViewController {
             return
         }
         
-        viewModel.uploadImages(section: section)
+        if viewModel.canSend {
+            viewModel.sendProtocol(section: section)
+        } else {
+            self.section = section
+            
+            viewModel.loadingPublisher.send(true)
+        }
     }
     
     // MARK: - Private methods
@@ -86,7 +94,7 @@ final class SendProtocolViewController: BaseTableViewController {
 
                     if error != nil {
                         switch error {
-                        case .requestFailed(let responseError) :
+                        case .requestFailed(let responseError):
                             view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
                         default:
                             break
@@ -103,9 +111,33 @@ final class SendProtocolViewController: BaseTableViewController {
         })
     }
     
+    private func obserceUploadPhotoPublisher() {
+        uploadPhotoSubscription = viewModel
+            .uploadPhotoPublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] error in
+                    if error != nil {
+                        switch error {
+                        case .requestFailed(let responseError):
+                            print("upload photo failed: \(responseError)")
+                        default:
+                            print("upload photo failed: \(String(describing: error))")
+                        }
+                    } else {
+                        print("upload photo finished")
+                        
+                        if viewModel.canSend, let section = section {
+                            viewModel.sendProtocol(section: section)
+                        }
+                    }
+                })
+    }
+    
     private func addObservers() {
         observeSendPublisher()
         observeLoadingPublisher()
+        obserceUploadPhotoPublisher()
     }
 }
 

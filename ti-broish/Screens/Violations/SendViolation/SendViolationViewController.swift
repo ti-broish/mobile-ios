@@ -12,6 +12,7 @@ final class SendViolationViewController: BaseTableViewController {
     
     private let viewModel = SendViolationViewModel()
     private var sendSubscription: AnyCancellable?
+    private var uploadPhotoSubscription: AnyCancellable?
     
     // MARK: - View lifecycle
     
@@ -65,7 +66,7 @@ final class SendViolationViewController: BaseTableViewController {
         if let message = message {
             view.showMessage(message)
         } else {
-            viewModel.trySendViolation()
+            viewModel.sendViolation()
         }
     }
     
@@ -104,9 +105,33 @@ final class SendViolationViewController: BaseTableViewController {
         })
     }
     
+    private func obserceUploadPhotoPublisher() {
+        uploadPhotoSubscription = viewModel
+            .uploadPhotoPublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] error in
+                    if error != nil {
+                        switch error {
+                        case .requestFailed(let responseError):
+                            print("upload photo failed: \(responseError)")
+                        default:
+                            print("upload photo failed: \(String(describing: error))")
+                        }
+                    } else {
+                        print("upload photo finished")
+                        
+                        if viewModel.canSend {
+                            viewModel.sendViolation()
+                        }
+                    }
+                })
+    }
+    
     private func addObservers() {
         observeSendPublisher()
         observeLoadingPublisher()
+        obserceUploadPhotoPublisher()
     }
 }
 

@@ -10,6 +10,8 @@ import Combine
 
 final class StartStreamViewModel: BaseViewModel, CoordinatableViewModel {
     
+    let sendPublisher = PassthroughSubject<APIError?, Never>()
+    
     let startStreamPublisher = PassthroughSubject<StreamResponse, Never>()
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {

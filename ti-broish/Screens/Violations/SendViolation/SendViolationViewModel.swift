@@ -7,10 +7,22 @@
 
 import UIKit
 
-final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
+final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
     
-    private (set) var images = [UIImage]()
-    private var uploadPhotos = [UploadPhoto]()
+    override var canSend: Bool {
+        guard
+            let _ = dataForSendField(type: .town) as? Town,
+            let _ = dataForSendField(type: .description) as? String
+        else {
+            return false
+        }
+        
+        if images.count > 0 {
+            return images.count == uploadPhotos.count
+        } else {
+            return true
+        }
+    }
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
@@ -41,38 +53,13 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
         images.removeAll()
     }
     
-    func setImages(_ images: [UIImage]) {
-        images.forEach { image in
-            if self.images.first(where: { $0 == image }) == nil {
-                self.images.append(image)
-            }
-        }
-    }
-    
-    func removeImage(at index: Int) {
-        guard index < images.count else {
-            return
-        }
-        
-        images.remove(at: index)
-    }
-    
     func start() {
         loadDataFields()
     }
     
-    func trySendViolation() {
-        if images.count > 0 {
-            uploadImages()
-        } else {
-            loadingPublisher.send(true)
-            sendViolation()
-        }
-    }
-    
-    // MARK: - Private methods
-    
-    private func sendViolation() {
+    func sendViolation() {
+        loadingPublisher.send(true)
+        
         guard
             let town = dataForSendField(type: .town) as? Town,
             let descriptionText = dataForSendField(type: .description) as? String
@@ -101,36 +88,6 @@ final class SendViolationViewModel: BaseViewModel, CoordinatableViewModel {
             case .failure(let error):
                 strongSelf.uploadPhotos.removeAll()
                 strongSelf.sendPublisher.send(error)
-            }
-        }
-    }
-    
-    private func uploadImages() {
-        loadingPublisher.send(true)
-        images.forEach { [weak self] image in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            if let imageData = image.jpegData(compressionQuality: 1.0) {
-                let base64String = imageData.base64EncodedString()
-                let photo = Photo(base64: base64String)
-                
-                APIManager.shared.uploadPhoto(photo) { result in
-                    switch result {
-                    case .success(let uploadPhoto):
-                        print("upload photo: \(uploadPhoto)")
-                        strongSelf.uploadPhotos.append(uploadPhoto)
-                        
-                        if strongSelf.uploadPhotos.count == strongSelf.images.count {
-                            strongSelf.sendViolation()
-                        }
-                    case .failure(let error):
-                        print("failed to upload photo: \(error)")
-                        strongSelf.uploadPhotos.removeAll()
-                        strongSelf.sendPublisher.send(error)
-                    }
-                }
             }
         }
     }

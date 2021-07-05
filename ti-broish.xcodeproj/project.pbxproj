@@ -22,6 +22,7 @@
 		0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39AC261CFFF80005BF38 /* LoginViewController.xib */; };
 		0AEB39B8261D01B60005BF38 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB39B7261D01B60005BF38 /* MenuViewController.swift */; };
 		0AEB39BD261D025C0005BF38 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AEB39BC261D025C0005BF38 /* MenuViewController.xib */; };
+		1002A9B62693A73C00CFA993 /* SendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002A9B52693A73C00CFA993 /* SendViewModel.swift */; };
 		1004C793267BFB96003CBA71 /* PhotosPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1004C792267BFB96003CBA71 /* PhotosPickerViewController.swift */; };
 		1004C795267BFBDB003CBA71 /* PhotosPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1004C794267BFBDB003CBA71 /* PhotosPickerViewController.xib */; };
 		1004C797267BFBFB003CBA71 /* PhotosPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1004C796267BFBFB003CBA71 /* PhotosPickerViewModel.swift */; };
@@ -256,6 +257,7 @@
 		0AEB39B1261D001E0005BF38 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0AEB39B7261D01B60005BF38 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AEB39BC261D025C0005BF38 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		1002A9B52693A73C00CFA993 /* SendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewModel.swift; sourceTree = "<group>"; };
 		1004C792267BFB96003CBA71 /* PhotosPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerViewController.swift; sourceTree = "<group>"; };
 		1004C794267BFBDB003CBA71 /* PhotosPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosPickerViewController.xib; sourceTree = "<group>"; };
 		1004C796267BFBFB003CBA71 /* PhotosPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerViewModel.swift; sourceTree = "<group>"; };
@@ -1046,6 +1048,7 @@
 				10321C9126871B9000EBE2B5 /* SendFieldType.swift */,
 				10321C9326871BA200EBE2B5 /* SendSectionType.swift */,
 				1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */,
+				1002A9B52693A73C00CFA993 /* SendViewModel.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -1432,6 +1435,7 @@
 				1004C797267BFBFB003CBA71 /* PhotosPickerViewModel.swift in Sources */,
 				CF872A01264BC2C300C8E849 /* UpdateUserDetailsRequest.swift in Sources */,
 				CFA5755D2637FCE2002BCECD /* PhotosState.swift in Sources */,
+				1002A9B62693A73C00CFA993 /* SendViewModel.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */,
 				10577056267A8BE60003C1DC /* ResetPasswordDataBuilder.swift in Sources */,
