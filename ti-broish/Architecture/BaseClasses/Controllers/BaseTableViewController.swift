@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Photos
 
 class BaseTableViewController: BaseViewController {
 
@@ -66,42 +65,12 @@ class BaseTableViewController: BaseViewController {
         return container
     }
     
-    @objc func handlePhotoGalleryButton(_ sender: UIButton) {
-        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
-        
-        switch authorizationStatus {
-        // User has not yet made a choice with regards to this application
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization { [weak self] status in
-                if status == .authorized {
-                    DispatchQueue.main.async {
-                        self?.showPhotosPickerViewController()
-                    }
-                }
-            }
-        case .authorized:
-            showPhotosPickerViewController()
-        default:
-            showSettings()
-        }
-    }
-    
-    @objc func handleCameraButton(_ sender: UIButton) {
-        let controller = UIImagePickerController()
-        controller.sourceType = .camera
-        controller.allowsEditing = true
-        controller.delegate = self
-        present(controller, animated: true)
-    }
-    
-    func updateSelectedImages(_ images: [UIImage]) {
-        assertionFailure("updateSelectedImages not implemented")
-    }
-    
     func shouldShowSearchController(for indexPath: IndexPath) -> Bool {
         guard let fieldType = baseViewModel.data[indexPath.row].dataType as? SendFieldType else {
             return false
         }
+        
+        forceResignFirstResponder()
         
         switch fieldType {
         case .municipality:
@@ -193,6 +162,18 @@ class BaseTableViewController: BaseViewController {
         self.present(navController, animated: true)
     }
     
+    func forceResignFirstResponder() {
+        for visibleCell in tableView.visibleCells {
+            if let textCell = visibleCell as? TextCell {
+                textCell.textInputField.textField.resignFirstResponder()
+                break
+            } else if let descriptionCell = visibleCell as? DescriptionCell {
+                descriptionCell.textView.resignFirstResponder()
+                break
+            }
+        }
+    }
+
     // MARK: - Private methods
     
     private func addObservers() {
@@ -240,30 +221,6 @@ class BaseTableViewController: BaseViewController {
         if tableView.frame.origin.y != 0 {
             tableView.frame.origin.y = 0
         }
-    }
-    
-    private func showPhotosPickerViewController() {
-        let viewController = PhotosPickerViewController(nibName: PhotosPickerViewController.nibName, bundle: nil)
-        viewController.delegate = self
-        
-        present(viewController, animated: true)
-    }
-    
-    private func showSettings() {
-        let alertController = UIAlertController(
-            title: LocalizedStrings.Photos.Settings.title,
-            message: LocalizedStrings.Photos.Settings.message,
-            preferredStyle: .alert
-        )
-        
-        alertController.addAction(UIAlertAction(title: LocalizedStrings.Buttons.cancel, style: .default))
-        alertController.addAction(UIAlertAction(title: LocalizedStrings.Photos.Settings.settings, style: .cancel) { _ in
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url)
-            }
-        })
-        
-        present(alertController, animated: true)
     }
 }
 
@@ -315,7 +272,7 @@ extension BaseTableViewController: UITextFieldDelegate {
         }.first
     }
     
-    func updateValueForTextField(_ textField: UITextField) {
+    private func updateValueForTextField(_ textField: UITextField) {
         textField.resignFirstResponder()
         
         if let cell = cellFor(textField: textField),
@@ -323,36 +280,6 @@ extension BaseTableViewController: UITextFieldDelegate {
         {
             updateTextInputFieldValue(textField.text as AnyObject, at: indexPath)
         }
-    }
-}
-
-// MARK: - PhotosPickerDelegate
-
-extension BaseTableViewController: PhotosPickerDelegate {
-    
-    func didSelectPhotos(_ photos: [UIImage], sender: PhotosPickerViewController) {
-        print("didSelectPhotos: \(photos)")
-        updateSelectedImages(photos)
-        sender.dismiss(animated: true, completion: nil)
-    }
-}
-
-// MARK: - UIImagePickerControllerDelegate
-
-extension BaseTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(
-        _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
-    ) {
-        picker.dismiss(animated: true)
-
-        guard let image = info[.editedImage] as? UIImage else {
-            print("No image found")
-            return
-        }
-
-        updateSelectedImages([image])
     }
 }
 
@@ -384,4 +311,3 @@ extension BaseTableViewController: CountryCellDelegate {
         tableView.reloadData()
     }
 }
-

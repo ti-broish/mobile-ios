@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class SendViolationViewController: BaseTableViewController {
+final class SendViolationViewController: SendViewController {
     
     private let viewModel = SendViolationViewModel()
     private var sendSubscription: AnyCancellable?

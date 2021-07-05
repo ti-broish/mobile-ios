@@ -50,6 +50,7 @@
 		102B84832676607700839324 /* ProfileDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B84822676607700839324 /* ProfileDataBuilder.swift */; };
 		102DC28726851DD7003582BB /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102DC28626851DD7003582BB /* DescriptionCell.swift */; };
 		102DC28926851DF2003582BB /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102DC28826851DF2003582BB /* DescriptionCell.xib */; };
+		102F19162693AA8500DE8505 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F19152693AA8500DE8505 /* SendViewController.swift */; };
 		1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031CE7726449CBC000214DD /* CountriesRequest.swift */; };
 		10321C9226871B9000EBE2B5 /* SendFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10321C9126871B9000EBE2B5 /* SendFieldType.swift */; };
 		10321C9426871BA200EBE2B5 /* SendSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10321C9326871BA200EBE2B5 /* SendSectionType.swift */; };
@@ -284,6 +285,7 @@
 		102B84822676607700839324 /* ProfileDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataBuilder.swift; sourceTree = "<group>"; };
 		102DC28626851DD7003582BB /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
 		102DC28826851DF2003582BB /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
+		102F19152693AA8500DE8505 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		1031CE7726449CBC000214DD /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
 		10321C9126871B9000EBE2B5 /* SendFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFieldType.swift; sourceTree = "<group>"; };
 		10321C9326871BA200EBE2B5 /* SendSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSectionType.swift; sourceTree = "<group>"; };
@@ -1049,6 +1051,7 @@
 				10321C9326871BA200EBE2B5 /* SendSectionType.swift */,
 				1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */,
 				1002A9B52693A73C00CFA993 /* SendViewModel.swift */,
+				102F19152693AA8500DE8505 /* SendViewController.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -1394,6 +1397,7 @@
 				CFA5750F2637E2D2002BCECD /* APNSTokenRequest.swift in Sources */,
 				10123A5626739FFB0089799B /* ProtocolsViewModel.swift in Sources */,
 				B83A123E2680CE9C00304AC1 /* UserStream.swift in Sources */,
+				102F19162693AA8500DE8505 /* SendViewController.swift in Sources */,
 				CFA5766126392DB6002BCECD /* SendProtocolResponse.swift in Sources */,
 				CFA5768626394663002BCECD /* GetElectionRegionsRequest.swift in Sources */,
 				10C4EA5E2633494E005FD07F /* ProtocolsTableViewController.swift in Sources */,

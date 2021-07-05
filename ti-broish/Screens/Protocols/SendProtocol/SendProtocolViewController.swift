@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class SendProtocolViewController: BaseTableViewController {
+final class SendProtocolViewController: SendViewController {
     
     private let viewModel = SendProtocolViewModel()
     private var sendSubscription: AnyCancellable?
@@ -185,6 +185,7 @@ extension SendProtocolViewController: UITableViewDataSource {
             
             textCell.textInputField.configureWith(viewModel.data[indexPath.row])
             textCell.textInputField.textField.delegate = self
+            textCell.textInputField.textField.keyboardType = .numbersAndPunctuation
             
             return textCell
         case .images:
