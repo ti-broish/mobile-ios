@@ -38,7 +38,7 @@ final class HomeViewController: BaseViewController {
         sendViolationButton.configureSolidButton(title: LocalizedStrings.Home.sendViolation, theme: theme)
         termsButton.configureSolidButton(title: LocalizedStrings.Home.terms, theme: theme)
         // TODO: - make attributed string
-        liveButton.configureSolidButton(title: LocalizedStrings.Menu.live, theme: theme)
+        liveButton.configureSolidButton(attributedTitle: LocalizedStrings.Menu.live.makeLiveText(), theme: theme)
     }
     
     @IBAction private func handleSendProtocolButton(_ sender: UIButton) {

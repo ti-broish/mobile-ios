@@ -44,18 +44,18 @@
                                 <action selector="handleSendViolationButton:" destination="-1" eventType="touchUpInside" id="0oI-oX-nff"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-CL-leZ" userLabel="termsButton">
-                            <rect key="frame" x="0.0" y="156" width="248" height="54"/>
-                            <state key="normal" title="_terms_"/>
-                            <connections>
-                                <action selector="handleTermsButton:" destination="-1" eventType="touchUpInside" id="7Vh-iF-VJs"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fx6-Vd-jfz" userLabel="liveButton">
-                            <rect key="frame" x="0.0" y="234" width="248" height="54"/>
+                            <rect key="frame" x="0.0" y="156" width="248" height="54"/>
                             <state key="normal" title="_live_"/>
                             <connections>
                                 <action selector="handleLiveButton:" destination="-1" eventType="touchUpInside" id="HMY-P2-yuW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-CL-leZ" userLabel="termsButton">
+                            <rect key="frame" x="0.0" y="234" width="248" height="54"/>
+                            <state key="normal" title="_terms_"/>
+                            <connections>
+                                <action selector="handleTermsButton:" destination="-1" eventType="touchUpInside" id="7Vh-iF-VJs"/>
                             </connections>
                         </button>
                     </subviews>

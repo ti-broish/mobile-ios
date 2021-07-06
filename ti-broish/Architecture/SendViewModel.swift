@@ -26,7 +26,10 @@ class SendViewModel: BaseViewModel {
             return
         }
         
-        uploadPhotos.remove(at: index)
+        if index < uploadPhotos.count {
+            uploadPhotos.remove(at: index)
+        }
+        
         images.remove(at: index)
     }
     

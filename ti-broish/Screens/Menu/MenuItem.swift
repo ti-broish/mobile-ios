@@ -8,7 +8,7 @@
 
 enum MenuItemType {
     
-    case profile, sendProtocol, sendViolation, protocols, violations, terms, live, logout
+    case profile, sendProtocol, sendViolation, live, protocols, violations, terms, logout
 }
 
 struct MenuItem {
@@ -23,14 +23,14 @@ struct MenuItem {
             return LocalizedStrings.Menu.sendProtocol
         case .sendViolation:
             return LocalizedStrings.Menu.sendViolation
+        case .live:
+            return LocalizedStrings.Menu.live
         case .protocols:
             return LocalizedStrings.Menu.protocols
         case .violations:
             return LocalizedStrings.Menu.violations
         case .terms:
             return LocalizedStrings.Menu.terms
-        case .live:
-            return LocalizedStrings.Menu.live
         case .logout:
             return LocalizedStrings.Menu.logout
         }

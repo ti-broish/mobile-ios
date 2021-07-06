@@ -12,6 +12,10 @@ final class MenuCell: TibTableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     
     func configure(_ item: MenuItem) {
-        titleLabel.text = item.title
+        if item.type == .live {
+            titleLabel.attributedText = item.title.makeLiveText()
+        } else {
+            titleLabel.text = item.title
+        }
     }
 }

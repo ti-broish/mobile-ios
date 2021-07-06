@@ -24,4 +24,10 @@ extension UIButton {
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.regularFont(size: fontSize)
     }
+    
+    func configureSolidButton(attributedTitle: NSAttributedString, theme: TibTheme) {
+        layer.cornerRadius = 8.0
+        backgroundColor = theme.solidButtonBackgroundColor
+        setAttributedTitle(attributedTitle, for: .normal)
+    }
 }

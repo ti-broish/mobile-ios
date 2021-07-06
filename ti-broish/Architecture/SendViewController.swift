@@ -37,7 +37,6 @@ class SendViewController: BaseTableViewController {
         
         let controller = UIImagePickerController()
         controller.sourceType = .camera
-        controller.allowsEditing = true
         controller.delegate = self
         present(controller, animated: true)
     }
@@ -94,7 +93,7 @@ extension SendViewController: UIImagePickerControllerDelegate, UINavigationContr
     ) {
         picker.dismiss(animated: true)
 
-        guard let image = info[.editedImage] as? UIImage else {
+        guard let image = info[.originalImage] as? UIImage else {
             print("No image found")
             return
         }
