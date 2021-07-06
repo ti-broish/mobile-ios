@@ -18,6 +18,8 @@ final class SendProtocolViewModel: SendViewModel, CoordinatableViewModel {
                 data.append(config)
             }
         }
+        
+        loadCheckinDataSectionNumber()
     }
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
@@ -77,5 +79,15 @@ final class SendProtocolViewModel: SendViewModel, CoordinatableViewModel {
         }
     }
 
+    private func loadCheckinDataSectionNumber() {
+        let checkinData = checkinUtils.getStoredCheckinData()
+        let field: SendFieldType = .section
+        
+        if let item = checkinData[field] as? SearchItem,
+           let section = item.data as? Section
+        {
+            updateFieldValue(section as AnyObject, at: IndexPath(row: 0, section: SendSectionType.data.rawValue))
+        }
+    }
 }
 

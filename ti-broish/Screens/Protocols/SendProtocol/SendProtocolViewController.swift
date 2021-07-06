@@ -36,7 +36,7 @@ final class SendProtocolViewController: SendViewController {
     }
     
     override func updateTextInputFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
-        guard let sectionId = value as? String, sectionId.count > 5 else {
+        guard let sectionId = value as? String, sectionId.count == 9 else {
             return
         }
         

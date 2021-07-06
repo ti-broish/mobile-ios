@@ -149,6 +149,8 @@ class BaseViewModel: DataFieldModel {
     
     func resetFieldsData(for fieldType: SendFieldType) {
         switch fieldType {
+        case .countries:
+            resetFieldsData([.town, .section, .sectionNumber])
         case .electionRegion:
             resetFieldsData([.municipality, .town, .cityRegion, .section, .sectionNumber])
         case .municipality:

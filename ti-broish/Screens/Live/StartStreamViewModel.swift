@@ -8,9 +8,7 @@
 import UIKit
 import Combine
 
-final class StartStreamViewModel: BaseViewModel, CoordinatableViewModel {
-    
-    let sendPublisher = PassthroughSubject<APIError?, Never>()
+final class StartStreamViewModel: SendViewModel, CoordinatableViewModel {
     
     let startStreamPublisher = PassthroughSubject<StreamResponse, Never>()
     
@@ -31,12 +29,16 @@ final class StartStreamViewModel: BaseViewModel, CoordinatableViewModel {
     override func loadDataFields() {
         if isAbroad {
             resetAndReload(fields: SendFieldType.streamingAbroadFields)
+            tryLoadCheckinData(fields: SendFieldType.storedCheckinAbroadFields)
         } else {
             resetAndReload(fields: SendFieldType.streamingFields)
+            tryLoadCheckinData(fields: SendFieldType.storedCheckinFields)
         }
     }
     
     func start() {
+        isAbroad = checkinUtils.isAbroad
+        
         loadDataFields()
     }
     

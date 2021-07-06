@@ -9,8 +9,6 @@ import UIKit
 
 final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
     
-    private let checkinUtils = CheckinUtils()
-    
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
             let fieldType = data[indexPath.row].dataType as? SendFieldType,
@@ -28,10 +26,10 @@ final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
     override func loadDataFields() {
         if isAbroad {
             resetAndReload(fields: SendFieldType.checkinAbroadFields)
-            tryLoadCheckinData(fields: [.countries, .town, .section])
+            tryLoadCheckinData(fields: SendFieldType.storedCheckinAbroadFields)
         } else {
             resetAndReload(fields: SendFieldType.checkinFields)
-            tryLoadCheckinData(fields: [.electionRegion, .municipality, .town, .cityRegion, .section])
+            tryLoadCheckinData(fields: SendFieldType.storedCheckinFields)
         }
     }
     
@@ -82,36 +80,5 @@ final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
                 .cityRegion: dataForSendField(type: .cityRegion),
                 .section: dataForSendField(type: .section)
             ])
-    }
-    
-    private func loadCheckinData(_ checkinData: [SendFieldType: AnyObject?], fields: [SendFieldType]) {
-        for field in fields {
-            if let index = indexForSendField(type: field) {
-                if let value = checkinData[field] {
-                    resetFieldsData(for: field)
-                    setFieldValue(value, forFieldAt: index)
-                    toggleCityRegionField()
-                    prefillFieldValue(for: field, value: value)
-                }
-            }
-        }
-    }
-    
-    private func tryLoadCheckinData(fields: [SendFieldType]) {
-        let checkinData = checkinUtils.getStoredCheckinData()
-        
-        if isAbroad {
-            guard checkinData[.countries] != nil else {
-                return
-            }
-            
-            loadCheckinData(checkinData, fields: fields)
-        } else {
-            guard checkinData[.countries] == nil else {
-                return
-            }
-            
-            loadCheckinData(checkinData, fields: fields)
-        }
     }
 }

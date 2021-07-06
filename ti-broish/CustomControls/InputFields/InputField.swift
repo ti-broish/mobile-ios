@@ -64,6 +64,8 @@ class InputField: UIView, Configurable {
         
         if let text = data.data as? String {
             textField.text = text
+        } else if let section = data.data as? Section {
+            textField.text = section.id
         } else if let placeholderText = data.placeholderText {
             let theme = TibTheme()
             

@@ -26,8 +26,10 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
     override func loadDataFields() {
         if isAbroad {
             resetAndReload(fields: SendFieldType.violationAbroadFields)
+            tryLoadCheckinData(fields: SendFieldType.storedCheckinAbroadFields)
         } else {
             resetAndReload(fields: SendFieldType.violationFields)
+            tryLoadCheckinData(fields: SendFieldType.storedCheckinFields)
         }
     }
     
@@ -39,6 +41,8 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
     }
     
     func start() {
+        isAbroad = checkinUtils.isAbroad
+        
         loadDataFields()
     }
     

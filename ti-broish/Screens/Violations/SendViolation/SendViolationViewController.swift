@@ -189,6 +189,7 @@ extension SendViolationViewController: UITableViewDataSource {
                     return UITableViewCell()
                 }
 
+                countryCell.configure(countryType: viewModel.isAbroad ? .abroad : .defaultCountry)
                 countryCell.delegate = self
                 
                 cell = countryCell

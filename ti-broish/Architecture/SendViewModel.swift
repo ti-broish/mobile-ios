@@ -14,6 +14,7 @@ class SendViewModel: BaseViewModel {
     var uploadPhotos = [UploadPhoto]()
     
     let sendPublisher = PassthroughSubject<APIError?, Never>()
+    let checkinUtils = CheckinUtils()
     
     func setImages(_ images: [UIImage]) {
         for image in images {
@@ -65,6 +66,39 @@ class SendViewModel: BaseViewModel {
                             completion(.failure(error))
                         }
                     }
+                }
+            }
+        }
+    }
+
+    func tryLoadCheckinData(fields: [SendFieldType]) {
+        let checkinData = checkinUtils.getStoredCheckinData()
+        
+        if isAbroad {
+            guard checkinData[.countries] != nil else {
+                return
+            }
+            
+            loadCheckinData(checkinData, fields: fields)
+        } else {
+            guard checkinData[.countries] == nil else {
+                return
+            }
+            
+            loadCheckinData(checkinData, fields: fields)
+        }
+    }
+    
+    // MARK: - Private methods
+    
+    private func loadCheckinData(_ checkinData: [SendFieldType: AnyObject?], fields: [SendFieldType]) {
+        for field in fields {
+            if let index = indexForSendField(type: field) {
+                if let value = checkinData[field] {
+                    resetFieldsData(for: field)
+                    setFieldValue(value, forFieldAt: index)
+                    toggleCityRegionField()
+                    prefillFieldValue(for: field, value: value)
                 }
             }
         }

@@ -47,4 +47,12 @@ enum SendFieldType {
     static var checkinAbroadFields: [SendFieldType] {
         return [.countryCheckbox, .countries, .town, .section, .sectionNumber]
     }
+    
+    static var storedCheckinFields: [SendFieldType] {
+        return [.electionRegion, .municipality, .town, .cityRegion, .section]
+    }
+    
+    static var storedCheckinAbroadFields: [SendFieldType] {
+        return [.countries, .town, .section]
+    }
 }
