@@ -203,3 +203,25 @@ extension SendProtocolViewController: UITableViewDataSource {
         tableView.reloadData()
     }
 }
+
+// MARK: - UITextFieldDelegate
+
+extension SendProtocolViewController {
+    
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        let newString = "\(textField.text ?? "")\(string)"
+
+        guard
+            newString.count <= 9,
+            CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
+        else {
+            return false
+        }
+        
+        return true
+    }
+}
