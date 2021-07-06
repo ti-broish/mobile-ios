@@ -14,16 +14,10 @@ class SendViewModel: BaseViewModel {
     var uploadPhotos = [UploadPhoto]()
     
     let sendPublisher = PassthroughSubject<APIError?, Never>()
-    let uploadPhotoPublisher = PassthroughSubject<APIError?, Never>()
-    
-    var canSend: Bool {
-        return images.count == uploadPhotos.count
-    }
     
     func setImages(_ images: [UIImage]) {
         for image in images {
             self.images.append(image)
-            uploadImage(image)
         }
     }
     
@@ -36,30 +30,36 @@ class SendViewModel: BaseViewModel {
         images.remove(at: index)
     }
     
-    // MARK: - Private methods
-    
-    private func uploadImage(_ image: UIImage) {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
-            if let imageData = image.jpegData(compressionQuality: 1.0) {
-                let base64String = imageData.base64EncodedString()
-                let photo = Photo(base64: base64String)
+    func uploadImages(completion: @escaping (Result<Void, APIError>) -> (Void)) {
+        loadingPublisher.send(true)
+        
+        if uploadPhotos.count == images.count {
+            completion(.success(()))
+        } else {
+            uploadPhotos.removeAll()
+            
+            images.forEach { [weak self] image in
+                guard let strongSelf = self else {
+                    return
+                }
                 
-                APIManager.shared.uploadPhoto(photo) { result in
-                    switch result {
-                    case .success(let uploadPhoto):
-                        DispatchQueue.main.async {
+                if let imageData = image.jpegData(compressionQuality: 0.5) {
+                    let base64String = imageData.base64EncodedString()
+                    let photo = Photo(base64: base64String)
+                    
+                    APIManager.shared.uploadPhoto(photo) { result in
+                        switch result {
+                        case .success(let uploadPhoto):
                             print("upload photo: \(uploadPhoto)")
                             strongSelf.uploadPhotos.append(uploadPhoto)
-                            strongSelf.uploadPhotoPublisher.send(nil)
-                        }
-                    case .failure(let error):
-                        DispatchQueue.main.async {
+                            
+                            if strongSelf.uploadPhotos.count == strongSelf.images.count {
+                                completion(.success(()))
+                            }
+                        case .failure(let error):
                             print("failed to upload photo: \(error)")
                             strongSelf.uploadPhotos.removeAll()
-                            strongSelf.uploadPhotoPublisher.send(error)
+                            completion(.failure(error))
                         }
                     }
                 }

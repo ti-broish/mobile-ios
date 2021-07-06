@@ -12,7 +12,6 @@ final class SendProtocolViewController: SendViewController {
     
     private let viewModel = SendProtocolViewModel()
     private var sendSubscription: AnyCancellable?
-    private var uploadPhotoSubscription: AnyCancellable?
     private var section: Section?
     
     // MARK: - View lifecycle
@@ -66,14 +65,8 @@ final class SendProtocolViewController: SendViewController {
             view.showMessage(LocalizedStrings.Errors.invalidPhotos)
             return
         }
-        
-        if viewModel.canSend {
-            viewModel.sendProtocol(section: section)
-        } else {
-            self.section = section
-            
-            viewModel.loadingPublisher.send(true)
-        }
+
+        viewModel.uploadImages(section: section)
     }
     
     // MARK: - Private methods
@@ -111,33 +104,9 @@ final class SendProtocolViewController: SendViewController {
         })
     }
     
-    private func obserceUploadPhotoPublisher() {
-        uploadPhotoSubscription = viewModel
-            .uploadPhotoPublisher
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { [unowned self] error in
-                    if error != nil {
-                        switch error {
-                        case .requestFailed(let responseError):
-                            print("upload photo failed: \(responseError)")
-                        default:
-                            print("upload photo failed: \(String(describing: error))")
-                        }
-                    } else {
-                        print("upload photo finished")
-                        
-                        if viewModel.canSend, let section = section {
-                            viewModel.sendProtocol(section: section)
-                        }
-                    }
-                })
-    }
-    
     private func addObservers() {
         observeSendPublisher()
         observeLoadingPublisher()
-        obserceUploadPhotoPublisher()
     }
 }
 

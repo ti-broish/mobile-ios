@@ -9,21 +9,6 @@ import UIKit
 
 final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
     
-    override var canSend: Bool {
-        guard
-            let _ = dataForSendField(type: .town) as? Town,
-            let _ = dataForSendField(type: .description) as? String
-        else {
-            return false
-        }
-        
-        if images.count > 0 {
-            return images.count == uploadPhotos.count
-        } else {
-            return true
-        }
-    }
-    
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
             let fieldType = data[indexPath.row].dataType as? SendFieldType,
@@ -57,9 +42,25 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
         loadDataFields()
     }
     
-    func sendViolation() {
-        loadingPublisher.send(true)
-        
+    func trySendViolation() {
+        if images.count > 0 {
+            uploadImages { [weak self] result in
+                switch result {
+                case .success:
+                    self?.sendViolation()
+                case .failure(let error):
+                    self?.sendPublisher.send(error)
+                }
+            }
+        } else {
+            loadingPublisher.send(true)
+            sendViolation()
+        }
+    }
+    
+    // MARK: - Private methods
+    
+    private func sendViolation() {
         guard
             let town = dataForSendField(type: .town) as? Town,
             let descriptionText = dataForSendField(type: .description) as? String
@@ -85,8 +86,8 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
                 print("violation sent: \(violation)")
                 strongSelf.resetAll()
                 strongSelf.sendPublisher.send(nil)
+                strongSelf.loadingPublisher.send(false)
             case .failure(let error):
-                strongSelf.uploadPhotos.removeAll()
                 strongSelf.sendPublisher.send(error)
             }
         }

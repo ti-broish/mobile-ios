@@ -35,23 +35,13 @@ final class SendProtocolViewModel: SendViewModel, CoordinatableViewModel {
         loadDataFields()
     }
     
-    func sendProtocol(section: Section) {
-        loadingPublisher.send(true)
-        let pictures = uploadPhotos.map { $0.id }
-        
-        APIManager.shared.sendProtocol(section: section, pictures: pictures) { [weak self] result in
-            guard let strongSelf = self else {
-                return
-            }
-            
+    func uploadImages(section: Section) {
+        uploadImages { [weak self] result in
             switch result {
-            case .success(let item):
-                print("protocol sent: \(item)")
-                strongSelf.resetData()
-                strongSelf.sendPublisher.send(nil)
-                strongSelf.loadingPublisher.send(false)
+            case .success:
+                self?.sendProtocol(section: section)
             case .failure(let error):
-                strongSelf.sendPublisher.send(error)
+                self?.sendPublisher.send(error)
             }
         }
     }
@@ -66,5 +56,26 @@ final class SendProtocolViewModel: SendViewModel, CoordinatableViewModel {
         uploadPhotos.removeAll()
         images.removeAll()
     }
+    
+    private func sendProtocol(section: Section) {
+        let pictures = uploadPhotos.map { $0.id }
+
+        APIManager.shared.sendProtocol(section: section, pictures: pictures) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+
+            switch result {
+            case .success(let item):
+                print("protocol sent: \(item)")
+                strongSelf.resetData()
+                strongSelf.sendPublisher.send(nil)
+                strongSelf.loadingPublisher.send(false)
+            case .failure(let error):
+                strongSelf.sendPublisher.send(error)
+            }
+        }
+    }
+
 }
 
