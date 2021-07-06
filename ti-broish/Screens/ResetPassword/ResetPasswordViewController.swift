@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class ResetPasswordViewController: BaseViewController {
     
@@ -48,18 +49,26 @@ final class ResetPasswordViewController: BaseViewController {
     }
     
     @IBAction private func handleSendButton(_ sender: UIButton) {
-        guard let email = emailInputField.textField.text else {
+        guard
+            let email = emailInputField.textField.text,
+            viewModel.validator.validate(email: email)
+        else {
+            view.showMessage(LocalizedStrings.Errors.invalidEmail)
             return
         }
         
-        viewModel.resetPassword(email: email) { result in
+        view.showLoading()
+        viewModel.resetPassword(email: email) { [unowned self] result in
             switch result {
             case .success():
-                // TODO: - show toast
-                print(LocalizedStrings.ResetPassword.message)
+                view.showMessage(LocalizedStrings.ResetPassword.message)
+                viewModel.updateFieldValue(nil, at: IndexPath(row: 0, section: 0))
+                emailInputField.textField.text = nil
+                view.hideLoading()
             case .failure(let error):
-                // TODO: - show toast
-                print("request password failed: \(error.localizedString)")
+                print("request password failed: \(error)")
+                view.hideLoading()
+                view.showMessage(error.localizedString)
             }
         }
     }
@@ -71,7 +80,7 @@ extension ResetPasswordViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        // TODO: - implement email validation
+        
         return true
     }
 }
