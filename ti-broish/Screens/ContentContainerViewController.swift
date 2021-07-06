@@ -157,14 +157,16 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
             loadViewController(nibName: SendProtocolViewController.nibName)
         case .sendViolation:
             loadViewController(nibName: SendViolationViewController.nibName)
+        case .live:
+            loadViewController(nibName: StartStreamViewController.nibName)
+        case .checkin:
+            loadViewController(nibName: CheckinViewController.nibName)
         case .protocols:
             loadViewController(nibName: ProtocolsTableViewController.nibName)
         case .violations:
             loadViewController(nibName: ViolationsTableViewController.nibName)
         case .terms:
             loadViewController(nibName: TermsViewController.nibName)
-        case .live:
-            loadViewController(nibName: StartStreamViewController.nibName)
         case .logout:
             signOut()
         }

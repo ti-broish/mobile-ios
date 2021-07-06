@@ -9,7 +9,7 @@ import Foundation
 
 typealias ElectionRegionsResponse = [ElectionRegion]
 
-struct ElectionRegion: Decodable {
+struct ElectionRegion: Codable {
     
     // MARK: - Properties
     

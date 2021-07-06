@@ -134,7 +134,7 @@ class BaseViewModel: DataFieldModel {
         
         fields.forEach { fieldType in
             if var config = builder.makeConfig(for: fieldType) {
-                if fieldType == .section && self is StartStreamViewModel {
+                if fieldType == .section && (self is StartStreamViewModel || self is CheckinViewModel) {
                     config.isRequired = true
                 }
                 

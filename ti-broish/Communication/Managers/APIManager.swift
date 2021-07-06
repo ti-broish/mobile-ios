@@ -166,4 +166,10 @@ extension APIManager: APIClientInterface {
     func startStream(section: Section, completion: APIResult<StreamResponse>?) {
         apiClient.startStream(section: section, completion: completion)
     }
+    
+    // MARK: - Checkin
+    
+    func sendCheckin(section: Section, completion: APIResult<BaseResponse>?) {
+        apiClient.sendCheckin(section: section, completion: completion)
+    }
 }

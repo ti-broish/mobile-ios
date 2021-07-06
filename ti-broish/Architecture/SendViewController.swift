@@ -7,8 +7,11 @@
 
 import UIKit
 import Photos
+import Combine
 
 class SendViewController: BaseTableViewController {
+    
+    var sendSubscription: AnyCancellable?
     
     @objc func handlePhotoGalleryButton(_ sender: UIButton) {
         forceResignFirstResponder()

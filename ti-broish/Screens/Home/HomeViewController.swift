@@ -16,6 +16,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var sendViolationButton: UIButton!
     @IBOutlet private weak var termsButton: UIButton!
     @IBOutlet private weak var liveButton: UIButton!
+    @IBOutlet private weak var checkinButton: UIButton!
     
     let viewModel = HomeViewModel()
     
@@ -36,9 +37,9 @@ final class HomeViewController: BaseViewController {
         let theme = TibTheme()
         sendProtocolButton.configureSolidButton(title: LocalizedStrings.Home.sendProtocol, theme: theme)
         sendViolationButton.configureSolidButton(title: LocalizedStrings.Home.sendViolation, theme: theme)
-        termsButton.configureSolidButton(title: LocalizedStrings.Home.terms, theme: theme)
-        // TODO: - make attributed string
         liveButton.configureSolidButton(attributedTitle: LocalizedStrings.Menu.live.makeLiveText(), theme: theme)
+        checkinButton.configureSolidButton(title: LocalizedStrings.Menu.checkin, theme: theme)
+        termsButton.configureSolidButton(title: LocalizedStrings.Home.terms, theme: theme)
     }
     
     @IBAction private func handleSendProtocolButton(_ sender: UIButton) {
@@ -55,5 +56,9 @@ final class HomeViewController: BaseViewController {
     
     @IBAction private func handleLiveButton(_ sender: UIButton) {
         viewModel.coordinator?.loadViewController(nibName: StartStreamViewController.nibName)
+    }
+    
+    @IBAction private func handleCheckinButton(_ sender: UIButton) {
+        viewModel.coordinator?.loadViewController(nibName: CheckinViewController.nibName)
     }
 }

@@ -27,6 +27,8 @@ final class HomeCoordinator: Coordinator {
             controller = TermsViewController.init(nibName: nibName, bundle: nil)
         case StartStreamViewController.nibName:
             controller = StartStreamViewController.init(nibName: nibName, bundle: nil)
+        case CheckinViewController.nibName:
+            controller = CheckinViewController.init(nibName: nibName, bundle: nil)
         default:
             controller = nil
             assertionFailure("Invalid or not handled view controller nibName")

@@ -68,13 +68,13 @@ class StreamReconnectViewController: StreamingBaseViewController {
             activityIndicator?.isHidden = false
             activityIndicator?.startAnimating()
             tryAgainButton?.isHidden = true
-            cancelButton.configureSolidButton(title: .localized("button_cancel"), theme: theme)
+            cancelButton?.configureSolidButton(title: .localized("button_cancel"), theme: theme)
         } else {
             loadingLabel?.isHidden = true
             activityIndicator?.stopAnimating()
             activityIndicator?.isHidden = true
             tryAgainButton?.isHidden = false
-            cancelButton.configureSolidButton(title: .localized("button_close"), theme: theme)
+            cancelButton?.configureSolidButton(title: .localized("button_close"), theme: theme)
         }
     }
     

@@ -8,6 +8,11 @@
 
 struct LocalizedStrings {
     
+    struct Checkin {
+        
+        static let sent: String = "Отбелязването е изпратено успешно."
+    }
+    
     struct Profile {
         
         static let saved: String = "Промените са запазени."
@@ -138,10 +143,11 @@ struct LocalizedStrings {
         static let profile: String = "Профил"
         static let sendProtocol: String = "Изпрати протокол"
         static let sendViolation: String = "Изпрати сигнал"
+        static let live: String = "Ти броиш LIVE"
+        static let checkin: String = "Отбелязване"
         static let protocols: String = "Моите протоколи"
         static let violations: String = "Моите сигнали"
         static let terms: String = "Права и задължения"
-        static let live: String = "Ти броиш Live"
         static let logout: String = "Изход"
     }
     

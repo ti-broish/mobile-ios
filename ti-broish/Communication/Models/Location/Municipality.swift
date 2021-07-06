@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Municipality: Decodable {
+struct Municipality: Codable {
     
     // MARK: Properites
     

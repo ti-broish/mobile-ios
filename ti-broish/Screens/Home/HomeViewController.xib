@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
                 <outlet property="buttonsStackView" destination="CH8-eg-f5k" id="vFU-9n-l0g"/>
+                <outlet property="checkinButton" destination="9JW-ng-PVU" id="XSf-ur-igH"/>
                 <outlet property="liveButton" destination="Fx6-Vd-jfz" id="Dzy-zf-wjr"/>
                 <outlet property="sendProtocolButton" destination="g2G-j0-4Ps" id="qac-pE-7sW"/>
                 <outlet property="sendViolationButton" destination="vAv-bK-JMm" id="l8Y-dp-qtP"/>
@@ -25,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="CH8-eg-f5k" userLabel="buttonsStackView">
-                    <rect key="frame" x="83" y="44" width="248" height="288"/>
+                    <rect key="frame" x="83" y="44" width="248" height="366"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-j0-4Ps" userLabel="sendProtocolButton">
                             <rect key="frame" x="0.0" y="0.0" width="248" height="54"/>
@@ -51,8 +52,15 @@
                                 <action selector="handleLiveButton:" destination="-1" eventType="touchUpInside" id="HMY-P2-yuW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-CL-leZ" userLabel="termsButton">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JW-ng-PVU" userLabel="checkinButton">
                             <rect key="frame" x="0.0" y="234" width="248" height="54"/>
+                            <state key="normal" title="_checkin_"/>
+                            <connections>
+                                <action selector="handleCheckinButton:" destination="-1" eventType="touchUpInside" id="Z08-K8-dEF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-CL-leZ" userLabel="termsButton">
+                            <rect key="frame" x="0.0" y="312" width="248" height="54"/>
                             <state key="normal" title="_terms_"/>
                             <connections>
                                 <action selector="handleTermsButton:" destination="-1" eventType="touchUpInside" id="7Vh-iF-VJs"/>
@@ -62,9 +70,11 @@
                     <constraints>
                         <constraint firstItem="u6z-CL-leZ" firstAttribute="width" secondItem="g2G-j0-4Ps" secondAttribute="width" id="0JJ-9O-nXS"/>
                         <constraint firstItem="Fx6-Vd-jfz" firstAttribute="height" secondItem="g2G-j0-4Ps" secondAttribute="height" id="0zv-aL-wkI"/>
+                        <constraint firstItem="9JW-ng-PVU" firstAttribute="height" secondItem="Fx6-Vd-jfz" secondAttribute="height" id="HdZ-pK-sTY"/>
                         <constraint firstItem="vAv-bK-JMm" firstAttribute="width" secondItem="g2G-j0-4Ps" secondAttribute="width" id="MgE-S2-lPE"/>
                         <constraint firstItem="Fx6-Vd-jfz" firstAttribute="width" secondItem="g2G-j0-4Ps" secondAttribute="width" id="SOG-Ew-huf"/>
                         <constraint firstItem="u6z-CL-leZ" firstAttribute="height" secondItem="g2G-j0-4Ps" secondAttribute="height" id="cVj-gs-FmF"/>
+                        <constraint firstItem="9JW-ng-PVU" firstAttribute="width" secondItem="Fx6-Vd-jfz" secondAttribute="width" id="cha-GE-NYz"/>
                         <constraint firstItem="vAv-bK-JMm" firstAttribute="height" secondItem="g2G-j0-4Ps" secondAttribute="height" id="lnN-8V-yHF"/>
                     </constraints>
                 </stackView>

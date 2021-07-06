@@ -58,6 +58,9 @@ protocol APIClientInterface {
     
     // MARK: - Stream
     func startStream(section: Section, completion: APIResult<StreamResponse>?)
+    
+    // MARK: - Checkin
+    func sendCheckin(section: Section, completion: APIResult<BaseResponse>?)
 }
 
 final class APIClient {
@@ -357,6 +360,16 @@ extension APIClient: APIClientInterface {
     
     func startStream(section: Section, completion: APIResult<StreamResponse>?) {
         let request = StartStreamRequest(section: section)
+        
+        send(request) { result in
+            completion?(result)
+        }
+    }
+    
+    // MARK: - Checkin
+    
+    func sendCheckin(section: Section, completion: APIResult<BaseResponse>?) {
+        let request = SendCheckinRequest(section: section)
         
         send(request) { result in
             completion?(result)

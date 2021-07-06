@@ -91,6 +91,11 @@
 		106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B7EFF2644226400571859 /* UserDefaultsExtension.swift */; };
 		106CA8CB268DE80B00026043 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CA8CA268DE80B00026043 /* DeviceType.swift */; };
 		106ECCB0269475A000102C31 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106ECCAF269475A000102C31 /* StringExtension.swift */; };
+		106ECCB326949C7100102C31 /* CheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106ECCB226949C7100102C31 /* CheckinViewController.swift */; };
+		106ECCB526949C8700102C31 /* CheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106ECCB426949C8700102C31 /* CheckinViewController.xib */; };
+		106ECCB726949F9300102C31 /* CheckinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106ECCB626949F9200102C31 /* CheckinViewModel.swift */; };
+		106ECCB92694A51100102C31 /* SendCheckinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106ECCB82694A51100102C31 /* SendCheckinRequest.swift */; };
+		106ECCBB2694AA3300102C31 /* CheckinUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106ECCBA2694AA3300102C31 /* CheckinUtils.swift */; };
 		10790F5C268B9BAE00610D23 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */; };
 		107F71F9268AF3AC00658F2C /* RegistrationPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */; };
 		107F71FB268AF43B00658F2C /* RegistrationPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */; };
@@ -324,6 +329,11 @@
 		106B7EFF2644226400571859 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		106CA8CA268DE80B00026043 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		106ECCAF269475A000102C31 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		106ECCB226949C7100102C31 /* CheckinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinViewController.swift; sourceTree = "<group>"; };
+		106ECCB426949C8700102C31 /* CheckinViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckinViewController.xib; sourceTree = "<group>"; };
+		106ECCB626949F9200102C31 /* CheckinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinViewModel.swift; sourceTree = "<group>"; };
+		106ECCB82694A51100102C31 /* SendCheckinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCheckinRequest.swift; sourceTree = "<group>"; };
+		106ECCBA2694AA3300102C31 /* CheckinUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinUtils.swift; sourceTree = "<group>"; };
 		10790F5B268B9BAE00610D23 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		107F71F8268AF3AC00658F2C /* RegistrationPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneCell.swift; sourceTree = "<group>"; };
 		107F71FA268AF43B00658F2C /* RegistrationPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationPhoneCell.xib; sourceTree = "<group>"; };
@@ -558,6 +568,7 @@
 		0AEB398E261CFD800005BF38 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				106ECCB126949C6200102C31 /* Checkin */,
 				1044A813268A213000EEAB80 /* Live */,
 				0AE2CB552624EECC00C178C9 /* Profile */,
 				0AEB39B6261D01A10005BF38 /* Menu */,
@@ -715,6 +726,17 @@
 				10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */,
 			);
 			path = SendViolation;
+			sourceTree = "<group>";
+		};
+		106ECCB126949C6200102C31 /* Checkin */ = {
+			isa = PBXGroup;
+			children = (
+				106ECCB226949C7100102C31 /* CheckinViewController.swift */,
+				106ECCB426949C8700102C31 /* CheckinViewController.xib */,
+				106ECCB626949F9200102C31 /* CheckinViewModel.swift */,
+				106ECCBA2694AA3300102C31 /* CheckinUtils.swift */,
+			);
+			path = Checkin;
 			sourceTree = "<group>";
 		};
 		1080EB5F2675EEC8004AFC2A /* Controllers */ = {
@@ -917,6 +939,7 @@
 				CFA5767326393F6D002BCECD /* GetPartiesRequest.swift */,
 				CFA57680263943E0002BCECD /* GetSectionsRequest.swift */,
 				1091BD50268A6B9E008CF1F3 /* StartStreamRequest.swift */,
+				106ECCB82694A51100102C31 /* SendCheckinRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1263,6 +1286,7 @@
 				B83A12362680C2EA00304AC1 /* Localizable.strings in Resources */,
 				1042B3E12634AAFD00764ACF /* Montserrat-Regular.ttf in Resources */,
 				0AEB39AD261CFFF80005BF38 /* LoginViewController.xib in Resources */,
+				106ECCB526949C8700102C31 /* CheckinViewController.xib in Resources */,
 				1042B3E42634AAFD00764ACF /* Montserrat-Italic.ttf in Resources */,
 				10D0FAAB2674726E00DCF0EA /* ImageCell.xib in Resources */,
 				1016B695264C4C7F00515612 /* SearchCell.xib in Resources */,
@@ -1374,6 +1398,7 @@
 				0AE2CB692624F1FD00C178C9 /* LocalizedStrings.swift in Sources */,
 				10123A4D26739B3F0089799B /* ProtocolCell.swift in Sources */,
 				106306A32671168100133598 /* SharedAssetsConfig.swift in Sources */,
+				106ECCB726949F9300102C31 /* CheckinViewModel.swift in Sources */,
 				1080EB6A2675F1B7004AFC2A /* ViolationCell.swift in Sources */,
 				10C4EADD263362AD005FD07F /* TibViewControllable.swift in Sources */,
 				1042B3FC2634AD4E00764ACF /* UIFontExtension.swift in Sources */,
@@ -1416,6 +1441,7 @@
 				B83A12232680C17B00304AC1 /* InstructionsViewController.swift in Sources */,
 				0AE2CB6E2624F72300C178C9 /* MenuItem.swift in Sources */,
 				B83A12302680C1CC00304AC1 /* NetworkConnectivity.swift in Sources */,
+				106ECCB92694A51100102C31 /* SendCheckinRequest.swift in Sources */,
 				1031CE7826449CBC000214DD /* CountriesRequest.swift in Sources */,
 				10E02094267E70BD007420D9 /* UploadImageCell.swift in Sources */,
 				10EB5AA1263A0F9200690F88 /* LoginViewModel.swift in Sources */,
@@ -1434,6 +1460,7 @@
 				B83A12212680C17200304AC1 /* CaptureDevice.swift in Sources */,
 				10B9EAC52637557E0067FAE2 /* InputField.swift in Sources */,
 				B83A122F2680C1CC00304AC1 /* StringExt.swift in Sources */,
+				106ECCBB2694AA3300102C31 /* CheckinUtils.swift in Sources */,
 				10C4EACB26335C72005FD07F /* TibNavigationBar.swift in Sources */,
 				B83A12332680C1CC00304AC1 /* ImageExt.swift in Sources */,
 				CFA57681263943E0002BCECD /* GetSectionsRequest.swift in Sources */,
@@ -1446,6 +1473,7 @@
 				1002A9B62693A73C00CFA993 /* SendViewModel.swift in Sources */,
 				CFA574DE26374BE9002BCECD /* APIClient.swift in Sources */,
 				10B11E0626546544001E6B0E /* UILabelExtension.swift in Sources */,
+				106ECCB326949C7100102C31 /* CheckinViewController.swift in Sources */,
 				10577056267A8BE60003C1DC /* ResetPasswordDataBuilder.swift in Sources */,
 				CFA5766E26393D20002BCECD /* UploadPhotoRequest.swift in Sources */,
 				1062087D2671843B00F28D83 /* ContentContainerCoordinator.swift in Sources */,
@@ -1628,7 +1656,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ti-broish/ti-broish.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1653,7 +1681,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ti-broish/ti-broish.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -9,7 +9,7 @@ import Foundation
 
 typealias TownsResponse = [Town]
 
-struct Town: Decodable {
+struct Town: Codable {
     
     // MARK: Properties
     

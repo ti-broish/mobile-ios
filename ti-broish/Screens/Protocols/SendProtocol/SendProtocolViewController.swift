@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import Combine
 
 final class SendProtocolViewController: SendViewController {
     
     private let viewModel = SendProtocolViewModel()
-    private var sendSubscription: AnyCancellable?
     private var section: Section?
     
     // MARK: - View lifecycle

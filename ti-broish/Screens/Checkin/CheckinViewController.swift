@@ -1,15 +1,15 @@
 //
-//  SendViolationViewController.swift
+//  CheckinViewController.swift
 //  ti-broish
 //
-//  Created by Krasimir Slavkov on 23.04.21.
+//  Created by Krasimir Slavkov on 6.07.21.
 //
 
 import UIKit
 
-final class SendViolationViewController: SendViewController {
+final class CheckinViewController: SendViewController {
     
-    private let viewModel = SendViolationViewModel()
+    private let viewModel = CheckinViewModel()
     
     // MARK: - View lifecycle
     
@@ -27,13 +27,10 @@ final class SendViolationViewController: SendViewController {
         tableView.registerCell(CountryCell.self)
         tableView.registerCell(TextCell.self)
         tableView.registerCell(PickerCell.self)
-        tableView.registerCell(UploadImageCell.self)
-        tableView.registerCell(PhotoButtonsCell.self)
-        tableView.registerCell(DescriptionCell.self)
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.setHeaderView(text: LocalizedStrings.Menu.sendViolation)
+        tableView.setHeaderView(text: LocalizedStrings.Menu.checkin)
         tableView.tableFooterView = sendButtonTableFooterView()
     }
     
@@ -48,8 +45,8 @@ final class SendViolationViewController: SendViewController {
     
     override func handleSendButton(_ sender: UIButton) {
         let dataFields: [SendFieldType] = viewModel.isAbroad
-            ? [.countries, .town, .description]
-            : [.electionRegion, .municipality, .town, .description]
+            ? [.countries, .town, .section]
+            : [.electionRegion, .municipality, .town, .section]
         
         var message: String? = nil
         
@@ -63,7 +60,7 @@ final class SendViolationViewController: SendViewController {
         if let message = message {
             view.showMessage(message)
         } else {
-            viewModel.trySendViolation()
+            viewModel.sendCheckin()
         }
     }
     
@@ -91,7 +88,7 @@ final class SendViolationViewController: SendViewController {
                             break
                         }
                     } else {
-                        view.showMessage(LocalizedStrings.Violations.sent)
+                        view.showMessage(LocalizedStrings.Checkin.sent)
                     }
                 })
     }
@@ -110,7 +107,7 @@ final class SendViolationViewController: SendViewController {
 
 // MARK: - UITableViewDataSource
 
-extension SendViolationViewController: UITableViewDataSource {
+extension CheckinViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -130,10 +127,6 @@ extension SendViolationViewController: UITableViewDataSource {
         switch section {
         case .data:
             return viewModel.data.count
-        case .images:
-            return viewModel.images.count
-        case .buttons:
-            return 1
         default:
             return 0
         }
@@ -148,32 +141,15 @@ extension SendViolationViewController: UITableViewDataSource {
             let cell: UITableViewCell
             
             if model.isTextField {
-                let fieldType = model.dataType as! SendFieldType
-                
-                if fieldType == .description {
-                    let reusableCell = tableView.dequeueReusableCell(
-                        withIdentifier: DescriptionCell.cellIdentifier,
-                        for: indexPath
-                    )
-                    
-                    guard let descriptionCell = reusableCell as? DescriptionCell  else {
-                        return UITableViewCell()
-                    }
-
-                    descriptionCell.configureWith(model)
-                    descriptionCell.textView.delegate = self
-                    cell = descriptionCell
-                } else {
-                    let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
-                    guard let textCell = reusableCell as? TextCell  else {
-                        return UITableViewCell()
-                    }
-
-                    textCell.configureWith(model)
-                    textCell.textInputField.textField.delegate = self
-                    
-                    cell = textCell
+                let reusableCell = tableView.dequeueReusableCell(withIdentifier: TextCell.cellIdentifier, for: indexPath)
+                guard let textCell = reusableCell as? TextCell  else {
+                    return UITableViewCell()
                 }
+                
+                textCell.configureWith(model)
+                textCell.textInputField.textField.delegate = self
+                
+                cell = textCell
             } else if model.isPickerField {
                 let reusableCell = tableView.dequeueReusableCell(withIdentifier: PickerCell.cellIdentifier, for: indexPath)
                 guard let pickerCell = reusableCell as? PickerCell else {
@@ -197,75 +173,8 @@ extension SendViolationViewController: UITableViewDataSource {
             }
             
             return cell
-        case .images:
-            let reusableCell = tableView.dequeueReusableCell(
-                withIdentifier: UploadImageCell.cellIdentifier,
-                for: indexPath
-            )
-            
-            guard let uploadImageCell = reusableCell as? UploadImageCell else {
-                return UITableViewCell()
-            }
-            
-            uploadImageCell.configure(image: viewModel.images[indexPath.row], indexPath: indexPath)
-            uploadImageCell.deleteButton.addTarget(self, action: #selector(handleDeleteImage), for: .touchUpInside)
-            
-            return uploadImageCell
-        case .buttons:
-            let reusableCell = tableView.dequeueReusableCell(
-                withIdentifier: PhotoButtonsCell.cellIdentifier,
-                for: indexPath
-            )
-            
-            guard let photoButtonsCell = reusableCell as? PhotoButtonsCell else {
-                return UITableViewCell()
-            }
-            
-            photoButtonsCell.hideMessage()
-            photoButtonsCell.galleryButton.addTarget(self, action: #selector(handlePhotoGalleryButton), for: .touchUpInside)
-            photoButtonsCell.cameraButton.addTarget(self, action: #selector(handleCameraButton), for: .touchUpInside)
-            
-            return photoButtonsCell
         default:
             return UITableViewCell()
         }
-    }
-    
-    // MARK: - Private methods
-    
-    @objc private func handleDeleteImage(_ sender: UIButton) {
-        let indexPath = IndexPath(row: sender.tag, section: SendSectionType.images.rawValue)
-        
-        guard let _ = tableView.cellForRow(at: indexPath) as? UploadImageCell else {
-            return
-        }
-        
-        viewModel.removeImage(at: indexPath.row)
-        tableView.reloadData()
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension SendViolationViewController: UITextViewDelegate {
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if viewModel.dataForSendField(type: .description) == nil {
-            textView.textColor = TibTheme().textColor
-            textView.text = ""
-        }
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-            
-            if let index = viewModel.indexForSendField(type: .description) {
-                let indexPath = IndexPath(row: index, section: SendSectionType.data.rawValue)
-                viewModel.updateFieldValue(textView.text as AnyObject, at: indexPath)
-            }
-        }
-        
-        return true
     }
 }

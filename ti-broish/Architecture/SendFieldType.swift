@@ -39,4 +39,12 @@ enum SendFieldType {
     static var streamingAbroadFields: [SendFieldType] {
         return [.countryCheckbox, .countries, .town, .section, .sectionNumber]
     }
+    
+    static var checkinFields: [SendFieldType] {
+        return [.countryCheckbox, .electionRegion, .municipality, .town, .section, .sectionNumber]
+    }
+    
+    static var checkinAbroadFields: [SendFieldType] {
+        return [.countryCheckbox, .countries, .town, .section, .sectionNumber]
+    }
 }
