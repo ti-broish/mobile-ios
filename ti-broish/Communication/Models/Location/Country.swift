@@ -9,7 +9,7 @@ import Foundation
 
 typealias CountriesResponse = [Country]
 
-struct Country: Decodable {
+struct Country: Codable {
     
     static var defaultCountry: Country {
         return Country(code: "00", name: "България", isAbroad: false)

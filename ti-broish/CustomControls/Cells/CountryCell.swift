@@ -46,6 +46,17 @@ final class CountryCell: TibTableViewCell {
         changeCountry(type: .defaultCountry)
     }
     
+    func configure(countryType: CountryType) {
+        switch countryType {
+        case .defaultCountry:
+            countryButton.setTitle(CheckboxState.checked.stringValue, for: .normal)
+            abroadCountryButton.setTitle(CheckboxState.unchecked.stringValue, for: .normal)
+        case .abroad:
+            countryButton.setTitle(CheckboxState.unchecked.stringValue, for: .normal)
+            abroadCountryButton.setTitle(CheckboxState.checked.stringValue, for: .normal)
+        }
+    }
+    
     // MARK: - Private methods
     
     private func configureLabel(_ label: UILabel, text: String, theme: TibTheme) {
@@ -60,15 +71,7 @@ final class CountryCell: TibTableViewCell {
     }
     
     private func changeCountry(type: CountryType) {
-        switch type {
-        case .defaultCountry:
-            countryButton.setTitle(CheckboxState.checked.stringValue, for: .normal)
-            abroadCountryButton.setTitle(CheckboxState.unchecked.stringValue, for: .normal)
-        case .abroad:
-            countryButton.setTitle(CheckboxState.unchecked.stringValue, for: .normal)
-            abroadCountryButton.setTitle(CheckboxState.checked.stringValue, for: .normal)
-        }
-        
+        configure(countryType: type)
         delegate?.didChangeCountryType(type, sender: self)
     }
     

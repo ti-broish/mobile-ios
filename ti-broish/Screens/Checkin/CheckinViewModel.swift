@@ -9,6 +9,8 @@ import UIKit
 
 final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
     
+    private let checkinUtils = CheckinUtils()
+    
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
             let fieldType = data[indexPath.row].dataType as? SendFieldType,
@@ -26,8 +28,10 @@ final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
     override func loadDataFields() {
         if isAbroad {
             resetAndReload(fields: SendFieldType.checkinAbroadFields)
+            tryLoadCheckinData(fields: [.countries, .town, .section])
         } else {
             resetAndReload(fields: SendFieldType.checkinFields)
+            tryLoadCheckinData(fields: [.electionRegion, .municipality, .town, .cityRegion, .section])
         }
     }
     
@@ -39,6 +43,8 @@ final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
     }
     
     func start() {
+        isAbroad = checkinUtils.isAbroad
+        
         loadDataFields()
     }
     
@@ -55,7 +61,7 @@ final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
 
             switch result {
             case .success(_):
-                strongSelf.saveCheckin()
+                strongSelf.saveCheckinData()
                 strongSelf.sendPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
             case .failure(let error):
@@ -66,41 +72,46 @@ final class CheckinViewModel: SendViewModel, CoordinatableViewModel {
     
     // MARK: - Private methods
     
-    private func saveCheckin() {
+    private func saveCheckinData() {
+        checkinUtils.storeCheckin(
+            data: [
+                .countries: dataForSendField(type: .countries),
+                .electionRegion: dataForSendField(type: .electionRegion),
+                .municipality: dataForSendField(type: .municipality),
+                .town: dataForSendField(type: .town),
+                .cityRegion: dataForSendField(type: .cityRegion),
+                .section: dataForSendField(type: .section)
+            ])
+    }
+    
+    private func loadCheckinData(_ checkinData: [SendFieldType: AnyObject?], fields: [SendFieldType]) {
+        for field in fields {
+            if let index = indexForSendField(type: field) {
+                if let value = checkinData[field] {
+                    resetFieldsData(for: field)
+                    setFieldValue(value, forFieldAt: index)
+                    toggleCityRegionField()
+                    prefillFieldValue(for: field, value: value)
+                }
+            }
+        }
+    }
+    
+    private func tryLoadCheckinData(fields: [SendFieldType]) {
+        let checkinData = checkinUtils.getStoredCheckinData()
+        
         if isAbroad {
-            
-        } else {
-            guard
-                let electionRegion = dataForSendField(type: .electionRegion) as? ElectionRegion,
-                let municipality = dataForSendField(type: .municipality) as? Municipality,
-                let town = dataForSendField(type: .town) as? Town,
-                let section = dataForSendField(type: .section) as? Section
-            else {
+            guard checkinData[.countries] != nil else {
                 return
             }
-
-            let encoder = JSONEncoder()
-
-            if let electionRegionData = try? encoder.encode(electionRegion) {
-                UserDefaults.standard.set(electionRegionData, forKey: "checkinElectionRegion")
+            
+            loadCheckinData(checkinData, fields: fields)
+        } else {
+            guard checkinData[.countries] == nil else {
+                return
             }
             
-            if let municipalityData = try? encoder.encode(municipality) {
-                UserDefaults.standard.set(municipalityData, forKey: "checkinMunicipality")
-            }
-            
-            if let townData = try? encoder.encode(town) {
-                UserDefaults.standard.set(townData, forKey: "checkinTown")
-            }
-            
-            if let cityRegion = dataForSendField(type: .cityRegion) as? CityRegion,
-               let cityRegionData = try? encoder.encode(cityRegion) {
-                UserDefaults.standard.set(cityRegionData, forKey: "checkinCityRegion")
-            }
-            
-            if let sectionData = try? encoder.encode(section) {
-                UserDefaults.standard.set(sectionData, forKey: "checkinSection")
-            }
+            loadCheckinData(checkinData, fields: fields)
         }
     }
 }
