@@ -37,7 +37,12 @@ final class HomeViewController: BaseViewController {
         let theme = TibTheme()
         sendProtocolButton.configureSolidButton(title: LocalizedStrings.Home.sendProtocol, theme: theme)
         sendViolationButton.configureSolidButton(title: LocalizedStrings.Home.sendViolation, theme: theme)
-        liveButton.configureSolidButton(attributedTitle: LocalizedStrings.Menu.live.makeLiveText(), theme: theme)
+        
+        liveButton.configureSolidButton(
+            attributedTitle: LocalizedStrings.Menu.live.makeLiveText(textColor: theme.solidButtonTextColor),
+            theme: theme
+        )
+        
         checkinButton.configureSolidButton(title: LocalizedStrings.Menu.checkin, theme: theme)
         termsButton.configureSolidButton(title: LocalizedStrings.Home.terms, theme: theme)
     }
