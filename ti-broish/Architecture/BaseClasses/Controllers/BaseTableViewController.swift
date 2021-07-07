@@ -208,6 +208,8 @@ class BaseTableViewController: BaseViewController {
     }
 
     @objc private func keyboardWillShow(notification: NSNotification) {
+        tableView.isScrollEnabled = false
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if tableView.frame.origin.y == 0 {
                 if let frame = getFirstResponderPosition(), frame.y > (tableView.frame.size.height / 2.0) {
@@ -221,6 +223,8 @@ class BaseTableViewController: BaseViewController {
         if tableView.frame.origin.y != 0 {
             tableView.frame.origin.y = 0
         }
+        
+        tableView.isScrollEnabled = true
     }
 }
 
