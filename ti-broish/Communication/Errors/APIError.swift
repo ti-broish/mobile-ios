@@ -11,6 +11,7 @@ enum APIResponseErrorType: String, Codable {
     
     case BadRequestException
     case ConflictException
+    case UnauthorizedException
 }
 
 struct APIResponseError: Codable {

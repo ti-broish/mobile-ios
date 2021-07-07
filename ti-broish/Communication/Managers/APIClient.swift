@@ -133,7 +133,7 @@ final class APIClient {
                         }
                     } catch {
                         let responseError = String(data: data, encoding: .utf8) ?? "invalid api response error data"
-                        print("[API_RESPONSE_ERROR]: \(responseError)")
+                        print("[API_RESPONSE_ERROR JSONDecoder failed]: \(responseError)")
                         
                         completion(.failure(.jsonDecodingFailed(error: error)))
                     }
@@ -224,7 +224,7 @@ extension APIClient: APIClientInterface {
                 filteredCountries.sort(by: { $0.name < $1.name })
                 completion?(.success(filteredCountries))
             case .failure(let error):
-                completion?(.failure(.requestFailed(error: error)))
+                completion?(.failure(error))
             }
         }
     }
@@ -237,7 +237,7 @@ extension APIClient: APIClientInterface {
                 regions.sort(by: { $0.code < $1.code })
                 completion?(.success(regions))
             case .failure(let error):
-                completion?(.failure(.requestFailed(error: error)))
+                completion?(.failure(error))
             }
         }
     }
@@ -262,7 +262,7 @@ extension APIClient: APIClientInterface {
                 sections.sort(by: { $0.code < $1.code })
                 completion?(.success(sections))
             case .failure(let error):
-                completion?(.failure(.requestFailed(error: error)))
+                completion?(.failure(error))
             }
         }
     }
@@ -322,7 +322,7 @@ extension APIClient: APIClientInterface {
                 violations.sort(by: { $0.id < $1.id })
                 completion?(.success(violations))
             case .failure(let error):
-                completion?(.failure(.requestFailed(error: error)))
+                completion?(.failure(error))
             }
         }
     }

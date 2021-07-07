@@ -117,6 +117,15 @@ struct CheckinUtils {
         return data
     }
     
+    func reset() {
+        userDefaults.removeObject(forKey: storeKey(for: .countries))
+        userDefaults.removeObject(forKey: storeKey(for: .electionRegion))
+        userDefaults.removeObject(forKey: storeKey(for: .municipality))
+        userDefaults.removeObject(forKey: storeKey(for: .town))
+        userDefaults.removeObject(forKey: storeKey(for: .cityRegion))
+        userDefaults.removeObject(forKey: storeKey(for: .section))
+    }
+    
     // MARK: - Private methods
     
     private func store<T: Encodable>(data: T, key: String) {
@@ -159,14 +168,5 @@ struct CheckinUtils {
         case .organization:
             return "checkinOrganization"
         }
-    }
-    
-    private func reset() {
-        userDefaults.removeObject(forKey: storeKey(for: .countries))
-        userDefaults.removeObject(forKey: storeKey(for: .electionRegion))
-        userDefaults.removeObject(forKey: storeKey(for: .municipality))
-        userDefaults.removeObject(forKey: storeKey(for: .town))
-        userDefaults.removeObject(forKey: storeKey(for: .cityRegion))
-        userDefaults.removeObject(forKey: storeKey(for: .section))
     }
 }

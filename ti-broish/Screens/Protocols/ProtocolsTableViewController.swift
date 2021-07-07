@@ -45,8 +45,14 @@ final class ProtocolsTableViewController: BaseTableViewController {
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
-                    if let error = error {
+                    if let error = error as? APIError {
                         print("reload data failed \(error)")
+                        switch error {
+                        case .requestFailed(let responseErrors):
+                            view.showMessage(responseErrors.message.first ?? LocalizedStrings.Errors.defaultError)
+                        default:
+                            break
+                        }
                     }
                     
                     tableView.reloadData()

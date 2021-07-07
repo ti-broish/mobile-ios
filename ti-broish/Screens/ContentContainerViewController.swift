@@ -123,6 +123,7 @@ final class ContentContainerViewController: BaseViewController {
         do {
             try Auth.auth().signOut()
             LocalStorage.User().reset()
+            CheckinUtils().reset()
             appDelegate.appCoordinator?.logout()
         } catch {
             print("signOut failed: \(error)")

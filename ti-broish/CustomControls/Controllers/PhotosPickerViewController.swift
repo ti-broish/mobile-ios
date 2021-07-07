@@ -76,7 +76,7 @@ final class PhotosPickerViewController: BaseCollectionViewController {
                 receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
                     if let error = error {
-                        print("reload data failed \(error)")
+                        view.showMessage(error.localizedDescription)
                     }
                     
                     collectionView.reloadData()

@@ -45,6 +45,7 @@ final class TermsViewController: BaseViewController {
                 receiveValue: { [unowned self] error in
                     if let error = error {
                         print("reload data failed \(error)")
+                        view.showMessage(error.localizedDescription)
                         view.hideLoading()
                     } else {
                         webView.loadHTMLString(viewModel.htmlString ?? "", baseURL: nil)

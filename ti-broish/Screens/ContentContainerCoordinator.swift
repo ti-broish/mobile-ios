@@ -74,6 +74,8 @@ final class ContentContainerCoordinator: Coordinator {
             return TermsViewController.init(nibName: nibName, bundle: nil)
         case StartStreamViewController.nibName:
             return StartStreamViewController.init(nibName: nibName, bundle: nil)
+        case CheckinViewController.nibName:
+            return CheckinViewController.init(nibName: nibName, bundle: nil)
         default:
             assertionFailure("Invalid or not handled nibName")
             return nil
