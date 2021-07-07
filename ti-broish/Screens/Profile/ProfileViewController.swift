@@ -191,6 +191,11 @@ final class ProfileViewController: BaseTableViewController {
                     
                     if let error = error {
                         switch error {
+                        case .requestFailedAFError(let error):
+                            print("requestFailedAFError: \(error)")
+                            // TODO: - refactor alamofire response serialization failed ???
+                            view.showMessage(LocalizedStrings.Profile.deleted)
+                            perform(#selector(forceLogout), with: nil, afterDelay: 1)
                         case .requestFailed(let responseErrors):
                             view.showMessage(responseErrors.firstError ?? LocalizedStrings.Errors.defaultError)
                         default:

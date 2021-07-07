@@ -62,8 +62,8 @@ enum APIError: Error {
     /// Failed to create a valid `URL` from `APIRequest`'s baseUrl.
     case invalidBaseUrl
 
-    /// Api Request failed with an underlying error.
-    case requestFailed(error: Error)
+    /// Api Request failed with an underlying alamofire error.
+    case requestFailedAFError(error: Error)
     
     /// Api Request failed with an underlying errors.
     case requestFailed(responseErrors: APIResponseErrors)

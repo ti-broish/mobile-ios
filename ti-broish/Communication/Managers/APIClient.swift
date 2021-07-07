@@ -107,7 +107,7 @@ final class APIClient {
             DispatchQueue.main.async {
                 guard let httpResponse = response.response else {
                     if let error = response.error {
-                        completion(.failure(.requestFailed(error: error)))
+                        completion(.failure(.requestFailedAFError(error: error)))
                     } else {
                         completion(.failure(.unknown))
                     }
@@ -139,7 +139,7 @@ final class APIClient {
                     }
                 } else {
                     let mappedResponse = response.mapError { (error) -> APIError in
-                        APIError.requestFailed(error: error)
+                        APIError.requestFailedAFError(error: error)
                     }
                     
                     completion(mappedResponse.result)

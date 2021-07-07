@@ -67,7 +67,7 @@ final class RegistrationViewController: BaseTableViewController {
     
     private func observeRegistrationFailedPublisher() {
         registrationFailedSubscription = viewModel
-            .registrationPublisher
+            .registrationFailedPublisher
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [unowned self] message in
