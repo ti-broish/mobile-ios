@@ -10,9 +10,18 @@ import Foundation
 enum APIResponseErrorType: String, Codable {
     
     case BadRequestException
+    case ConflictException
 }
 
 struct APIResponseError: Codable {
+    
+    let error: String
+    let errorType: APIResponseErrorType
+    let message: String
+    let statusCode: Int
+}
+
+struct APIResponseErrors: Codable {
     
     let error: String
     let errorType: APIResponseErrorType
@@ -34,6 +43,15 @@ struct APIResponseError: Codable {
             return text
         }
     }
+    
+    static func make(from responseError: APIResponseError) -> APIResponseErrors {
+        return APIResponseErrors(
+            error: responseError.error,
+            errorType: responseError.errorType,
+            message: [responseError.message],
+            statusCode: responseError.statusCode
+        )
+    }
 }
 
 enum APIError: Error {
@@ -46,8 +64,8 @@ enum APIError: Error {
     /// Api Request failed with an underlying error.
     case requestFailed(error: Error)
     
-    /// Api Request failed with an underlying error.
-    case requestFailed(responseError: APIResponseError)
+    /// Api Request failed with an underlying errors.
+    case requestFailed(responseErrors: APIResponseErrors)
     
     /// Api response no data
     case invalidResponseData

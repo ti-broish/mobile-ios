@@ -14,7 +14,7 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     private var userDetails: UserDetails?
     
     let savePublisher = PassthroughSubject<APIError?, Never>()
-    let deletePublisher = PassthroughSubject<Void, Never>()
+    let deletePublisher = PassthroughSubject<APIError?, Never>()
     
     override func loadDataFields() {
         let builder = ProfileDataBuilder()
@@ -63,8 +63,13 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
     
     func deleteProfile() {
         loadingPublisher.send(true)
-        APIManager.shared.deleteUser { [weak self] _ in
-            self?.deletePublisher.send()
+        APIManager.shared.deleteUser { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.deletePublisher.send(nil)
+            case .failure(let error):
+                self?.deletePublisher.send(error)
+            }
         }
     }
     

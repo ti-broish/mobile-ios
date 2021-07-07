@@ -160,8 +160,8 @@ final class ProfileViewController: BaseTableViewController {
                         print("reload data failed \(error)")
                         
                         switch error {
-                        case .requestFailed(let responseError):
-                            view.showMessage(responseError.firstError ?? LocalizedStrings.Errors.defaultError)
+                        case .requestFailed(let responseErrors):
+                            view.showMessage(responseErrors.firstError ?? LocalizedStrings.Errors.defaultError)
                         default:
                             view.showMessage(LocalizedStrings.Errors.defaultError)
                         }
@@ -184,8 +184,18 @@ final class ProfileViewController: BaseTableViewController {
                 receiveValue: { [unowned self] error in
                     tableView.reloadData()
                     viewModel.loadingPublisher.send(false)
-                    view.showMessage(LocalizedStrings.Profile.deleted)
-                    perform(#selector(forceLogout), with: nil, afterDelay: 1)
+                    
+                    if let error = error {
+                        switch error {
+                        case .requestFailed(let responseErrors):
+                            view.showMessage(responseErrors.firstError ?? LocalizedStrings.Errors.defaultError)
+                        default:
+                            view.showMessage(LocalizedStrings.Errors.defaultError)
+                        }
+                    } else {
+                        view.showMessage(LocalizedStrings.Profile.deleted)
+                        perform(#selector(forceLogout), with: nil, afterDelay: 1)
+                    }
                 })
     }
     

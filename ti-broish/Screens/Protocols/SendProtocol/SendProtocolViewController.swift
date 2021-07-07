@@ -85,8 +85,8 @@ final class SendProtocolViewController: SendViewController {
 
                     if error != nil {
                         switch error {
-                        case .requestFailed(let responseError):
-                            view.showMessage(responseError.message.first ?? LocalizedStrings.Errors.defaultError)
+                        case .requestFailed(let responseErrors):
+                            view.showMessage(responseErrors.message.first ?? LocalizedStrings.Errors.defaultError)
                         default:
                             break
                         }
