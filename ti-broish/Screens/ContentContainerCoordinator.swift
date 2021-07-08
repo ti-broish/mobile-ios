@@ -30,6 +30,20 @@ final class ContentContainerCoordinator: Coordinator {
         pushController(controller, animated: false)
     }
     
+    func showProtocol(id: String) {
+        let viewController = DetailsViewController.init(nibName: DetailsViewController.nibName, bundle: nil)
+        viewController.viewModel.protocolId = id
+
+        pushController(viewController, animated: true)
+    }
+    
+    func showViolation(id: String) {
+        let viewController = DetailsViewController.init(nibName: DetailsViewController.nibName, bundle: nil)
+        viewController.viewModel.violationId = id
+
+        pushController(viewController, animated: true)
+    }
+    
     func remove(_ viewController: UIViewController?) {
         guard let controller = viewController, controller.parent != nil else {
             return

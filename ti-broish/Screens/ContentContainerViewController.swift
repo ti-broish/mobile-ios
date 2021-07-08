@@ -32,6 +32,15 @@ final class ContentContainerViewController: BaseViewController {
         addObservers()
     }
     
+    func showRemoteNotificationViewController(nibName: String) {
+        coordinator?.remove(currentViewController)
+        
+        if let viewController = coordinator?.getViewController(nibName: nibName) {
+            currentViewController = viewController
+            coordinator?.add(viewController: viewController, to: contentViewController)
+        }
+    }
+    
     // MARK: - Private methods
     
     private func removeCurrentViewController() {

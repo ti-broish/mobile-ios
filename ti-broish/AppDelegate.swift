@@ -35,8 +35,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
-    // MARK: Private Methods
+    
+    func application(
+        _ application: UIApplication,
+        didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
+    ) {
+        if let protocolId = userInfo["protocol_id"] as? String {
+            appCoordinator?.showProtocol(id: protocolId)
+        } else if let violationId = userInfo["violation_id"] as? String {
+            appCoordinator?.showViolation(id: violationId)
+        } else if let screen = userInfo["screen"] as? String {
+            switch screen {
+            case "protocols":
+                appCoordinator?.showProtocols()
+            case "violations":
+                appCoordinator?.showViolations()
+            default:
+                break
+            }
+        } else {
+            print("remote notification userInfo: \(userInfo)")
+        }
+    }
+    
+    // MARK: - Private Methods
     
     private func registerRemoteNotifications(for application: UIApplication) {
         UNUserNotificationCenter.current().delegate = self

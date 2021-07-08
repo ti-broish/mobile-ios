@@ -126,6 +126,8 @@ struct LocalizedStrings {
         static let invalidSection: String = "Невалидна секция. Номера на секцията трябва да бъде 9 или повече символа."
         static let invalidPhotos: String = "Моля изберете най-малко 4 снимки"
         static let sendProtocolFailed: String = "Грешка при изпращането на протокола."
+        static let protocolNotFound: String = "Невалиден протокол"
+        static let violationNotFound: String = "Невалиден сигнал"
         static let emailAlreadyInUse: String = "Имейл адреса е регистриран. Моля въведете друг имейл адрес."
         static let emailNotVerified: String = "За да продължите трябва да потвърдите имейл адреса си"
         

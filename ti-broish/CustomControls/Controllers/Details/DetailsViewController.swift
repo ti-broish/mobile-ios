@@ -15,8 +15,9 @@ final class DetailsViewController: BaseCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assert(viewModel.protocolItem != nil || viewModel.violation != nil, "invalid protocol or violation")
         setupViews()
+        addObservers()
+        viewModel.start()
     }
     
     // MARK: - Private methods
@@ -36,6 +37,42 @@ final class DetailsViewController: BaseCollectionViewController {
     
     private func setupViews() {
         setupCollectionView()
+    }
+    
+    private func observeReloadDataPublisher() {
+        reloadDataSubscription = viewModel
+            .reloadDataPublisher
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [unowned self] error in
+                    view.hideLoading()
+
+                    if let error = error as? APIError {
+                        switch error {
+                        case .requestFailed(let responseErrors):
+                            view.showMessage(responseErrors.message.first ?? LocalizedStrings.Errors.defaultError)
+                        case .protocolNotFound:
+                            view.showMessage(LocalizedStrings.Errors.protocolNotFound, position: .center)
+                        case .violationNotFound:
+                            view.showMessage(LocalizedStrings.Errors.violationNotFound, position: .center)
+                        default:
+                            view.showMessage(LocalizedStrings.Errors.defaultError, position: .center)
+                        }
+                    } else {
+                        collectionView.reloadData()
+                    }
+                })
+    }
+    
+    private func observeLoadingPublisher() {
+        loadingSubscription = viewModel.loadingPublisher.sink(receiveValue: { [unowned self] isLoading in
+            isLoading ? view.showLoading() : view.hideLoading()
+        })
+    }
+    
+    private func addObservers() {
+        observeReloadDataPublisher()
+        observeLoadingPublisher()
     }
 }
 

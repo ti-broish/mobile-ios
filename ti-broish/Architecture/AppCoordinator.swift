@@ -9,10 +9,8 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
-    // MARK: Properties
     let window: UIWindow?
     
-    // MARK: Coordinator
     init(window: UIWindow?) {
         self.window = window
         super.init()
@@ -49,6 +47,30 @@ class AppCoordinator: Coordinator {
         start()
     }
     
+    func showProtocol(id: String) {
+        guard let contentCoordinator = childCoordinators.first as? ContentContainerCoordinator else {
+            return
+        }
+        
+        contentCoordinator.showProtocol(id: id)
+    }
+    
+    func showProtocols() {
+        showRemoteNotificationViewController(nibName: ProtocolsTableViewController.nibName)
+    }
+    
+    func showViolation(id: String) {
+        guard let contentCoordinator = childCoordinators.first as? ContentContainerCoordinator else {
+            return
+        }
+        
+        contentCoordinator.showViolation(id: id)
+    }
+    
+    func showViolations() {
+        showRemoteNotificationViewController(nibName: ViolationsTableViewController.nibName)
+    }
+    
     // MARK: - Private methods
     
     private func isLoggedIn() -> Bool {
@@ -57,6 +79,17 @@ class AppCoordinator: Coordinator {
         }
         
         return token.count > 0
+    }
+    
+    private func showRemoteNotificationViewController(nibName: String) {
+        guard
+            let contentCoordinator = childCoordinators.first as? ContentContainerCoordinator,
+            let viewController = contentCoordinator.navigationController.children.first as? ContentContainerViewController
+        else {
+            return
+        }
+        
+        viewController.showRemoteNotificationViewController(nibName: nibName)
     }
 }
 
