@@ -68,9 +68,9 @@ final class APIClient {
     // MARK: Properties
     
     #if STAGING
-    private let baseUrl = "https://<staging_api_url>"
+    private let baseUrl = "https://d1tapi.dabulgaria.bg"
     #else
-    private let baseUrl = "https://<production_api_url>"
+    private let baseUrl = "https://api.tibroish.bg"
     #endif
     
     private let requestInterceptor: RequestInterceptor
