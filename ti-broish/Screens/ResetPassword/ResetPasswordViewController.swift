@@ -66,7 +66,6 @@ final class ResetPasswordViewController: BaseViewController {
                 emailInputField.textField.text = nil
                 view.hideLoading()
             case .failure(let error):
-                print("request password failed: \(error)")
                 view.hideLoading()
                 view.showMessage(error.localizedString)
             }

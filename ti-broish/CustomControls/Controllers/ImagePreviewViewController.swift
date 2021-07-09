@@ -103,7 +103,6 @@ final class ImagePreviewViewController: BaseViewController {
                     strongSelf.view.hideLoading()
                 }
             } catch {
-                print(error)
                 strongSelf.view.hideLoading()
             }
         }

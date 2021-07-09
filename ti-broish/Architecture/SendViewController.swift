@@ -80,7 +80,6 @@ class SendViewController: BaseTableViewController {
 extension SendViewController: PhotosPickerDelegate {
     
     func didSelectPhotos(_ photos: [UIImage], sender: PhotosPickerViewController) {
-        print("didSelectPhotos: \(photos)")
         updateSelectedImages(photos)
         sender.dismiss(animated: true, completion: nil)
     }
@@ -97,7 +96,6 @@ extension SendViewController: UIImagePickerControllerDelegate, UINavigationContr
         picker.dismiss(animated: true)
 
         guard let image = info[.originalImage] as? UIImage else {
-            print("No image found")
             return
         }
 

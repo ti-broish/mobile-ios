@@ -1665,7 +1665,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.2;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D d1t";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D STAGING";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

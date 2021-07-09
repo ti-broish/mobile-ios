@@ -133,7 +133,6 @@ final class ProfileViewController: BaseTableViewController {
                 receiveCompletion: { _ in },
                 receiveValue: { [unowned self] error in
                     if let error = error as? APIError {
-                        print("reload data failed \(error)")
                         switch error {
                         case .requestFailed(let responseErrors):
                             view.showMessage(responseErrors.message.first ?? LocalizedStrings.Errors.defaultError)
@@ -161,8 +160,6 @@ final class ProfileViewController: BaseTableViewController {
                     viewModel.loadingPublisher.send(false)
                     
                     if let error = error {
-                        print("reload data failed \(error)")
-                        
                         switch error {
                         case .requestFailed(let responseErrors):
                             view.showMessage(responseErrors.firstError ?? LocalizedStrings.Errors.defaultError)

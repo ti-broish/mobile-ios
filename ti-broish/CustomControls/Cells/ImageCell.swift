@@ -52,8 +52,6 @@ final class ImageCell: UICollectionViewCell, Cell {
                     strongSelf.spinner.stopAnimating()
                 }
             } catch {
-                print(error)
-                
                 DispatchQueue.main.async {
                     strongSelf.spinner.stopAnimating()
                 }

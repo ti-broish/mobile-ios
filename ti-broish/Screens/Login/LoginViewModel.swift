@@ -38,7 +38,6 @@ final class LoginViewModel: BaseViewModel, CoordinatableViewModel {
         APIManager.shared.login(email: email, password: password) { [weak self] result in
             switch result {
             case .success(let jwt):
-                print("firebase jwt: \(jwt)")
                 LocalStorage.Login().save(email: email)
                 LocalStorage.User().setJwt(jwt)
                 self?.loadingPublisher.send(false)

@@ -106,8 +106,6 @@ final class LoginViewController: BaseViewController {
             case .success(_):
                 self?.viewModel.coordinator?.showHomeScreen()
             case .failure(let error):
-                print("login failed: \(error)")
-                
                 self?.view.showMessage(error.localizedString)
             }
         }

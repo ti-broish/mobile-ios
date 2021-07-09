@@ -206,7 +206,6 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
             reloadDataPublisher.send(nil)
             loadingPublisher.send(false)
         } catch {
-            print("makeCountryCodes failed: \(error)")
             reloadDataPublisher.send(error)
             loadingPublisher.send(false)
         }

@@ -54,14 +54,12 @@ class SendViewModel: BaseViewModel {
                     APIManager.shared.uploadPhoto(photo) { result in
                         switch result {
                         case .success(let uploadPhoto):
-                            print("upload photo: \(uploadPhoto)")
                             strongSelf.uploadPhotos.append(uploadPhoto)
                             
                             if strongSelf.uploadPhotos.count == strongSelf.images.count {
                                 completion(.success(()))
                             }
                         case .failure(let error):
-                            print("failed to upload photo: \(error)")
                             strongSelf.uploadPhotos.removeAll()
                             completion(.failure(error))
                         }

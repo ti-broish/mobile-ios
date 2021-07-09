@@ -51,7 +51,6 @@ final class StartStreamViewModel: SendViewModel, CoordinatableViewModel {
             
             switch result {
             case .success(let stream):
-                print("start stream: \(stream)")
                 strongSelf.startStreamPublisher.send(stream)
             case .failure(let error):
                 strongSelf.sendPublisher.send(error)

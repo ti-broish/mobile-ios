@@ -44,7 +44,6 @@ final class ProfileViewModel: BaseViewModel, CoordinatableViewModel {
         }
 
         guard let userDetails = makeUserDetails() else {
-            print("failed to make user details")
             return
         }
 

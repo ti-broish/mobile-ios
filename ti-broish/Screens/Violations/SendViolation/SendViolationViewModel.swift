@@ -86,8 +86,7 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
             }
             
             switch result {
-            case .success(let violation):
-                print("violation sent: \(violation)")
+            case .success(_):
                 strongSelf.resetAll()
                 strongSelf.sendPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
