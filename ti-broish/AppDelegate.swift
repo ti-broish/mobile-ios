@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didReceiveRemoteNotification userInfo: [AnyHashable : Any],
         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
     ) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+
         if let protocolId = userInfo["protocol_id"] as? String {
             appCoordinator?.showProtocol(id: protocolId)
         } else if let violationId = userInfo["violation_id"] as? String {
