@@ -14,7 +14,7 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var emailInputField: CredentialInputField!
     @IBOutlet private weak var passwordInputField: CredentialInputField!
     @IBOutlet private weak var loginButton: UIButton!
-    @IBOutlet private weak var registrationButton: UIButton!
+//    @IBOutlet private weak var registrationButton: UIButton!
     @IBOutlet private weak var resetPasswordButton: UIButton!
     
     private let validator = Validator()
@@ -52,7 +52,7 @@ final class LoginViewController: BaseViewController {
         
         let theme = TibTheme()
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)
-        registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)
+//        registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)
         resetPasswordButton.configureButton(title: LocalizedStrings.Login.resetPasswordButton, theme: theme)
     }
     

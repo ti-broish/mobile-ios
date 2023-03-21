@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +15,6 @@
                 <outlet property="loginButton" destination="vQ6-Vn-e7k" id="Szx-hy-yiq"/>
                 <outlet property="logoImageView" destination="yNc-an-Oqr" id="ACb-Mc-eOK"/>
                 <outlet property="passwordInputField" destination="F9I-k7-npD" id="nvn-N5-dLL"/>
-                <outlet property="registrationButton" destination="sBo-QN-BYv" id="iDZ-ca-Vtp"/>
                 <outlet property="resetPasswordButton" destination="uH8-Ae-yEc" id="YhG-k5-J7p"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sTK-e8-NAJ"/>
             </connections>
@@ -26,24 +25,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-an-Oqr" userLabel="logoImageView">
-                    <rect key="frame" x="0.0" y="181" width="414" height="128"/>
+                    <rect key="frame" x="0.0" y="183" width="414" height="128"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="MkH-pT-UOO"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txm-9t-17q" userLabel="emailInputField" customClass="CredentialInputField" customModule="ti_broish" customModuleProvider="target">
-                    <rect key="frame" x="40" y="349" width="334" height="64"/>
+                    <rect key="frame" x="40" y="351" width="334" height="64"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="JUB-9i-iKb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9I-k7-npD" userLabel="passwordInputField" customClass="CredentialInputField" customModule="ti_broish" customModuleProvider="target">
-                    <rect key="frame" x="40" y="421" width="334" height="64"/>
+                    <rect key="frame" x="40" y="423" width="334" height="64"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ6-Vn-e7k" userLabel="loginButton">
-                    <rect key="frame" x="163" y="525" width="88" height="44"/>
+                    <rect key="frame" x="163" y="527" width="88" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="88" id="22f-wa-GaE"/>
                         <constraint firstAttribute="height" constant="44" id="U2J-Is-KsE"/>
@@ -53,15 +52,8 @@
                         <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="6ja-26-mFD"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBo-QN-BYv" userLabel="registrationButton">
-                    <rect key="frame" x="159" y="617" width="96" height="30"/>
-                    <state key="normal" title="_registration_"/>
-                    <connections>
-                        <action selector="didPressRegistrationButton:" destination="-1" eventType="touchUpInside" id="8oa-BS-Z4w"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH8-Ae-yEc" userLabel="resetPasswordButton">
-                    <rect key="frame" x="143.5" y="663" width="127" height="30"/>
+                    <rect key="frame" x="143.5" y="619" width="127" height="30"/>
                     <state key="normal" title="_reset_password_"/>
                     <connections>
                         <action selector="didPressResetPasswordButton:" destination="-1" eventType="touchUpInside" id="vyt-RK-Ff3"/>
@@ -78,17 +70,14 @@
                 <constraint firstItem="F9I-k7-npD" firstAttribute="top" secondItem="Txm-9t-17q" secondAttribute="bottom" constant="8" id="BRx-U5-eWH"/>
                 <constraint firstItem="vQ6-Vn-e7k" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="H5r-fL-4Ju"/>
                 <constraint firstItem="yNc-an-Oqr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ni2-ze-rar"/>
-                <constraint firstItem="sBo-QN-BYv" firstAttribute="top" secondItem="vQ6-Vn-e7k" secondAttribute="bottom" constant="48" id="Wff-fM-UjD"/>
+                <constraint firstItem="uH8-Ae-yEc" firstAttribute="top" secondItem="vQ6-Vn-e7k" secondAttribute="bottom" constant="48" id="PsL-OB-a0w"/>
                 <constraint firstItem="uH8-Ae-yEc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="awI-q2-yhb"/>
                 <constraint firstItem="uH8-Ae-yEc" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.681818" id="g6l-5K-09i"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Txm-9t-17q" secondAttribute="trailing" constant="40" id="ggC-Pe-YN6"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="height" secondItem="Txm-9t-17q" secondAttribute="height" id="jHO-Uo-qfF"/>
                 <constraint firstItem="Txm-9t-17q" firstAttribute="top" secondItem="yNc-an-Oqr" secondAttribute="bottom" constant="40" id="kcM-9q-Wzg"/>
                 <constraint firstItem="vQ6-Vn-e7k" firstAttribute="top" secondItem="F9I-k7-npD" secondAttribute="bottom" constant="40" id="oQ7-UN-zME"/>
-                <constraint firstItem="sBo-QN-BYv" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="oUo-0q-zJZ"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="leading" secondItem="Txm-9t-17q" secondAttribute="leading" id="oqD-Yp-vvs"/>
-                <constraint firstItem="sBo-QN-BYv" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.681818" id="ph7-2V-3Ga"/>
-                <constraint firstItem="uH8-Ae-yEc" firstAttribute="top" secondItem="sBo-QN-BYv" secondAttribute="bottom" constant="16" id="trc-si-7Wb"/>
             </constraints>
             <point key="canvasLocation" x="-287" y="75"/>
         </view>
