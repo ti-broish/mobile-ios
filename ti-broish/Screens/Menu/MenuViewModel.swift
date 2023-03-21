@@ -25,7 +25,7 @@ final class MenuViewModel: CoordinatableViewModel {
     private func setupMenuItems() {
         menuItems.append(MenuItem(type: .sendProtocol))
         menuItems.append(MenuItem(type: .sendViolation))
-        menuItems.append(MenuItem(type: .live))
+//        menuItems.append(MenuItem(type: .live))
         menuItems.append(MenuItem(type: .checkin))
         menuItems.append(MenuItem(type: .protocols))
         menuItems.append(MenuItem(type: .violations))

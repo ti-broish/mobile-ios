@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="CH8-eg-f5k" userLabel="buttonsStackView">
-                    <rect key="frame" x="83" y="44" width="248" height="366"/>
+                    <rect key="frame" x="83" y="44" width="248" height="288"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-j0-4Ps" userLabel="sendProtocolButton">
                             <rect key="frame" x="0.0" y="0.0" width="248" height="54"/>
@@ -45,22 +45,22 @@
                                 <action selector="handleSendViolationButton:" destination="-1" eventType="touchUpInside" id="0oI-oX-nff"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fx6-Vd-jfz" userLabel="liveButton">
-                            <rect key="frame" x="0.0" y="156" width="248" height="54"/>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fx6-Vd-jfz" userLabel="liveButton">
+                            <rect key="frame" x="0.0" y="144" width="248" height="54"/>
                             <state key="normal" title="_live_"/>
                             <connections>
                                 <action selector="handleLiveButton:" destination="-1" eventType="touchUpInside" id="HMY-P2-yuW"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JW-ng-PVU" userLabel="checkinButton">
-                            <rect key="frame" x="0.0" y="234" width="248" height="54"/>
+                            <rect key="frame" x="0.0" y="156" width="248" height="54"/>
                             <state key="normal" title="_checkin_"/>
                             <connections>
                                 <action selector="handleCheckinButton:" destination="-1" eventType="touchUpInside" id="Z08-K8-dEF"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-CL-leZ" userLabel="termsButton">
-                            <rect key="frame" x="0.0" y="312" width="248" height="54"/>
+                            <rect key="frame" x="0.0" y="234" width="248" height="54"/>
                             <state key="normal" title="_terms_"/>
                             <connections>
                                 <action selector="handleTermsButton:" destination="-1" eventType="touchUpInside" id="7Vh-iF-VJs"/>
