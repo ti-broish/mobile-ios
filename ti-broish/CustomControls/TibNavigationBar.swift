@@ -12,11 +12,6 @@ final class TibNavigationBar: UINavigationBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
         isTranslucent = false
-        
-        let theme = TibTheme()
-        barTintColor = theme.navigationBarTintColor
-        tintColor = theme.navigationBarTextColor
-        titleTextAttributes = [.foregroundColor: theme.navigationBarTextColor]
     }
     
     required init?(coder: NSCoder) {

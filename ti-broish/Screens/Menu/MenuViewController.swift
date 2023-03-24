@@ -41,6 +41,7 @@ final class MenuViewController: BaseViewController {
         tableView.registerCell(MenuCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .clear
         tableView.separatorColor = theme.tableViewSeparatorColor
         tableView.rowHeight = 44.0
         tableView.tableFooterView = UIView()

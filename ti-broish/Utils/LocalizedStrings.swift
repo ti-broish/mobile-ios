@@ -151,6 +151,7 @@ struct LocalizedStrings {
         static let violations: String = "Моите сигнали"
         static let terms: String = "Права и задължения"
         static let logout: String = "Изход"
+        static let login: String = "Вход"
     }
     
     struct Login {

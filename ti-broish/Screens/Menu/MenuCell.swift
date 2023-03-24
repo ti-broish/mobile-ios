@@ -13,6 +13,7 @@ final class MenuCell: TibTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .clear
         titleLabel.font = .regularFont(size: 16.0)
         titleLabel.textColor = TibTheme().textColor
     }

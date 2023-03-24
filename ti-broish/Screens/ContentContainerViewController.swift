@@ -179,6 +179,8 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
             loadViewController(nibName: TermsViewController.nibName)
         case .logout:
             signOut()
+        case .login:
+            loadViewController(nibName: LoginViewController.nibName)
         }
     }
 }

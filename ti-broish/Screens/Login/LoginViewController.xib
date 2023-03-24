@@ -11,10 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ti_broish" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="cKC-C8-eKO" id="Gv5-l2-HIK"/>
                 <outlet property="emailInputField" destination="Txm-9t-17q" id="fjX-2d-d30"/>
                 <outlet property="loginButton" destination="vQ6-Vn-e7k" id="Szx-hy-yiq"/>
                 <outlet property="logoImageView" destination="yNc-an-Oqr" id="ACb-Mc-eOK"/>
                 <outlet property="passwordInputField" destination="F9I-k7-npD" id="nvn-N5-dLL"/>
+                <outlet property="registrationButton" destination="vfN-0O-qdm" id="lGO-yQ-Nvh"/>
                 <outlet property="resetPasswordButton" destination="uH8-Ae-yEc" id="YhG-k5-J7p"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sTK-e8-NAJ"/>
             </connections>
@@ -52,11 +54,27 @@
                         <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="6ja-26-mFD"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfN-0O-qdm" userLabel="registrationButton">
+                    <rect key="frame" x="142" y="619" width="130" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="_registration_"/>
+                    <connections>
+                        <action selector="didPressRegistrationButton:" destination="-1" eventType="touchUpInside" id="abV-xo-1VL"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH8-Ae-yEc" userLabel="resetPasswordButton">
-                    <rect key="frame" x="143.5" y="619" width="127" height="30"/>
+                    <rect key="frame" x="143.5" y="678" width="127" height="35.5"/>
                     <state key="normal" title="_reset_password_"/>
                     <connections>
                         <action selector="didPressResetPasswordButton:" destination="-1" eventType="touchUpInside" id="vyt-RK-Ff3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKC-C8-eKO" userLabel="backButton">
+                    <rect key="frame" x="20" y="807" width="80" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="_back_"/>
+                    <connections>
+                        <action selector="didPressBackButton:" destination="-1" eventType="touchUpInside" id="xzl-xU-okb"/>
                     </connections>
                 </button>
             </subviews>
@@ -65,19 +83,25 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yNc-an-Oqr" secondAttribute="trailing" id="1mw-Xy-9i6"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="3Ou-NA-XuA"/>
+                <constraint firstItem="cKC-C8-eKO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="6Jm-gH-gQS"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="trailing" secondItem="Txm-9t-17q" secondAttribute="trailing" id="6md-Zb-tcM"/>
                 <constraint firstItem="Txm-9t-17q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="8Vi-vc-b9k"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="top" secondItem="Txm-9t-17q" secondAttribute="bottom" constant="8" id="BRx-U5-eWH"/>
                 <constraint firstItem="vQ6-Vn-e7k" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="H5r-fL-4Ju"/>
                 <constraint firstItem="yNc-an-Oqr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ni2-ze-rar"/>
-                <constraint firstItem="uH8-Ae-yEc" firstAttribute="top" secondItem="vQ6-Vn-e7k" secondAttribute="bottom" constant="48" id="PsL-OB-a0w"/>
+                <constraint firstItem="vfN-0O-qdm" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.8" id="V8U-vt-iv7"/>
                 <constraint firstItem="uH8-Ae-yEc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="awI-q2-yhb"/>
-                <constraint firstItem="uH8-Ae-yEc" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.681818" id="g6l-5K-09i"/>
+                <constraint firstItem="uH8-Ae-yEc" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.8" id="g6l-5K-09i"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Txm-9t-17q" secondAttribute="trailing" constant="40" id="ggC-Pe-YN6"/>
+                <constraint firstItem="vfN-0O-qdm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hGp-HO-kp1"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="height" secondItem="Txm-9t-17q" secondAttribute="height" id="jHO-Uo-qfF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cKC-C8-eKO" secondAttribute="bottom" constant="20" id="jaj-Gr-L83"/>
                 <constraint firstItem="Txm-9t-17q" firstAttribute="top" secondItem="yNc-an-Oqr" secondAttribute="bottom" constant="40" id="kcM-9q-Wzg"/>
                 <constraint firstItem="vQ6-Vn-e7k" firstAttribute="top" secondItem="F9I-k7-npD" secondAttribute="bottom" constant="40" id="oQ7-UN-zME"/>
                 <constraint firstItem="F9I-k7-npD" firstAttribute="leading" secondItem="Txm-9t-17q" secondAttribute="leading" id="oqD-Yp-vvs"/>
+                <constraint firstItem="cKC-C8-eKO" firstAttribute="height" secondItem="vQ6-Vn-e7k" secondAttribute="height" multiplier="0.8" id="tFo-iI-kCj"/>
+                <constraint firstItem="uH8-Ae-yEc" firstAttribute="top" secondItem="vfN-0O-qdm" secondAttribute="bottom" constant="24" id="tzS-jo-Tvr"/>
+                <constraint firstItem="vfN-0O-qdm" firstAttribute="top" secondItem="vQ6-Vn-e7k" secondAttribute="bottom" constant="48" id="uDE-mB-cci"/>
             </constraints>
             <point key="canvasLocation" x="-287" y="75"/>
         </view>

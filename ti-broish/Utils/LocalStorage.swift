@@ -41,6 +41,14 @@ struct LocalStorage {
         private var userStorageKey: String {
             return "userLocalStorageKey"
         }
+
+        var isLoggedIn: Bool {
+            guard let token = getJwt() else {
+                return false
+            }
+            
+            return token.count > 0
+        }
         
         init(userDefaults: UserDefaults = UserDefaults.standard) {
             self.userDefaults = userDefaults

@@ -14,8 +14,9 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var emailInputField: CredentialInputField!
     @IBOutlet private weak var passwordInputField: CredentialInputField!
     @IBOutlet private weak var loginButton: UIButton!
-//    @IBOutlet private weak var registrationButton: UIButton!
+    @IBOutlet private weak var registrationButton: UIButton!
     @IBOutlet private weak var resetPasswordButton: UIButton!
+    @IBOutlet private weak var backButton: UIButton!
     
     private let validator = Validator()
     let viewModel = LoginViewModel()
@@ -52,8 +53,9 @@ final class LoginViewController: BaseViewController {
         
         let theme = TibTheme()
         loginButton.configureSolidButton(title: LocalizedStrings.Login.loginButton, theme: theme)
-//        registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)
+        registrationButton.configureButton(title: LocalizedStrings.Login.registrationButton, theme: theme, fontSize: 16.0)
         resetPasswordButton.configureButton(title: LocalizedStrings.Login.resetPasswordButton, theme: theme)
+        backButton.configureButton(title: LocalizedStrings.Buttons.back, theme: theme)
     }
     
     private func observeLoadingPublisher() {
@@ -117,6 +119,10 @@ final class LoginViewController: BaseViewController {
     
     @IBAction private func didPressResetPasswordButton(_ sender: UIButton) {
         viewModel.coordinator?.showResetPasswordScreen()
+    }
+    
+    @IBAction private func didPressBackButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 }
 

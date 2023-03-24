@@ -16,17 +16,11 @@ class AppCoordinator: Coordinator {
         super.init()
         
         let navigationController = UINavigationController(navigationBarClass: TibNavigationBar.self, toolbarClass: nil)
+        configureNavigationController(navigationController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        let screenCoordinator: Coordinator
-        if isLoggedIn() {
-            screenCoordinator = ContentContainerCoordinator(navigationController: navigationController)
-        } else {
-            screenCoordinator = LoginCoordinator(navigationController: navigationController)
-        }
-        
-        addChildCoordinator(screenCoordinator)
+        addChildCoordinator(ContentContainerCoordinator(navigationController: navigationController))
     }
     
     override func start() {
@@ -73,12 +67,16 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Private methods
     
-    private func isLoggedIn() -> Bool {
-        guard let token = LocalStorage.User().getJwt() else {
-            return false
-        }
+    private func configureNavigationController(_ navigationController: UINavigationController) {
+        let theme = TibTheme()
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = theme.navigationBarTintColor
+        appearance.titleTextAttributes = [.foregroundColor: theme.navigationBarTextColor]
         
-        return token.count > 0
+        navigationController.navigationBar.tintColor = theme.navigationBarTextColor
+        navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.scrollEdgeAppearance = appearance
     }
     
     private func showRemoteNotificationViewController(nibName: String) {
