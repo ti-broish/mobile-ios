@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>381175256790-4blbe5dmg0p81jqha4ejfsk8u05qcnro.apps.googleusercontent.com</string>
+	<string>609937462962-0ir6eg4ks3aro1el6ruab924248m8j3l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.381175256790-4blbe5dmg0p81jqha4ejfsk8u05qcnro</string>
+	<string>com.googleusercontent.apps.609937462962-0ir6eg4ks3aro1el6ruab924248m8j3l</string>
 	<key>API_KEY</key>
-	<string>AIzaSyApeAWVCDbPFsopnhPB0CKIqvtCSaLpucw</string>
+	<string>AIzaSyDcO-ETcgFI4RpMVwscocoeE5QMptAnbGg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>381175256790</string>
+	<string>609937462962</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.dsi.tibroish</string>
 	<key>PROJECT_ID</key>
-	<string>ti-broish</string>
+	<string>ti-broish-staging</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ti-broish.appspot.com</string>
+	<string>ti-broish-staging.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:381175256790:ios:ccbd5b26c5576228379b77</string>
-	<key>DATABASE_URL</key>
-	<string>https://ti-broish.firebaseio.com</string>
+	<string>1:609937462962:ios:d009dbc05968205644dbab</string>
 </dict>
 </plist>

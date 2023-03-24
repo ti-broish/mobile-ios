@@ -32,10 +32,13 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
         /// Set the Authorization header value using the access token.
         if let accessToken = storage.getJwt() {
             urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
-
+            
             completion(.success(urlRequest))
         } else {
-            completion(.failure(APIError.invalidAuthorizationToken))
+            urlRequest.setValue("9D7EFDC3-A6BE-41DD-A406-7DFBCDD97303", forHTTPHeaderField: "Authorization")
+            completion(.success(urlRequest))
+            // TODO: - get token from AppCheck
+            //completion(.failure(APIError.invalidAuthorizationToken))
         }
     }
     

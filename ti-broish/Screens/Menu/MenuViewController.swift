@@ -34,6 +34,11 @@ final class MenuViewController: BaseViewController {
         self.view.backgroundColor = .white
     }
     
+    func reloadData() {
+        viewModel.start()
+        tableView.reloadData()
+    }
+    
     // MARK: - Private methods
     
     private func setupTableView() {

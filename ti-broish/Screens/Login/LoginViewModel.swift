@@ -14,7 +14,7 @@ enum LoginFieldType {
 
 final class LoginViewModel: BaseViewModel, CoordinatableViewModel {
     
-    weak var coordinator: LoginCoordinator?
+    var coordinator: LoginCoordinator?
     
     func makeConfig(for type: LoginFieldType) -> InputFieldConfig {
         switch type {

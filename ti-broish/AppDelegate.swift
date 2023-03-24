@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool
     {
         TibTheme.changeAppearance()
+//        let providerFactory = TibAppCheckProviderFactory()
+//        AppCheck.setAppCheckProviderFactory(providerFactory)
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+    
         FirebaseApp.configure()
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)

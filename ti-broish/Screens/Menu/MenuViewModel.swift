@@ -23,6 +23,8 @@ final class MenuViewModel: CoordinatableViewModel {
     // MARK: - Private methods
     
     private func setupMenuItems(isLoggedIn: Bool) {
+        menuItems.removeAll()
+        
         menuItems.append(MenuItem(type: .sendProtocol))
         menuItems.append(MenuItem(type: .sendViolation))
 //        menuItems.append(MenuItem(type: .live))

@@ -106,7 +106,7 @@ final class LoginViewController: BaseViewController {
         viewModel.login(email: email, password: password) { [weak self] result in 
             switch result {
             case .success(_):
-                self?.viewModel.coordinator?.showHomeScreen()
+                self?.dismiss(animated: true)
             case .failure(let error):
                 self?.view.showMessage(error.localizedString)
             }
