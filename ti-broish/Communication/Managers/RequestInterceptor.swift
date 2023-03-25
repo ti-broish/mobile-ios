@@ -35,10 +35,7 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
             
             completion(.success(urlRequest))
         } else {
-            urlRequest.setValue("9D7EFDC3-A6BE-41DD-A406-7DFBCDD97303", forHTTPHeaderField: "Authorization")
             completion(.success(urlRequest))
-            // TODO: - get token from AppCheck
-            //completion(.failure(APIError.invalidAuthorizationToken))
         }
     }
     
