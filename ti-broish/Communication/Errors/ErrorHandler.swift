@@ -12,11 +12,7 @@ struct ErrorHandler {
     static func handleFirebaseError(_ error: Error) -> FirebaseError {
         let nsError: NSError = error as NSError
         
-        guard let errorCode: AuthErrorCode = AuthErrorCode(rawValue: nsError.code) else {
-            return .unknownError
-        }
-        
-        switch errorCode {
+        switch AuthErrorCode(_nsError: nsError).code {
         case .operationNotAllowed:
             return .operationNotAllowed
         case .invalidEmail:

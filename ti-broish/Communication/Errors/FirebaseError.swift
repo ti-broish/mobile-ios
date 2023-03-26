@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum FirebaseAppCheckError: Error {
+    case checkError((any Error)?)
+    case invalidToken
+}
+
 enum FirebaseError: Error {
     
     case unknownError

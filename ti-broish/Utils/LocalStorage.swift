@@ -41,6 +41,14 @@ struct LocalStorage {
         private var userStorageKey: String {
             return "userLocalStorageKey"
         }
+
+        var isLoggedIn: Bool {
+            guard let token = getJwt() else {
+                return false
+            }
+            
+            return token.count > 0
+        }
         
         init(userDefaults: UserDefaults = UserDefaults.standard) {
             self.userDefaults = userDefaults
@@ -66,6 +74,34 @@ struct LocalStorage {
         
         private func jwtStorageKey() -> String {
             return "\(userStorageKey)_jwt"
+        }
+    }
+    
+    struct AppCheck {
+        private let userDefaults: UserDefaults
+        
+        private var tokenStorageKey: String {
+            return "appCheckTokenLocalStorageKey"
+        }
+        
+        init(userDefaults: UserDefaults = UserDefaults.standard) {
+            self.userDefaults = userDefaults
+        }
+        
+        func getToken() -> String? {
+            guard let token = userDefaults.stringValue(forKey: tokenStorageKey) else {
+                return nil
+            }
+            
+            return token
+        }
+        
+        func setToken(_ token: String) {
+            userDefaults.set(token, forKey: tokenStorageKey)
+        }
+        
+        func reset() {
+            userDefaults.removeObject(forKey: tokenStorageKey)
         }
     }
 }

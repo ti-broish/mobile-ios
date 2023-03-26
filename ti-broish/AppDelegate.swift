@@ -23,7 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool
     {
         TibTheme.changeAppearance()
+//        let providerFactory = TibAppCheckProviderFactory()
+//        AppCheck.setAppCheckProviderFactory(providerFactory)
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+    
         FirebaseApp.configure()
+        getAppCheckToken()
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         appCoordinator = AppCoordinator(window: window)
@@ -112,6 +118,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @objc private func keyboardWillHide(notification: NSNotification) {
         isKeyboardVisible = false
+    }
+    
+    private func getAppCheckToken() {
+        APIManager.shared.getAppCheckToken() { response in
+            switch response {
+            case .success(let token):
+                LocalStorage.AppCheck().setToken(token)
+            case .failure(let error):
+                print("getAppCheckToken failed: \(error)")
+                break
+            }
+        }
     }
 }
 

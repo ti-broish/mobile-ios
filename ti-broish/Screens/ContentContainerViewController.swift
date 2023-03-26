@@ -14,7 +14,12 @@ final class ContentContainerViewController: BaseViewController {
     private var contentViewController = UIViewController()
     private var currentViewController: UIViewController?
     private var menuViewController: MenuViewController!
-    private var isMenuExpand: Bool = true
+    
+    private var isMenuExpand: Bool = true {
+        didSet {
+            menuViewController.reloadData()
+        }
+    }
     
     weak var coordinator: ContentContainerCoordinator?
 
@@ -61,6 +66,23 @@ final class ContentContainerViewController: BaseViewController {
             currentViewController = viewController
             coordinator?.add(viewController: viewController, to: contentViewController)
         }
+    }
+    
+    private func loadLoginViewController() {
+        toggleMainMenu()
+        
+        guard let loginViewController = coordinator?.getViewController(nibName: LoginViewController.nibName) as? LoginViewController else {
+            return
+        }
+
+        let navController = UINavigationController(rootViewController: loginViewController)
+        navController.navigationBar.isHidden = true
+        navController.navigationBar.tintColor = navigationController!.navigationBar.tintColor
+        navController.navigationBar.standardAppearance = navigationController!.navigationBar.standardAppearance
+        navController.navigationBar.scrollEdgeAppearance = navigationController!.navigationBar.scrollEdgeAppearance
+        loginViewController.viewModel.coordinator = LoginCoordinator(navigationController: navController)
+        
+        self.present(navController, animated: true)
     }
     
     private func setupContentViewController() {
@@ -133,7 +155,8 @@ final class ContentContainerViewController: BaseViewController {
             try Auth.auth().signOut()
             LocalStorage.User().reset()
             CheckinUtils().reset()
-            appDelegate.appCoordinator?.logout()
+            toggleMainMenu()
+            appDelegate.appCoordinator?.start()
         } catch {
             print("signOut failed: \(error)")
         }
@@ -179,6 +202,8 @@ extension ContentContainerViewController: MenuViewControllerDelegate {
             loadViewController(nibName: TermsViewController.nibName)
         case .logout:
             signOut()
+        case .login:
+            loadLoginViewController()
         }
     }
 }

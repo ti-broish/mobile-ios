@@ -18,5 +18,7 @@ xcuserdata/
 *.xcworkspace
 *.xcuserstate
 
+GoogleService-Info.plist
+
 Pods/
 

@@ -14,7 +14,7 @@ final class ContentContainerCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
-        self.navigationController = navigationController        
+        self.navigationController = navigationController
         homeCoordinator = HomeCoordinator(navigationController: self.navigationController)
     }
     
@@ -90,6 +90,8 @@ final class ContentContainerCoordinator: Coordinator {
             return StartStreamViewController.init(nibName: nibName, bundle: nil)
         case CheckinViewController.nibName:
             return CheckinViewController.init(nibName: nibName, bundle: nil)
+        case LoginViewController.nibName:
+            return LoginViewController.init(nibName: nibName, bundle: nil)
         default:
             assertionFailure("Invalid or not handled nibName")
             return nil

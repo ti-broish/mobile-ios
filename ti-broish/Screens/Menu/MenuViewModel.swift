@@ -17,12 +17,14 @@ final class MenuViewModel: CoordinatableViewModel {
     // MARK: - Public Methods
     
     func start() {
-        setupMenuItems()
+        setupMenuItems(isLoggedIn: LocalStorage.User().isLoggedIn)
     }
     
     // MARK: - Private methods
     
-    private func setupMenuItems() {
+    private func setupMenuItems(isLoggedIn: Bool) {
+        menuItems.removeAll()
+        
         menuItems.append(MenuItem(type: .sendProtocol))
         menuItems.append(MenuItem(type: .sendViolation))
 //        menuItems.append(MenuItem(type: .live))
@@ -30,7 +32,12 @@ final class MenuViewModel: CoordinatableViewModel {
         menuItems.append(MenuItem(type: .protocols))
         menuItems.append(MenuItem(type: .violations))
         menuItems.append(MenuItem(type: .terms))
-        menuItems.append(MenuItem(type: .profile))
-        menuItems.append(MenuItem(type: .logout))
+        
+        if isLoggedIn {
+            menuItems.append(MenuItem(type: .profile))
+            menuItems.append(MenuItem(type: .logout))
+        } else {
+            menuItems.append(MenuItem(type: .login))
+        }
     }
 }
