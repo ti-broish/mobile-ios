@@ -49,6 +49,10 @@ extension APIManager {
     func sendEmailVerification(completion: @escaping (Result<Void, FirebaseError>) -> Void) {
         firebaseClient.sendEmailVerification(completion: completion)
     }
+    
+    func getAppCheckToken(forcingRefresh: Bool = false, completion: @escaping (Result<String, FirebaseAppCheckError>) -> Void) {
+        firebaseClient.getAppCheckToken(forcingRefresh: forcingRefresh, completion: completion)
+    }
 }
 
 // MARK: - API calls

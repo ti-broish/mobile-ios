@@ -76,7 +76,11 @@ final class APIClient {
     private let requestInterceptor: RequestInterceptor
     
     init() {
-        self.requestInterceptor = RequestInterceptor(storage: LocalStorage(), host: baseUrl)
+        self.requestInterceptor = RequestInterceptor(
+            userStorage: LocalStorage.User(),
+            appCheckStorage: LocalStorage.AppCheck(),
+            host: baseUrl
+        )
     }
     
     // MARK: Private Methods

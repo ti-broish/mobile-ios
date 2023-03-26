@@ -85,4 +85,22 @@ class FirebaseClient {
             }
         }
     }
+    
+    func getAppCheckToken(forcingRefresh: Bool, completion: @escaping (Result<String, FirebaseAppCheckError>) -> Void) {
+        AppCheck.appCheck().token(forcingRefresh: forcingRefresh) { token, error in
+            guard error == nil else {
+                print("Unable to retrieve App Check token: \(error!)")
+                completion(.failure(.checkError(error)))
+                return
+            }
+            
+            guard let token = token else {
+                print("Unable to retrieve App Check token.")
+                completion(.failure(.invalidToken))
+                return
+            }
+            // Get the raw App Check token string.
+            completion(.success(token.token))
+        }
+    }
 }
