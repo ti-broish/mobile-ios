@@ -33,15 +33,17 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
         /// Set the Authorization header value using the access token.
         if let accessToken = userStorage.getJwt() {
             urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
-            
-            completion(.success(urlRequest))
         } else if let appCheckToken = appCheckStorage.getToken() {
+            // Note: - Enable Firebase AppCheck (in AppDelegate)
             urlRequest.setValue(appCheckToken, forHTTPHeaderField: "X-Firebase-AppCheck")
-//            urlRequest.setValue("Bearer " + appCheckToken, forHTTPHeaderField: "Authorization")
-            
+            urlRequest.setValue("Bearer " + appCheckToken, forHTTPHeaderField: "Authorization")
+        }
+        // TODO: - handle invalid authorization token if needed
+        if let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
+            urlRequest.setValue("Ti Broish iOS v\(appVersion)", forHTTPHeaderField: "User-Agent")
             completion(.success(urlRequest))
         } else {
-            completion(.failure(APIError.invalidAuthorizationToken))
+            completion(.failure(APIError.userAgentHeaderNotSet))
         }
     }
     

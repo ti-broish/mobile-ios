@@ -23,10 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool
     {
         TibTheme.changeAppearance()
+        // Note: - enable Firebase AppCheck in next release
 //        let providerFactory = TibAppCheckProviderFactory()
 //        AppCheck.setAppCheckProviderFactory(providerFactory)
-        let providerFactory = AppCheckDebugProviderFactory()
-        AppCheck.setAppCheckProviderFactory(providerFactory)
+//        let providerFactory = AppCheckDebugProviderFactory()
+//        AppCheck.setAppCheckProviderFactory(providerFactory)
     
         FirebaseApp.configure()
         getAppCheckToken()
