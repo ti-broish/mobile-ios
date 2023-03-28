@@ -12,7 +12,7 @@ struct SendProtocolResponse: Decodable {
     // MARK: Properties
     
     let id: String
-    let section: Section
+    let section: Section?
     let pictures: [Picture]
     let status: ProtocolStatus
     

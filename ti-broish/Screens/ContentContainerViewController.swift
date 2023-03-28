@@ -150,10 +150,11 @@ final class ContentContainerViewController: BaseViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        
+
         do {
             try Auth.auth().signOut()
             LocalStorage.User().reset()
+            LocalStorage.AppCheck().reset()
             CheckinUtils().reset()
             toggleMainMenu()
             appDelegate.appCoordinator?.start()
