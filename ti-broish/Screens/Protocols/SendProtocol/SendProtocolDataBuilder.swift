@@ -16,7 +16,7 @@ struct SendProtocolDataBuilder {
                 type: .text,
                 title: LocalizedStrings.SendInputField.section,
                 placeholderText: LocalizedStrings.SendInputField.sectionNumberPlaceholder,
-                isRequired: true,
+                isRequired: false,
                 dataType: SendFieldType.section as AnyObject
             )
         default:

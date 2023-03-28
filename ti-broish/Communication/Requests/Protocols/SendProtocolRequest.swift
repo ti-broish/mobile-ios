@@ -25,10 +25,16 @@ struct SendProtocolRequest: RequestProvider {
     }
     
     var parameters: [String : Any?] {
-        [
-            "section" : section.id,
-            "pictures" : pictures
-        ]
+        if section.id.isEmpty {
+            return [
+                "pictures" : pictures
+            ]
+        } else {
+            return [
+                "section" : section.id,
+                "pictures" : pictures
+            ]
+        }
     }
     
 }

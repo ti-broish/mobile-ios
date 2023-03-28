@@ -8,9 +8,7 @@
 import UIKit
 
 final class SendProtocolViewController: SendViewController {
-    
     private let viewModel = SendProtocolViewModel()
-    private var section: Section?
     
     // MARK: - View lifecycle
     
@@ -50,13 +48,14 @@ final class SendProtocolViewController: SendViewController {
     }
     
     override func handleSendButton(_ sender: UIButton) {
-        guard
-            let index = viewModel.indexForSendField(type: .section),
-            let section = viewModel.data[index].data as? Section,
-            section.id.count > 8
-        else {
-            view.showMessage(LocalizedStrings.Errors.invalidSection)
-            return
+        let section: Section
+        if let index = viewModel.indexForSendField(type: .section),
+            let uSection = viewModel.data[index].data as? Section
+        {
+            section = uSection
+        } else {
+            // force set an empty section
+            section = Section(id: "", code: "", place: "")
         }
         
         guard viewModel.images.count > 3 else {
