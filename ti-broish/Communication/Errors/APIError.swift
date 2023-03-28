@@ -93,4 +93,7 @@ enum APIError: Error {
     
     /// Protocol not found
     case protocolNotFound
+    
+    /// Set User-Agent http header failed (missing app version)
+    case userAgentHeaderNotSet
 }
