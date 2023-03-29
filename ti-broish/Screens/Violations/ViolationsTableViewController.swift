@@ -58,6 +58,10 @@ final class ViolationsTableViewController: BaseTableViewController {
                     
                     tableView.reloadData()
                     viewModel.loadingPublisher.send(false)
+                    
+                    if viewModel.violations.isEmpty {
+                        viewModel.getLocalViolations()
+                    }
                 })
     }
     

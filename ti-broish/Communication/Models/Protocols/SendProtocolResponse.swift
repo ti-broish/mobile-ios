@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SendProtocolResponse: Decodable {
+struct SendProtocolResponse: Codable {
     
     // MARK: Properties
     
@@ -15,5 +15,4 @@ struct SendProtocolResponse: Decodable {
     let section: Section?
     let pictures: [Picture]
     let status: ProtocolStatus
-    
 }

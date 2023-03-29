@@ -68,7 +68,8 @@ final class SendProtocolViewModel: SendViewModel, CoordinatableViewModel {
             }
 
             switch result {
-            case .success(_):
+            case .success(let response):
+                LocalStorage.Protocols().storeProtocol(response)
                 strongSelf.resetData()
                 strongSelf.sendPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)

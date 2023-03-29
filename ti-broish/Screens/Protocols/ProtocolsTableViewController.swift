@@ -56,6 +56,10 @@ final class ProtocolsTableViewController: BaseTableViewController {
                     
                     tableView.reloadData()
                     viewModel.loadingPublisher.send(false)
+                    
+                    if viewModel.protocols.isEmpty {
+                        viewModel.getLocalProtocols()
+                    }
                 })
     }
     

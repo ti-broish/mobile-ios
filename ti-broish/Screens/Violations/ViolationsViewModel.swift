@@ -12,7 +12,35 @@ final class ViolationsViewModel: BaseViewModel, CoordinatableViewModel {
     private (set) var violations = [Violation]()
     
     func start() {
-        getViolations()
+        if LocalStorage.User().isLoggedIn {
+            getViolations()
+        } else {
+            getLocalViolations()
+        }
+    }
+    
+    func getLocalViolations() {
+        let localViolations = LocalStorage.Violations().getViolations()
+        
+        if !localViolations.isEmpty {
+            for localViolation in localViolations {
+                let newViolation = Violation(
+                    id: localViolation.id,
+                    description: localViolation.description,
+                    pictures: localViolation.pictures,
+                    section: localViolation.section,
+                    status: localViolation.status,
+                    statusLocalized: localViolation.status.localizedStatus,
+                    statusColor: localViolation.status.colorString
+                )
+                
+                if violations.first(where: { $0.id == newViolation.id }) == nil {
+                    violations.append(newViolation)
+                }
+            }
+            
+            reloadDataPublisher.send(nil)
+        }
     }
     
     // MARK: - Private methods

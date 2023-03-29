@@ -146,7 +146,8 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
             }
             
             switch result {
-            case .success(_):
+            case .success(let response):
+                LocalStorage.Violations().storeViolation(response)
                 strongSelf.resetAll()
                 strongSelf.sendPublisher.send(nil)
                 strongSelf.loadingPublisher.send(false)
