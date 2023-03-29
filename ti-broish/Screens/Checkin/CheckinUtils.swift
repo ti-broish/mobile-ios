@@ -167,6 +167,12 @@ struct CheckinUtils {
             return "checkinDescription"
         case .organization:
             return "checkinOrganization"
+        case .name:
+            return "checkinName"
+        case .email:
+            return "checkinEmail"
+        case .phone:
+            return "checkinPhone"
         }
     }
 }

@@ -19,17 +19,31 @@ enum SendFieldType {
     case sectionNumber
     case description
     case organization
+    case name
+    case email
+    case phone
 
     static var protocolFields: [SendFieldType] {
         return [.section]
     }
     
     static var violationFields: [SendFieldType] {
-        return [.countryCheckbox, .electionRegion, .municipality, .town, .section, .sectionNumber, .description]
+        return [
+            .countryCheckbox,
+            .electionRegion,
+            .municipality,
+            .town,
+            .section,
+            .sectionNumber,
+            .description,
+            .name,
+            .email,
+            .phone
+        ]
     }
     
     static var violationAbroadFields: [SendFieldType] {
-        return [.countryCheckbox, .countries, .town, .section, .sectionNumber, .description]
+        return [.countryCheckbox, .countries, .town, .section, .sectionNumber, .description, .name, .email, .phone]
     }
     
     static var streamingFields: [SendFieldType] {

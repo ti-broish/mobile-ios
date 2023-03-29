@@ -30,6 +30,7 @@ final class SendViolationViewController: SendViewController {
         tableView.registerCell(UploadImageCell.self)
         tableView.registerCell(PhotoButtonsCell.self)
         tableView.registerCell(DescriptionCell.self)
+        tableView.registerCell(RegistrationPhoneCell.self)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -48,11 +49,10 @@ final class SendViolationViewController: SendViewController {
     
     override func handleSendButton(_ sender: UIButton) {
         let dataFields: [SendFieldType] = viewModel.isAbroad
-            ? [.countries, .town, .description]
-            : [.electionRegion, .municipality, .town, .description]
+            ? [.countries, .town, .description, .name, .email, .phone]
+            : [.electionRegion, .municipality, .town, .description, .name, .email, .phone]
         
         var message: String? = nil
-        
         for field in dataFields {
             if let errorMessage = viewModel.errorMessageForField(type: field) {
                 message = errorMessage
@@ -193,6 +193,24 @@ extension SendViolationViewController: UITableViewDataSource {
                 countryCell.delegate = self
                 
                 cell = countryCell
+            } else if model.type == .phone {
+                let reusableCell = tableView.dequeueReusableCell(
+                    withIdentifier: RegistrationPhoneCell.cellIdentifier,
+                    for: indexPath
+                )
+                
+                guard let phoneCell = reusableCell as? RegistrationPhoneCell  else {
+                    return UITableViewCell()
+                }
+
+                phoneCell.configureWith(
+                    model,
+                    countryPhoneCode: viewModel.countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
+                )
+                
+                phoneCell.codeButton.addTarget(self, action: #selector(handleCountryCodeButton), for: .touchUpInside)
+                phoneCell.numberTextField.delegate = self
+                cell = phoneCell
             } else {
                 cell = UITableViewCell()
             }
@@ -243,6 +261,22 @@ extension SendViolationViewController: UITableViewDataSource {
         
         viewModel.removeImage(at: indexPath.row)
         tableView.reloadData()
+    }
+    
+    @objc private func handleCountryCodeButton(_ sender: UIButton) {
+        guard let indexPath = viewModel.phoneIndexPath else {
+            return
+        }
+        
+        let viewController = SearchViewController.init(nibName: SearchViewController.nibName, bundle: nil)
+        viewController.viewModel.setSearchType(.countryPhoneCodes, isAbroad: false)
+        viewController.delegate = self
+        viewController.parentCellIndexPath = indexPath
+        viewController.selectedItem = viewModel.countryPhoneCodeSearchItem
+        loadData(searchController: viewController)
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        self.present(navController, animated: true)
     }
 }
 

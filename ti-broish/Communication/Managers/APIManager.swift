@@ -132,6 +132,7 @@ extension APIManager: APIClientInterface {
         pictures: [String],
         description: String,
         section: Section?,
+        contacts: ViolationContacts,
         completion: APIResult<SendViolationResponse>?
     ) {
         apiClient.sendViolation(
@@ -139,6 +140,7 @@ extension APIManager: APIClientInterface {
             pictures: pictures,
             description: description,
             section: section,
+            contacts: contacts, 
             completion: completion
         )
     }

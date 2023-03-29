@@ -8,6 +8,21 @@
 import UIKit
 
 final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
+    var countryPhoneCode: CountryPhoneCode?
+    
+    var phoneIndexPath: IndexPath? {
+        guard let index = data.firstIndex(where: { $0.type == .phone }) else {
+            return nil
+        }
+        
+        return IndexPath(row: index, section: 0)
+    }
+    
+    var countryPhoneCodeSearchItem: SearchItem? {
+        let countryPhoneCode = countryPhoneCode ?? CountryPhoneCode.defaultCountryPhoneCode
+        
+        return SearchItem(id: -1, name: countryPhoneCode.name, code: countryPhoneCode.code, type: .phoneCode)
+    }
     
     override func updateFieldValue(_ value: AnyObject?, at indexPath: IndexPath) {
         guard
@@ -40,6 +55,44 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
         images.removeAll()
     }
     
+    override func errorMessageForField(type: SendFieldType) -> String? {
+        guard [.name, .email, .phone].contains(type) else {
+            return super.errorMessageForField(type: type)
+        }
+        
+        if let data = dataForSendField(type: type) {
+            switch type {
+            case .name:
+                if !validator.validate(name: data as? String) {
+                    return LocalizedStrings.Errors.invalidName
+                }
+            case .email:
+                if !validator.validate(email: data as? String) {
+                    return LocalizedStrings.Errors.invalidEmail
+                }
+            case .phone:
+                if !validator.validate(phone: data as? String) {
+                    return LocalizedStrings.Errors.invalidPhone
+                }
+            default:
+                break
+            }
+        } else {
+            switch type {
+            case .name:
+                return LocalizedStrings.SendInputField.nameNotSet
+            case .email:
+                return LocalizedStrings.SendInputField.emailNotSet
+            case .phone:
+                return LocalizedStrings.SendInputField.phoneNotSet
+            default:
+                return LocalizedStrings.Errors.defaultError
+            }
+        }
+        
+        return nil
+    }
+    
     func start() {
         isAbroad = checkinUtils.isAbroad
         
@@ -67,7 +120,10 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
     private func sendViolation() {
         guard
             let town = dataForSendField(type: .town) as? Town,
-            let descriptionText = dataForSendField(type: .description) as? String
+            let descriptionText = dataForSendField(type: .description) as? String,
+            let name = dataForSendField(type: .name) as? String,
+            let email = dataForSendField(type: .email) as? String,
+            let phone = dataForSendField(type: .phone) as? String
         else {
             return
         }
@@ -75,11 +131,15 @@ final class SendViolationViewModel: SendViewModel, CoordinatableViewModel {
         let pictures = uploadPhotos.map { $0.id }
         let section = dataForSendField(type: .section) as? Section
         
+        let phoneCode = countryPhoneCode?.code ?? CountryPhoneCode.defaultCountryPhoneCode.code
+        let contacts = ViolationContacts(name: name, email: email, phone: "\(phoneCode)\(phone)")
+        
         APIManager.shared.sendViolation(
             town: town,
             pictures: pictures,
             description: descriptionText,
-            section: section
+            section: section,
+            contacts: contacts
         ) { [weak self] result in
             guard let strongSelf = self else {
                 return

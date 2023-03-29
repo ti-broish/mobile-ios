@@ -15,6 +15,7 @@ struct SendViolationRequest: RequestProvider {
     let pictures: [String]
     let description: String
     let section: Section?
+    let contacts: ViolationContacts
     
     // MARK: - RequestProvider
     
@@ -32,6 +33,9 @@ struct SendViolationRequest: RequestProvider {
             "pictures": pictures,
             "description": description,
             "section": section?.id,
+            "name": contacts.name,
+            "email": contacts.email,
+            "phone": contacts.phone
         ]
     }
     

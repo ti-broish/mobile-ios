@@ -44,6 +44,7 @@ final class HomeViewController: BaseViewController {
         )
         
         checkinButton.configureSolidButton(title: LocalizedStrings.Menu.checkin, theme: theme)
+        checkinButton.isHidden = !LocalStorage.User().isLoggedIn
         termsButton.configureSolidButton(title: LocalizedStrings.Home.terms, theme: theme)
     }
     

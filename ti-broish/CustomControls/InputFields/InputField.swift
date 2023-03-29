@@ -85,6 +85,11 @@ class InputField: UIView, Configurable {
         configureTextFieldKeyboardType(inputFieldType: data.type)
     }
     
+    func enableTextField() {
+        textField.isEnabled = true
+        textField.textAlignment = .natural
+    }
+    
     func disableTextField() {
         textField.isEnabled = false
         textField.textAlignment = .center

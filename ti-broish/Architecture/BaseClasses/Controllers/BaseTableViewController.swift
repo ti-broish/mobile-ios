@@ -295,6 +295,8 @@ extension BaseTableViewController: SearchViewControllerDelegate {
         if value?.type == .phoneCode {
             if let viewModel = baseViewModel as? RegistrationViewModel {
                 viewModel.countryPhoneCode = value?.data as? CountryPhoneCode
+            } else if let viewModel = baseViewModel as? SendViolationViewModel {
+                viewModel.countryPhoneCode = value?.data as? CountryPhoneCode
             }
         } else if let indexPath = sender.parentCellIndexPath {
             baseViewModel.updateFieldValue(value as AnyObject, at: indexPath)

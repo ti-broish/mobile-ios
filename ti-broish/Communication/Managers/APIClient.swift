@@ -45,6 +45,7 @@ protocol APIClientInterface {
         pictures: [String],
         description: String,
         section: Section?,
+        contacts: ViolationContacts,
         completion: APIResult<SendViolationResponse>?
     )
     
@@ -287,13 +288,15 @@ extension APIClient: APIClientInterface {
         pictures: [String],
         description: String,
         section: Section?,
+        contacts: ViolationContacts,
         completion: APIResult<SendViolationResponse>?
     ) {
         let request = SendViolationRequest(
             town: town,
             pictures: pictures,
             description: description,
-            section: section
+            section: section,
+            contacts: contacts
         )
         
         send(request) { result in

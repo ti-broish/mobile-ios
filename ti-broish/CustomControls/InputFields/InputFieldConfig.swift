@@ -17,7 +17,7 @@ struct InputFieldConfig {
     var dataType: AnyObject?
     
     var isTextField: Bool {
-        return type != .picker && type != .checkbox
+        return type != .picker && type != .checkbox && type != .phone
     }
     
     var isPickerField: Bool {

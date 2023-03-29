@@ -65,7 +65,7 @@ class BaseViewModel: DataFieldModel {
         }
         
         switch type {
-        case .description:
+        case .description, .name, .email, .phone:
             return data[index].data
         default:
             let item = data[index].data as? SearchItem
@@ -102,6 +102,8 @@ class BaseViewModel: DataFieldModel {
             return nil
         case .organization:
             return .organizations
+        default:
+            return nil
         }
     }
     
