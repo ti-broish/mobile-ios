@@ -24,6 +24,14 @@ final class ViolationsTableViewController: BaseTableViewController {
         // TODO: - implement pagination
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if viewModel.violations.isEmpty {
+            viewModel.getLocalViolations()
+        }
+    }
+    
     override func setupTableView() {
         super.setupTableView()
         tableView.registerCell(ViolationCell.self)
@@ -58,10 +66,6 @@ final class ViolationsTableViewController: BaseTableViewController {
                     
                     tableView.reloadData()
                     viewModel.loadingPublisher.send(false)
-                    
-                    if viewModel.violations.isEmpty {
-                        viewModel.getLocalViolations()
-                    }
                 })
     }
     
