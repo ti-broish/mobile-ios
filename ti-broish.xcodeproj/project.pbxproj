@@ -73,6 +73,7 @@
 		1044A819268A23A200EEAB80 /* StartStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044A818268A23A200EEAB80 /* StartStreamViewModel.swift */; };
 		1044A81D268A244300EEAB80 /* SendFieldsDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */; };
 		10482D9026710848001C260F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10482D8F26710848001C260F /* Alamofire */; };
+		104D0FBC29D43D0600E48083 /* ViolationContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104D0FBB29D43D0600E48083 /* ViolationContacts.swift */; };
 		104DAF84263A880A001B6B15 /* InputFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DAF83263A880A001B6B15 /* InputFieldType.swift */; };
 		1050C42226336D0100EE2FE4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */; };
 		10569EE12680D6AC00843E71 /* SendViolationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */; };
@@ -315,6 +316,7 @@
 		1044A816268A22C400EEAB80 /* StartStreamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartStreamViewController.xib; sourceTree = "<group>"; };
 		1044A818268A23A200EEAB80 /* StartStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStreamViewModel.swift; sourceTree = "<group>"; };
 		1044A81C268A244300EEAB80 /* SendFieldsDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFieldsDataBuilder.swift; sourceTree = "<group>"; };
+		104D0FBB29D43D0600E48083 /* ViolationContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationContacts.swift; sourceTree = "<group>"; };
 		104DAF83263A880A001B6B15 /* InputFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldType.swift; sourceTree = "<group>"; };
 		1050C42126336D0100EE2FE4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		10569EE02680D6AC00843E71 /* SendViolationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViolationViewModel.swift; sourceTree = "<group>"; };
@@ -1018,6 +1020,7 @@
 			children = (
 				CFA575472637FA07002BCECD /* SendViolationResponse.swift */,
 				CFA5754C2637FB06002BCECD /* Violation.swift */,
+				104D0FBB29D43D0600E48083 /* ViolationContacts.swift */,
 			);
 			path = Violations;
 			sourceTree = "<group>";
@@ -1420,6 +1423,7 @@
 				101CFA6D2634CC8E00666DD8 /* UIButtonExtension.swift in Sources */,
 				108F202226496D8800E54F64 /* Town.swift in Sources */,
 				CFA575582637FC5D002BCECD /* UploadPhoto.swift in Sources */,
+				104D0FBC29D43D0600E48083 /* ViolationContacts.swift in Sources */,
 				10EB5AA3263A1A8F00690F88 /* TibTextField.swift in Sources */,
 				106B7F002644226400571859 /* UserDefaultsExtension.swift in Sources */,
 				10123A582673A6790089799B /* BaseViewModel.swift in Sources */,
@@ -1664,7 +1668,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ti-broish/ti-broish.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1673,7 +1677,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D STAGING";
+				OTHER_SWIFT_FLAGS = "-D STAGING";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1691,7 +1695,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ti-broish/ti-broish.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2T55BC3A9S;
 				INFOPLIST_FILE = "ti-broish/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1700,7 +1704,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0.0;
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-D STAGING";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsi.tibroish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -28,9 +28,13 @@ final class MenuViewModel: CoordinatableViewModel {
         menuItems.append(MenuItem(type: .sendProtocol))
         menuItems.append(MenuItem(type: .sendViolation))
 //        menuItems.append(MenuItem(type: .live))
-        menuItems.append(MenuItem(type: .checkin))
-        menuItems.append(MenuItem(type: .protocols))
-        menuItems.append(MenuItem(type: .violations))
+        
+        if isLoggedIn {
+            menuItems.append(MenuItem(type: .checkin))
+            menuItems.append(MenuItem(type: .protocols))
+            menuItems.append(MenuItem(type: .violations))
+        }
+
         menuItems.append(MenuItem(type: .terms))
         
         if isLoggedIn {

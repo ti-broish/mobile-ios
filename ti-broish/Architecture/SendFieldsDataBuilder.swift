@@ -89,6 +89,30 @@ struct SendFieldsDataBuilder {
             )
         case .organization:
             return nil
+        case .name:
+            return InputFieldConfig(
+                type: .text,
+                title: LocalizedStrings.Violations.name,
+                placeholderText: LocalizedStrings.Violations.namePlaceholder,
+                isRequired: true,
+                dataType: SendFieldType.name as AnyObject
+            )
+        case .email:
+            return InputFieldConfig(
+                type: .email,
+                title: LocalizedStrings.CommonInputField.email,
+                placeholderText: LocalizedStrings.CommonInputField.emailPlaceholder,
+                isRequired: true,
+                dataType: SendFieldType.email as AnyObject
+            )
+        case .phone:
+            return InputFieldConfig(
+                type: .phone,
+                title: LocalizedStrings.CommonInputField.phone,
+                placeholderText: LocalizedStrings.CommonInputField.phonePlaceholder,
+                isRequired: true,
+                dataType: SendFieldType.phone as AnyObject
+            )
         }
     }
 }

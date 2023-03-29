@@ -44,7 +44,22 @@ final class HomeViewController: BaseViewController {
         )
         
         checkinButton.configureSolidButton(title: LocalizedStrings.Menu.checkin, theme: theme)
+        checkinButton.isHidden = !LocalStorage.User().isLoggedIn
         termsButton.configureSolidButton(title: LocalizedStrings.Home.terms, theme: theme)
+        
+        #if STAGING
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "STAGING_ENVIRONMENT"
+        label.textColor = .red
+        label.font = .boldSystemFont(ofSize: 14.0)
+        self.view.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            label.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -64.0)
+        ])
+        #endif
     }
     
     @IBAction private func handleSendProtocolButton(_ sender: UIButton) {

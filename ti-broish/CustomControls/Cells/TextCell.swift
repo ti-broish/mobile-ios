@@ -30,6 +30,11 @@ final class TextCell: TibTableViewCell {
                 textInputField.disableTextField()
             }
         } else {
+            // send violation contacts
+            if [.name, .email, .phone].contains(fieldType) {
+                textInputField.enableTextField()
+            }
+            
             textInputField.configureWith(data)
         }
     }

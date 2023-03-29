@@ -46,6 +46,9 @@ struct LocalizedStrings {
         static let cityRegionNotSet: String = "Моля изберете район"
         static let descriptionNotSet: String = "Моля въведете описане (повече от 20 символа)"
         static let sectionNotSet: String = "Моля изберете секция"
+        static let nameNotSet: String = "Моля въведете вашето име, презиме и фамилия"
+        static let emailNotSet: String = "Моля въведете имейл"
+        static let phoneNotSet: String = "Моля въведете телефон"
     }
     
     struct Buttons {
@@ -78,6 +81,8 @@ struct LocalizedStrings {
         static let country: String = "България"
         static let abroad: String = "Чужбина"
         static let sent: String = "Сигналът е изпратен успешно."
+        static let name: String = "Име, презиме и фамилия:"
+        static let namePlaceholder: String = "Въведете вашето име, презиме и фамилия"
         
         struct ViolationDetails {
             
@@ -133,6 +138,7 @@ struct LocalizedStrings {
         
         static let invalidFirstName: String = "Невалидно име"
         static let invalidLastName: String = "Невалидна фамилия"
+        static let invalidName: String = "Невалидно име, презиме, фамилия"
         static let invalidPhone: String = "Невалиден формат на телефонен номер."
         static let invalidPin: String = "Невалидни цифри от ЕГН (последните 4)"
         static let invalidOrganization: String = "Невалидна организация"
