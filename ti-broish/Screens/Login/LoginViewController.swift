@@ -106,6 +106,7 @@ final class LoginViewController: BaseViewController {
         viewModel.login(email: email, password: password) { [weak self] result in 
             switch result {
             case .success(_):
+                (UIApplication.shared.delegate as? AppDelegate)?.appCoordinator?.start()
                 self?.dismiss(animated: true)
             case .failure(let error):
                 self?.view.showMessage(error.localizedString)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SendViolationResponse: Decodable {
+struct SendViolationResponse: Codable {
     
     // MARK: Properties
     

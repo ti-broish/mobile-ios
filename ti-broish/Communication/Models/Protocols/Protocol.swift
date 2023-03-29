@@ -9,7 +9,7 @@ import Foundation
 
 typealias ProtocolsResponse = [Protocol]
 
-enum ProtocolStatus: String, Decodable {
+enum ProtocolStatus: String, Codable {
     
     case received, rejected, approved, processed
     
@@ -25,9 +25,22 @@ enum ProtocolStatus: String, Decodable {
             return "#4CAF50"
         }
     }
+    
+    var localizedStatus: String {
+        switch (self) {
+        case .received:
+            return "Получен"
+        case .rejected:
+            return "Отхвърлен"
+        case .approved:
+            return "Одобрен"
+        case .processed:
+            return "Обработва се"
+        }
+    }
 }
 
-struct Picture: Decodable {
+struct Picture: Codable {
     
     let id: String
     let path: String
@@ -41,7 +54,7 @@ struct Protocol: Decodable {
     
     let id: String
     let pictures: [Picture]
-    let section: Section
+    let section: Section?
     let status: ProtocolStatus
     let statusLocalized: String
     let statusColor: String?

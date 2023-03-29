@@ -47,7 +47,7 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         stackView.addArrangedSubview(
             makeLabel(
                 prefix: LocalizedStrings.Protocols.ProtocolDetails.sectionNumber,
-                text: protocolItem.section.id,
+                text: protocolItem.section?.id ?? "",
                 textColor: theme.darkTextColor
             )
         )
@@ -55,7 +55,7 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
         stackView.addArrangedSubview(
             makeLabel(
                 prefix: LocalizedStrings.Protocols.ProtocolDetails.location,
-                text: protocolItem.section.place,
+                text: protocolItem.section?.place ?? "",
                 textColor: theme.darkTextColor
             )
         )

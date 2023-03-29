@@ -9,7 +9,7 @@ import Foundation
 
 typealias ViolationsResponse = [Violation]
 
-enum ViolationStatus: String, Decodable {
+enum ViolationStatus: String, Codable {
     
     case received, rejected, approved, processed
     
@@ -23,6 +23,19 @@ enum ViolationStatus: String, Decodable {
             return "#4CAF50"
         case .processed:
             return "#4CAF50"
+        }
+    }
+    
+    var localizedStatus: String {
+        switch (self) {
+        case .received:
+            return "Получен"
+        case .rejected:
+            return "Отхвърлен"
+        case .approved:
+            return "Одобрен"
+        case .processed:
+            return "Обработва се"
         }
     }
 }

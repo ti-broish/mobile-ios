@@ -32,11 +32,11 @@ final class ProtocolCell: TibTableViewCell {
     func configure(_ model: Protocol, at indexPath: IndexPath) {
         titleLabel.attributedText = StringUtils.makeAttributedText(
             prefix: "\(indexPath.row + 1). \(LocalizedStrings.SendInputField.section)",
-            text: model.section.id,
+            text: model.section?.id ?? "",
             textColor: TibTheme().darkTextColor
         )
         
-        locationLabel.text = model.section.place
+        locationLabel.text = model.section?.place ?? ""
         statusLabel.text = model.statusLocalized
         
         if let statusColor = model.statusColor {

@@ -12,7 +12,34 @@ final class ProtocolsViewModel: BaseViewModel, CoordinatableViewModel {
     private (set) var protocols = [Protocol]()
     
     func start() {
-        getProtocols()
+        if LocalStorage.User().isLoggedIn {
+            getProtocols()
+        } else {
+            getLocalProtocols()
+        }
+    }
+    
+    func getLocalProtocols() {
+        let localProtocols = LocalStorage.Protocols().getProtocols()
+        
+        if !localProtocols.isEmpty {
+            for localProtocol in localProtocols {
+                let newProtocol = Protocol(
+                    id: localProtocol.id,
+                    pictures: localProtocol.pictures,
+                    section: localProtocol.section,
+                    status: localProtocol.status,
+                    statusLocalized: localProtocol.status.localizedStatus,
+                    statusColor: localProtocol.status.colorString
+                )
+                
+                if protocols.first(where: { $0.id == newProtocol.id }) == nil {
+                    protocols.append(newProtocol)
+                }
+            }
+            
+            reloadDataPublisher.send(nil)
+        }
     }
     
     // MARK: - Private methods

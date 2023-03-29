@@ -22,6 +22,14 @@ final class ProtocolsTableViewController: BaseTableViewController {
         // TODO: - implement pagination
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if viewModel.protocols.isEmpty {
+            viewModel.getLocalProtocols()
+        }
+    }
+    
     override func setupTableView() {
         super.setupTableView()
         tableView.registerCell(ProtocolCell.self)
