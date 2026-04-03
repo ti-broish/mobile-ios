@@ -10,7 +10,7 @@ import Photos
 
 final class ImageCell: UICollectionViewCell, Cell {
     
-    @IBOutlet private (set) weak var imageView: UIImageView!
+    @IBOutlet private(set) weak var imageView: UIImageView!
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     override func awakeFromNib() {

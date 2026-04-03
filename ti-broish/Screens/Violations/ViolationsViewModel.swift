@@ -9,7 +9,7 @@ import Foundation
 
 final class ViolationsViewModel: BaseViewModel, CoordinatableViewModel {
     
-    private (set) var violations = [Violation]()
+    private(set) var violations = [Violation]()
     
     func start() {
         if LocalStorage.User().isLoggedIn {

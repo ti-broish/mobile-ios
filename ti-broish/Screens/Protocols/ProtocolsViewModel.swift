@@ -9,7 +9,7 @@ import Foundation
 
 final class ProtocolsViewModel: BaseViewModel, CoordinatableViewModel {
     
-    private (set) var protocols = [Protocol]()
+    private(set) var protocols = [Protocol]()
     
     func start() {
         if LocalStorage.User().isLoggedIn {

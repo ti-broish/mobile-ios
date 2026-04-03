@@ -10,7 +10,7 @@ import UIKit
 final class DescriptionCell: TibTableViewCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private (set) weak var textView: UITextView!
+    @IBOutlet private(set) weak var textView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

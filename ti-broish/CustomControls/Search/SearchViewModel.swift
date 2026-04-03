@@ -25,7 +25,7 @@ final class SearchViewModel: BaseViewModel, CoordinatableViewModel {
     private var lastSearchedText = ""
     private var searchData = [SearchItem]()
     private var filteredSearchData = [SearchItem]()
-    private (set) var searchType: SearchType?
+    private(set) var searchType: SearchType?
     private var electionRegions = [ElectionRegion]()
     private var municipalities = [Municipality]()
     

@@ -11,8 +11,8 @@ import Combine
 
 final class PhotosPickerViewModel: BaseViewModel, CoordinatableViewModel {
     
-    private (set) var allPhotos = PHFetchResult<PHAsset>()
-    private (set) var selectedPhotos = [UIImage]()
+    private(set) var allPhotos = PHFetchResult<PHAsset>()
+    private(set) var selectedPhotos = [UIImage]()
     
     let selectedPhotosCountPublisher = PassthroughSubject<Int, Never>()
     

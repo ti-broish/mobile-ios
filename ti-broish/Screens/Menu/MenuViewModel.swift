@@ -8,7 +8,7 @@
 
 final class MenuViewModel: CoordinatableViewModel {
     
-    private (set) var menuItems = [MenuItem]()
+    private(set) var menuItems = [MenuItem]()
     
     init() {
         start()

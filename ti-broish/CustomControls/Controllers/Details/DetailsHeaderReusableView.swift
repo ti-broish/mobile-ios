@@ -11,7 +11,7 @@ final class DetailsHeaderReusableView: UICollectionReusableView {
     
     private let stackViewConstraintOffset: CGFloat = 16.0
     private var stackView = UIStackView()
-    private (set) var headerSize: CGSize = .zero
+    private(set) var headerSize: CGSize = .zero
     
     static var reuseIdentifier: String {
         return "\(String(describing: self))"

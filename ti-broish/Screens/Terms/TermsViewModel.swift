@@ -9,7 +9,7 @@ import Foundation
 
 final class TermsViewModel: BaseViewModel, CoordinatableViewModel {
     
-    private (set) var htmlString: String?
+    private(set) var htmlString: String?
     
     func start() {
         loadTerms()

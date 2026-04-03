@@ -12,7 +12,7 @@ import AVFoundation
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private (set) var isKeyboardVisible = false
+    private(set) var isKeyboardVisible = false
     
     var window: UIWindow?
     var appCoordinator: AppCoordinator?

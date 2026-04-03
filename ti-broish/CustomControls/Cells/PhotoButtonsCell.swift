@@ -12,11 +12,11 @@ final class PhotoButtonsCell: TibTableViewCell {
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var galleryView: UIView!
-    @IBOutlet private (set) weak var galleryButton: UIButton!
+    @IBOutlet private(set) weak var galleryButton: UIButton!
     @IBOutlet private weak var galleryImageView: UIImageView!
     @IBOutlet private weak var galleryLabel: UILabel!
     @IBOutlet private weak var cameraView: UIView!
-    @IBOutlet private (set) weak var cameraButton: UIButton!
+    @IBOutlet private(set) weak var cameraButton: UIButton!
     @IBOutlet private weak var cameraImageView: UIImageView!
     @IBOutlet private weak var cameraLabel: UILabel!
     

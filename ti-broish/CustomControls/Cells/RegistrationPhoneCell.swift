@@ -10,8 +10,8 @@ import UIKit
 final class RegistrationPhoneCell: TibTableViewCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private (set) weak var codeButton: UIButton!
-    @IBOutlet private (set) weak var numberTextField: TibTextField!
+    @IBOutlet private(set) weak var codeButton: UIButton!
+    @IBOutlet private(set) weak var numberTextField: TibTextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

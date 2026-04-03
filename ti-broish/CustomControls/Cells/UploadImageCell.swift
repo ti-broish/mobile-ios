@@ -10,7 +10,7 @@ import UIKit
 final class UploadImageCell: TibTableViewCell {
     
     @IBOutlet private weak var mImageView: UIImageView!
-    @IBOutlet private (set) weak var deleteButton: UIButton!
+    @IBOutlet private(set) weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
