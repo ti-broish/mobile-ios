@@ -117,6 +117,11 @@ final class ProfileViewController: BaseTableViewController {
         ])
         
         let deleteButton = UIBarButtonItem(customView: button)
+        
+        if #available(iOS 26.0, *) {
+            deleteButton.hidesSharedBackground = true
+        }
+        
         // note: - parent?.parent? (ContentContainerViewController.contentViewController)
         parent?.parent?.navigationItem.setRightBarButton(deleteButton, animated: true)
     }
